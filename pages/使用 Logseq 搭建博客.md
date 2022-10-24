@@ -5,6 +5,7 @@
 		- [简悦 + Logseq + Github Page 无代码全自动化知识管理发布方案 · Discussion #3426 · Kenshin/simpread · GitHub](https://github.com/Kenshin/simpread/discussions/3426)
 			- 这里使用了 [Logseq Publish GitHub Action](https://pengx17.github.io/knowledge-garden/#/page/logseq%20publish%20github%20action)
 - 问题
-	- 似乎第一次部署并没有成功，打开之后页面是空的
-	- 可能是没有打开发布所有页面
-	- 修改之后
+	- TODO 似乎第一次部署并没有成功，打开之后页面是空的
+		- 可能是没有打开发布所有页面
+		- 修改之后打开完全没有问题
+	- TODO 设置首页为 Content

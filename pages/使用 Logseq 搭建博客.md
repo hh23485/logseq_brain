@@ -14,3 +14,4 @@
 			  ![image.png](../assets/image_1666634651163_0.png){:height 266, :width 627}
 	- DONE 设置首页为 Content 页面
 		- [如何发布logseq成为博客 #发布#教程 - 分享 - Logseq 中文社区](https://cn.logseq.com/t/topic/82)
+		  ![image.png](../assets/image_1666634692461_0.png)

@@ -6,4 +6,4 @@
 			- 这里使用了 [Logseq Publish GitHub Action](https://pengx17.github.io/knowledge-garden/#/page/logseq%20publish%20github%20action)
 - 问题
 	- 似乎第一次部署并没有成功，打开之后页面是空的
-	-
+	- 可能是没有打开发布所有页面

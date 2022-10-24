@@ -11,4 +11,5 @@
 	  :END:
 		- 可能是没有打开发布所有页面
 			- 修改之后打开完全解决问题
-	- TODO 设置首页为 Content 页面
+	- DONE 设置首页为 Content 页面
+		- [如何发布logseq成为博客 #发布#教程 - 分享 - Logseq 中文社区](https://cn.logseq.com/t/topic/82)

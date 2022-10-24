@@ -3,4 +3,5 @@
 	- 搭建流程
 		- [如何发布logseq成为博客 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/344165645)
 		- [简悦 + Logseq + Github Page 无代码全自动化知识管理发布方案 · Discussion #3426 · Kenshin/simpread · GitHub](https://github.com/Kenshin/simpread/discussions/3426)
-			- 这里使用了
+			- 这里使用了 [Logseq Publish GitHub Action](https://pengx17.github.io/knowledge-garden/#/page/logseq%20publish%20github%20action)
+			-

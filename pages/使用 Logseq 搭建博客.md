@@ -2,4 +2,5 @@
 	- Logseq 是一个更好的存放临时笔记和想法的地方，在某种程度上，它会成为一个知识库来关联所有的其他笔记和资源，在这里产生出新的观点和想法，然后再输出到 Notion 中
 	- 搭建流程
 		- [如何发布logseq成为博客 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/344165645)
+		- [简悦 + Logseq + Github Page 无代码全自动化知识管理发布方案 · Discussion #3426 · Kenshin/simpread · GitHub](https://github.com/Kenshin/simpread/discussions/3426)
 		-

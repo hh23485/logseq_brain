@@ -7,4 +7,4 @@ tags:: tmux, ubuntu, setup
 - 配置
 	- [[配置 tmux]]
 - 教程
-	-
+	- 使用教程可以查看 [Tmux 速成教程：技巧和调整](http://blog.jobbole.com/87584/)

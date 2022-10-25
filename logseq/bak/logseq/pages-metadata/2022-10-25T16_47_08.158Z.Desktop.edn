@@ -2,14 +2,14 @@
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "anytype",
-  :block/created-at 1666716264182,
-  :block/updated-at 1666716264182}
+  :block/created-at 1666709470910,
+  :block/updated-at 1666709470910}
  {:block/name "anytype 使用的自动冲突解决方案 - crdt",
-  :block/created-at 1666716263736,
-  :block/updated-at 1666716263736}
+  :block/created-at 1666709393198,
+  :block/updated-at 1666710868764}
  {:block/name "apt",
-  :block/created-at 1666716263797,
-  :block/updated-at 1666716263797}
+  :block/created-at 1666694106358,
+  :block/updated-at 1666694106358}
  {:block/name "b",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -29,8 +29,8 @@
   :block/created-at 1666630637161,
   :block/updated-at 1666633169437}
  {:block/name "crdt",
-  :block/created-at 1666716264185,
-  :block/updated-at 1666716264185}
+  :block/created-at 1666709470910,
+  :block/updated-at 1666709470910}
  {:block/name "doing",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -38,8 +38,8 @@
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "draft notes",
-  :block/created-at 1666716263733,
-  :block/updated-at 1666716263733}
+  :block/created-at 1666676386797,
+  :block/updated-at 1666676386797}
  {:block/name "favorites",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -50,41 +50,45 @@
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "logseq",
-  :block/created-at 1666716264356,
-  :block/updated-at 1666716264356}
+  :block/created-at 1666676386853,
+  :block/updated-at 1666676386853}
  {:block/name "notes",
-  :block/created-at 1666716263737,
-  :block/updated-at 1666716263737}
+  :block/created-at 1666696885139,
+  :block/updated-at 1666696885139}
  {:block/name "now",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "obsidian",
-  :block/created-at 1666716264183,
-  :block/updated-at 1666716264183}
+  :block/created-at 1666709605923,
+  :block/updated-at 1666709605923}
  {:block/name "oct 25th, 2022",
   :block/created-at 1666630095969,
+<<<<<<< HEAD
   :block/updated-at 1666630100897}
  {:block/name "oct 26th, 2022",
   :block/created-at 1666715804949,
   :block/updated-at 1666715804949}
+=======
+  :block/updated-at 1666709800628}
  {:block/name "readme",
-  :block/created-at 1666716263625,
-  :block/updated-at 1666716263625}
+  :block/created-at 1666693822636,
+  :block/updated-at 1666693822636}
  {:block/name "setup",
-  :block/created-at 1666716263806,
-  :block/updated-at 1666716263806}
+  :block/created-at 1666694020083,
+  :block/updated-at 1666694020083}
  {:block/name "tmux",
-  :block/created-at 1666716263805,
-  :block/updated-at 1666716263805}
+  :block/created-at 1666693708653,
+  :block/updated-at 1666693708653}
+>>>>>>> 190762cf2a386ff91c0f487603837fae5633a291
  {:block/name "todo",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "ubuntu",
-  :block/created-at 1666716263805,
-  :block/updated-at 1666716263805}
+  :block/created-at 1666694020082,
+  :block/updated-at 1666694020082}
  {:block/name "ubuntu 安装 tmux",
-  :block/created-at 1666716263738,
-  :block/updated-at 1666716263738}
+  :block/created-at 1666685563224,
+  :block/updated-at 1666694145161}
  {:block/name "wait",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -95,5 +99,5 @@
   :block/created-at 1666630100896,
   :block/updated-at 1666634299953}
  {:block/name "配置 tmux",
-  :block/created-at 1666716263739, 
-  :block/updated-at 1666716263739}]
+  :block/created-at 1666685739969, 
+  :block/updated-at 1666694055363}]

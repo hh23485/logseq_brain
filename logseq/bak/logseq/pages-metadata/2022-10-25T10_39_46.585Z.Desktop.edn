@@ -1,15 +1,6 @@
 [{:block/name "a",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
- {:block/name "anytype",
-  :block/created-at 1666709470910,
-  :block/updated-at 1666709470910}
- {:block/name "anytype 使用的自动冲突解决方案 - crdt",
-  :block/created-at 1666709393198,
-  :block/updated-at 1666710868764}
- {:block/name "apt",
-  :block/created-at 1666694106358,
-  :block/updated-at 1666694106358}
  {:block/name "b",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -28,9 +19,6 @@
  {:block/name "contents",
   :block/created-at 1666630637161,
   :block/updated-at 1666633169437}
- {:block/name "crdt",
-  :block/created-at 1666709470910,
-  :block/updated-at 1666709470910}
  {:block/name "doing",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -52,43 +40,21 @@
  {:block/name "logseq",
   :block/created-at 1666676386853,
   :block/updated-at 1666676386853}
- {:block/name "notes",
-  :block/created-at 1666696885139,
-  :block/updated-at 1666696885139}
  {:block/name "now",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
- {:block/name "obsidian",
-  :block/created-at 1666709605923,
-  :block/updated-at 1666709605923}
  {:block/name "oct 25th, 2022",
   :block/created-at 1666630095969,
-<<<<<<< HEAD
-  :block/updated-at 1666630100897}
- {:block/name "oct 26th, 2022",
-  :block/created-at 1666715804949,
-  :block/updated-at 1666715804949}
-=======
-  :block/updated-at 1666709800628}
- {:block/name "readme",
-  :block/created-at 1666693822636,
-  :block/updated-at 1666693822636}
- {:block/name "setup",
-  :block/created-at 1666694020083,
-  :block/updated-at 1666694020083}
+  :block/updated-at 1666685739971}
  {:block/name "tmux",
   :block/created-at 1666693708653,
   :block/updated-at 1666693708653}
->>>>>>> 190762cf2a386ff91c0f487603837fae5633a291
  {:block/name "todo",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
- {:block/name "ubuntu",
-  :block/created-at 1666694020082,
-  :block/updated-at 1666694020082}
  {:block/name "ubuntu 安装 tmux",
   :block/created-at 1666685563224,
-  :block/updated-at 1666694145161}
+  :block/updated-at 1666693708653}
  {:block/name "wait",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -98,6 +64,6 @@
  {:block/name "使用 logseq 搭建博客",
   :block/created-at 1666630100896,
   :block/updated-at 1666634299953}
- {:block/name "配置 tmux",
+ {:block/name "配置 tmux 快捷键",
   :block/created-at 1666685739969, 
-  :block/updated-at 1666694055363}]
+  :block/updated-at 1666685739969}]

@@ -6,4 +6,5 @@ tags:: tmux, ubuntu, setup
 	  ```
 - 配置
 	- [[配置 tmux]]
--
+- 教程
+	-

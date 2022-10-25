@@ -46,12 +46,15 @@
  {:block/name "oct 25th, 2022",
   :block/created-at 1666630095969,
   :block/updated-at 1666685739971}
+ {:block/name "tmux",
+  :block/created-at 1666693708653,
+  :block/updated-at 1666693708653}
  {:block/name "todo",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "ubuntu 安装 tmux",
   :block/created-at 1666685563224,
-  :block/updated-at 1666685563224}
+  :block/updated-at 1666693708653}
  {:block/name "wait",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}

@@ -25,6 +25,9 @@
  {:block/name "done",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
+ {:block/name "draft notes",
+  :block/created-at 1666676386797,
+  :block/updated-at 1666676386797}
  {:block/name "favorites",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -34,6 +37,9 @@
  {:block/name "later",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
+ {:block/name "logseq",
+  :block/created-at 1666676386853,
+  :block/updated-at 1666676386853}
  {:block/name "now",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}

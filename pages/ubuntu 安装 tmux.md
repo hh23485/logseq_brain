@@ -49,7 +49,7 @@ tags:: tmux
 	  # 右下角
 	  set -g status-right '#[fg=green][#[fg=cyan]%m-%d %H:%M#[fg=green]]'
 	  ```
-- Alias 配置
+- alias 配置
 	- ``` bash
 	  alias tm="tmux"
 	  alias tma="tmux attach"
@@ -61,3 +61,5 @@ tags:: tmux
 		- `tma`  用于快速连接到默认的 tmux 会话
 		- `tmt`  用于直接连接指定的 tmux 会话
 		- `tmk`  用于 kill 一个会话
+- 之后，在使用的过程中，基本上连上远程之后，输入  `tma`  就能够继续工作~
+-

@@ -1,3 +1,5 @@
+tags:: tmux, ubuntu
+
 - 根据 简书博客 [tmux简洁教程及config关键配置](https://gitee.com/link?target=https%3A%2F%2Fwww.jianshu.com%2Fp%2Ffd3bbdba9dc9) 和 伯乐在线 [Tmux 速成教程：技巧和调整](https://gitee.com/link?target=http%3A%2F%2Fblog.jobbole.com%2F87584%2F) 的两篇博客，我也用上了比较好用的 tmux. 贴一下 tmux 的配置和快捷键作用，以及自己配置的 alias。
 - Conf 配置
 	- ``` conf

@@ -1,9 +1,6 @@
 [{:block/name "a",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
- {:block/name "apt",
-  :block/created-at 1666694106358,
-  :block/updated-at 1666694106358}
  {:block/name "b",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -49,24 +46,15 @@
  {:block/name "oct 25th, 2022",
   :block/created-at 1666630095969,
   :block/updated-at 1666685739971}
- {:block/name "readme",
-  :block/created-at 1666693822636,
-  :block/updated-at 1666693822636}
- {:block/name "setup",
-  :block/created-at 1666694020083,
-  :block/updated-at 1666694020083}
  {:block/name "tmux",
   :block/created-at 1666693708653,
   :block/updated-at 1666693708653}
  {:block/name "todo",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
- {:block/name "ubuntu",
-  :block/created-at 1666694020082,
-  :block/updated-at 1666694020082}
  {:block/name "ubuntu 安装 tmux",
   :block/created-at 1666685563224,
-  :block/updated-at 1666694145161}
+  :block/updated-at 1666693708653}
  {:block/name "wait",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -76,6 +64,6 @@
  {:block/name "使用 logseq 搭建博客",
   :block/created-at 1666630100896,
   :block/updated-at 1666634299953}
- {:block/name "配置 tmux",
+ {:block/name "配置 tmux 快捷键",
   :block/created-at 1666685739969, 
-  :block/updated-at 1666694055363}]
+  :block/updated-at 1666685739969}]

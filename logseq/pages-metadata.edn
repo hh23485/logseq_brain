@@ -63,10 +63,10 @@
   :block/updated-at 1666716264183}
  {:block/name "oct 25th, 2022",
   :block/created-at 1666630095969,
-  :block/updated-at 1666630100897}
+  :block/updated-at 1666716580307}
  {:block/name "oct 26th, 2022",
   :block/created-at 1666715804949,
-  :block/updated-at 1666715804949}
+  :block/updated-at 1666716602398}
  {:block/name "readme",
   :block/created-at 1666716263625,
   :block/updated-at 1666716263625}
@@ -94,6 +94,12 @@
  {:block/name "使用 logseq 搭建博客",
   :block/created-at 1666630100896,
   :block/updated-at 1666634299953}
+ {:block/name "性能之巅2@book",
+  :block/created-at 1666716602397,
+  :block/updated-at 1666716602397}
+ {:block/name "读书",
+  :block/created-at 1666716590569,
+  :block/updated-at 1666716590569}
  {:block/name "配置 tmux",
   :block/created-at 1666716263739, 
   :block/updated-at 1666716263739}]

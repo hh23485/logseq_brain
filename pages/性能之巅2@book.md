@@ -1,4 +1,5 @@
 - #+BEGIN_QUERY
-  propery
+  :Proprties:
+  :book 性能之巅2@book
   #+END_QUERY
 -

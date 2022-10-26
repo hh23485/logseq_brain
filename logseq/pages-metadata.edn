@@ -19,6 +19,9 @@
  {:block/name "bpf",
   :block/created-at 1666760665498,
   :block/updated-at 1666760665498}
+ {:block/name "brendan gregg",
+  :block/created-at 1666763941075,
+  :block/updated-at 1666763941075}
  {:block/name "c",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -112,21 +115,33 @@
  {:block/name "什么是金丝雀测试",
   :block/created-at 1666759546177,
   :block/updated-at 1666759609259}
+ {:block/name "作者",
+  :block/created-at 1666763941075,
+  :block/updated-at 1666763941075}
  {:block/name "使用 logseq 搭建博客",
   :block/created-at 1666630100896,
   :block/updated-at 1666634299953}
+ {:block/name "出版",
+  :block/created-at 1666763922493,
+  :block/updated-at 1666763922493}
  {:block/name "前言与绪论 - 关于性能问题的描述",
   :block/created-at 1666757750249,
-  :block/updated-at 1666763159120}
+  :block/updated-at 1666764210407}
  {:block/name "性能",
   :block/created-at 1666759693949,
   :block/updated-at 1666759693949}
  {:block/name "性能之巅2@book",
   :block/created-at 1666716602397,
-  :block/updated-at 1666763184029}
+  :block/updated-at 1666764239803}
  {:block/name "火焰图",
   :block/created-at 1666760922582,
   :block/updated-at 1666760922582}
+ {:block/name "版次",
+  :block/created-at 1666763969725,
+  :block/updated-at 1666763969725}
+ {:block/name "读书笔记",
+  :block/created-at 1666764210402,
+  :block/updated-at 1666764210402}
  {:block/name "配置 tmux",
   :block/created-at 1666716263739, 
   :block/updated-at 1666716263739}]

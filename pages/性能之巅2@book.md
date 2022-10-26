@@ -2,6 +2,6 @@
   :Proprties:
   :book 性能之巅2@book
   #+END_QUERY
-- {{query property book 性能之巅2@book}}
+- {{query （page-property book 性能之巅2@book}}
 -
 -

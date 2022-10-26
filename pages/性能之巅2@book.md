@@ -5,3 +5,4 @@ tags:: book
 
 - 章节笔记
 	- {{query (page-property book "性能之巅2@book")}}
+	  query-properties:: [:page :tags :created-at]

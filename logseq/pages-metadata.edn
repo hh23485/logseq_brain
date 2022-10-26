@@ -1,10 +1,4 @@
-[{:block/name "#green",
-  :block/created-at 1666759205817,
-  :block/updated-at 1666759205817}
- {:block/name "#red",
-  :block/created-at 1666760214580,
-  :block/updated-at 1666760214580}
- {:block/name "a",
+[{:block/name "a",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "anytype",
@@ -123,7 +117,7 @@
   :block/updated-at 1666634299953}
  {:block/name "前言与绪论 - 关于性能问题的描述",
   :block/created-at 1666757750249,
-  :block/updated-at 1666761393732}
+  :block/updated-at 1666761818851}
  {:block/name "性能",
   :block/created-at 1666759693949,
   :block/updated-at 1666759693949}

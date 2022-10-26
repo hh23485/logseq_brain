@@ -299,4 +299,5 @@
  ;;     ;parse `.` in file name as slash `/` in page title
  :file/name-format :triple-lowbar
  :publishing/all-pages-public? true
+ :ui/show-brackets? true
  }

@@ -4,3 +4,4 @@ tags:: [[book]]
 版次:: 2017-4
 
 - {{query (page-property src "Hadoop 权威指南 第4版@book")}}
+  query-properties:: [:page :created-at :tags]

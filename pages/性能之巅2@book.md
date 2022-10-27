@@ -3,7 +3,7 @@ tags:: book,性能
 作者:: [[Brendan Gregg]]
 版次:: 2022-7
 
-- [[读书笔记
+- 读书笔记
 	- {{query (page-property src "性能之巅2@book")}}
 	  query-properties:: [:page :tags :created-at]
 -

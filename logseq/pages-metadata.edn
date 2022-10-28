@@ -61,9 +61,12 @@
  {:block/name "feathr",
   :block/created-at 1666871590281,
   :block/updated-at 1666871744607}
+ {:block/name "feathr local mode 是如何工作的？",
+  :block/created-at 1666947272151,
+  :block/updated-at 1666947348911}
  {:block/name "feathr 是如何工作的？",
   :block/created-at 1666870750363,
-  :block/updated-at 1666945341664}
+  :block/updated-at 1666947275288}
  {:block/name "feathr 的官方示例解读",
   :block/created-at 1666871954427,
   :block/updated-at 1666871954427}
@@ -88,6 +91,9 @@
  {:block/name "iops",
   :block/created-at 1666870524560,
   :block/updated-at 1666870524560}
+ {:block/name "ivy",
+  :block/created-at 1666951817771,
+  :block/updated-at 1666951817771}
  {:block/name "java",
   :block/created-at 1666871628831,
   :block/updated-at 1666871628831}
@@ -120,7 +126,7 @@
   :block/updated-at 1666871969563}
  {:block/name "oct 28th, 2022",
   :block/created-at 1666886440465,
-  :block/updated-at 1666886440465}
+  :block/updated-at 1666950729653}
  {:block/name "open source",
   :block/created-at 1666871796387,
   :block/updated-at 1666871804729}
@@ -133,6 +139,12 @@
  {:block/name "readme",
   :block/created-at 1666716263625,
   :block/updated-at 1666716263625}
+ {:block/name "sbt",
+  :block/created-at 1666950737028,
+  :block/updated-at 1666950737028}
+ {:block/name "sbt 默认的 jar 路径",
+  :block/created-at 1666950729645,
+  :block/updated-at 1666951817772}
  {:block/name "scala",
   :block/created-at 1666871624507,
   :block/updated-at 1666871624507}

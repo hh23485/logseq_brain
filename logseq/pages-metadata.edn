@@ -142,9 +142,9 @@
  {:block/name "sbt",
   :block/created-at 1666950737028,
   :block/updated-at 1666950737028}
- {:block/name "sbt 默认的 jar 路径",
+ {:block/name "sbt 自动管理的 jar 依赖路径",
   :block/created-at 1666950729645,
-  :block/updated-at 1666951817772}
+  :block/updated-at 1666951959290}
  {:block/name "scala",
   :block/created-at 1666871624507,
   :block/updated-at 1666871624507}

@@ -5,5 +5,6 @@ tags:: Spark
 - Spark 支持 4 种集群管理器
 	- Spark 自带的独立集群管理器
 	- Apache Hadoop YARN
+	  id:: 635cac14-396d-4e6a-bf70-828e28586354
 	- Apache Mesos
 	- Kubernetes

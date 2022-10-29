@@ -33,5 +33,3 @@ tags:: [[Spark Structured Streaming]]
 	  			.option("topic", "output"))
 	  ```
 	-
-	-
-	-

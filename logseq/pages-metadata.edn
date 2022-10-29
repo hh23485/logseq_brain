@@ -168,7 +168,7 @@
   :block/updated-at 1667010696502}
  {:block/name "oct 29th, 2022",
   :block/created-at 1667010229932,
-  :block/updated-at 1667010909825}
+  :block/updated-at 1667018067135}
  {:block/name "open source",
   :block/created-at 1667010697351,
   :block/updated-at 1667010697351}
@@ -205,6 +205,9 @@
  {:block/name "spark structured streaming",
   :block/created-at 1667015696885,
   :block/updated-at 1667015762019}
+ {:block/name "spark 执行器",
+  :block/created-at 1667017906970,
+  :block/updated-at 1667017995232}
  {:block/name "spark 提供的 4 个组件",
   :block/created-at 1667016742757,
   :block/updated-at 1667016807204}
@@ -276,7 +279,7 @@
   :block/updated-at 1666871103429}
  {:block/name "前言和综述简介",
   :block/created-at 1667010909815,
-  :block/updated-at 1667017711975}
+  :block/updated-at 1667017907055}
  {:block/name "性能",
   :block/created-at 1666870524395,
   :block/updated-at 1666870524395}

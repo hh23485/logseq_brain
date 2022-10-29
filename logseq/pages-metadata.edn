@@ -181,6 +181,9 @@
  {:block/name "oct 29th, 2022",
   :block/created-at 1667010229932,
   :block/updated-at 1667035539228}
+ {:block/name "oct 30th, 2022",
+  :block/created-at 1667059204904,
+  :block/updated-at 1667059204904}
  {:block/name "open source",
   :block/created-at 1667010697351,
   :block/updated-at 1667010697351}

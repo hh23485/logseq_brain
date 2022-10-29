@@ -10,5 +10,3 @@ tags:: Spark
 	  |YARN 客户端模式|在客户端内运行，不属于集群的一部分|YARN 的节点管理器所启动的容器|YARN 的资源管理器与 YARN 的应用主容器协作，从节点管理器上为执行器分配容器|
 	  |YARN 集群模式|在 YARN 的应用主容器内运行|与 YARN 客户端模式相同|与 YARN 客户端模式相同|
 	  |Kubernetes|在一个 Kubernetes pod 内运行|各个执行器在各自的 pod 中运行|Kubernetes Master|
-	-
-	-

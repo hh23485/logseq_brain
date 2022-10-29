@@ -4,7 +4,7 @@
 	- 开源
 		- [[Feathr]]
 	- 大数据
-		- [[Spark]]
+		- [[Apache Spark]]
 		- [[Hadoop]]
 - 生活
 - 随笔

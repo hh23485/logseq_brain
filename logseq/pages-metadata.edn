@@ -211,6 +211,9 @@
  {:block/name "spark 提供的 4 个组件",
   :block/created-at 1667016742757,
   :block/updated-at 1667016807204}
+ {:block/name "spark 的部署模式",
+  :block/created-at 1667033709871,
+  :block/updated-at 1667033983614}
  {:block/name "spark 集群管理器",
   :block/created-at 1667017711964,
   :block/updated-at 1667017807619}
@@ -279,7 +282,7 @@
   :block/updated-at 1666871103429}
  {:block/name "前言和综述简介",
   :block/created-at 1667010909815,
-  :block/updated-at 1667017907055}
+  :block/updated-at 1667033709881}
  {:block/name "性能",
   :block/created-at 1666870524395,
   :block/updated-at 1666870524395}

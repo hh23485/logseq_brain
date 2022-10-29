@@ -1,8 +1,10 @@
 - 技术
-	- [[性能之巅2@book]]
+	- 读书
+		- [[性能之巅2@book]]
 	- [[Feathr]]
-	- [[Spark]]
-	- [[Hadoop]]
+	- 大数据
+		- [[Spark]]
+		- [[Hadoop]]
 - 生活
 - 随笔
 	- [[使用 Logseq 搭建博客]]

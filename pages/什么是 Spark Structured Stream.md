@@ -6,5 +6,5 @@ tags:: [[Spark Structured Streaming]]
 	  Spark 2.x 和 Spark 3.0 将流式数据源的范围扩大到包括 Apache Kafka、Kinesis、基于 HDFS 的数据，以及云存储的数据
 	  #+END_QUOTE
 - 能力
-	-
+	- 让大数据开发人员能够将来自 [[Kafka]] 或其他流数据形式的数据源和静态数据结合起来，并
 	-

@@ -23,4 +23,4 @@ tags:: Spark SQL
 		- 创建临时表
 		- 使用 SQL 查询
 		- 结果由 Spark DataFrame 表示
-- 性能
+-

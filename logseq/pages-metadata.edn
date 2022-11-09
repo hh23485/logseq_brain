@@ -1,13 +1,9 @@
-[{:block/name "635cea75-d9e7-425e-9b94-238f54b75729",
-  :block/created-at 1667034302195,
-  :block/updated-at 1667034302195}
- {:block/name "a",
+[{:block/name "a",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "anytype",
   :block/created-at 1666716264182,
   :block/updated-at 1666716264182}
-<<<<<<< HEAD
  {:block/name "apache hadoop yarn",
   :block/created-at 1667017796923,
   :block/updated-at 1667017800220}
@@ -17,11 +13,6 @@
  {:block/name "apache spark",
   :block/created-at 1667035382732,
   :block/updated-at 1667035382732}
-=======
- {:block/name "apache lvy",
-  :block/created-at 1666953879096,
-  :block/updated-at 1666953879096}
->>>>>>> 3ab028b ([logseq-plugin-git:commit] 2022-11-03T08:44:34.515Z)
  {:block/name "apt",
   :block/created-at 1666716263797,
   :block/updated-at 1666716263797}
@@ -60,17 +51,10 @@
   :block/updated-at 1668007286211}
  {:block/name "contents",
   :block/created-at 1666630637161,
-<<<<<<< HEAD
-  :block/updated-at 1667016534625}
- {:block/name "coursier",
-  :block/created-at 1667010697069,
-  :block/updated-at 1667010697069}
-=======
   :block/updated-at 1666764659964}
  {:block/name "coursier",
   :block/created-at 1666953874268,
   :block/updated-at 1666953874268}
->>>>>>> 3ab028b ([logseq-plugin-git:commit] 2022-11-03T08:44:34.515Z)
  {:block/name "crdt",
   :block/created-at 1666716264185,
   :block/updated-at 1666716264185}
@@ -137,6 +121,9 @@
  {:block/name "https://spark.apache.org",
   :block/created-at 1667036003252,
   :block/updated-at 1667036003252}
+ {:block/name "how feathr talk with synapse spark cluster",
+  :block/created-at 1667467593345,
+  :block/updated-at 1667467593345}
  {:block/name "in-progress",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -176,17 +163,9 @@
  {:block/name "notes",
   :block/created-at 1666716263737,
   :block/updated-at 1666716263737}
-<<<<<<< HEAD
- {:block/name "nov 6th, 2022",
-  :block/created-at 1667731928844,
-  :block/updated-at 1667731928844}
- {:block/name "nov 7th, 2022",
-  :block/created-at 1667830304622,
-  :block/updated-at 1667830304622}
  {:block/name "nov 9th, 2022",
   :block/created-at 1668007248311,
   :block/updated-at 1668007306810}
-=======
  {:block/name "nov 1st, 2022",
   :block/created-at 1667232041303,
   :block/updated-at 1667232041303}
@@ -195,8 +174,21 @@
   :block/updated-at 1667318441484}
  {:block/name "nov 3rd, 2022",
   :block/created-at 1667404841729,
-  :block/updated-at 1667404841729}
->>>>>>> 3ab028b ([logseq-plugin-git:commit] 2022-11-03T08:44:34.515Z)
+  :block/updated-at 1667467593346}
+ {:block/name "nov 4th, 2022",
+  :block/created-at 1667491241946,
+  :block/updated-at 1667491241946}
+  :block/created-at 1667577642159,
+  :block/updated-at 1667577642159}
+ {:block/name "nov 6th, 2022",
+  :block/created-at 1667664042375,
+  :block/updated-at 1667664042375}
+ {:block/name "nov 7th, 2022",
+  :block/created-at 1667750442601,
+  :block/updated-at 1667750442601}
+ {:block/name "nov 8th, 2022",
+  :block/created-at 1667836842834,
+  :block/updated-at 1667836842834}
  {:block/name "now",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -213,13 +205,6 @@
   :block/created-at 1667010696672,
   :block/updated-at 1667010696672}
  {:block/name "oct 28th, 2022",
-<<<<<<< HEAD
-  :block/created-at 1667010696502,
-  :block/updated-at 1667010696502}
- {:block/name "oct 29th, 2022",
-  :block/created-at 1667010229932,
-  :block/updated-at 1667035539228}
-=======
   :block/created-at 1666886440465,
   :block/updated-at 1666950729653}
  {:block/name "oct 29th, 2022",
@@ -231,7 +216,6 @@
  {:block/name "oct 31st, 2022",
   :block/created-at 1667145641132,
   :block/updated-at 1667145641132}
->>>>>>> 3ab028b ([logseq-plugin-git:commit] 2022-11-03T08:44:34.515Z)
  {:block/name "open source",
   :block/created-at 1667010697351,
   :block/updated-at 1667010697351}

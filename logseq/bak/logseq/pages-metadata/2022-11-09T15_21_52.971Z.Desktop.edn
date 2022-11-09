@@ -46,12 +46,6 @@
  {:block/name "card",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
- {:block/name "conflict check",
-  :block/created-at 1668007305343,
-  :block/updated-at 1668007305343}
- {:block/name "conflict check from laptop",
-  :block/created-at 1668007279242,
-  :block/updated-at 1668007286211}
  {:block/name "contents",
   :block/created-at 1666630637161,
   :block/updated-at 1667016534625}
@@ -163,15 +157,12 @@
  {:block/name "notes",
   :block/created-at 1666716263737,
   :block/updated-at 1666716263737}
- {:block/name "nov 6th, 2022",
-  :block/created-at 1667731928844,
-  :block/updated-at 1667731928844}
  {:block/name "nov 7th, 2022",
   :block/created-at 1667830304622,
   :block/updated-at 1667830304622}
- {:block/name "nov 9th, 2022",
-  :block/created-at 1668007248311,
-  :block/updated-at 1668007306810}
+ {:block/name "nov 8th, 2022",
+  :block/created-at 1667836818092,
+  :block/updated-at 1667836818092}
  {:block/name "now",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}

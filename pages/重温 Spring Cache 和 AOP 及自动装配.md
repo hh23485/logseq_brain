@@ -50,5 +50,7 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 		- `JCacheCacheManager`
 	- Cache 的组合
 		- 提供了 `CompositeCacheManager` 接口，可以从多个 `CacheManager` 中查询
-			- 按顺序查找，直到找到位置，可以选择找不到
+			- 按顺序查找，直到找到为止
+	-
+		-
 		-

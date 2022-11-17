@@ -24,6 +24,8 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 		- #+BEGIN_QUOTE
 		  [Spring Cache 抽象详解](https://www.pudn.com/news/62615bc10e75e42012407a76.html)
 		  #+END_QUOTE
+	- 样例
+		- TODO 添加样例
 - # 实现 Cache
 	- 对 Cache 抽象做了如下抽象
 	  id:: 63762220-f82f-4eb9-bb2e-c6f6a2ef675f
@@ -55,6 +57,7 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 	- Cache 的组合
 		- 提供了 `CompositeCacheManager` 接口，可以从多个 `CacheManager` 中查询
 			- 按顺序查找，直到找到为止
+	- 调用逻辑
+		- TODO 补充调用逻辑，如何在调用改方法时替换成 proxy 对象
+- # 实现自动装配
 	-
-		-
-		-

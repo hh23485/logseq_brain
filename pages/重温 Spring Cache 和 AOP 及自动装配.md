@@ -49,5 +49,5 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 		- `EhCacheCacheManager`
 		- `JCacheCacheManager`
 	- Cache 的组合
-		- CompositeCacheManager 接口
+		- 提供了 `CompositeCacheManager` 接口，可以从多个 CacheManager 中查询
 		-

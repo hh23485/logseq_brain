@@ -8,5 +8,6 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 		- 如何做到像插件一样自动装配？
 	- 这些问题的答案是互相包含的，总之，我们在寻求一种类似 Spring Cache 的体验，当在系统中开启配置之后，无需做任何代码的修改，就能自动为所有的节点或者特定的节点开启缓存，无侵入，轻量级。
 	- 然而，Spring 能做到这些，必然是依赖了 [[Dependency Injection]] 和 [Spring AOP]。但在 .Net 4.7.2 还没有这些官方的功能，在现有的系统中，即便使用 [[AutoFac]] 这样的依赖注入库，想要复现完整的体验，也不是一个容易的事情。所以再次重温一下 Spring Cache 的实现和自动装配的知识，看看如何最小的改动来支撑需求。
-- Spring Cache
-	- Spring
+- Spring Cache 的使用体验
+	- 开启
+		- Spring 中使用 @Cacheable 来表示在方法调用前先查询

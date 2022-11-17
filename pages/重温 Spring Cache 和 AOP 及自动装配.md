@@ -10,4 +10,6 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 	- 然而，Spring 能做到这些，必然是依赖了 [[Dependency Injection]] 和 [Spring AOP]。但在 .Net 4.7.2 还没有这些官方的功能，在现有的系统中，即便使用 [[AutoFac]] 这样的依赖注入库，想要复现完整的体验，也不是一个容易的事情。所以再次重温一下 Spring Cache 的实现和自动装配的知识，看看如何最小的改动来支撑需求。
 - Spring Cache 的使用体验
 	- 开启
-		- Spring 中使用 @Cacheable 来表示在方法调用前先查询
+		- 使用 @Cacheable 来表示在方法调用前先查询缓存，如果有缓存就跳过调用
+		- 使用 `@CachePut 来表示在方法调用后，要写入缓存
+		- 使用 `@CacheEvict` 表示

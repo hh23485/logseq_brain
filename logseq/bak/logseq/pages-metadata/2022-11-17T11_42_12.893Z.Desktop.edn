@@ -1,6 +1,11 @@
 [{:block/name "635cea75-d9e7-425e-9b94-238f54b75729",
+<<<<<<< HEAD
+  :block/created-at 1667034302195,
+  :block/updated-at 1667034302195}
+=======
   :block/created-at 1668008469530,
   :block/updated-at 1668008469530}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "a",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -47,6 +52,16 @@
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
  {:block/name "conflict check",
+<<<<<<< HEAD
+  :block/created-at 1668007305343,
+  :block/updated-at 1668008518416}
+ {:block/name "conflict check from laptop",
+  :block/created-at 1668007279242,
+  :block/updated-at 1668007286211}
+ {:block/name "conflict check from pc",
+  :block/created-at 1668318035508,
+  :block/updated-at 1668318035508}
+=======
   :block/created-at 1668008422487,
   :block/updated-at 1668008504121}
  {:block/name "conflict check from laptop",
@@ -55,6 +70,7 @@
  {:block/name "conflict check from pc",
   :block/created-at 1668008636530,
   :block/updated-at 1668008636530}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "contents",
   :block/created-at 1666630637161,
   :block/updated-at 1667016534625}
@@ -98,8 +114,19 @@
   :block/created-at 1666871590281,
   :block/updated-at 1666871744607}
  {:block/name "feathr local mode 是如何工作的？",
+<<<<<<< HEAD
+  :block/created-at 1667010696949,
+  :block/updated-at 1667010696949}
+ {:block/name "feathr spark local 模式测试样例解读",
+  :block/created-at 1668321458236,
+  :block/updated-at 1668321458236}
+ {:block/name "feathr 初始化开发环境",
+  :block/created-at 1668318055777,
+  :block/updated-at 1668321988883}
+=======
   :block/created-at 1666947272151,
   :block/updated-at 1666947348911}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "feathr 是如何工作的？",
   :block/created-at 1666870750363,
   :block/updated-at 1666947275288}
@@ -107,8 +134,16 @@
   :block/created-at 1666871954427,
   :block/updated-at 1666871954427}
  {:block/name "feature store",
+<<<<<<< HEAD
+  :block/created-at 1667010696753,
+  :block/updated-at 1667010696753}
+ {:block/name "github codespace",
+  :block/created-at 1668321932510,
+  :block/updated-at 1668321932510}
+=======
   :block/created-at 1666871602116,
   :block/updated-at 1666871602116}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "hadoop",
   :block/created-at 1668008469522,
   :block/updated-at 1668008469522}
@@ -122,6 +157,16 @@
   :block/created-at 1666870652122,
   :block/updated-at 1666871137797}
  {:block/name "hdfs",
+<<<<<<< HEAD
+  :block/created-at 1667010697707,
+  :block/updated-at 1667013224419}
+ {:block/name "how feathr talk with synapse spark cluster",
+  :block/created-at 1668010105842,
+  :block/updated-at 1668010105842}
+ {:block/name "https://spark.apache.org",
+  :block/created-at 1667036003252,
+  :block/updated-at 1667036003252}
+=======
   :block/created-at 1666871057212,
   :block/updated-at 1666871057212}
  {:block/name "how feathr talk with synapse spark cluster",
@@ -130,6 +175,7 @@
  {:block/name "https://spark.apache.org",
   :block/created-at 1668008469698,
   :block/updated-at 1668008469698}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "in-progress",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -169,14 +215,30 @@
  {:block/name "notes",
   :block/created-at 1666716263737,
   :block/updated-at 1666716263737}
+<<<<<<< HEAD
+ {:block/name "nov 12th, 2022",
+  :block/created-at 1668183407481,
+  :block/updated-at 1668225094979}
+ {:block/name "nov 13th, 2022",
+  :block/created-at 1668313215961,
+  :block/updated-at 1668318055780}
+ {:block/name "nov 3rd, 2022",
+  :block/created-at 1668010105843,
+  :block/updated-at 1668010105843}
+ {:block/name "nov 9th, 2022",
+  :block/created-at 1668007248311,
+  :block/updated-at 1668007306810}
+=======
  {:block/name "nov 17th, 2022",
   :block/created-at 1668685106346,
   :block/updated-at 1668685106346}
+ {:block/name "nov 3rd, 2022",
   :block/created-at 1668008636436,
   :block/updated-at 1668008636436}
  {:block/name "nov 9th, 2022",
   :block/created-at 1668008363944,
   :block/updated-at 1668008426751}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "now",
   :block/created-at 1666630637161,
   :block/updated-at 1666630637161}
@@ -193,12 +255,16 @@
   :block/created-at 1666870472424,
   :block/updated-at 1666871969563}
  {:block/name "oct 28th, 2022",
-  :block/created-at 1666886440465,
-  :block/updated-at 1666950729653}
+  :block/created-at 1667010696502,
+  :block/updated-at 1667010696502}
  {:block/name "oct 29th, 2022",
+<<<<<<< HEAD
+  :block/created-at 1667010229932,
+  :block/updated-at 1667035539228}
+=======
   :block/created-at 1668008469447,
   :block/updated-at 1668008469447}
-  :block/updated-at 1667059240870}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "open source",
   :block/created-at 1666871796387,
   :block/updated-at 1666871804729}
@@ -218,8 +284,13 @@
   :block/created-at 1666950737028,
   :block/updated-at 1666950737028}
  {:block/name "sbt 自动管理的 jar 依赖路径",
+<<<<<<< HEAD
+  :block/created-at 1667010696499,
+  :block/updated-at 1667010696499}
+=======
   :block/created-at 1666950729645,
   :block/updated-at 1666954138077}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "scala",
   :block/created-at 1666871624507,
   :block/updated-at 1666871624507}
@@ -314,8 +385,16 @@
   :block/created-at 1668008469446,
   :block/updated-at 1668008469446}
  {:block/name "安装 spark",
+<<<<<<< HEAD
+  :block/created-at 1667035539227,
+  :block/updated-at 1667036134084}
+ {:block/name "安装环境",
+  :block/created-at 1668321610559,
+  :block/updated-at 1668321610559}
+=======
   :block/created-at 1668008469425,
   :block/updated-at 1668008469425}
+>>>>>>> f4c43e7 ([logseq-plugin-git:commit] 2022-11-17T11:40:13.963Z)
  {:block/name "性能",
   :block/created-at 1666870524395,
   :block/updated-at 1666870524395}

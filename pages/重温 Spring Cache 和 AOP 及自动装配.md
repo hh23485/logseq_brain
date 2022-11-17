@@ -25,7 +25,7 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 		  [Spring Cache 抽象详解](https://www.pudn.com/news/62615bc10e75e42012407a76.html)
 		  #+END_QUOTE
 - # 实现 Cache
-	- Cache 抽象
+	- 对 Cache 抽象做了如下抽象
 	  id:: 63762220-f82f-4eb9-bb2e-c6f6a2ef675f
 		- Cache 接口
 			- ``` java
@@ -45,6 +45,8 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 			      }
 			  }  
 			  ```
+		- Cacheable 注解
+			-
 	- 默认实现
 		- `ConcurrentMapCacheManager`
 		- `GuavaCacheManager`

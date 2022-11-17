@@ -16,7 +16,11 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 	- 配置
 	- 好处
 		- 提供了注解访问，对代码侵入少，耦合低，甚至完全透明
-		- 提供了 Cache 抽象，可以轻松的替换底层缓存存储
+		- 提供了 [Cache 抽象](((63762220-f82f-4eb9-bb2e-c6f6a2ef675f)))，可以轻松的替换底层缓存存储
 		- 可以和事务一起回滚
-		- 支持比较复杂的
--
+		- 支持比较复杂的缓存逻辑
+		- #+BEGIN_QUOTE
+		  [Spring Cache 抽象详解](https://www.pudn.com/news/62615bc10e75e42012407a76.html)
+		  #+END_QUOTE
+- Cache 抽象
+  id:: 63762220-f82f-4eb9-bb2e-c6f6a2ef675f

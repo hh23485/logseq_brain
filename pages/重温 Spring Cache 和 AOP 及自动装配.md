@@ -47,7 +47,7 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 			  ```
 		- Cacheable 注解
 			-
-	- 默认实现
+	- 接口的默认实现
 		- `ConcurrentMapCacheManager`
 		- `GuavaCacheManager`
 		- `EhCacheCacheManager`

@@ -22,29 +22,32 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 		- #+BEGIN_QUOTE
 		  [Spring Cache 抽象详解](https://www.pudn.com/news/62615bc10e75e42012407a76.html)
 		  #+END_QUOTE
-- Cache 抽象
-  id:: 63762220-f82f-4eb9-bb2e-c6f6a2ef675f
-	- Cache 接口
-		- ``` java
-		  package org.springframework.cache;  
-		    
-		  public interface Cache {  
-		      String getName();  //缓存的名字  
-		      Object getNativeCache(); //得到底层使用的缓存，如Ehcache  
-		      ValueWrapper get(Object key); //根据key得到一个ValueWrapper，然后调用其get方法获取值  
-		      <T> T get(Object key, Class<T> type);//根据key，和value的类型直接获取value  
-		      void put(Object key, Object value);//往缓存放数据  
-		      void evict(Object key);//从缓存中移除key对应的缓存  
-		      void clear(); //清空缓存  
-		    
-		      interface ValueWrapper { //缓存值的Wrapper  
-		        Object get(); //得到真实的value  
-		      }
-		  }  
-		  ```
-- 默认实现
-	- `ConcurrentMapCacheManager`
-	- `GuavaCacheManager`
-	- `EhCacheCacheManager`
-	- `JCacheCacheManager`
--
+- 实现
+	- Cache 抽象
+	  id:: 63762220-f82f-4eb9-bb2e-c6f6a2ef675f
+		- Cache 接口
+			- ``` java
+			  package org.springframework.cache;  
+			    
+			  public interface Cache {  
+			      String getName();  //缓存的名字  
+			      Object getNativeCache(); //得到底层使用的缓存，如Ehcache  
+			      ValueWrapper get(Object key); //根据key得到一个ValueWrapper，然后调用其get方法获取值  
+			      <T> T get(Object key, Class<T> type);//根据key，和value的类型直接获取value  
+			      void put(Object key, Object value);//往缓存放数据  
+			      void evict(Object key);//从缓存中移除key对应的缓存  
+			      void clear(); //清空缓存  
+			    
+			      interface ValueWrapper { //缓存值的Wrapper  
+			        Object get(); //得到真实的value  
+			      }
+			  }  
+			  ```
+	- 默认实现
+		- `ConcurrentMapCacheManager`
+		- `GuavaCacheManager`
+		- `EhCacheCacheManager`
+		- `JCacheCacheManager`
+	- Cache 的组合
+		- CompositeCacheManager 接口
+		-

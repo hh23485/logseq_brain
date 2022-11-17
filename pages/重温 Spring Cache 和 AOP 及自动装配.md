@@ -11,5 +11,5 @@ tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
 - Spring Cache 的使用体验
 	- 开启
 		- 使用 @Cacheable 来表示在方法调用前先查询缓存，如果有缓存就跳过调用
-		- 使用 `@CachePut 来表示在方法调用后，要写入缓存
-		- 使用 `@CacheEvict` 表示
+		- 使用 `@CachePut` 来表示在方法调用后，要写入缓存
+		- 使用 `@CacheEvict` 表示需要

@@ -1,4 +1,5 @@
 tags:: Java, Spring Framework, Spring Cache, AOP, 架构设计
+id:: 63761e55-757b-4662-9a4f-074129ddb560
 
 - # 前言
 	- 上次读 Spring 是很久以前的事情了，最近工作需要在改造一个工作流引擎，想要针对其中的每个工作节点加入缓存，但遇到很多在 Java 界早就被 Spring 解决的很好，但 C# 界或者说我部门还无人问津的事情，例如：

@@ -300,4 +300,5 @@
  :file/name-format :triple-lowbar
  :publishing/all-pages-public? true
  :ui/show-brackets? true
+ :feature/enable-whiteboards? true
  }

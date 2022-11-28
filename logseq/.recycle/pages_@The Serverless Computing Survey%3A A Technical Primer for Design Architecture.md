@@ -1,4 +1,4 @@
-tags:: [[Computer Science - Distributed]], [[Parallel]], [[and Cluster Computing]], [[zotero]], [[Serverless]] 
+tags:: [[Computer Science - Distributed]], [[Parallel]], [[and Cluster Computing]]
 date:: [[Jan 31st, 2022]]
 issn:: "0360-0300, 1557-7341"
 issue:: 10s

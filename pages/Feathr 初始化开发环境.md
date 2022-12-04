@@ -35,9 +35,7 @@ tags:: feathr, 安装环境
 			  ``` 
 			  #+END_WARNING
 		- 通过 `setup.py` 来安装所需要的依赖
-			- ``` bash
-			  python -m pip install -e .
-			  ```
+			- python -m pip install -e .
 		- 安装 `pytest`
 			- ``` bash
 			  pip install pytest pytest_mock

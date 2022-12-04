@@ -1,5 +1,5 @@
-file:: [Li et al. - 2022 - The Serverless Computing Survey A Technical Prime.pdf](file://C:/Users/minghu/Zotero/storage/ZQTQ5BQN/Li et al. - 2022 - The Serverless Computing Survey A Technical Prime.pdf)
-file-path:: file://C:/Users/minghu/Zotero/storage/ZQTQ5BQN/Li et al. - 2022 - The Serverless Computing Survey A Technical Prime.pdf
+file:: [Li et al. - 2022 - The Serverless Computing Survey A Technical Prime.pdf](../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Design_Architecture_1670129409560_0.pdf)
+file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Design_Architecture_1670129409560_0.pdf
 
 - Due to its inherent scalability and flexibility, serverless computing becomes attractive and more pervasive for ever-growing Internet services
   ls-type:: annotation

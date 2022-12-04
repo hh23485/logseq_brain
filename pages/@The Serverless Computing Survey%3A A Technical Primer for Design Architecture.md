@@ -26,7 +26,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 	- ((63842390-801b-47c4-aab6-e196527e79a4))
 		- ((638423af-9b58-4ca8-9b6f-6182cb60f0a1))
 - [[Attachments]]
-	- [Li et al. - 2022 - The Serverless Computing Survey A Technical Prime.pdf](zotero://select/library/items/ZQTQ5BQN) {{zotero-imported-file ZQTQ5BQN, "Li et al. - 2022 - The Serverless Computing Survey A Technical Prime.pdf"}}
+	- ![The Serverless Computing Survey A Technical Primer for Design Architecture.pdf](../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Design_Architecture_1670129409560_0.pdf)
 - [[Notes]]
 	- Definition of Serverless computing
 		-

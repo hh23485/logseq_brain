@@ -211,3 +211,28 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 1
   hl-color:: yellow
   id:: 638c283c-b8e5-4f9a-8995-f4be5ea35a67
+- triggered by events
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c76d0-ff03-4612-8b39-48f3c33bd64a
+- arrival of RESTful HTTP queries, the update of a message queue, or new data to a storage service
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c76dd-39c9-485e-91da-a42d337c97ac
+- binding events to functions with triggers and rules
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c7717-9008-4bbd-852f-cebe7472d3f3
+- makes relationships between events and the system detectable, enabling different collaboration responses to different events
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c7732-ed4a-4cad-937c-45affd683ec3
+- ==Cloud-Native Computing Foundation (CNCF) serverless group also published [[CloudEvents]] specifications for commonly describing event metadata to provide interoperability.==
+  hl-page:: 3
+  ls-type:: annotation
+  id:: 638c7764-a45d-4602-a7ce-ec2c8fe7a41c
+  hl-color:: blue

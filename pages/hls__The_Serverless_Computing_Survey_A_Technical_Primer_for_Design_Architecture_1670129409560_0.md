@@ -26,7 +26,7 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 1
   hl-color:: yellow
   id:: 638c2951-7cef-456b-ac28-2a5be85820a9
-- Traditional Infrastructure-as-a-Service (IaaS) deployment mode demands a long-term running server for sustainable service delivery
+- Traditional Infrastructure-as-a-Service ([[IaaS]]) deployment mode demands a long-term running server for sustainable service delivery
   ls-type:: annotation
   hl-page:: 1
   hl-color:: yellow
@@ -63,3 +63,13 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-color:: yellow
   id:: 638c2b70-2ef8-47eb-8d1c-29759c526155
   hl-stamp:: 1670130546414
+- Berkeley View
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c2bde-7bf1-4207-9f78-ad366e5bbd8f
+- [65]
+  ls-type:: annotation
+  hl-page:: 31
+  hl-color:: yellow
+  id:: 638c2bf4-fe5e-494e-a6db-39f4f9d8a54d

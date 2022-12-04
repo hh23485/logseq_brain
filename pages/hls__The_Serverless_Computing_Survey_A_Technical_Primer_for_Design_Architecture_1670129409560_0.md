@@ -105,3 +105,31 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-color:: blue
   id:: 638c2da0-d898-4203-ab2b-4c805b07c381
   hl-stamp:: 1670131117988
+- [:span]
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c2f99-bd82-45a6-bca4-dd60f740d073
+  hl-type:: area
+  hl-stamp:: 1670131607894
+- receives triggered API queries from the users, validates them, and invokes the functions 
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c3007-8f76-4289-ba29-901ec44b8015
+- by creating new sandboxes (aka the cold startup [15, 28 , 65])
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c3017-dd38-4963-b60e-5ea3701a13e5
+- reusing running warm ones (aka the warm startup).
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c301e-7c08-4a3e-b1f6-b0a5618d0c42
+- isolation ensures that each function invocation runs in an individual container or a virtual machine assigned from an access-control controller.
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c303a-ecf0-465a-ae17-25ecfe7ba5a4
+  hl-stamp:: 1670131775153

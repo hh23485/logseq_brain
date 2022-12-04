@@ -168,7 +168,7 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 3
   hl-color:: yellow
   id:: 638c33c4-8870-4187-baf1-bd101d7e9ac8
-- Pay-as-you-go.
+- ==Pay-as-you-go==.
   ls-type:: annotation
   hl-page:: 3
   hl-color:: yellow
@@ -236,3 +236,23 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   ls-type:: annotation
   id:: 638c7764-a45d-4602-a7ce-ec2c8fe7a41c
   hl-color:: blue
+- cloud vendors should ensure available physical nodes, isolated sandboxes, software runtimes, and computing power while making them transparent to maintainers.
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c77ed-47a9-4d17-ba79-49538b081f10
+- should also integrate DevOps tools to help deploy and iterate more efficiently.
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c7816-b8ad-45f7-98b2-892569b81d7c
+- billing model shifts the cost of computing power from a capital expense to an operating expense
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: blue
+  id:: 638c7827-cba9-4c3f-9459-852a8eb88259
+- eliminates the requirement from users to buy exclusive servers based on the peak load. By sharing network, disk, CPU, memory, and other resources, the pay-as-you-go model only indicates the resources that applications actually used [1, 2, 26], no matter whether the instances are running or idle.
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: purple
+  id:: 638c7841-45d5-4ea0-8eff-2b3288b50c14

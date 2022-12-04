@@ -39,7 +39,14 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 					- ((638c2b1b-378d-4c1b-9bf7-5c1fce695a7f))
 				- ((638c2b70-2ef8-47eb-8d1c-29759c526155))
 			- ### ((638c2c5b-d23f-4947-8f73-60504e99a251))
-				-
+				- Common definitions
+				  id:: 638c2bf8-1824-430c-b5c1-dd0432f81303
+					- ((638c2cbf-a800-44c1-9921-b2e3213a1deb))
+						- ((638c2ce9-06fe-4ff5-9d3f-297a8bdd4412))
+						- ((638c2d00-17f6-4bc2-a726-5169857097e6))
+						- ((638c2d05-2ac3-45d6-8be9-dd180edd3299))
+					- ((638c2d69-8b82-4ecb-a639-38df62914be2))
+						-
 				-
 				-
 			-

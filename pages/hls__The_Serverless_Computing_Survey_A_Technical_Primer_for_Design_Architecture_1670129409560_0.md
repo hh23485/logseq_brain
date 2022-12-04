@@ -73,3 +73,28 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 2
   hl-color:: yellow
   id:: 638c2c5b-d23f-4947-8f73-60504e99a251
+- 𝑆𝑒𝑟𝑣𝑒𝑟𝑙𝑒𝑠𝑠 𝐶𝑜𝑚𝑝𝑢𝑡𝑖𝑛𝑔 = 𝐹𝑎𝑎𝑆 (𝐹𝑢𝑛𝑐𝑡𝑖𝑜𝑛-𝑎𝑠-𝑎-𝑆𝑒𝑟𝑣𝑖𝑐𝑒) + 𝐵𝑎𝑎𝑆 (𝐵𝑎𝑐𝑘𝑒𝑛𝑑-𝑎𝑠-𝑎-𝑆𝑒𝑟𝑣𝑖𝑐𝑒).
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c2cbf-a800-44c1-9921-b2e3213a1deb
+- ‘Serverless’ is interchangeable with ‘FaaS’
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c2ce9-06fe-4ff5-9d3f-297a8bdd4412
+- 𝐹𝑎𝑎𝑆 model enables the function isolation and invocation
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: blue
+  id:: 638c2d00-17f6-4bc2-a726-5169857097e6
+- 𝐵𝑎𝑎𝑆 provides overall backend support for online services.
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: blue
+  id:: 638c2d05-2ac3-45d6-8be9-dd180edd3299
+- [[𝐹𝑎𝑎𝑆]] model, an application is sliced into **functions** or **functionlevel microservices** [ 26, 45 , 57, 65, 117, 141 ]
+  hl-page:: 2
+  ls-type:: annotation
+  id:: 638c2d69-8b82-4ecb-a639-38df62914be2
+  hl-color:: yellow

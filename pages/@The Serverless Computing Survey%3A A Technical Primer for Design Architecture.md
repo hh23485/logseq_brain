@@ -54,6 +54,8 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 						- ((638c3017-dd38-4963-b60e-5ea3701a13e5))
 						- ((638c301e-7c08-4a3e-b1f6-b0a5618d0c42))
 					- ((638c303a-ecf0-465a-ae17-25ecfe7ba5a4))
+					- ((638c3097-abb9-4f42-9c41-1f335e142faa))
+						- ((638c30dd-b6f1-4fa4-8748-17427486279b))
+						- ((638c30f7-f20a-4d13-8178-e21507095ab4))
 					-
-				-
 			-

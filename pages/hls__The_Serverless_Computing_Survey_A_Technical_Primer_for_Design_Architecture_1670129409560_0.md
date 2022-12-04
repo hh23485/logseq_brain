@@ -127,9 +127,24 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 2
   hl-color:: yellow
   id:: 638c301e-7c08-4a3e-b1f6-b0a5618d0c42
-- isolation ensures that each function invocation runs in an individual container or a virtual machine assigned from an access-control controller.
+- ==isolation== ensures that each function invocation runs in an individual container or a virtual machine assigned from an access-control controller.
   ls-type:: annotation
   hl-page:: 2
   hl-color:: yellow
   id:: 638c303a-ecf0-465a-ae17-25ecfe7ba5a4
   hl-stamp:: 1670131775153
+- he serverless system can be triggered to provide on-demand isolated instances and ==scale== them horizontally according to the actual application workload.
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c3097-abb9-4f42-9c41-1f335e142faa
+- ach execution worker accesses a backend database to save execution results [23]
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c30dd-b6f1-4fa4-8748-17427486279b
+- further configuring triggers and bridging interactions, users can customize the execution for complex applications
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c30f7-f20a-4d13-8178-e21507095ab4

@@ -21,3 +21,23 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 1
   hl-color:: green
   id:: 638c28c6-35ad-4828-a907-1f8fe7a9cfd5
+- Definition of Serverless Computing
+  ls-type:: annotation
+  hl-page:: 1
+  hl-color:: yellow
+  id:: 638c2951-7cef-456b-ac28-2a5be85820a9
+- Traditional Infrastructure-as-a-Service (IaaS) deployment mode demands a long-term running server for sustainable service delivery
+  ls-type:: annotation
+  hl-page:: 1
+  hl-color:: yellow
+  id:: 638c2a2b-b430-4989-abbe-aaca559d4ae3
+- exclusive allocation needs to retain resources regardless of whether the user application is running or not.
+  ls-type:: annotation
+  hl-page:: 1
+  hl-color:: red
+  id:: 638c2a40-eb22-4da3-926b-5e1af65859c5
+- results in low resource utilization in current data centers by only about 10% on average, especially for an online service with a diurnal pattern.
+  ls-type:: annotation
+  hl-page:: 1
+  hl-color:: red
+  id:: 638c2a4f-0910-4b4b-ab2d-0972be6f2d12

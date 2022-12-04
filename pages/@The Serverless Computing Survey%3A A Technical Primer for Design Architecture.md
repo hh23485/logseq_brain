@@ -34,6 +34,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 				- ((638c2a4f-0910-4b4b-ab2d-0972be6f2d12))
 				- diurnal: 昼夜的，流量如果呈现出昼夜的不同的 pattern，或者分时不同的流量，就意味着需要预留足够的资源，也导致资源不能够充足的被利用
 			- 引发了对按需部署模型的思考
+				-
 		-
 			-
 		-

@@ -41,3 +41,8 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 1
   hl-color:: red
   id:: 638c2a4f-0910-4b4b-ab2d-0972be6f2d12
+- attracts the development of a platform-managed on-demand
+  ls-type:: annotation
+  hl-page:: 1
+  hl-color:: yellow
+  id:: 638c2af0-1d21-4a4f-8288-19121e121cba

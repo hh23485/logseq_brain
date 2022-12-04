@@ -173,3 +173,36 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 3
   hl-color:: yellow
   id:: 638c33cb-5c6c-4a90-870c-931ace8d1357
+- The indispensable factor in identifying a serverless system is performing horizontal and vertical scaling when accommodating workload dynamics
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: blue
+  id:: 638c3434-36c2-49f4-9ca1-3985389f8a11
+  hl-stamp:: 1670132799806
+- **no longer bound to a specific server**
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: blue
+  id:: 638c3466-3ecc-49d4-a369-1e338fa9354c
+  hl-stamp:: 1670132846514
+- serverless controller dynamically schedules applications 
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: blue
+  id:: 638c4e2c-c2f1-420f-ba9e-7e7e10da0eec
+- according to the resource usage in the cluster, while ensuring load balancing and performance assurances
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c4e51-b62a-4093-9b0b-a4a1d210adf4
+  hl-stamp:: 1670139474954
+- also takes the multi-region collaboration into account [ 154 ].
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c4e67-2930-4eb6-9f72-829fa536483c
+- allows the workload queries to be distributed across a broader range of regions [119 ].
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c4e7d-410e-4f48-9280-0bd306700195

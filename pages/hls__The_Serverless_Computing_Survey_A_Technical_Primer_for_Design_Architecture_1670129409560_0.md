@@ -138,7 +138,7 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 2
   hl-color:: yellow
   id:: 638c3097-abb9-4f42-9c41-1f335e142faa
-- ach execution worker accesses a backend database to save execution results [23]
+- Each execution worker accesses a backend database to save execution results [23]
   ls-type:: annotation
   hl-page:: 2
   hl-color:: yellow
@@ -148,3 +148,28 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 2
   hl-color:: yellow
   id:: 638c30f7-f20a-4d13-8178-e21507095ab4
+- Auto-scaling
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c33b0-dd96-484e-9580-5431b88ad4a8
+- Flexible scheduling
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c33b8-b95f-4439-9a33-ebf4369c9e0a
+- Event-driven.
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c33be-7271-49e9-a464-e82bd690f7e8
+- Transparent development
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c33c4-8870-4187-baf1-bd101d7e9ac8
+- Pay-as-you-go.
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c33cb-5c6c-4a90-870c-931ace8d1357

@@ -256,3 +256,8 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 3
   hl-color:: purple
   id:: 638c7841-45d5-4ea0-8eff-2b3288b50c14
+- Nowadays the serverless computing is commonly applied in backend scenarios for batch jobs, including data analytics (e.g., distributed computing model in PyWren [64]), machine learning tasks (e.g., deep learning) [78, 111 ], and event-driven web applications.
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 638c78b2-48b0-498c-89b7-d99418eff88d

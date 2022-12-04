@@ -46,3 +46,20 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 1
   hl-color:: yellow
   id:: 638c2af0-1d21-4a4f-8288-19121e121cba
+- higher resource utilization
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: blue
+  id:: 638c2b0c-9963-4d6c-bae9-10c5d94fb85c
+  hl-stamp:: 1670130449918
+- lower cloud computing costs.
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: blue
+  id:: 638c2b1b-378d-4c1b-9bf7-5c1fce695a7f
+- To this end, [[serverless]] computing was put forward,
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c2b70-2ef8-47eb-8d1c-29759c526155
+  hl-stamp:: 1670130546414

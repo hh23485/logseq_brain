@@ -46,7 +46,8 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 						- ((638c2d00-17f6-4bc2-a726-5169857097e6))
 						- ((638c2d05-2ac3-45d6-8be9-dd180edd3299))
 					- ((638c2d69-8b82-4ecb-a639-38df62914be2))
-						-
+					- ((638c2da0-d898-4203-ab2b-4c805b07c381))
+						- A few services relies on like cloud storage, message bus sytem,
 				-
 				-
 			-

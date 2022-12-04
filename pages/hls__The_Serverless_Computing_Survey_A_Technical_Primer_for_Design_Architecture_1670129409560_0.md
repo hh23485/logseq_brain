@@ -97,4 +97,11 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 2
   ls-type:: annotation
   id:: 638c2d69-8b82-4ecb-a639-38df62914be2
-  hl-color:: yellow
+  hl-color:: blue
+  hl-stamp:: 1670131115477
+- 𝐵𝑎𝑎𝑆 covers a wide range of services that any application relies on can be categorized into it.
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: blue
+  id:: 638c2da0-d898-4203-ab2b-4c805b07c381
+  hl-stamp:: 1670131117988

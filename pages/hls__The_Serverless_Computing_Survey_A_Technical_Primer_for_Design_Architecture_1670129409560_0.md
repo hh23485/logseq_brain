@@ -63,13 +63,13 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-color:: yellow
   id:: 638c2b70-2ef8-47eb-8d1c-29759c526155
   hl-stamp:: 1670130546414
-- Berkeley View
-  ls-type:: annotation
-  hl-page:: 2
-  hl-color:: yellow
-  id:: 638c2bde-7bf1-4207-9f78-ad366e5bbd8f
 - [65]
   ls-type:: annotation
   hl-page:: 31
   hl-color:: yellow
   id:: 638c2bf4-fe5e-494e-a6db-39f4f9d8a54d
+- Berkeley View [65]
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 638c2c5b-d23f-4947-8f73-60504e99a251

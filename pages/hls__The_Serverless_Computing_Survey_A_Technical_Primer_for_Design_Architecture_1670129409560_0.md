@@ -206,3 +206,8 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 3
   hl-color:: yellow
   id:: 638c4e7d-410e-4f48-9280-0bd306700195
+- The development of cloud infrastructures inspires the emergence of cloud-native computing. 
+  ls-type:: annotation
+  hl-page:: 1
+  hl-color:: yellow
+  id:: 638c283c-b8e5-4f9a-8995-f4be5ea35a67

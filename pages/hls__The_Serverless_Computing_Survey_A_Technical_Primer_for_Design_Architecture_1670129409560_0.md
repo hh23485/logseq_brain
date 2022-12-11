@@ -261,3 +261,10 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 3
   hl-color:: yellow
   id:: 638c78b2-48b0-498c-89b7-d99418eff88d
+- [:span]
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 638cb398-2b8c-48a5-8ed3-2e4f0faa91ec
+  hl-type:: area
+  hl-stamp:: 1670165398686

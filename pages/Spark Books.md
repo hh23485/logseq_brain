@@ -1,0 +1,16 @@
+- Books
+	- Basic Knowledge
+		- [Learning Spark, 2nd Edition (oreilly.com)](https://learning.oreilly.com/library/view/learning-spark-2nd/9781492050032/cover.html)
+		- [High Performance Spark (oreilly.com)](https://learning.oreilly.com/library/view/high-performance-spark/9781491943199/cover.html)
+		- [Spark in Action, Second Edition (oreilly.com)](https://learning.oreilly.com/library/view/spark-in-action/9781617295522/OEBPS/Text/titlepage.xhtml)
+	- Stream
+		- [Stream Processing with Apache Spark (oreilly.com)](https://learning.oreilly.com/library/view/stream-processing-with/9781491944233/?_gl=1*17aoumh*_ga*MTM1MTI4MTcyNy4xNjU1NjkxODM4*_ga_092EL089CH*MTY3MDg0Njk3My40LjEuMTY3MDg0NzAyNC45LjAuMA..)
+	- Analytics
+		- [Advanced Analytics with PySpark (oreilly.com)](https://learning.oreilly.com/library/view/advanced-analytics-with/9781098103644/?_gl=1*9bncfd*_ga*MTM1MTI4MTcyNy4xNjU1NjkxODM4*_ga_092EL089CH*MTY3MDg0Njk3My40LjEuMTY3MDg0NzAzMy42MC4wLjA.)
+	- ML
+		- [Scaling Machine Learning with Spark (oreilly.com)](https://learning.oreilly.com/library/view/scaling-machine-learning/9781098106812/?_gl=1*140opk0*_ga*MTM1MTI4MTcyNy4xNjU1NjkxODM4*_ga_092EL089CH*MTY3MDg0Njk3My40LjEuMTY3MDg0NzA0MS41Mi4wLjA.)
+- Video
+	- [Spark Programming in Python for Beginners with Apache Spark 3 (oreilly.com)](https://learning.oreilly.com/videos/spark-programming-in/9781803246161/)
+	- [Spark Programming in Scala for Beginners with Apache Spark 3 (oreilly.com)](https://learning.oreilly.com/videos/spark-programming-in/9781803239538/)
+	- [Apache Spark 3 for Data Engineering and Analytics with Python (oreilly.com)](https://learning.oreilly.com/videos/apache-spark-3/9781803244303/)
+	- [Apache Spark 3 Advance Skills for Cracking Job Interviews (oreilly.com)](https://learning.oreilly.com/videos/apache-spark-3/9781803241555/)

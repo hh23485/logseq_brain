@@ -268,3 +268,152 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   id:: 638cb398-2b8c-48a5-8ed3-2e4f0faa91ec
   hl-type:: area
   hl-stamp:: 1670165398686
+- s a result, researchers and serverless vendors may find it struggling to grasp and comprehend each issue in the real serverless architecture. In the lack of systematic knowledge, challenges and proposed solutions will lack high portability and compatibility for various serverless systems.
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 6395fb09-ad5b-41a9-84cc-8cb3bc8bc5de
+- this survey is inspired to propose a layered design and summarize the research domains from different views
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 6395fb78-d0e2-46ee-a616-974ab84cda2f
+- help researchers and practitioners to further understand the nature of serverless computing
+  ls-type:: annotation
+  hl-page:: 3
+  hl-color:: yellow
+  id:: 6395fb85-cd3a-49bd-8658-759d12406545
+- Virtualization layer
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63a90973-a4b2-4d69-8a0e-181030aef848
+- enables function isolation within a performance and functionality secured sandbox
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63a9097d-2096-4c62-a974-ad92b7923549
+- sandbox serves as the runtime for application service code, runtime environment, dependencies, and system libraries.
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: blue
+  id:: 63a90996-ebdd-442a-a788-e4c3495ddf8d
+- cloud vendors usually adopt containers/virtual machines to achieve isolation
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63a909aa-7044-49b4-9002-bb49c20141f6
+- popular sandbox technologies are Docker [ 41], gVisor [ 49], Kata [67], Firecracker [ 3], and Unikernel [86]
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63a909b4-6ad4-4a28-b7c7-8a0d41d361e6
+- Encapsule layer
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2fcc4-fbd9-46ea-8744-1f4fa6fca58a
+- Various middlewares in the Encapsule layer enable customized function triggers and executions, and they also provide data metrics collection for communicating and monitoring.
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2fd47-2a8d-4b6c-945e-0a034236474f
+- all these additional middlewares the sidecar
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: blue
+  id:: 63b2fd80-a930-4163-9804-f41a1ce03df6
+- It separates the service’s business logic and enables loose coupling between the functions and the underlying platform
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2fd92-6428-4fbf-80f4-3bf9ef53e7b1
+- the prewarm pool is commonly used in the Encapsule layer [44 , 97, 104, 105 ].
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: green
+  id:: 63b2fdb7-a478-4c0a-b2c1-910850298ec5
+  hl-stamp:: 1672675025923
+- to speed up instance startup and initialization
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2fde1-7a83-474a-90b6-dd5401efb5ac
+- use prediction by analyzing the load pattern to prewarm each by one-to-one approach [118 , 146 ],
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: green
+  id:: 63b2fdf0-a8dc-4173-acc5-e8e1ef5db9ac
+  hl-stamp:: 1672675027327
+- build a template for all functions to dynamically install requirements (REQs) according to the runtime characteristics by a one-for-all approach
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: green
+  id:: 63b2fdf8-8a74-4206-bd1d-a927f6e23d4f
+  hl-stamp:: 1672675028808
+- System Orchestration layer
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2fe0d-e025-4f43-b37a-5acd4ac734c0
+- allows users to configure triggers and bind rules
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2fe58-082b-48c3-a7e9-e9ebbf06cb25
+- ensuring the high availability and stability of the user application by dynamically adjusting as load change
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2fe63-2fe2-4e5e-b1dd-57ad991f9aa7
+- Through the cloud orchestrator, the combination of online and offline scheduling can avoid resource contention, recycle idle resources and ease the performance degradation for co-located functions.
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: green
+  id:: 63b2fea7-f922-4c94-b3c4-097bcec889a9
+  hl-stamp:: 1672675034068
+- While in the serverless system, resource monitor, controller, and load balancer are consolidated to resolve scheduling challenges [ 4, 32, 50, 57, 66, 70, 88, 139 ]
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: purple
+  id:: 63b2fefa-ed04-4234-9bc2-2f03794d307c
+- scheduling optimizations in three different levels: 
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2ff17-3c80-417d-991a-a93b162b34c5
+- esource-level,
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2ff27-3e78-47a8-aa6b-fa7425b934fe
+- nstance-level
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2ff31-8da6-4ca3-8a91-cb22ea0382c4
+- application-level
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2ff38-359b-4094-ad30-8583911ad2a9
+- System Coordination layer
+  ls-type:: annotation
+  hl-page:: 4
+  hl-color:: yellow
+  id:: 63b2ff4d-2305-48ea-8ed9-eb4b4f9db5d0
+- consists of a series of Backendas-a-Service (BaaS) components that use unified APIs and SDKs to integrate backend services into functions.
+  hl-page:: 4
+  ls-type:: annotation
+  id:: 63b2ffb5-e46e-4c21-88a9-5cc58c020b1b
+  hl-color:: yellow
+- t differs from the traditional middlewares that use local physical services outside the cloud.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: blue
+  id:: 63b2ffe2-9e1e-45d1-ad30-95cb448091ca
+- provide the **storage**, **queue service** [94, 99], **trigger binding** [75,77], **API gateway,** **data cache** [ 6, 7 ], **DevOps tools** [ 24, 25, 63 , 122 ], and other customized components for better meeting the System Orchestration layer’s **flexibility** requirements.
+  hl-page:: 5
+  ls-type:: annotation
+  id:: 63b2fffa-b6ca-476c-93af-b8f9ff18374c
+  hl-color:: blue

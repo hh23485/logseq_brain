@@ -417,3 +417,33 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   ls-type:: annotation
   id:: 63b2fffa-b6ca-476c-93af-b8f9ff18374c
   hl-color:: blue
+- Whenever a user function is invoked in serverless computing, it will be loaded and executed within a virtualized sandbox
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44e28-a2d7-49ab-9f6d-8e4a12aba803
+- A function can either reuse a warm sandbox or create a new one, but usually not co-run with different user functions.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44e50-0f48-4715-b202-24a91d7e136b
+- most of the concerns in virtualization are isolation, flexibility, and low startup latency.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: blue
+  id:: 63b44e83-c471-49b4-b335-5d8467a50064
+- solation ensures that each application process runs in the demarcated resource space, and the running process can avoid interference by others.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44ea0-fbb6-42bf-a4c6-f971f2a9b424
+- The flexibility is demonstrated by the ability of testing and debugging, and the additional supports for extending over the system
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44eac-b5de-4b19-8a9f-66e5f194a684
+- Low startup latency requires a fast response for the sandbox creation and initialization
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44eb8-3c0d-4c25-8caa-634b3efc77e2

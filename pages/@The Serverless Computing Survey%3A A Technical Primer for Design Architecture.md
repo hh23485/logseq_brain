@@ -30,6 +30,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 - [[Notes]]
 	- # Introduction
 		- ## ((638c2951-7cef-456b-ac28-2a5be85820a9))
+		  collapsed:: true
 			- ((638c2a2b-b430-4989-abbe-aaca559d4ae3))
 				- ((638c2a40-eb22-4da3-926b-5e1af65859c5))
 					- ((638c2a4f-0910-4b4b-ab2d-0972be6f2d12))
@@ -78,6 +79,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 				- #### Scenario
 					- ((638c78b2-48b0-498c-89b7-d99418eff88d))
 		- ## Survey Method by the Layered Serverless Architecture
+		  collapsed:: true
 			- 很难把握和真正理解架构中的每个问题
 			- ((6395fb78-d0e2-46ee-a616-974ab84cda2f))
 				- ((6395fb85-cd3a-49bd-8658-759d12406545))
@@ -111,5 +113,11 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 						- ((63b2ffe2-9e1e-45d1-ad30-95cb448091ca))
 						- ((63b2fffa-b6ca-476c-93af-b8f9ff18374c))
 	- # Virtualization Layer
-		-
+		- ((63b44e28-a2d7-49ab-9f6d-8e4a12aba803))
+		- ((63b44e50-0f48-4715-b202-24a91d7e136b))
+		- ((63b44e83-c471-49b4-b335-5d8467a50064))
+			- ((63b44ea0-fbb6-42bf-a4c6-f971f2a9b424))
+			- ((63b44eac-b5de-4b19-8a9f-66e5f194a684))
+			- ((63b44eb8-3c0d-4c25-8caa-634b3efc77e2))
+			-
 		-

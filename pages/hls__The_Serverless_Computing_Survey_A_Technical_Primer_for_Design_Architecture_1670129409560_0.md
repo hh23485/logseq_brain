@@ -447,3 +447,60 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 5
   hl-color:: yellow
   id:: 63b44eb8-3c0d-4c25-8caa-634b3efc77e2
+- traditional VM (Virtual Machine),
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44f38-eb11-48d7-a358-768867ca1570
+- container
+  hl-page:: 5
+  ls-type:: annotation
+  id:: 63b44f41-828a-49ec-957a-9ed4a6ee3da6
+  hl-color:: yellow
+- ecure container
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44f48-3f10-4543-aa9f-526b11cc6bf0
+- Unikernel.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44f4d-04a5-4642-bcbf-39462ec691bc
+- [:span]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63bcb80f-53d8-4720-b605-59bf86249633
+  hl-type:: area
+  hl-stamp:: 1673312269240
+- Startup latency
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c36528-03f6-46ca-852d-a4cc2dba275e
+- the response latency of cold startup
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c36535-ef11-43fe-a231-2773cbe338b3
+- Isolation level
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c36540-2216-455c-ba20-4d96dfd58119
+- the capacity of functions running without interference by others
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c3654b-64bb-4d23-827d-362f09e7be84
+- OSkernel
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c3657a-888c-4570-8654-eb38318564a0
+- whether the kernel in GuestOS is share
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c36582-2ee3-47f8-ab9f-af8d98bbb4dd

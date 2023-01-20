@@ -1,10 +1,10 @@
-tags:: [[Computer Science - Distributed]], [[Parallel]], [[and Cluster Computing]]
+tags:: [[Computer Science - Distributed]], [[Parallel]], [[Cluster Computing]], [[Paper]]
 date:: [[Jan 31st, 2022]]
 issn:: "0360-0300, 1557-7341"
 issue:: 10s
 extra:: arXiv:2112.12921 [cs]
 doi:: 10.1145/3508360
-title:: @The Serverless Computing Survey: A Technical Primer for Design Architecture
+title:: The Serverless Computing Survey: A Technical Primer for Design Architecture@Paper
 pages:: 1-34
 volume:: 54
 item-type:: [[journalArticle]]

@@ -139,7 +139,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 							- ((63ce1b12-929d-4eab-beaa-1675587969ff))
 					- 优点
 						- ((63ce1b24-37b7-4261-aa82-d52f384fb96f))
-					- .
+					- 缺点
 						- ((63ce1b37-5a25-4e4f-be27-180b443b16c4))
 							- ((63ce1b76-31ae-417f-846c-8e9e18d7978b))
 					-

@@ -437,6 +437,7 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 5
   hl-color:: yellow
   id:: 63b44ea0-fbb6-42bf-a4c6-f971f2a9b424
+  hl-stamp:: 1674444799729
 - The flexibility is demonstrated by the ability of testing and debugging, and the additional supports for extending over the system
   ls-type:: annotation
   hl-page:: 5
@@ -474,11 +475,6 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   id:: 63bcb80f-53d8-4720-b605-59bf86249633
   hl-type:: area
   hl-stamp:: 1673312269240
-- Startup latency
-  ls-type:: annotation
-  hl-page:: 5
-  hl-color:: yellow
-  id:: 63c36528-03f6-46ca-852d-a4cc2dba275e
 - the response latency of cold startup
   ls-type:: annotation
   hl-page:: 5
@@ -504,3 +500,43 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 5
   hl-color:: yellow
   id:: 63c36582-2ee3-47f8-ab9f-af8d98bbb4dd
+- . “Hotplug” allows the function instance to start with minimal resources (CPU, memory, virtio blocks) and add additional resources at runtime
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce02eb-5dc9-4bcc-af80-1af703b53b04
+- “OCI supported” means whether it provides the Open Container Initiative (OCI), an open governance structure for expressing container formats and runtimes
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce0309-268d-46e3-906b-ce46d2f124aa
+- traditional VM-based isolation adopts a VMM 
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1aa2-5fab-4cdb-befc-608dd31faec0
+- provides virtualization capabilities to GuestOS.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1af2-36f3-47db-be21-01261dca4a97
+- mediate access to all shared resources by provided interfaces (or using Qemu/KVM
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1b12-929d-4eab-beaa-1675587969ff
+- shows high flexibility in quick failsafe when patch performing on applications within each VM instance
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1b24-37b7-4261-aa82-d52f384fb96f
+- lacks the benefits of lower startup latency for user applications (usually >1000ms)
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1b37-5a25-4e4f-be27-180b443b16c4
+- This tradeoff is fundamental in the serverless computing, where functions are small while the relative overhead of VMM and guest kernel is high
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: red
+  id:: 63ce1b76-31ae-417f-846c-8e9e18d7978b

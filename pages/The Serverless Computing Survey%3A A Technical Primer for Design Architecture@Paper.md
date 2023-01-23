@@ -125,9 +125,18 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 			- ((63b44f48-3f10-4543-aa9f-526b11cc6bf0))
 			- ((63b44f4d-04a5-4642-bcbf-39462ec691bc))
 			- 对比
-				- ((63bcb80f-53d8-4720-b605-59bf86249633))
-					- ((63c36528-03f6-46ca-852d-a4cc2dba275e)): ((63c36535-ef11-43fe-a231-2773cbe338b3))
-					- ((63c36540-2216-455c-ba20-4d96dfd58119)): ((63c3654b-64bb-4d23-827d-362f09e7be84))，不受他人干扰运行的能力
-					- ((63c3657a-888c-4570-8654-eb38318564a0)): ((63c36582-2ee3-47f8-ab9f-af8d98bbb4dd))
-					-
+				- Summary ((63bcb80f-53d8-4720-b605-59bf86249633))
+					- Startup latency: ((63c36535-ef11-43fe-a231-2773cbe338b3))
+					- Isolation level: ((63c3654b-64bb-4d23-827d-362f09e7be84))，不受他人干扰运行的能力
+					- OSKernel: ((63c36582-2ee3-47f8-ab9f-af8d98bbb4dd))
+					- Hotplug: ((63ce02eb-5dc9-4bcc-af80-1af703b53b04))
+					- OCI supported: ((63ce0309-268d-46e3-906b-ce46d2f124aa))
+				- 传统基于 VM 的隔离
+					- ((63ce1aa2-5fab-4cdb-befc-608dd31faec0))
+						- like hypervisor
+						- ((63ce1af2-36f3-47db-be21-01261dca4a97))
+						- ((63ce1b12-929d-4eab-beaa-1675587969ff))
+						- ((63ce1b24-37b7-4261-aa82-d52f384fb96f))
+						- ((63ce1b37-5a25-4e4f-be27-180b443b16c4))
+							- ((63ce1b76-31ae-417f-846c-8e9e18d7978b))
 		-

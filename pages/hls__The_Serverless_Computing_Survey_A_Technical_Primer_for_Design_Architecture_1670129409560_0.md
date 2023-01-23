@@ -540,3 +540,38 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 5
   hl-color:: red
   id:: 63ce1b76-31ae-417f-846c-8e9e18d7978b
+- Container 
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1c7c-baef-421c-affd-f40c160725db
+- The container engine leverages the Linux kernel to isolate resources, and creating containers as different processes in HostOS [19, 92 ]
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1c90-3034-44be-9341-3c25225ff81d
+- shares the HostOS kernel with the read-only
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1ca3-5672-4deb-80ea-93cdae538498
+- typically includes binaries and libraries
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1cc2-daae-4b91-9fd4-3c55ae86afbe
+- with the UnionFS (Union File System), which enables the combination of the layered container image by read-only and read-write layers
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1ced-3ab9-4990-94ed-9a0d92c9d077
+- achieves the isolation through namespace to enable processes sharing the same system kernel and Linux Cgroups to set resource limits
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1d15-1ba3-425c-a73a-9bd8c5e91202
+- Without hardware isolation, container-based sandboxing shows lower startup latency than coarse-grained consolidation strategies [11, 147] in hypervisor-based VMs
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1d27-b043-4159-98ec-c627127f3027

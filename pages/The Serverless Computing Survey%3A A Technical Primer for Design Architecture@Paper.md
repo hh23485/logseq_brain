@@ -132,9 +132,9 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 					- Hotplug: ((63ce02eb-5dc9-4bcc-af80-1af703b53b04))
 					- OCI supported: ((63ce0309-268d-46e3-906b-ce46d2f124aa))
 				- 传统基于 VM 的隔离
-					- ((63ce1aa2-5fab-4cdb-befc-608dd31faec0))
-						- like hypervisor
-					- 功能
+					- 特点
+						- ((63ce1aa2-5fab-4cdb-befc-608dd31faec0))
+							- like hypervisor
 						- ((63ce1af2-36f3-47db-be21-01261dca4a97))
 							- ((63ce1b12-929d-4eab-beaa-1675587969ff))
 					- 优点
@@ -142,5 +142,16 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 					- 缺点
 						- ((63ce1b37-5a25-4e4f-be27-180b443b16c4))
 							- ((63ce1b76-31ae-417f-846c-8e9e18d7978b))
+				- 容器
+					- ((63ce1c90-3034-44be-9341-3c25225ff81d)).
+						- ((63ce1ca3-5672-4deb-80ea-93cdae538498))
+							- ((63ce1cc2-daae-4b91-9fd4-3c55ae86afbe))
+						- ((63ce1ced-3ab9-4990-94ed-9a0d92c9d077))
+						- ((63ce1d15-1ba3-425c-a73a-9bd8c5e91202))
+					- 优点
+						- ((63ce1d27-b043-4159-98ec-c627127f3027))
+						-
+						-
+				-
 				-
 		-

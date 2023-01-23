@@ -169,6 +169,32 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 								- ((63ce1fbe-6962-4394-9812-e5a845312218))
 					-
 				- 安全容器
-					-
+					- 安全问题 - 隔离能力不足
+						- ((63ce2149-1cfa-4288-ab46-46d56f0932f2))
+						- ((63ce2062-a2ea-4787-abc5-f479012ab609))
+							- ((63ce20d8-e3ac-4e55-9c3f-70123e608d9c))
+							- ((63ce21ae-414d-4338-89e2-cc4e6ac2e758))
+					- 实现
+						- ((63ce21ec-88b8-44f9-9068-06121a78a193))
+							- ((63ce2204-f574-48eb-9b77-722837a8603e)). ((63ce2230-4760-4595-bc57-757dc2f89d45))
+							  collapsed:: true
+								- ((63ce2261-63b3-453c-9dc0-c5248b283a84))
+								- ((63ce227a-0502-49b0-a1d1-701233bf740d))
+							- ((63ce234b-ccb7-4388-b2ba-708762e5980f))
+							  collapsed:: true
+								- ((63ce22c7-6733-4ebb-a139-83546771a8c9))
+								- ((63ce2336-e813-4a45-bf9e-e97add7d0d15))
+									- ((63ce2447-c4e2-4a21-a593-d6abbe3f722f))
+							- ((63ce2503-56e7-4128-99ea-3ac31919b5af))
+							  collapsed:: true
+								- ((63ce2522-a91c-4144-a3cb-88ce7ce08aa0))
+							- ((63ce2555-6c64-4c60-8317-c04b6efee9bc))
+							  collapsed:: true
+								- ((63ce2574-e459-4af6-b975-395febf46906))
+					- 优点
+						- ((63ce258c-1db7-4ec2-8615-7b1b15006564))
+					- 缺点
+						- ((63ce259d-dec4-43ab-be50-22fbb9f6c002))
+						-
 					-
 		-

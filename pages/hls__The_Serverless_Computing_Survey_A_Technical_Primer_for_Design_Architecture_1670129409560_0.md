@@ -626,3 +626,105 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 6
   hl-color:: red
   id:: 63ce1fd8-9ea8-4670-8b1f-1f50e60f83d0
+- security concerns in Virtualization Layer arise for the relatively low isolation level of containers
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 63ce2062-a2ea-4787-abc5-f479012ab609
+- It requires containers to prevent code vulnerabilities in the case of shared kernel architecture.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce20d8-e3ac-4e55-9c3f-70123e608d9c
+- Side-channel attacks such as Meltdown [ 84], Zombieload [114 ], Spectre [72] prompt mitigation approaches toward vulnerabilities, especially for multi-tenants in serverless context
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 63ce2149-1cfa-4288-ab46-46d56f0932f2
+- should concern with preventing privilege escalation, information, and communication disclosure side channels [3].
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: blue
+  id:: 63ce21ae-414d-4338-89e2-cc4e6ac2e758
+- leveraging Secure Container.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce21ec-88b8-44f9-9068-06121a78a193
+- Microsoft proposes their Hyper-V Container for Windows [58]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce2204-f574-48eb-9b77-722837a8603e
+- offers enhanced security and broader compatibility.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce2230-4760-4595-bc57-757dc2f89d45
+- Each instance runs inside a highly optimized MicroVM and does not share its kernel with others on the same hos
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: green
+  id:: 63ce2261-63b3-453c-9dc0-c5248b283a84
+  hl-stamp:: 1674453613104
+- still a heavy-weight virtualization that can introduce more than1000ms of startup latency
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 63ce227a-0502-49b0-a1d1-701233bf740d
+- the kernel in it acts as a non-privileged process to restrict syscalls that called in userspace
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce22c7-6733-4ebb-a139-83546771a8c9
+- overhead introduced during interception and processing syscalls in a sandbox is high
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 63ce2336-e813-4a45-bf9e-e97add7d0d15
+- Google gVisor [49]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce234b-ccb7-4388-b2ba-708762e5980f
+- the kernel in it acts as a non-privileged process to
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce2365-0b9c-43bf-bb40-887a0933b77b
+- not well-suited for applications with heavy syscalls.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 63ce2447-c4e2-4a21-a593-d6abbe3f722f
+- FireCracker [ 3] creates MicroVMs by customizing VMM for cloud-native applications. 
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2503-56e7-4128-99ea-3ac31919b5af
+- Each Firecracker sandbox runs in user space and is restricted by Seccomp, Cgroup, and Namespace policies
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2522-a91c-4144-a3cb-88ce7ce08aa0
+- Kata [67] adopts an agent to communicate with the kata-proxy located on the host through the hypervisor, thus achieve a secure environment in a lightweight manner
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce2555-6c64-4c60-8317-c04b6efee9bc
+  hl-stamp:: 1674454361036
+- FireCracker and Kata containers can significantly reduce startup latency and memory consumption, and they all need only 50ms-500ms to start a sandbox
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2574-e459-4af6-b975-395febf46906
+- provide complete and strong isolation from the HostOS and other tenants, at the cost of the limited flexibility in the condensed MicroVM
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce258c-1db7-4ec2-8615-7b1b15006564
+- still results in instances’ long startup latency due to the additional application initialization, e.g., JVM or Python interpreter setup.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce259d-dec4-43ab-be50-22fbb9f6c002

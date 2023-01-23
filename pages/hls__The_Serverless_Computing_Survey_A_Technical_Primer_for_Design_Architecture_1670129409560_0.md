@@ -904,3 +904,13 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 9
   hl-color:: yellow
   id:: 63ce4db8-58bd-478b-968c-f77afd833d61
+- One-to-one prewarm by size-fixed pool: effective but resource-unfriendly.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63ce4ed8-bf98-4d0c-82a5-ae9fbf845afa
+- One-to-one prewarm by predictive warm-up: ways to make resource friendly.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63ce4edb-fe0f-48bc-9b3f-171d631f7b80

@@ -458,7 +458,7 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   ls-type:: annotation
   id:: 63b44f41-828a-49ec-957a-9ed4a6ee3da6
   hl-color:: yellow
-- ecure container
+- secure container
   ls-type:: annotation
   hl-page:: 5
   hl-color:: yellow

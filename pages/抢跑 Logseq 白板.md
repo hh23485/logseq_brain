@@ -36,6 +36,7 @@
 				      (:feature/enable-whiteboards? (sub-config repo))))
 				  ```
 - # 编译
+  id:: 63ca644d-ccc5-4445-bfe9-818d85167398
 	- 如果你按照 [When does whiteboard release? · Discussion #8044 · logseq/logseq (github.com)](https://github.com/logseq/logseq/discussions/8044#discussioncomment-4714927) 的修改，请执行
 		- ``` cmd
 		  yarn

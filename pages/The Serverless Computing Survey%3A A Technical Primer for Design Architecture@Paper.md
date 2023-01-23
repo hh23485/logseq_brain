@@ -197,9 +197,19 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 					- 缺点
 						- ((63ce259d-dec4-43ab-be50-22fbb9f6c002))
 					- TODO How microVM works?
-				- [统一内核]
+				- [统一内核](((63ce272e-682e-455d-9c01-d0561d82be47)))
 					- 特点
-					-
-					-
-					-
+						- ((63ce2777-66e1-44e5-86ad-148f3ee51b1e))
+							- ((63ce27a1-b57f-4e97-b4df-7147aa890f29))
+							- ((63ce27c1-fda2-4284-952b-c407f421f6f0))
+								- ((63ce27e1-0299-40a8-a84d-c94670a888f3))
+								- ((63ce27f3-87c3-4d13-b36d-04b05208dc57))
+								- ((63ce2803-1726-4caf-86ec-910ee1470778))
+					- 实现
+						- LightVM
+							- ((63ce2882-ff5e-4731-92fd-01f524825d85))
+						- HermitTux
+							- ((63ce28ba-5dac-42a3-972a-734e2266aba2))
+								- ((63ce28ca-4633-4247-9d1f-88d135c2e995))
+								- ((63ce28db-d043-4316-8f84-258bef6d959b))
 		-

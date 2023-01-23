@@ -733,3 +733,57 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 7
   hl-color:: yellow
   id:: 63ce272e-682e-455d-9c01-d0561d82be47
+- leverages libraryOS, including series of essential dependent libraries to construct a specialized, single-address-space machine image
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2777-66e1-44e5-86ad-148f3ee51b1e
+- runs as a built-in GuestOS, the compile-time invariance rules out runtime management, which significantly reduces the applicability and flexibility of Unikernel.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 63ce27a1-b57f-4e97-b4df-7147aa890f29
+  hl-stamp:: 1674454992693
+- unnecessary programs or tools such as 𝑙𝑠, 𝑐𝑑, 𝑡𝑎𝑟 are not contained, so the image size of a Unikernel is smaller 
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce27c1-fda2-4284-952b-c407f421f6f0
+- 2MB by mirage-skeleton [ 95] that compiled from Xen)
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce27e1-0299-40a8-a84d-c94670a888f3
+  hl-stamp:: 1674455048562
+- startup latency is much less (e.g., startup within 10ms)
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce27f3-87c3-4d13-b36d-04b05208dc57
+  hl-stamp:: 1674455050126
+- the security is more substantial than containers
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce2803-1726-4caf-86ec-910ee1470778
+  hl-stamp:: 1674455051698
+- LightVM [90 ] replaces the time-consuming XenStore and implements the split tool stack, separating functionality that runs periodically from that which must be carried out, thus improving efficiency and reducing VM startup latency.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2882-ff5e-4731-92fd-01f524825d85
+- Olivier proposes HermitTux [ 102], a Unikernel model compatible with Linux binary.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce28ba-5dac-42a3-972a-734e2266aba2
+- makes the Unikernel model compatible with Linux Application Binary Interface while retaining the benefits of Unikernel.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce28ca-4633-4247-9d1f-88d135c2e995
+- s not adaptable for developers once built, making it inherently inflexible for applications, let alone the terrible DevOps environment
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 63ce28db-d043-4316-8f84-258bef6d959b

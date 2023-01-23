@@ -787,3 +787,9 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 7
   hl-color:: red
   id:: 63ce28db-d043-4316-8f84-258bef6d959b
+- in heterogeneous clusters, the heterogeneity of the underlying hardware forces Unikernel to update as drivers change, making it the antithesis of serverless philosophy.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2dc9-d25f-46e1-a132-b12697da31ba
+  hl-stamp:: 1674456543846

@@ -793,3 +793,15 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-color:: yellow
   id:: 63ce2dc9-d25f-46e1-a132-b12697da31ba
   hl-stamp:: 1674456543846
+- Tradeoffs among Security, performance, and flexibility.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2e47-9149-442e-8c63-bb35ecd7ce23
+- [:span]
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2eaf-920b-4fb7-9b55-3d70b4cb3ccd
+  hl-type:: area
+  hl-stamp:: 1674456750879

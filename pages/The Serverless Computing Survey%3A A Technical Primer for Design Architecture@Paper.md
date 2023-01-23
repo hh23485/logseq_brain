@@ -29,7 +29,8 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 	- ![The Serverless Computing Survey A Technical Primer for Design Architecture.pdf](../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Design_Architecture_1670129409560_0.pdf)
 - [[Notes]]
 	- # Introduction
-		- ## ((638c2951-7cef-456b-ac28-2a5be85820a9))
+	  collapsed:: true
+		- ## Definition of Serverless Computing
 		  collapsed:: true
 			- ((638c2a2b-b430-4989-abbe-aaca559d4ae3))
 				- ((638c2a40-eb22-4da3-926b-5e1af65859c5))
@@ -113,6 +114,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 						- ((63b2ffe2-9e1e-45d1-ad30-95cb448091ca))
 						- ((63b2fffa-b6ca-476c-93af-b8f9ff18374c))
 	- # Virtualization Layer
+	  collapsed:: true
 		- ((63b44e28-a2d7-49ab-9f6d-8e4a12aba803))
 		- ((63b44e50-0f48-4715-b202-24a91d7e136b))
 		- ((63b44e83-c471-49b4-b335-5d8467a50064))
@@ -186,7 +188,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 								- ((63ce22c7-6733-4ebb-a139-83546771a8c9))
 								- ((63ce2336-e813-4a45-bf9e-e97add7d0d15))
 									- ((63ce2447-c4e2-4a21-a593-d6abbe3f722f))
-							- ((63ce2503-56e7-4128-99ea-3ac31919b5af))
+							- ((63ce2503-56e7-4128-99ea-3ac31919b5af)) #疑问
 							  collapsed:: true
 								- ((63ce2522-a91c-4144-a3cb-88ce7ce08aa0))
 							- ((63ce2555-6c64-4c60-8317-c04b6efee9bc))
@@ -213,5 +215,8 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 								- ((63ce28ca-4633-4247-9d1f-88d135c2e995))
 								- ((63ce28db-d043-4316-8f84-258bef6d959b))
 								- ((63ce2dc9-d25f-46e1-a132-b12697da31ba)) #疑问
-								-
-		-
+			- ((63ce2e47-9149-442e-8c63-bb35ecd7ce23))
+				- ((63ce2eaf-920b-4fb7-9b55-3d70b4cb3ccd))
+					- From this perspective, Secure Container is great for prod, and Container is good for dev
+				-
+-

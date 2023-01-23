@@ -575,3 +575,54 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 6
   hl-color:: yellow
   id:: 63ce1d27-b043-4159-98ec-c627127f3027
+- Docker packages software into a standardized RunC container adapted to the environment requirements, including libraries, system tools, code, and runtime
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1d92-82ec-4e72-b705-10e8891e9517
+- has been widely applied to various serverless systems for its lightweight nature.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1e62-6606-4d2f-aba9-82863e82be66
+- SOCK [101 ] proposes an integration solution for serverless RunC containers, where redundant mechanisms in Docker containers are discarded in this lean container
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: blue
+  id:: 63ce1e7e-f020-419f-bced-6aaf326170bc
+  hl-stamp:: 1674452659425
+- SOCK container makes serverless systems running more efficiently in startup latency and throughput.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: blue
+  id:: 63ce1eac-2c24-4019-8713-b8df7734a198
+- By only constructing a root file system, creating communication channels, and imposing isolation boundaries
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1f00-b15e-4eb8-94bf-3052f0c55a96
+- startup latency of SOCK container is reduced to 10ms50ms, comparing to docker containers that usually takes 50ms-500ms
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: green
+  id:: 63ce1f30-ff66-4713-aef1-da6b9152e9cb
+- CNTR [130] splits the container image into “fat” and“slim” parts.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1f7e-3991-421e-829d-58446efbfa52
+- A user can independently deploy the “slim” image and expand it with additional tools by dynamically attaching the “fat” image to it. 
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1fa7-4f87-44d7-bbce-9c11a904c87c
+- can significantly improve the overall performance and effectively reduce the image size when extensively applied in the data center.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: green
+  id:: 63ce1fbe-6962-4394-9812-e5a845312218
+- additional tools (e.g., debuggers, editors, coreutils, shell) enriching the container and increasing the image size
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 63ce1fd8-9ea8-4670-8b1f-1f50e60f83d0

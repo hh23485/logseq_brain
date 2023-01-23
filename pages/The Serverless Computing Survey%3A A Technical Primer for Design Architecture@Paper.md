@@ -151,8 +151,20 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 						- ((63ce1d15-1ba3-425c-a73a-9bd8c5e91202))
 					- 优点
 						- ((63ce1d27-b043-4159-98ec-c627127f3027))
-						-
-						-
+					- 实现
+						- Docker
+							- ((63ce1d92-82ec-4e72-b705-10e8891e9517))
+							- ((63ce1e62-6606-4d2f-aba9-82863e82be66))
+						- SOCK
+							- ((63ce1e7e-f020-419f-bced-6aaf326170bc))
+							- ((63ce1eac-2c24-4019-8713-b8df7734a198))
+								- ((63ce1f00-b15e-4eb8-94bf-3052f0c55a96))
+								- ((63ce1f30-ff66-4713-aef1-da6b9152e9cb))
+						- CNTR
+							- ((63ce1fd8-9ea8-4670-8b1f-1f50e60f83d0))
+							- ((63ce1f7e-3991-421e-829d-58446efbfa52))
+								- ((63ce1fa7-4f87-44d7-bbce-9c11a904c87c))
+								- ((63ce1fbe-6962-4394-9812-e5a845312218))
 				-
 				-
 		-

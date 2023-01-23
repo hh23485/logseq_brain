@@ -805,3 +805,102 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   id:: 63ce2eaf-920b-4fb7-9b55-3d70b4cb3ccd
   hl-type:: area
   hl-stamp:: 1674456750879
+- A cold startup in serverless computing may occur when the function fails to capture a warm running container, or experiences a bursty load
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce3210-7c84-4e90-969e-139149ef4554
+- a function is invoked for the first time, or scheduled with a longer invocation interval than the instance lifetime
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce3299-3fc0-462b-afe6-8ec239372fad
+- instances (or pods) must get started from scratch
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce32ae-ad78-4e71-aa98-673aa9033bd8
+- instances need to perform horizontal scaling during a surge in user workloads
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce32bc-7914-4018-a0c6-6871106a3cf6
+- autoscale as load changes to ensure adequate resource allocation
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce32d9-abe1-4868-94bf-8969b2f49c5c
+- Besides taking less than one second to prepare a sandbox in the Virtualization layer, the initialization of software environment, e.g., load Python libraries; and application-specific user code can dwarf the former [42, 65, 83, 101 , 117].
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: red
+  id:: 63ce3d22-8a9e-479c-b016-9aac95d0a404
+  hl-stamp:: 1674461524919
+- an efficient solution is to prewarm instances in the Encapsule layer. This approach is known as the prewarm startup
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: green
+  id:: 63ce4064-41b1-4592-804e-023190c9880a
+  hl-stamp:: 1674461531794
+- [:span]
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce407f-e3d2-4efe-98ff-3869a6cf67ca
+  hl-type:: area
+  hl-stamp:: 1674461310047
+- “Template” reflects whether the cold startup instance comes from a template.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce41f0-2f7a-48d5-9f1e-1b51766532a5
+- “Static image” shows whether the VM/container image for prewarm disables dynamically updating in each cold startup
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce41fc-5a15-4717-bd1c-fa85781e3ed8
+- “Pool” indicates whether there is a prewarm pool for function cold startups.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4206-42b4-4b74-87ff-4332d712d84d
+- “Exclusive” and “Fixed-size” represents whether the prewarmed instance and its prewarm pool is exclusive and size-fixe
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce420d-b169-4127-bc4a-2bd7f65345cc
+- . “Predict/Heuristic” points out whether the prediction algorithm or heuristic-based method is used to prewarm instances
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4214-89e1-47f6-85ab-cd499f82fb9d
+- “REQs” reflects whether the runtime libraries and packages are dynamically loading and updating in the prewarm instance
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce421b-3d71-4696-9840-d6d78499fc28
+- “C/R” reflects whether it supports checkpoint and restore to accelerate the startup.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4221-7373-452c-afe5-097080864d5f
+- “Sidecar based” represents whether the relevant technologies can be implemented or integrated into the sideca
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4225-cbb6-4627-90e7-46d483a7a832
+- “Imp” indicates where it is implemented.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4228-bce8-439a-b869-df458c180666
+- one-to-one
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63ce4dae-34ef-476d-92d7-35d9785e5af1
+- onefor-all
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63ce4db8-58bd-478b-968c-f77afd833d61

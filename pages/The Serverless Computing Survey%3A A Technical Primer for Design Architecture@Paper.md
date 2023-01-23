@@ -219,4 +219,21 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 				- ((63ce2eaf-920b-4fb7-9b55-3d70b4cb3ccd))
 					- From this perspective, Secure Container is great for prod, and Container is good for dev
 				-
--
+	- # Encapsule Layer
+		- ((63ce3210-7c84-4e90-969e-139149ef4554))
+			- ((63ce3d22-8a9e-479c-b016-9aac95d0a404))
+		- ((63ce4064-41b1-4592-804e-023190c9880a))
+		- 产品对比
+			- ((63ce407f-e3d2-4efe-98ff-3869a6cf67ca))
+				- Template: ((63ce41f0-2f7a-48d5-9f1e-1b51766532a5))
+				- Static image: ((63ce41fc-5a15-4717-bd1c-fa85781e3ed8)) #疑问
+				- Pool: ((63ce4206-42b4-4b74-87ff-4332d712d84d))
+				- Predict/Heuristic: ((63ce4214-89e1-47f6-85ab-cd499f82fb9d))
+				- REQa: ((63ce421b-3d71-4696-9840-d6d78499fc28))
+				- C/R: ((63ce4221-7373-452c-afe5-097080864d5f))
+				- Sidecar: ((63ce4225-cbb6-4627-90e7-46d483a7a832))
+				- Imp: ((63ce4228-bce8-439a-b869-df458c180666))
+		- Startup approaches
+			- ((63ce4dae-34ef-476d-92d7-35d9785e5af1))
+			- ((63ce4db8-58bd-478b-968c-f77afd833d61))
+		-

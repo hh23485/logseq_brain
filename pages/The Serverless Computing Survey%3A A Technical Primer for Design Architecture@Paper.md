@@ -169,6 +169,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 								- ((63ce1fbe-6962-4394-9812-e5a845312218))
 					-
 				- 安全容器
+				  collapsed:: true
 					- 安全问题 - 隔离能力不足
 						- ((63ce2149-1cfa-4288-ab46-46d56f0932f2))
 						- ((63ce2062-a2ea-4787-abc5-f479012ab609))
@@ -195,6 +196,10 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 						- ((63ce258c-1db7-4ec2-8615-7b1b15006564))
 					- 缺点
 						- ((63ce259d-dec4-43ab-be50-22fbb9f6c002))
+					- TODO How microVM works?
+				- [统一内核]
+					- 特点
+					-
 					-
 					-
 		-

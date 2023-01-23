@@ -728,3 +728,8 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 7
   hl-color:: yellow
   id:: 63ce259d-dec4-43ab-be50-22fbb9f6c002
+- Specialized Unikernel: enhance flexibility with high security and performance.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce272e-682e-455d-9c01-d0561d82be47

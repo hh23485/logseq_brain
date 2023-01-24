@@ -964,3 +964,13 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 9
   hl-color:: yellow
   id:: 63cfe7b1-f3f3-4e14-91d5-1f317a300065
+- Xu et al. [146 ] design an AWU (Adaptive Warm-up) (AWU) strategy by leveraging the LSTM (Long Short-Term Memory) networks to discover the dependence relationships based on the historical traces
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe84c-d183-40f0-9c6b-4d739d74bcd9
+- predicts the invoking time of each function to prewarm the instances, and initialize the prewarmed containers according to the ACPS (Adaptive Container Pool Scaling) strategy once AWU fails
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfec24-fbf2-4316-ab92-122f6949ab82

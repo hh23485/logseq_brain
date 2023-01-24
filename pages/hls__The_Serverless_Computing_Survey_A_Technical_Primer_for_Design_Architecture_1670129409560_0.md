@@ -914,3 +914,53 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 9
   hl-color:: yellow
   id:: 63ce4edb-fe0f-48bc-9b3f-171d631f7b80
+- prewarmed from a size-fixed pool
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfdf81-1a58-4303-8492-a1c00f907ea3
+- by dynamic prediction based on the historical workload traces
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfdf89-e0f5-4933-8d1b-834ad91349a5
+- prewarmed from cached sandboxes,
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfdf9a-a165-4c94-b193-2cb786b7f480
+- according to a common configuration file
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfdfa2-cdf8-4146-86f1-a627e7f19111
+- C/R is a technique that can freeze a running instance, make a checkpoint into a list of files, and then restore the running state of the instance at the frozen point.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe081-3203-4ca8-b678-3c9d992515bc
+- pause the instance when idle to save resources, and then recovery it for reusing when invoked [55, 94].
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: green
+  id:: 63cfe08e-21b7-4607-9131-0475062689aa
+- Azure Functions [105 ] warms up instances of each function by setting up a fixed-size prewarm pool. 
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe71c-2b43-4693-9f04-1e676a0e9bd5
+- The open-sourced Fission [ 44] also prewarms like Azure Function.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe758-9f3f-429c-b10e-0f413e8d5a8b
+- Once the always-ready instance is occupied, prewarmed instances will be active and continue to buffer until reaching the limit. 
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe7a1-cdb7-4e89-8869-96d4e99dae33
+- ntroduces a component called 𝑝𝑜𝑜𝑙𝑚𝑔𝑟 , which manages a pool of generic instances with a fixed pool size and injects function code into the idle instances to reduce the cold start latency.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe7b1-f3f3-4e14-91d5-1f317a300065

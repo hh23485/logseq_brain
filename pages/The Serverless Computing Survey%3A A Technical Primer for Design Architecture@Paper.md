@@ -236,5 +236,14 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 		- Startup approaches
 			- ((63ce4dae-34ef-476d-92d7-35d9785e5af1))
 				- ((63ce4ed8-bf98-4d0c-82a5-ae9fbf845afa))
+					- ((63cfe71c-2b43-4693-9f04-1e676a0e9bd5))
+						- ((63cfe7a1-cdb7-4e89-8869-96d4e99dae33))
+					- ((63cfe758-9f3f-429c-b10e-0f413e8d5a8b))
+						- ((63cfe7b1-f3f3-4e14-91d5-1f317a300065))
+							- a kind of worker
+				- ((63ce4edb-fe0f-48bc-9b3f-171d631f7b80))
 			- ((63ce4db8-58bd-478b-968c-f77afd833d61))
-				-
+		- 优化
+			- C/R
+				- ((63cfe081-3203-4ca8-b678-3c9d992515bc))
+					- ((63cfe08e-21b7-4607-9131-0475062689aa))

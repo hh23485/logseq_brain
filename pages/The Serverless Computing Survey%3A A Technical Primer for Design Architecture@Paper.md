@@ -220,6 +220,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 					- From this perspective, Secure Container is great for prod, and Container is good for dev
 				-
 	- # Encapsule Layer
+	  collapsed:: true
 		- ((63ce3210-7c84-4e90-969e-139149ef4554))
 			- ((63ce3d22-8a9e-479c-b016-9aac95d0a404))
 		- ((63ce4064-41b1-4592-804e-023190c9880a))
@@ -235,6 +236,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 				- Imp: ((63ce4228-bce8-439a-b869-df458c180666))
 		- Startup approaches
 			- ((63ce4dae-34ef-476d-92d7-35d9785e5af1))
+			  collapsed:: true
 				- ((63ce4ed8-bf98-4d0c-82a5-ae9fbf845afa))
 					- ((63cfe71c-2b43-4693-9f04-1e676a0e9bd5))
 						- ((63cfe7a1-cdb7-4e89-8869-96d4e99dae33))
@@ -252,12 +254,14 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 					  疑问:: CRIU 怎么在 serverless 中发挥作用
 						- ((63d123f2-b516-4c1a-a3ea-f9ab04e6301d))
 			- ((63ce4db8-58bd-478b-968c-f77afd833d61)) #疑问
+			  collapsed:: true
 				- ((63d1244a-a068-4a0b-adf5-05c7a7e70319))
 					- ((63d124db-cc87-4f75-bb81-07c13411bcda)), ((63d124e5-cd7b-403a-beaa-8d8bcae8d46d)). ((63d124fb-dabe-47d6-a3a0-2b9c8b1632ec)).
 					- ((63d12530-99e5-47b6-9952-7a82653a175a)) ((63d1266c-913f-4b67-94fe-1eeda22ca8a7))
 					- ((63d1269b-04bb-482d-ab43-91448c842ea1))
 						- ((63d126b2-5efa-4a96-93e6-47ba1aee2446))
 			- ((63d126d9-88b2-40ae-8a1e-efa2fbb8a246))
+			  collapsed:: true
 				- One to One
 					- ((63d12b13-329b-4da3-a182-f65230ff8f23))
 				- One to All
@@ -267,3 +271,5 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 			- C/R
 				- ((63cfe081-3203-4ca8-b678-3c9d992515bc))
 					- ((63cfe08e-21b7-4607-9131-0475062689aa))
+	- # Orchestration Layer
+		-

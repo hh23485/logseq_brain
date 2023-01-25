@@ -974,3 +974,93 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 9
   hl-color:: yellow
   id:: 63cfec24-fbf2-4316-ab92-122f6949ab82
+- Shahrad et al. [ 118 ] propose a practical resource management policy for the one-to-one prewarm startup
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfed95-3a54-4b7b-bd91-786013dff98b
+- characterizing the FaaS workloads
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d122d4-9ce1-4db8-b72c-f76fb509cbe2
+- dynamically change the instance lifetime of the recycling and provisioning instances according to the time series prediction
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d122e1-a6c9-4f14-bff1-b7d6534bc223
+- Replayable Execution [140] makes improvements based on CRIU
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d1234f-5e69-4056-9a34-f21dfe23b86a
+- using “mmap” to map checkpoint files to memory and leveraging the Copy-on-Write in OS to share cold data among multiple containers.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d123f2-b516-4c1a-a3ea-f9ab04e6301d
+- One-for-all prewarm with caching-aware: try to make the prewarm generalized and resource friendly with privacy guaranteed.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d1244a-a068-4a0b-adf5-05c7a7e70319
+- startup shares a similar mechanism with the Template method
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d124db-cc87-4f75-bb81-07c13411bcda
+- hatched and already pre-imported most of the bins/libs after being informed by the socket
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d124e5-cd7b-403a-beaa-8d8bcae8d46d
+- When a new invocation arrives and requires a new instance, it only needs to initialize or specialize from the templates
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d124fb-dabe-47d6-a3a0-2b9c8b1632ec
+- Catalyzer [42] optimizes the restore process in C/R by accelerating the recovery on the retrenched critical path.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d12530-99e5-47b6-9952-7a82653a175a
+- roposes a sandbox fork to leverage a template sandbox that already has pre-loaded the specific function for state resuing.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d1266c-913f-4b67-94fe-1eeda22ca8a7
+- Mohan et al. [97 ] propose a self-evolving pause container pool by pre-allocating virtual network interfaces with lazy pause containers binding
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d1269b-04bb-482d-ab43-91448c842ea1
+- make the cold startup less initialization together with more flat startup latency,
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d126b2-5efa-4a96-93e6-47ba1aee2446
+- One-to-one and one-for-all prewarm: the challenging points.
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d126d9-88b2-40ae-8a1e-efa2fbb8a246
+- The one-to-one prewarm startup focuses on significantly less initialization latency by exchanging the memory resource
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12b13-329b-4da3-a182-f65230ff8f23
+- it still suffers from several challenges, including the huge template image size [8 , 51] and confliction of various pre-imported libraries
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12b39-2cd5-4130-aa3c-6e1e1965eae3
+- It is very important to “suit the remedy to the case” for cold startups in different scenarios
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12c1f-f2b0-4f7b-80d0-4c72f42271c7
+- it is much more efficient to generate a template by one-for-all prewarm startup when the function is invoked for the first time, or with poor predictions during the trace analysis
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12c2d-b4cb-491c-bea4-bd5bdc1d8851

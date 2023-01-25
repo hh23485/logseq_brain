@@ -1064,3 +1064,103 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 10
   hl-color:: yellow
   id:: 63d12c2d-b4cb-491c-bea4-bd5bdc1d8851
+- main challenge in the System Orchestration Layer is the friendly and elastic support for different services
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12ebd-29dd-48cf-8d7f-213e6a6b1c16
+- As hundreds of functions coexist on a serverless node, it raises challenges for scheduling massive functions with inextricable dependencie
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: red
+  id:: 63d12ed6-b2a5-46a3-bc51-596ebf60b13e
+  hl-stamp:: 1674653404295
+- . Similar to the traditional solutions [ 26, 35, 59, 76, 126 ], the serverless model also concerns the ability to predict the on-demand computing resources, and an efficient scheduling strategy for services
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: green
+  id:: 63d12ef1-4e82-453e-93e2-f05c6c511662
+- [:span]
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d13632-c793-4a0f-9606-dee1c064ea4e
+  hl-type:: area
+  hl-stamp:: 1674655281760
+- researchers usually propose to introduce the load balancer and resource monitor components into the controller,
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d1365e-7afa-42e4-9d17-23c0f3d55e5b
+- load balancer aims to coordinate the resource usage to avoid overloading any single resource
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d1367f-2721-41d5-8369-cd4c112b0ce7
+- resource monitor keeps watching the resource utilization of each node, and passes the updated information to the load balance
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d1368c-2e9d-4f42-ad80-d2a7fb2cbad2
+- resource-level, instance-level, and application-level.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d136d1-3597-4fbc-802e-1bc47a86625e
+- [:span]
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d1371d-492b-4334-8fcf-9e21a859d00c
+  hl-type:: area
+  hl-stamp:: 1674655516202
+- the “focused hierarchy” indicates an optimized method (aka resource adjusting) is designed besides an essential strategy for resource auto-provision, which can be classified into “R” (Resource-level), “I” (Instance-level), or “A” (Application-level), respectively.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d13791-93bc-4eaa-ac26-10fe8d5b13a6
+- “Resource adjusting” shows whether the scheduling provides an adjustment for resource provision
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d1379b-77cd-4f3e-8b7b-8ebc515c9255
+- “SLO” reflects whether SLO constraints are considered
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137a4-fc7d-410b-b84c-cb3e9c03c62b
+- “Intf” represents whether the resource contention or interference is discussed.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137ab-606b-49bb-86ab-8bd5d3411636
+- “Usage feedback” reflects whether the feedback of resource usage in a physical node is considered
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137b8-a743-4fbc-a4fb-c526286ac73d
+- “Dynamic strategy” indicates whether it is a dynamic and runtime scheduling strategy.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137bf-9bb5-419f-87e6-fc8d39150515
+- “Trace driven” indicates whether making choices depends on traces or collected data metrics
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137c6-777c-44ba-b76b-b5ab050663b6
+- “Predict/Heuristic” reflects whether a prediction-based or heuristic-based method is used
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137ce-1cea-4aeb-94a2-c72061d74486
+- “Implement” points out where it is implemented (“P” represents it is a prototype)
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137d6-5342-46a9-8821-ae025845216e
+- “Insight” summarizes its unique insight and key motivation
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137de-cb65-48a2-8f69-e74890e91f01

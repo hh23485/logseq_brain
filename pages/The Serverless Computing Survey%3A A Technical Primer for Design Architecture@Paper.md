@@ -272,4 +272,28 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 				- ((63cfe081-3203-4ca8-b678-3c9d992515bc))
 					- ((63cfe08e-21b7-4607-9131-0475062689aa))
 	- # Orchestration Layer
+		- chanllenge
+			- ((63d12ebd-29dd-48cf-8d7f-213e6a6b1c16))
+				- ((63d12ed6-b2a5-46a3-bc51-596ebf60b13e))
+					- ((63d12ef1-4e82-453e-93e2-f05c6c511662))
+		- ((63d13632-c793-4a0f-9606-dee1c064ea4e))
+			- ((63d1365e-7afa-42e4-9d17-23c0f3d55e5b))
+				- ((63d1367f-2721-41d5-8369-cd4c112b0ce7))
+				- ((63d1368c-2e9d-4f42-ad80-d2a7fb2cbad2))
+		- Controller
+			- Summary
+				- ((63d1371d-492b-4334-8fcf-9e21a859d00c))
+					- ((63d13791-93bc-4eaa-ac26-10fe8d5b13a6))
+					- ((63d1379b-77cd-4f3e-8b7b-8ebc515c9255))
+					- ((63d137a4-fc7d-410b-b84c-cb3e9c03c62b))
+					- ((63d137ab-606b-49bb-86ab-8bd5d3411636))
+					- ((63d137b8-a743-4fbc-a4fb-c526286ac73d))
+					- ((63d137bf-9bb5-419f-87e6-fc8d39150515))
+					- ((63d137c6-777c-44ba-b76b-b5ab050663b6))
+					- ((63d137ce-1cea-4aeb-94a2-c72061d74486))
+					- ((63d137d6-5342-46a9-8821-ae025845216e))
+					- ((63d137de-cb65-48a2-8f69-e74890e91f01))
+			- Aspects
 		-
+			-
+			-

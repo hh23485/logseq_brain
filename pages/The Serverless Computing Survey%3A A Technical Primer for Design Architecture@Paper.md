@@ -282,6 +282,7 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 				- ((63d1368c-2e9d-4f42-ad80-d2a7fb2cbad2))
 		- Controller
 			- Summary
+			  collapsed:: true
 				- ((63d1371d-492b-4334-8fcf-9e21a859d00c))
 					- ((63d13791-93bc-4eaa-ac26-10fe8d5b13a6))
 					- ((63d1379b-77cd-4f3e-8b7b-8ebc515c9255))
@@ -293,7 +294,29 @@ links:: [Local library](zotero://select/library/items/C99HVFHM), [Web library](h
 					- ((63d137ce-1cea-4aeb-94a2-c72061d74486))
 					- ((63d137d6-5342-46a9-8821-ae025845216e))
 					- ((63d137de-cb65-48a2-8f69-e74890e91f01))
-			- Aspects
-		-
-			-
-			-
+			- ((63d154a4-a672-4949-9f7d-0c4aad38d5b2))
+				- ((63d15553-938e-4995-9021-a76729193446))
+				- ((63d156ff-87a0-4540-9da1-36f461a1db1c))
+					- ((63d15748-6418-4c93-9195-9f4dd4cea06c))
+						- ((63d15758-7a27-4bb6-a559-3570b35cde42))
+						- ((63d157c5-c79d-43b7-a874-a333fe803a23))
+				- Topic
+					- ((63d15837-f495-4e02-bc03-d63c64dea209))
+					  collapsed:: true
+						- ((63d23d41-a5bc-4f44-8628-7b4999bc50ce))
+							- ((63d23d81-4679-42ad-926a-de7f529445b4))
+								- ((63d240cd-13f0-4dbe-a729-f77e9e2392bd))
+									- Based on Resource Monitor and Controller
+							- ((63d241cc-bf35-451b-9ff4-fc5909969387))
+								- ((63d241fc-8f25-48ef-8d57-1a0e74ddbd40))
+								- ((63d2420d-9d0a-455e-895c-56cfbac45e51))
+							- ((63d24221-6f91-4da6-80e8-a7bade6acc59))
+								- ((63d24233-87d3-4452-b301-6b22943f0eb2))
+								- ((63d24248-ef96-4d74-ab1b-bb1329699380))
+							- ((63d28488-d920-44a3-9f84-f14f26a88698))
+							- ((63d28493-edf8-4fef-8532-90c79528dc4e))
+								- ((63d284b0-8e7f-4456-a18a-4154e3da82ac))
+						-
+					- ((63d28560-1ade-4b83-843e-aa3b7665c5a0))
+						- ((63d29a8a-657e-4f40-867f-aeab9efcb08b))
+						-

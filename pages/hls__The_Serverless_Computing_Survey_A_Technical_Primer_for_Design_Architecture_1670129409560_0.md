@@ -1080,13 +1080,6 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 10
   hl-color:: green
   id:: 63d12ef1-4e82-453e-93e2-f05c6c511662
-- [:span]
-  ls-type:: annotation
-  hl-page:: 11
-  hl-color:: yellow
-  id:: 63d13632-c793-4a0f-9606-dee1c064ea4e
-  hl-type:: area
-  hl-stamp:: 1674655281760
 - researchers usually propose to introduce the load balancer and resource monitor components into the controller,
   ls-type:: annotation
   hl-page:: 10
@@ -1164,3 +1157,120 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   hl-page:: 11
   hl-color:: yellow
   id:: 63d137de-cb65-48a2-8f69-e74890e91f01
+- Dynamic Adjustment of Resource Provision (Resource-level)
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d154a4-a672-4949-9f7d-0c4aad38d5b2
+- Resources including CPU, Memory 
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d15553-938e-4995-9021-a76729193446
+- configured by an orchestrator, and access to them is restricted
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d156f5-ab75-44de-a2a3-3de4d5d08b95
+- controller will allocate resources for a new instance and isolate the execution environment when a cold startup occurs
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d156ff-87a0-4540-9da1-36f461a1db1c
+- the key to building an efficient serverless controller is auto-scaling just the right amount of resources to satisfy the resilient workloads.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d15730-5241-4778-b857-55db8c6fc8eb
+- controller component itself cannot adjust appropriately 
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: red
+  id:: 63d15748-6418-4c93-9195-9f4dd4cea06c
+- resource is highly dynamic in the cluster 
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: red
+  id:: 63d15758-7a27-4bb6-a559-3570b35cde42
+- the potential inaccurate resource specifications by default.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: red
+  id:: 63d157c5-c79d-43b7-a874-a333fe803a23
+- Make resource provision of the container “just the right amount”.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d15837-f495-4e02-bc03-d63c64dea209
+- building feedbacks regarding historical traces.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d23d41-a5bc-4f44-8628-7b4999bc50ce
+- works in [33, 34] optimize the original resource settings by varying the trace-driven patterns for VMs.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d23d81-4679-42ad-926a-de7f529445b4
+- [:span]
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d240cd-13f0-4dbe-a729-f77e9e2392bd
+  hl-type:: area
+  hl-stamp:: 1674723532243
+- Pigeon [82] builds a serverless framework, introducing a function-level resource scheduler and an oversubscribed static pool.
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d241cc-bf35-451b-9ff4-fc5909969387
+- assigns containers with different resource configurations to the queries based on the node capacity and function requirement
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d241fc-8f25-48ef-8d57-1a0e74ddbd40
+- lead to resource segmentation and low utilization
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: red
+  id:: 63d2420d-9d0a-455e-895c-56cfbac45e51
+- FlowCon [ 155] facilitates dynamic resource allocation for container-based DL training tasks in the near future and resets resource configuration elastically
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d24221-6f91-4da6-80e8-a7bade6acc59
+- Though they design a dynamic auto-provision strategy based on the monitor feedback, the SLO constraints and resource interference are not considered furthe
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d24233-87d3-4452-b301-6b22943f0eb2
+- lack of flexibility and practicality in a real production environment. 
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: red
+  id:: 63d24248-ef96-4d74-ab1b-bb1329699380
+- RL (Deep Reinforcement Learning), evolving from Deep Q-learning, is a widely used combination algorithm by learning control strategies from higher-dimensional perceptual inputs [96], which can be used to make resource provision decisions
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d28488-d920-44a3-9f84-f14f26a88698
+- Wang et al. [ 139 ] propose a serverless scheduler based on DRL for ML training jobs.
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d28493-edf8-4fef-8532-90c79528dc4e
+- can dynamically adjust the number of function instances needed and their memory size, to balance high model quality and the training cost.
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d284b0-8e7f-4456-a18a-4154e3da82ac
+- The keys to making resource provision robust to performance
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d28560-1ade-4b83-843e-aa3b7665c5a0
+- take the SLA into account to ensure stability
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d29a8a-657e-4f40-867f-aeab9efcb08b

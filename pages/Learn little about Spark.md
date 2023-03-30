@@ -65,7 +65,136 @@ tags:: Spark, Sharing
 			  background-color:: red
 				- Spark will use memory as much as possible, also support pipeline execution.
 				  background-color:: green
-	- ## Write Word
+	- ## Write WordCount in Map Reduce and Spark
+		- ### Map Reduce Version
+			- #### Java
+				- ``` java
+				  public static class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+				      private final static IntWritable one = new IntWritable(1);
+				      private Text word = new Text();
+				  
+				      public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+				          String line = value.toString();
+				          StringTokenizer tokenizer = new StringTokenizer(line);
+				          while (tokenizer.hasMoreTokens()) {
+				              word.set(tokenizer.nextToken());
+				              context.write(word, one);
+				          }
+				      }
+				  }
+				  
+				  public static class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+				      private IntWritable result = new IntWritable();
+				  
+				      public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+				          int sum = 0;
+				          for (IntWritable val : values) {
+				              sum += val.get();
+				          }
+				          result.set(sum);
+				          context.write(key, result);
+				      }
+				  }
+				  ```
+		- ### Spark Version
+			- #### Java
+			  collapsed:: true
+				- ``` java
+				  import org.apache.spark.SparkConf;
+				  import org.apache.spark.api.java.JavaRDD;
+				  import org.apache.spark.api.java.JavaSparkContext;
+				  
+				  public class WordCount {
+				      public static void main(String[] args) {
+				          // Create a SparkConf object and set the app name
+				          SparkConf conf = new SparkConf().setAppName("WordCount");
+				  
+				          // Create a JavaSparkContext object
+				          JavaSparkContext sc = new JavaSparkContext(conf);
+				  
+				          // Load the input text file into an RDD
+				          JavaRDD<String> input = sc.textFile(args[0]);
+				  
+				          // Split each line into words
+				          JavaRDD<String> words = input.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
+				  
+				          // Map each word to a tuple of (word, 1)
+				          JavaPairRDD<String, Integer> pairs = words.mapToPair(word -> new Tuple2<>(word, 1));
+				  
+				          // Reduce by key to get the count of each word
+				          JavaPairRDD<String, Integer> counts = pairs.reduceByKey((a, b) -> a + b);
+				  
+				          // Save the output to a text file
+				          counts.saveAsTextFile(args[1]);
+				  
+				          // Stop the SparkContext
+				          sc.stop();
+				      }
+				  }
+				  ```
+			- #### Python
+			  collapsed:: true
+				- ``` python
+				  from pyspark import SparkConf, SparkContext
+				  
+				  # Create a SparkConf object and set the app name
+				  conf = SparkConf().setAppName("WordCount")
+				  
+				  # Create a SparkContext object
+				  sc = SparkContext(conf=conf)
+				  
+				  # Load the input text file into an RDD
+				  input = sc.textFile("input.txt")
+				  
+				  # Split each line into words
+				  words = input.flatMap(lambda line: line.split(" "))
+				  
+				  # Map each word to a tuple of (word, 1)
+				  pairs = words.map(lambda word: (word, 1))
+				  
+				  # Reduce by key to get the count of each word
+				  counts = pairs.reduceByKey(lambda a, b: a + b)
+				  
+				  # Save the output to a text file
+				  counts.saveAsTextFile("output")
+				  
+				  # Stop the SparkContext
+				  sc.stop()
+				  ```
+			- ### Scala
+			  collapsed:: true
+				- ``` scala
+				  import org.apache.spark.{SparkConf, SparkContext}
+				  
+				  object WordCount {
+				    def main(args: Array[String]) {
+				      // Create a SparkConf object and set the app name
+				      val conf = new SparkConf().setAppName("WordCount")
+				  
+				      // Create a SparkContext object
+				      val sc = new SparkContext(conf)
+				  
+				      // Load the input text file into an RDD
+				      val input = sc.textFile(args(0))
+				  
+				      // Split each line into words
+				      val words = input.flatMap(line => line.split(" "))
+				  
+				      // Map each word to a tuple of (word, 1)
+				      val pairs = words.map(word => (word, 1))
+				  
+				      // Reduce by key to get the count of each word
+				      val counts = pairs.reduceByKey(_ + _)
+				  
+				      // Save the output to a text file
+				      counts.saveAsTextFile(args(1))
+				  
+				      // Stop the SparkContext
+				      sc.stop()
+				    }
+				  }
+				  ```
+	-
 	- ## How big data framework like Spark works?
 		- Big data application 3 elements:
 			- **Input Data**: Stored in DFS, like HDFS, cosmos

@@ -205,7 +205,7 @@ tags:: Spark, Sharing
 	- All this content comes from a great book [大数据处理框架Apache Spark设计与实现（全彩） (豆瓣) (douban.com)](https://book.douban.com/subject/35140409/)
 	- ## How a Spark application run?
 		- Here are the steps:
-			- An big data application can be describe as `<Input Data, User Source Code, Configuration and Arguments>`
+			- An big data application can be describe as <`Input Data`, `User Source Code`, `Configuration and Arguments`>
 				- Input data are hosted in HDFS or generated in the code
 				- Configurations are resource related, like buffer size, memory limit, CPU, instance number, dependency files
 			- Once submit to Spark, it will create a [Driver]([[Spark Driver]]) to deal follow actions: #.ol

@@ -212,10 +212,10 @@ tags:: Spark, Sharing
 				- Based on logic plan, spark will **convert** the logic plan **to physical plan**, which means how to execute the job
 				- Request for **resources**, **schedule** executors and **run** it
 				- Collect result.
-		- Fig about the execute mode
-			- ![image.png](../assets/image_1680199915800_0.png){:height 278, :width 599}
-		- Fig about the system layer
-			- ![image.png](../assets/image_1680199082879_0.png)
+			- Fig about the execute mode
+				- ![image.png](../assets/image_1680199915800_0.png){:height 278, :width 599}
+			- Fig about the system layer
+				- ![image.png](../assets/image_1680199082879_0.png)
 	- ## What's RDD
 		-
 	- ## What's the deployment mode of Spark

@@ -209,16 +209,18 @@ tags:: Spark, Sharing
 				- Input data are hosted in HDFS or generated in the code
 				- Configurations are resource related, like buffer size, memory limit, CPU, instance number, dependency files
 			- Once submit to Spark, it will create a [Driver]([[Spark Driver]]) to deal follow actions: #.ol
-				- Analyzes and **convert** them into spark **logic plan**, which means the calculate steps, will be kind DAG.
+				- Analyze and **convert** them into spark **logic plan**, which means the **Actions** and **Orders**.
 				- Based on logic plan, spark will **convert** the logic plan **to physical plan**, which means how to execute the job
 				- Request for **resources**, **schedule** executors and **run** it
 				- Collect result.
 		- Fig about the execute mode
+		  collapsed:: true
 			- ![image.png](../assets/image_1680199915800_0.png){:height 278, :width 599}
 		- Fig about the system layer
+		  collapsed:: true
 			- ![image.png](../assets/image_1680199082879_0.png)
 	- ## What's RDD
-		- All intermediate data are expressed as [[RDD]]
+		- All intermediate data are expressed as [[Resilient Distributed Dataset]],
 	- ## What's the deployment mode of Spark
 	- ## What's the architecture of Spark from high level
 	- ## How Spark generate logic plan

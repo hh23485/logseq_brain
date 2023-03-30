@@ -3,7 +3,6 @@ tags:: Spark, Sharing
 - TOC {{renderer :tocgen, [[]], 2, h}}
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Quick Introduction about Why Spark
-  collapsed:: true
 	- ## Start from MapReduce
 	  collapsed:: true
 		- **MapReduce** is a programming model and software framework first introduced by **Google** in 2004 to address the challenges of processing large data sets. The main idea behind MapReduce is to **divide a large task into smaller subtasks that can be processed in parallel across multiple computing nodes.**
@@ -234,19 +233,21 @@ tags:: Spark, Sharing
 		- Because RDDs contain this information, they can adequately represent the dataset in a distributed computation and thus be the data abstraction for all intermediate results.
 			- {{embed ((6425d71c-9fe1-43f5-b43e-dbffd4e28a56))}}
 				- The squares represent java objects
-				- The circles are RDDs
+				- **The circles are RDDs**
 		- RDDs are created by an API provided by Spark, and can be constructed from ordinary in-memory object data, or from files, streams.
 			- Create from HDFS file
 				- ``` java
-				  
+				  // Load data from an HDFS file into an RDD
+				  JavaRDD<String> lines = sc.textFile("hdfs://path/to/input/file.txt");
 				  ```
 			- Create from a array
 				- ``` java
-				  
+				  // Load data from a Java memory array into an RDD
+				  Integer[] data = new Integer[]{1, 2, 3, 4, 5};
+				  JavaRDD<Integer> rdd = sc.parallelize(Arrays.asList(data));
 				  ```
 	- ## What's the deployment mode of Spark
 		- [[.embed]]{{embed ((642582f5-f28a-4b8e-b977-8dd37c960363)) }}
-	- ## What's the architecture of Spark from high level
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle

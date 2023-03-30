@@ -266,6 +266,7 @@ tags:: Spark, Sharing
 		- ### When Spark cluster starts
 			- The Master process is started on the Master node
 			- The Worker process is started on each Worker node
+		- ###
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle

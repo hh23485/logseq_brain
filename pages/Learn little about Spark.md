@@ -65,6 +65,7 @@ tags:: Spark, Sharing
 			  background-color:: red
 				- Spark will use memory as much as possible, also support pipeline execution.
 				  background-color:: green
+	- ## Write Word
 	- ## How big data framework like Spark works?
 		- Big data application 3 elements:
 			- **Input Data**: Stored in DFS, like HDFS, cosmos
@@ -72,7 +73,10 @@ tags:: Spark, Sharing
 			- **Configuration**
 		- Big data framework has four layers:
 			- User Layer
-			-
+			  Distributed Data Parallel Processing Layer
+			  Resource management and task scheduling layer
+			  Physical execution layer
+	-
 - # Spark Internal
 	- [[What's RDD]]
 	- [[]]

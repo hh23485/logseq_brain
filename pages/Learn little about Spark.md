@@ -68,6 +68,7 @@ tags:: Spark, Sharing
 	- ## Write WordCount in Map Reduce and Spark
 		- ### Map Reduce Version
 			- #### Java
+			  collapsed:: true
 				- ``` java
 				  public static class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 				      private final static IntWritable one = new IntWritable(1);
@@ -195,16 +196,16 @@ tags:: Spark, Sharing
 				  }
 				  ```
 	-
-	- ## How big data framework like Spark works?
-		- Big data application 3 elements:
-			- **Input Data**: Stored in DFS, like HDFS, cosmos
-			- **User Source Code**
-			- **Configuration**
-		- Big data framework has four layers:
-			- User Layer
-			  Distributed Data Parallel Processing Layer
-			  Resource management and task scheduling layer
-			  Physical execution layer
+- # How Spark works?
+	- Big data application 3 elements:
+		- **Input Data**: Stored in DFS, like HDFS, cosmos
+		- **User Source Code**
+		- **Configuration**
+	- Big data framework has four layers:
+		- User Layer
+		  Distributed Data Parallel Processing Layer
+		  Resource management and task scheduling layer
+		  Physical execution layer
 	-
 - # Spark Internal
 	- [[What's RDD]]

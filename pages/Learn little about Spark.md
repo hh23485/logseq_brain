@@ -223,10 +223,13 @@ tags:: Spark, Sharing
 		- [[RDD]], full name is [[Resilient Distributed Dataset]], is a fundamental abstract data structure in Spark.
 		- Putting aside those concepts in the official introduction, the RDD is a object with partition information, with such features:
 			- Stands for a collection, different type RDD implements express different collections
-			- Immutable
-			- Contains partition information
-			- Dependency relationships
-		-
+			- Immutable, for parallel computation
+			- Contains partition information, like partition list, partitioner
+			- Contains dependency relationships with parent RDDs
+			- Contains Some partition data
+			- Operations are defined on the RDD, like `rdd.Count()`, `rdd.Filter()`, `rdd.GroupByKey()`
+		- Because RDDs contain this information, they can adequately represent the dataset in a distributed computation and thus be the data abstraction for all intermediate results.
+		- RDDs are created by an API provided by Spark, and can be constructed from ordinary in-memory object data, or from files, streams.
 	- ## What's the deployment mode of Spark
 	- ## What's the architecture of Spark from high level
 	- ## How Spark generate logic plan

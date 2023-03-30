@@ -250,7 +250,6 @@ tags:: Spark, Sharing
 				  JavaRDD<Integer> rdd = sc.parallelize(Arrays.asList(data));
 				  ```
 	- ## What's the deployment mode of Spark
-	  collapsed:: true
 		- Big data frameworks are almost always deployed in master-slave mode, and when Spark is deployed in a cluster, it looks like the following diagram
 			- ![image.png](../assets/image_1680201992563_0.png){:height 598, :width 752}
 		- ### Master node and Worker node
@@ -270,9 +269,10 @@ tags:: Spark, Sharing
 			- The Master process is started on the Master node
 			- The Worker process is started on each Worker node
 		- ### When submit applications
-			- Create a driver process (which run the `main()` of application)
-			- Driver on master node notify worker node to start executors, executors will take up declared resources
-			- Executors run tasks as threads, 1 CPU 1 task. All the tasks belong to the same job.
+			- Create a **driver** process (which run the `main()` of application)
+			- Driver on **master node** notify **worker node** to start **executors**, executors will take up declared resources
+			- Executors run tasks as threads, 1 CPU per task. All the tasks belong to the same job.
+	- ## A new example with more actions for analysis
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle

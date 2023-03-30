@@ -201,7 +201,7 @@ tags:: Spark, Sharing
 			- Run directly in IDE
 		- Remote
 			- Submit to spark endpoint
-				-
+			-
 - # How Spark works?
 	- Big data application 3 elements:
 		- **Input Data**: Stored in DFS, like HDFS, cosmos

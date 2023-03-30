@@ -204,6 +204,7 @@ tags:: Spark, Sharing
 - # Spark Internal Basic
 	- All this content comes from a great book [大数据处理框架Apache Spark设计与实现（全彩） (豆瓣) (douban.com)](https://book.douban.com/subject/35140409/)
 	- ## How a Spark application run?
+	  collapsed:: true
 		- Here are the steps:
 			- An big data application can be describe as <`Input Data`, `User Source Code`, `Configuration`>
 				- Input data are hosted in HDFS or generated in the code
@@ -223,6 +224,7 @@ tags:: Spark, Sharing
 		  collapsed:: true
 			- ![image.png](../assets/image_1680199082879_0.png)
 	- ## What's RDD
+	  collapsed:: true
 		- [[RDD]], full name is [[Resilient Distributed Dataset]], is a fundamental abstract data structure in Spark.
 		- Putting aside those concepts in the official introduction, the RDD is a object with partition information, with such features:
 			- Stands for a collection, different type RDD implements express different collections
@@ -248,6 +250,7 @@ tags:: Spark, Sharing
 				  JavaRDD<Integer> rdd = sc.parallelize(Arrays.asList(data));
 				  ```
 	- ## What's the deployment mode of Spark
+	  collapsed:: true
 		- Big data frameworks are almost always deployed in master-slave mode, and when Spark is deployed in a cluster, it looks like the following diagram
 			- ![image.png](../assets/image_1680201992563_0.png){:height 598, :width 752}
 		- ### Master node and Worker node
@@ -269,8 +272,7 @@ tags:: Spark, Sharing
 		- ### When submit applications
 			- Create a driver process (which run the `main()` of application)
 			- Driver on master node notify worker node to start executors, executors will take up declared resources
-			- Executors run tasks as threads, 1 CPU 1 task
-		- .
+			- Executors run tasks as threads, 1 CPU 1 task. All the tasks belong to the same job.
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle

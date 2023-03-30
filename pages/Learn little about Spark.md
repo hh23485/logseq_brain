@@ -207,8 +207,7 @@ tags:: Spark, Sharing
 		- Here are the steps
 			- An big data application can be describe as <Input Data, User Source Code, Configuration and Arguments>
 				- Input data are hosted in HDFS or generated in the code
-				- Configurations
-					- Resource related, like buffer size, memory limit, CPU, instance number
+				- Configurations are resource related, like buffer size, memory limit, CPU, instance number, dependencies
 			- Once submit to Spark, it will create a [Driver]([[Spark Driver]]) to deal follow actions: #.ol
 				- analysis and **convert** them into spark **logic plan**, which means the calculate steps, will be kind DAG.
 				- Based on logic plan, spark will **convert** the logic plan **to physical plan**, which means how to execute the job

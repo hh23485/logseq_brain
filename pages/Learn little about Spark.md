@@ -266,7 +266,11 @@ tags:: Spark, Sharing
 		- ### When Spark cluster starts
 			- The Master process is started on the Master node
 			- The Worker process is started on each Worker node
-		- ###
+		- ### When submit applications
+			- Create a driver process (which run the `main()` of application)
+			- Driver on master node notify worker node to start executors, executors will take up declared resources
+			- Executors run tasks as threads, 1 CPU 1 task
+		- .
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle

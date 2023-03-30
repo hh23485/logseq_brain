@@ -3,6 +3,7 @@ tags:: Spark, Sharing
 - TOC {{renderer :tocgen, [[]], 2, h}}
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Quick Introduction about Why Spark
+  collapsed:: true
 	- ## Start from MapReduce
 	  collapsed:: true
 		- **MapReduce** is a programming model and software framework first introduced by **Google** in 2004 to address the challenges of processing large data sets. The main idea behind MapReduce is to **divide a large task into smaller subtasks that can be processed in parallel across multiple computing nodes.**
@@ -247,7 +248,24 @@ tags:: Spark, Sharing
 				  JavaRDD<Integer> rdd = sc.parallelize(Arrays.asList(data));
 				  ```
 	- ## What's the deployment mode of Spark
-		- [[.embed]]{{embed ((642582f5-f28a-4b8e-b977-8dd37c960363)) }}
+		- Big data frameworks are almost always deployed in master-slave mode, and when Spark is deployed in a cluster, it looks like the following diagram
+			- ![image.png](../assets/image_1680201992563_0.png){:height 598, :width 752}
+		- ### Master node and Worker node
+			- **Master node** is responsible for managing applications and tasks
+				- The Master node has a resident **Master process** on it
+				- Responsible for managing all Worker nodes
+				- Assigning Spark tasks to Worker nodes
+				- Collecting information about the operation of tasks on Worker nodes
+				- Monitor the survival status of Worker nodes, etc.
+			- **Worker nodes** are responsible for executing tasks
+				- Resident worker processes on worker nodes
+				- Communicate with the Master node
+				- Responsible for managing the execution of Spark tasks
+					- e.g. start Executor to execute specific Spark tasks
+					- Monitoring the status of tasks, etc.
+		- ### When Spark cluster starts
+			- The Master process is started on the Master node
+			- The Worker process is started on each Worker node
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle

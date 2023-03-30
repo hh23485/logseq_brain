@@ -213,6 +213,9 @@ tags:: Spark, Sharing
 				- Based on logic plan, spark will **convert** the logic plan **to physical plan**, which means how to execute the job
 				- Request for **resources**, **schedule** executors and **run** it
 				- Collect result.
+		- Fig about the progress
+			- ![image.png](../assets/image_1680201501252_0.png){:height 384, :width 699}
+			  id:: 6425d71c-9fe1-43f5-b43e-dbffd4e28a56
 		- Fig about the execute mode
 		  collapsed:: true
 			- ![image.png](../assets/image_1680199915800_0.png){:height 278, :width 599}
@@ -223,12 +226,15 @@ tags:: Spark, Sharing
 		- [[RDD]], full name is [[Resilient Distributed Dataset]], is a fundamental abstract data structure in Spark.
 		- Putting aside those concepts in the official introduction, the RDD is a object with partition information, with such features:
 			- Stands for a collection, different type RDD implements express different collections
-			- Immutable, for parallel computation
-			- Contains partition information, like partition list, partitioner
-			- Contains dependency relationships with parent RDDs
-			- Contains Some partition data
-			- Operations are defined on the RDD, like `rdd.Count()`, `rdd.Filter()`, `rdd.GroupByKey()`
+			- **Immutable**, for parallel computation
+			- Contains **partition information**, like partition list, partitioner
+			- Contains dependency **relationships with parent RDDs**
+			- Contains **some partition data**
+			- **Operations** are defined on the RDD, like `rdd.Count()`, `rdd.Filter()`, `rdd.GroupByKey()`
 		- Because RDDs contain this information, they can adequately represent the dataset in a distributed computation and thus be the data abstraction for all intermediate results.
+			- {{embed ((6425d71c-9fe1-43f5-b43e-dbffd4e28a56))}}
+				- The squares represent java objects
+				- The circles on the diagram are RDDs
 		- RDDs are created by an API provided by Spark, and can be constructed from ordinary in-memory object data, or from files, streams.
 			- Create from HDFS file
 				- ``` java

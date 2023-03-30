@@ -201,7 +201,13 @@ tags:: Spark, Sharing
 			- Run directly in IDE
 		- Remote
 			- Submit to spark endpoint
-- # Spark Internal
+- # Spark Internal Basic
+	- ## How a Spark application run?
+	- ## What's the deployment mode of Spark
+	- ## What's the architecture of Spark from high level
+	- ## How Spark generate logic plan
+	- ## How spark convert logic plan to physical plan
+	- ## How spark do shuffle
 	- Big data application 3 elements:
 		- **Input Data**: Stored in DFS, like HDFS, cosmos
 		- **User Source Code**

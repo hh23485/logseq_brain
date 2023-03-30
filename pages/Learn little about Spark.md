@@ -230,7 +230,16 @@ tags:: Spark, Sharing
 			- Operations are defined on the RDD, like `rdd.Count()`, `rdd.Filter()`, `rdd.GroupByKey()`
 		- Because RDDs contain this information, they can adequately represent the dataset in a distributed computation and thus be the data abstraction for all intermediate results.
 		- RDDs are created by an API provided by Spark, and can be constructed from ordinary in-memory object data, or from files, streams.
+			- Create from HDFS file
+				- ``` java
+				  
+				  ```
+			- Create from a array
+				- ``` java
+				  
+				  ```
 	- ## What's the deployment mode of Spark
+		- [[.embed]]{{embed ((642582f5-f28a-4b8e-b977-8dd37c960363)) }}
 	- ## What's the architecture of Spark from high level
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan

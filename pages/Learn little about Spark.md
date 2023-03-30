@@ -220,7 +220,7 @@ tags:: Spark, Sharing
 		  collapsed:: true
 			- ![image.png](../assets/image_1680199082879_0.png)
 	- ## What's RDD
-		- All intermediate data are expressed as [[Resilient Distributed Dataset]],
+		- All intermediate data are expressed as [[RDD]], full name is [[Resilient Distributed Dataset]]
 	- ## What's the deployment mode of Spark
 	- ## What's the architecture of Spark from high level
 	- ## How Spark generate logic plan

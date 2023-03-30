@@ -65,7 +65,7 @@ tags:: Spark, Sharing
 			  background-color:: red
 				- Spark will use memory as much as possible, also support pipeline execution.
 				  background-color:: green
-	- ## How big data frameoSpark works?
+	- ## How big data framework like Spark works?
 		-
 - # Spark Internal
 	- [[What's RDD]]

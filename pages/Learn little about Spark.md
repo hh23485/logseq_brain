@@ -3,6 +3,7 @@ tags:: Spark, Sharing
 - TOC {{renderer :tocgen, [[]], 2, h}}
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Quick Introduction about Why Spark
+  collapsed:: true
 	- ## Start from MapReduce
 	  collapsed:: true
 		- **MapReduce** is a programming model and software framework first introduced by **Google** in 2004 to address the challenges of processing large data sets. The main idea behind MapReduce is to **divide a large task into smaller subtasks that can be processed in parallel across multiple computing nodes.**
@@ -200,8 +201,7 @@ tags:: Spark, Sharing
 			- Run directly in IDE
 		- Remote
 			- Submit to spark endpoint
-			-
-- # How Spark works?
+- # Spark Internal
 	- Big data application 3 elements:
 		- **Input Data**: Stored in DFS, like HDFS, cosmos
 		- **User Source Code**

@@ -67,8 +67,8 @@ tags:: Spark, Sharing
 				  background-color:: green
 	- ## How big data framework like Spark works?
 		- Big data application 3 elements:
-			- Input Data
-			- User Source Code
+			- Input Data: Stored in DFS, like HDFS, cosmos
+			- User Source Code:
 			- Configuration
 		-
 - # Spark Internal

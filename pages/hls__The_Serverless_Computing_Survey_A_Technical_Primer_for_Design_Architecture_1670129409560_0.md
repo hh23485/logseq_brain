@@ -417,3 +417,750 @@ file-path:: ../assets/The_Serverless_Computing_Survey_A_Technical_Primer_for_Des
   ls-type:: annotation
   id:: 63b2fffa-b6ca-476c-93af-b8f9ff18374c
   hl-color:: blue
+- Whenever a user function is invoked in serverless computing, it will be loaded and executed within a virtualized sandbox
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44e28-a2d7-49ab-9f6d-8e4a12aba803
+- A function can either reuse a warm sandbox or create a new one, but usually not co-run with different user functions.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44e50-0f48-4715-b202-24a91d7e136b
+- most of the concerns in virtualization are isolation, flexibility, and low startup latency.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: blue
+  id:: 63b44e83-c471-49b4-b335-5d8467a50064
+- solation ensures that each application process runs in the demarcated resource space, and the running process can avoid interference by others.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44ea0-fbb6-42bf-a4c6-f971f2a9b424
+  hl-stamp:: 1674444799729
+- The flexibility is demonstrated by the ability of testing and debugging, and the additional supports for extending over the system
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44eac-b5de-4b19-8a9f-66e5f194a684
+- Low startup latency requires a fast response for the sandbox creation and initialization
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44eb8-3c0d-4c25-8caa-634b3efc77e2
+- traditional VM (Virtual Machine),
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44f38-eb11-48d7-a358-768867ca1570
+- container
+  hl-page:: 5
+  ls-type:: annotation
+  id:: 63b44f41-828a-49ec-957a-9ed4a6ee3da6
+  hl-color:: yellow
+- secure container
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44f48-3f10-4543-aa9f-526b11cc6bf0
+- Unikernel.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63b44f4d-04a5-4642-bcbf-39462ec691bc
+- [:span]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63bcb80f-53d8-4720-b605-59bf86249633
+  hl-type:: area
+  hl-stamp:: 1673312269240
+- the response latency of cold startup
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c36535-ef11-43fe-a231-2773cbe338b3
+- Isolation level
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c36540-2216-455c-ba20-4d96dfd58119
+- the capacity of functions running without interference by others
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c3654b-64bb-4d23-827d-362f09e7be84
+- OSkernel
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c3657a-888c-4570-8654-eb38318564a0
+- whether the kernel in GuestOS is share
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63c36582-2ee3-47f8-ab9f-af8d98bbb4dd
+- . “Hotplug” allows the function instance to start with minimal resources (CPU, memory, virtio blocks) and add additional resources at runtime
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce02eb-5dc9-4bcc-af80-1af703b53b04
+- “OCI supported” means whether it provides the Open Container Initiative (OCI), an open governance structure for expressing container formats and runtimes
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce0309-268d-46e3-906b-ce46d2f124aa
+- traditional VM-based isolation adopts a VMM 
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1aa2-5fab-4cdb-befc-608dd31faec0
+- provides virtualization capabilities to GuestOS.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1af2-36f3-47db-be21-01261dca4a97
+- mediate access to all shared resources by provided interfaces (or using Qemu/KVM
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1b12-929d-4eab-beaa-1675587969ff
+- shows high flexibility in quick failsafe when patch performing on applications within each VM instance
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1b24-37b7-4261-aa82-d52f384fb96f
+- lacks the benefits of lower startup latency for user applications (usually >1000ms)
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1b37-5a25-4e4f-be27-180b443b16c4
+- This tradeoff is fundamental in the serverless computing, where functions are small while the relative overhead of VMM and guest kernel is high
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: red
+  id:: 63ce1b76-31ae-417f-846c-8e9e18d7978b
+- Container 
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1c7c-baef-421c-affd-f40c160725db
+- The container engine leverages the Linux kernel to isolate resources, and creating containers as different processes in HostOS [19, 92 ]
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1c90-3034-44be-9341-3c25225ff81d
+- shares the HostOS kernel with the read-only
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 63ce1ca3-5672-4deb-80ea-93cdae538498
+- typically includes binaries and libraries
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1cc2-daae-4b91-9fd4-3c55ae86afbe
+- with the UnionFS (Union File System), which enables the combination of the layered container image by read-only and read-write layers
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1ced-3ab9-4990-94ed-9a0d92c9d077
+- achieves the isolation through namespace to enable processes sharing the same system kernel and Linux Cgroups to set resource limits
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1d15-1ba3-425c-a73a-9bd8c5e91202
+- Without hardware isolation, container-based sandboxing shows lower startup latency than coarse-grained consolidation strategies [11, 147] in hypervisor-based VMs
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1d27-b043-4159-98ec-c627127f3027
+- Docker packages software into a standardized RunC container adapted to the environment requirements, including libraries, system tools, code, and runtime
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1d92-82ec-4e72-b705-10e8891e9517
+- has been widely applied to various serverless systems for its lightweight nature.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1e62-6606-4d2f-aba9-82863e82be66
+- SOCK [101 ] proposes an integration solution for serverless RunC containers, where redundant mechanisms in Docker containers are discarded in this lean container
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: blue
+  id:: 63ce1e7e-f020-419f-bced-6aaf326170bc
+  hl-stamp:: 1674452659425
+- SOCK container makes serverless systems running more efficiently in startup latency and throughput.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: blue
+  id:: 63ce1eac-2c24-4019-8713-b8df7734a198
+- By only constructing a root file system, creating communication channels, and imposing isolation boundaries
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1f00-b15e-4eb8-94bf-3052f0c55a96
+- startup latency of SOCK container is reduced to 10ms50ms, comparing to docker containers that usually takes 50ms-500ms
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: green
+  id:: 63ce1f30-ff66-4713-aef1-da6b9152e9cb
+- CNTR [130] splits the container image into “fat” and“slim” parts.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1f7e-3991-421e-829d-58446efbfa52
+- A user can independently deploy the “slim” image and expand it with additional tools by dynamically attaching the “fat” image to it. 
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce1fa7-4f87-44d7-bbce-9c11a904c87c
+- can significantly improve the overall performance and effectively reduce the image size when extensively applied in the data center.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: green
+  id:: 63ce1fbe-6962-4394-9812-e5a845312218
+- additional tools (e.g., debuggers, editors, coreutils, shell) enriching the container and increasing the image size
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 63ce1fd8-9ea8-4670-8b1f-1f50e60f83d0
+- security concerns in Virtualization Layer arise for the relatively low isolation level of containers
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 63ce2062-a2ea-4787-abc5-f479012ab609
+- It requires containers to prevent code vulnerabilities in the case of shared kernel architecture.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce20d8-e3ac-4e55-9c3f-70123e608d9c
+- Side-channel attacks such as Meltdown [ 84], Zombieload [114 ], Spectre [72] prompt mitigation approaches toward vulnerabilities, especially for multi-tenants in serverless context
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 63ce2149-1cfa-4288-ab46-46d56f0932f2
+- should concern with preventing privilege escalation, information, and communication disclosure side channels [3].
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: blue
+  id:: 63ce21ae-414d-4338-89e2-cc4e6ac2e758
+- leveraging Secure Container.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce21ec-88b8-44f9-9068-06121a78a193
+- Microsoft proposes their Hyper-V Container for Windows [58]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce2204-f574-48eb-9b77-722837a8603e
+- offers enhanced security and broader compatibility.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce2230-4760-4595-bc57-757dc2f89d45
+- Each instance runs inside a highly optimized MicroVM and does not share its kernel with others on the same hos
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: green
+  id:: 63ce2261-63b3-453c-9dc0-c5248b283a84
+  hl-stamp:: 1674453613104
+- still a heavy-weight virtualization that can introduce more than1000ms of startup latency
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 63ce227a-0502-49b0-a1d1-701233bf740d
+- the kernel in it acts as a non-privileged process to restrict syscalls that called in userspace
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce22c7-6733-4ebb-a139-83546771a8c9
+- overhead introduced during interception and processing syscalls in a sandbox is high
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 63ce2336-e813-4a45-bf9e-e97add7d0d15
+- Google gVisor [49]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce234b-ccb7-4388-b2ba-708762e5980f
+- the kernel in it acts as a non-privileged process to
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 63ce2365-0b9c-43bf-bb40-887a0933b77b
+- not well-suited for applications with heavy syscalls.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 63ce2447-c4e2-4a21-a593-d6abbe3f722f
+- FireCracker [ 3] creates MicroVMs by customizing VMM for cloud-native applications. 
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2503-56e7-4128-99ea-3ac31919b5af
+- Each Firecracker sandbox runs in user space and is restricted by Seccomp, Cgroup, and Namespace policies
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2522-a91c-4144-a3cb-88ce7ce08aa0
+- Kata [67] adopts an agent to communicate with the kata-proxy located on the host through the hypervisor, thus achieve a secure environment in a lightweight manner
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce2555-6c64-4c60-8317-c04b6efee9bc
+  hl-stamp:: 1674454361036
+- FireCracker and Kata containers can significantly reduce startup latency and memory consumption, and they all need only 50ms-500ms to start a sandbox
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2574-e459-4af6-b975-395febf46906
+- provide complete and strong isolation from the HostOS and other tenants, at the cost of the limited flexibility in the condensed MicroVM
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce258c-1db7-4ec2-8615-7b1b15006564
+- still results in instances’ long startup latency due to the additional application initialization, e.g., JVM or Python interpreter setup.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce259d-dec4-43ab-be50-22fbb9f6c002
+- Specialized Unikernel: enhance flexibility with high security and performance.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce272e-682e-455d-9c01-d0561d82be47
+- leverages libraryOS, including series of essential dependent libraries to construct a specialized, single-address-space machine image
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2777-66e1-44e5-86ad-148f3ee51b1e
+- runs as a built-in GuestOS, the compile-time invariance rules out runtime management, which significantly reduces the applicability and flexibility of Unikernel.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 63ce27a1-b57f-4e97-b4df-7147aa890f29
+  hl-stamp:: 1674454992693
+- unnecessary programs or tools such as 𝑙𝑠, 𝑐𝑑, 𝑡𝑎𝑟 are not contained, so the image size of a Unikernel is smaller 
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce27c1-fda2-4284-952b-c407f421f6f0
+- 2MB by mirage-skeleton [ 95] that compiled from Xen)
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce27e1-0299-40a8-a84d-c94670a888f3
+  hl-stamp:: 1674455048562
+- startup latency is much less (e.g., startup within 10ms)
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce27f3-87c3-4d13-b36d-04b05208dc57
+  hl-stamp:: 1674455050126
+- the security is more substantial than containers
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce2803-1726-4caf-86ec-910ee1470778
+  hl-stamp:: 1674455051698
+- LightVM [90 ] replaces the time-consuming XenStore and implements the split tool stack, separating functionality that runs periodically from that which must be carried out, thus improving efficiency and reducing VM startup latency.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2882-ff5e-4731-92fd-01f524825d85
+- Olivier proposes HermitTux [ 102], a Unikernel model compatible with Linux binary.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce28ba-5dac-42a3-972a-734e2266aba2
+- makes the Unikernel model compatible with Linux Application Binary Interface while retaining the benefits of Unikernel.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 63ce28ca-4633-4247-9d1f-88d135c2e995
+- s not adaptable for developers once built, making it inherently inflexible for applications, let alone the terrible DevOps environment
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 63ce28db-d043-4316-8f84-258bef6d959b
+- in heterogeneous clusters, the heterogeneity of the underlying hardware forces Unikernel to update as drivers change, making it the antithesis of serverless philosophy.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2dc9-d25f-46e1-a132-b12697da31ba
+  hl-stamp:: 1674456543846
+- Tradeoffs among Security, performance, and flexibility.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2e47-9149-442e-8c63-bb35ecd7ce23
+- [:span]
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 63ce2eaf-920b-4fb7-9b55-3d70b4cb3ccd
+  hl-type:: area
+  hl-stamp:: 1674456750879
+- A cold startup in serverless computing may occur when the function fails to capture a warm running container, or experiences a bursty load
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce3210-7c84-4e90-969e-139149ef4554
+- a function is invoked for the first time, or scheduled with a longer invocation interval than the instance lifetime
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce3299-3fc0-462b-afe6-8ec239372fad
+- instances (or pods) must get started from scratch
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce32ae-ad78-4e71-aa98-673aa9033bd8
+- instances need to perform horizontal scaling during a surge in user workloads
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce32bc-7914-4018-a0c6-6871106a3cf6
+- autoscale as load changes to ensure adequate resource allocation
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce32d9-abe1-4868-94bf-8969b2f49c5c
+- Besides taking less than one second to prepare a sandbox in the Virtualization layer, the initialization of software environment, e.g., load Python libraries; and application-specific user code can dwarf the former [42, 65, 83, 101 , 117].
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: red
+  id:: 63ce3d22-8a9e-479c-b016-9aac95d0a404
+  hl-stamp:: 1674461524919
+- an efficient solution is to prewarm instances in the Encapsule layer. This approach is known as the prewarm startup
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: green
+  id:: 63ce4064-41b1-4592-804e-023190c9880a
+  hl-stamp:: 1674461531794
+- [:span]
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce407f-e3d2-4efe-98ff-3869a6cf67ca
+  hl-type:: area
+  hl-stamp:: 1674461310047
+- “Template” reflects whether the cold startup instance comes from a template.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce41f0-2f7a-48d5-9f1e-1b51766532a5
+- “Static image” shows whether the VM/container image for prewarm disables dynamically updating in each cold startup
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce41fc-5a15-4717-bd1c-fa85781e3ed8
+- “Pool” indicates whether there is a prewarm pool for function cold startups.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4206-42b4-4b74-87ff-4332d712d84d
+- “Exclusive” and “Fixed-size” represents whether the prewarmed instance and its prewarm pool is exclusive and size-fixe
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce420d-b169-4127-bc4a-2bd7f65345cc
+- . “Predict/Heuristic” points out whether the prediction algorithm or heuristic-based method is used to prewarm instances
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4214-89e1-47f6-85ab-cd499f82fb9d
+- “REQs” reflects whether the runtime libraries and packages are dynamically loading and updating in the prewarm instance
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce421b-3d71-4696-9840-d6d78499fc28
+- “C/R” reflects whether it supports checkpoint and restore to accelerate the startup.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4221-7373-452c-afe5-097080864d5f
+- “Sidecar based” represents whether the relevant technologies can be implemented or integrated into the sideca
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4225-cbb6-4627-90e7-46d483a7a832
+- “Imp” indicates where it is implemented.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 63ce4228-bce8-439a-b869-df458c180666
+- one-to-one
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63ce4dae-34ef-476d-92d7-35d9785e5af1
+- onefor-all
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63ce4db8-58bd-478b-968c-f77afd833d61
+- One-to-one prewarm by size-fixed pool: effective but resource-unfriendly.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63ce4ed8-bf98-4d0c-82a5-ae9fbf845afa
+- One-to-one prewarm by predictive warm-up: ways to make resource friendly.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63ce4edb-fe0f-48bc-9b3f-171d631f7b80
+- prewarmed from a size-fixed pool
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfdf81-1a58-4303-8492-a1c00f907ea3
+- by dynamic prediction based on the historical workload traces
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfdf89-e0f5-4933-8d1b-834ad91349a5
+- prewarmed from cached sandboxes,
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfdf9a-a165-4c94-b193-2cb786b7f480
+- according to a common configuration file
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfdfa2-cdf8-4146-86f1-a627e7f19111
+- C/R is a technique that can freeze a running instance, make a checkpoint into a list of files, and then restore the running state of the instance at the frozen point.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe081-3203-4ca8-b678-3c9d992515bc
+- pause the instance when idle to save resources, and then recovery it for reusing when invoked [55, 94].
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: green
+  id:: 63cfe08e-21b7-4607-9131-0475062689aa
+- Azure Functions [105 ] warms up instances of each function by setting up a fixed-size prewarm pool. 
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe71c-2b43-4693-9f04-1e676a0e9bd5
+- The open-sourced Fission [ 44] also prewarms like Azure Function.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe758-9f3f-429c-b10e-0f413e8d5a8b
+- Once the always-ready instance is occupied, prewarmed instances will be active and continue to buffer until reaching the limit. 
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe7a1-cdb7-4e89-8869-96d4e99dae33
+- ntroduces a component called 𝑝𝑜𝑜𝑙𝑚𝑔𝑟 , which manages a pool of generic instances with a fixed pool size and injects function code into the idle instances to reduce the cold start latency.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe7b1-f3f3-4e14-91d5-1f317a300065
+- Xu et al. [146 ] design an AWU (Adaptive Warm-up) (AWU) strategy by leveraging the LSTM (Long Short-Term Memory) networks to discover the dependence relationships based on the historical traces
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfe84c-d183-40f0-9c6b-4d739d74bcd9
+- predicts the invoking time of each function to prewarm the instances, and initialize the prewarmed containers according to the ACPS (Adaptive Container Pool Scaling) strategy once AWU fails
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfec24-fbf2-4316-ab92-122f6949ab82
+- Shahrad et al. [ 118 ] propose a practical resource management policy for the one-to-one prewarm startup
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63cfed95-3a54-4b7b-bd91-786013dff98b
+- characterizing the FaaS workloads
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d122d4-9ce1-4db8-b72c-f76fb509cbe2
+- dynamically change the instance lifetime of the recycling and provisioning instances according to the time series prediction
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d122e1-a6c9-4f14-bff1-b7d6534bc223
+- Replayable Execution [140] makes improvements based on CRIU
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d1234f-5e69-4056-9a34-f21dfe23b86a
+- using “mmap” to map checkpoint files to memory and leveraging the Copy-on-Write in OS to share cold data among multiple containers.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d123f2-b516-4c1a-a3ea-f9ab04e6301d
+- One-for-all prewarm with caching-aware: try to make the prewarm generalized and resource friendly with privacy guaranteed.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d1244a-a068-4a0b-adf5-05c7a7e70319
+- startup shares a similar mechanism with the Template method
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d124db-cc87-4f75-bb81-07c13411bcda
+- hatched and already pre-imported most of the bins/libs after being informed by the socket
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d124e5-cd7b-403a-beaa-8d8bcae8d46d
+- When a new invocation arrives and requires a new instance, it only needs to initialize or specialize from the templates
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d124fb-dabe-47d6-a3a0-2b9c8b1632ec
+- Catalyzer [42] optimizes the restore process in C/R by accelerating the recovery on the retrenched critical path.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d12530-99e5-47b6-9952-7a82653a175a
+- roposes a sandbox fork to leverage a template sandbox that already has pre-loaded the specific function for state resuing.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 63d1266c-913f-4b67-94fe-1eeda22ca8a7
+- Mohan et al. [97 ] propose a self-evolving pause container pool by pre-allocating virtual network interfaces with lazy pause containers binding
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d1269b-04bb-482d-ab43-91448c842ea1
+- make the cold startup less initialization together with more flat startup latency,
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d126b2-5efa-4a96-93e6-47ba1aee2446
+- One-to-one and one-for-all prewarm: the challenging points.
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d126d9-88b2-40ae-8a1e-efa2fbb8a246
+- The one-to-one prewarm startup focuses on significantly less initialization latency by exchanging the memory resource
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12b13-329b-4da3-a182-f65230ff8f23
+- it still suffers from several challenges, including the huge template image size [8 , 51] and confliction of various pre-imported libraries
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12b39-2cd5-4130-aa3c-6e1e1965eae3
+- It is very important to “suit the remedy to the case” for cold startups in different scenarios
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12c1f-f2b0-4f7b-80d0-4c72f42271c7
+- it is much more efficient to generate a template by one-for-all prewarm startup when the function is invoked for the first time, or with poor predictions during the trace analysis
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12c2d-b4cb-491c-bea4-bd5bdc1d8851
+- main challenge in the System Orchestration Layer is the friendly and elastic support for different services
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d12ebd-29dd-48cf-8d7f-213e6a6b1c16
+- As hundreds of functions coexist on a serverless node, it raises challenges for scheduling massive functions with inextricable dependencie
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: red
+  id:: 63d12ed6-b2a5-46a3-bc51-596ebf60b13e
+  hl-stamp:: 1674653404295
+- . Similar to the traditional solutions [ 26, 35, 59, 76, 126 ], the serverless model also concerns the ability to predict the on-demand computing resources, and an efficient scheduling strategy for services
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: green
+  id:: 63d12ef1-4e82-453e-93e2-f05c6c511662
+- [:span]
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d13632-c793-4a0f-9606-dee1c064ea4e
+  hl-type:: area
+  hl-stamp:: 1674655281760
+- researchers usually propose to introduce the load balancer and resource monitor components into the controller,
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d1365e-7afa-42e4-9d17-23c0f3d55e5b
+- load balancer aims to coordinate the resource usage to avoid overloading any single resource
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d1367f-2721-41d5-8369-cd4c112b0ce7
+- resource monitor keeps watching the resource utilization of each node, and passes the updated information to the load balance
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 63d1368c-2e9d-4f42-ad80-d2a7fb2cbad2
+- resource-level, instance-level, and application-level.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d136d1-3597-4fbc-802e-1bc47a86625e
+- [:span]
+  ls-type:: annotation
+  hl-page:: 12
+  hl-color:: yellow
+  id:: 63d1371d-492b-4334-8fcf-9e21a859d00c
+  hl-type:: area
+  hl-stamp:: 1674655516202
+- the “focused hierarchy” indicates an optimized method (aka resource adjusting) is designed besides an essential strategy for resource auto-provision, which can be classified into “R” (Resource-level), “I” (Instance-level), or “A” (Application-level), respectively.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d13791-93bc-4eaa-ac26-10fe8d5b13a6
+- “Resource adjusting” shows whether the scheduling provides an adjustment for resource provision
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d1379b-77cd-4f3e-8b7b-8ebc515c9255
+- “SLO” reflects whether SLO constraints are considered
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137a4-fc7d-410b-b84c-cb3e9c03c62b
+- “Intf” represents whether the resource contention or interference is discussed.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137ab-606b-49bb-86ab-8bd5d3411636
+- “Usage feedback” reflects whether the feedback of resource usage in a physical node is considered
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137b8-a743-4fbc-a4fb-c526286ac73d
+- “Dynamic strategy” indicates whether it is a dynamic and runtime scheduling strategy.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137bf-9bb5-419f-87e6-fc8d39150515
+- “Trace driven” indicates whether making choices depends on traces or collected data metrics
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137c6-777c-44ba-b76b-b5ab050663b6
+- “Predict/Heuristic” reflects whether a prediction-based or heuristic-based method is used
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137ce-1cea-4aeb-94a2-c72061d74486
+- “Implement” points out where it is implemented (“P” represents it is a prototype)
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137d6-5342-46a9-8821-ae025845216e
+- “Insight” summarizes its unique insight and key motivation
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 63d137de-cb65-48a2-8f69-e74890e91f01

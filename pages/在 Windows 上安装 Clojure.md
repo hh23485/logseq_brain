@@ -1,0 +1,7 @@
+- 安装 Clojure 事实上分为两个部分。
+	- 按照官方教程 [Clojure - Install Clojure](https://www.clojure.org/guides/install_clojure) 安装
+		- 安装为 Powershell module，可以在任意环位置的 [[Powershell]] 上使用 clojure cli
+		- 然而在 cmd 中并不能找到 `clojure` 命令，因为 clojure cli 是在 Powershell 中定义的。
+		- 在特定的应用中，比如 [编译 Logseq](((63ca644d-ccc5-4445-bfe9-818d85167398))) 在执行 `yarn release` 的时候，即便是在 Powershell 中执行，但仍然会使用 cmd 来调用 `clojure`，导致编译出错
+	- [GitHub - frericksm/clj-windows: to support clojure cli on windows 10](https://github.com/frericksm/clj-windows)，该项目提供了一键安装脚本提供一个 cmd 下的支持
+		- 在安装完成后，可以刷新环境变量，可以在 cmd 环境想

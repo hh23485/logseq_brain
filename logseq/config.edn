@@ -299,4 +299,5 @@
  :zotero/settings-v2 {"default" {:zotero-data-directory "", :type-id "10443130"}}
  :publishing/all-pages-public? true
  :feature/enable-whiteboards? true
+ :graph/settings {:journal? false}
  }

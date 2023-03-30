@@ -234,7 +234,7 @@ tags:: Spark, Sharing
 		- Because RDDs contain this information, they can adequately represent the dataset in a distributed computation and thus be the data abstraction for all intermediate results.
 			- {{embed ((6425d71c-9fe1-43f5-b43e-dbffd4e28a56))}}
 				- The squares represent java objects
-				- The circles on the diagram are RDDs
+				- The circles are RDDs
 		- RDDs are created by an API provided by Spark, and can be constructed from ordinary in-memory object data, or from files, streams.
 			- Create from HDFS file
 				- ``` java

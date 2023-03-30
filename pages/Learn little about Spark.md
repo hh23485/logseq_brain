@@ -208,6 +208,9 @@ tags:: Spark, Sharing
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle
+	- ## How Spark do caching
+	- ## How Spark do fault tolerance
+	- ## How Spark manager
 	- Big data application 3 elements:
 		- **Input Data**: Stored in DFS, like HDFS, cosmos
 		- **User Source Code**

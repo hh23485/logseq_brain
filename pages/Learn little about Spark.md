@@ -4,6 +4,7 @@ tags:: Spark, Sharing
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Quick Introduction about Why Spark
 	- ## Start from MapReduce
+	  collapsed:: true
 		- **MapReduce** is a programming model and software framework first introduced by **Google** in 2004 to address the challenges of processing large data sets. The main idea behind MapReduce is to **divide a large task into smaller subtasks that can be processed in parallel across multiple computing nodes.**
 		- Why was it introduced?
 			- To address the challenges of processing large data sets efficiently.
@@ -19,7 +20,8 @@ tags:: Spark, Sharing
 			- **Scalability**
 			- **Independence of tasks**
 		- Beside the framework, MapReduce is simple to simulate in python or other languages, why we still need the framework, then why Spark?
-	- ## Another Example on such job without big data framework
+	- ## Example on such job without big data framework
+	  collapsed:: true
 		- A Data Generate Job in Azure Speller
 			- Convert a few big language model data into [[RocksDB]] directories
 				- Each line is a Key Value pair
@@ -50,8 +52,12 @@ tags:: Spark, Sharing
 			- **Data storage and management**: Big data frameworks provide tools for storing and managing large amounts of data across distributed systems.
 			- **Data processing and analysis**: Big data frameworks offer a wide range of tools for processing and analyzing data at scale.
 	- ## Why use Spark instead of MapReduce?
-		-
-	-
+		- MapReduce has some drawbacks in its implementation
+			- Map Reduce has limited expressive power, while many data processing requires higher-level expressions, such as `Join`, `Zip`, `Map`, `Sum`, `Max`, etc.
+				- Scope and Spark allowed users to write code like SQL, and high level operations.
+			- Map Reduce can only express one operation per task, and often data processing may contain multiple operations. While Map Reduce itself cannot concatenate and organize.
+				- Scope and Spark will convert the job to DAG, much flexiable
+			- Map Reduce is not faster enough compare to Spark
 - # Spark in Service Side
 	-
 - # Spark Internal

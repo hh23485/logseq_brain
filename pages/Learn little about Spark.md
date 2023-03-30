@@ -53,12 +53,12 @@ tags:: Spark, Sharing
 			- **Data processing and analysis**: Big data frameworks offer a wide range of tools for processing and analyzing data at scale.
 	- ## Why use Spark instead of MapReduce?
 		- MapReduce has some drawbacks in its implementation
-			- Map Reduce has limited expressive power, while many data processing requires higher-level expressions, such as `Join`, `Zip`, `Map`, `Sum`, `Max`, etc.
+			- Map Reduce has limited expressive power, while many data processing requires higher-level expressions, such as `Join`, `Zip`, `Flatap`, `Sum`, `Max`, etc.
 				- Scope and Spark allowed users to write code like SQL, and high level operations.
 			- Map Reduce can only express one operation per task, and often data processing may contain multiple operations. While Map Reduce itself cannot concatenate and organize.
 				- Scope and Spark will convert the job to DAG.
 			- Map Reduce is not faster enough compare to Spark.
-				- Spark will use memory as much as possible, also support pipeline execution
+				- Spark will use memory as much as possible, also support pipeline execution.
 - # Spark in Service Side
 	-
 - # Spark Internal

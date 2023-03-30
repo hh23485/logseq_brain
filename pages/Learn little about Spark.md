@@ -66,7 +66,7 @@ tags:: Spark, Sharing
 				- Spark will use memory as much as possible, also support pipeline execution.
 				  background-color:: green
 	- ## How big data framework like Spark works?
-		- Big data application four elements:
+		- Big data application three elements:
 			- Input Data
 			- User Source Code
 			- Configuration

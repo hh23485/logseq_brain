@@ -69,8 +69,10 @@ tags:: Spark, Sharing
 		- Big data application 3 elements:
 			- **Input Data**: Stored in DFS, like HDFS, cosmos
 			- **User Source Code**
-			- Configuration
-		-
+			- **Configuration**
+		- Big data framework has four layers:
+			- User Layer
+			-
 - # Spark Internal
 	- [[What's RDD]]
 	- [[]]

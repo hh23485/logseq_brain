@@ -99,7 +99,6 @@ tags:: Spark, Sharing
 				  ```
 		- ### Spark Version
 			- #### Java
-			  collapsed:: true
 				- ``` java
 				  import org.apache.spark.SparkConf;
 				  import org.apache.spark.api.java.JavaRDD;

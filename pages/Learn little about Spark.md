@@ -202,7 +202,22 @@ tags:: Spark, Sharing
 		- Remote
 			- Submit to spark endpoint
 - # Spark Internal Basic
+	- All this content comes from a great book [大数据处理框架Apache Spark设计与实现（全彩） (豆瓣) (douban.com)](https://book.douban.com/subject/35140409/)
 	- ## How a Spark application run?
+		- Here are the steps
+			- An big data application can be describe as <Input Data, User Source Code, Configuration and Arguments>
+				- Input data are hosted in HDFS or generated in the code
+			- Once submit to Spark, it will create a [Driver]([[Spark Driver]]) to deal follow actions:
+				- analysis and **convert** them into spark **logic plan**, which means the calculate steps, will be kind DAG.
+				- Based on logic plan, spark will **convert** the logic plan **to physical plan**, which means how to execute the job
+				- Request for **resources**, **schedule** executors and **run** it
+				- Collect result.
+		- Fig about the execute mode
+			-
+		- Fig about the system layer
+			- ![image.png](../assets/image_1680199082879_0.png)
+	- ## What's RDD
+		-
 	- ## What's the deployment mode of Spark
 	- ## What's the architecture of Spark from high level
 	- ## How Spark generate logic plan
@@ -210,7 +225,7 @@ tags:: Spark, Sharing
 	- ## How spark do shuffle
 	- ## How Spark do caching
 	- ## How Spark do fault tolerance
-	- ## How Spark manager
+	- ## How Spark manage memory
 	- Big data application 3 elements:
 		- **Input Data**: Stored in DFS, like HDFS, cosmos
 		- **User Source Code**

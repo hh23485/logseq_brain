@@ -32,3 +32,4 @@ tags:: React
 		    this.setState({ hot: !this.state.hot });
 		  };
 		  ```
+			- 捕捉了外部的实例对象this

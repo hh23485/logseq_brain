@@ -1,4 +1,4 @@
 - State
 	- state 是组件的重要属性之一，用于保存组件的状态
-	- state 默认是 null，要求 state 必须是一个对象以存储多种状态，可以设置 `this.state={}`
+	- state 默认是 `null`，要求 state 必须是一个对象以存储多种状态，可以设置 `this.state={}`
 	-

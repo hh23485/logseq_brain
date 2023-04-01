@@ -9,14 +9,16 @@ tags:: React
 		    this.state = {
 		      hot: false,
 		    };
-		    this.handleClick = this.handleClick.bind(this);
+		    this.click = this.handleClick.bind(this);
 		  }
 		  
 		  handleClick() {
 		    this.setState({ hot: !this.state.hot });
 		  }
+		  
+		  // <h1 onClick={this.click}>
 		  ```
-		- 本质是上将原型上的函数在实例对象上又放了一份
+		- 本质是上将原型上的函数在实例对象上又放了一份，`handleClick` 放为 `click`
 	- 或者使用 `()=>`
 		- ``` js
 		  constructor(props) {

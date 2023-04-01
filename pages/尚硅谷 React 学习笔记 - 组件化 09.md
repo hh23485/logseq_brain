@@ -6,4 +6,4 @@ tags:: 尚硅谷, React
 		- extends 继承
 		- super 关键字
 		- this 指向当前对象
-		- constructor 指代所有
+		- constructor 构造方法

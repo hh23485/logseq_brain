@@ -23,5 +23,6 @@ tags:: [[JavaScript]], [[React]]
 	- JSX 中只能有一个根标签
 	- 标签必须闭合
 	- 标签首字母如果是小写，就换转换成 html 中同名元素
+	  id:: 6427dbd5-fb0a-4de1-bfad-7316d8dea0fd
 		- 若无同名元素，则报错
 -

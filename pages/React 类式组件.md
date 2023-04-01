@@ -1,3 +1,5 @@
+tags:: [[React 组件]]
+
 - JS 中类和 Java 基础语法很像
 	- extends 继承
 	- super 关键字

@@ -32,8 +32,9 @@ tags:: [[React 组件]]
 	  ReactDOM.render(<Student />, document.getElementById("test"));
 	  ```
 - 注意
-	- 只有 `render()` 中的 `this` 才是当前对象，在其他成员方法种的 this 都可能是 `undefined`。因为默认 render 是通过对象实例调用的。
+	- 只有 `constructor()` 和 `render()` 中的 `this` 才是当前对象，在其他成员方法种的 this 都可能是 `undefined`。因为默认 render 是通过对象实例调用的。
 		- ``` js
 		  conxt x = p1.study
 		  x() // 此时函数中的 this 为 undefined
 		  ```
+		- [[React 解决成员函数中的 this 为 undefined]]

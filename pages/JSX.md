@@ -25,4 +25,5 @@ tags:: [[JavaScript]], [[React]]
 	- 标签首字母如果是小写，就换转换成 html 中同名元素
 	  id:: 6427dbd5-fb0a-4de1-bfad-7316d8dea0fd
 		- 若无同名元素，则报错
--
+- 在线尝试
+	- [Babel · The compiler for next generation JavaScript (babeljs.cn)](https://www.babeljs.cn/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&modules=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.21.4&externalPlugins=&assumptions=%7B%7D)

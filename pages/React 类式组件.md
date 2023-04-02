@@ -9,7 +9,7 @@ tags:: [[React 组件]]
 - 创建 react 组件，继承 `React.Component`
 	- 如果需要传入参数，可以直接从 props 中获取，也可以在 props 后加入新的构造参数
 	- 额外参数可以在渲染标签时作为属性加入
-	- 可以将数组直接通过 `...` 展开传入作为 props
+	- 可以将数组直接通过 `{...<var>}` 深拷贝传入作为 props
 		- ``` html
 		  <Component {...data} />
 		  ```

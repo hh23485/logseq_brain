@@ -15,10 +15,23 @@
 	- 用于接收标签传入的属性
 		- ((64292f8d-8dd2-4adc-ab65-255c3dc63a6b))
 	- 限制属性规则
-		- 引入 `prop-types`
-		- ``` js
-		  <ComponentClass>.propsTypes = {
-		      name: {}
-		  }
-		  ```
+		- 限制类型
+			- 引入 `prop-types.js`，引入 `PropTypes`
+			- ``` js
+			  <ComponentClass>.propsTypes = {
+			      name: PropTypes.string
+			  }
+			  ```
+		- 要求必传
+			- ``` js
+			  <ComponentClass>.propsTypes = {
+			      name: PropTypes.string.isRequired
+			  }
+			  ```
+		- 默认值
+			- ``` js
+			  <ComponentClass>.defaultProps = {
+			      name: "DefaultValue"
+			  }
+			  ```
 -

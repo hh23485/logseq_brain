@@ -11,4 +11,5 @@
 	- 如何读取
 		- `this.state.<var>`
 		- 可以通过 `const {age, name} = this.state` 从其中获取多个属性
+- props
 	-

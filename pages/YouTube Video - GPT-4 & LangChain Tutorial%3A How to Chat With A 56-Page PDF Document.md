@@ -1,4 +1,28 @@
 - [GPT-4 & LangChain Tutorial: How to Chat With A 56-Page PDF Document (w/Pinecone) - YouTube](https://www.youtube.com/watch?v=ih9PBGVVOO4&t=188s)
-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ih9PBGVVOO4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	- <iframe width="560" height="315" src="https://www.youtube.com/embed/ih9PBGVVOO4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+- 功能
+	- 实现和 pdf 对话，并且可以在回答中给出依据的引用
+- 流程
+	- 索引
+		- 把 PDF 转换为 Chunks
+			- 使用 lang chain
+			- 每个 Chunk 大约一两千字符
+		- 将他们 Embedding，然后存储在某些数据库中
+	- 对话
+		- 将输入也做 Embedding
+		- 从数据库中查找相关的块，获得最相关的一些
+		- 将问题和相关文档发给 GPT
+		- 获取结果并返回
+- 实现
+	- 读取 PDF
+	- 拆分 Chunk，1000 个字符为上限，且互相之间有 200 左右字符重叠
+		- 由 LangChain 支持
+	- 使用 OpenAI Embedding 来完成编码
+	- 使用 Pinecone 作为向量存储，存入所有的文档
+	- 使用 LangChain 来构造一个 DBQA 流程
+		- 填入如何获取 vector，GPT 访问逻辑，是否展示 source 等参数
+- 注意
+	- 如果有多个 PDF，可能需要借助 GPT 先拆分问题，就像 new bing 一样 [GPT-4 Tutorial: How to Chat With Multiple PDF Files (~1000 pages of Tesla's 10-K Annual Reports) - YouTube](https://www.youtube.com/watch?v=Ix9WIZpArm0)
+		- ask GPT to extract store namespace from query
 	-
 	-

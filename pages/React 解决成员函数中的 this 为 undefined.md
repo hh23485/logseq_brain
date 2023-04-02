@@ -18,7 +18,7 @@ tags:: React
 		  
 		  // <h1 onClick={this.click}>
 		  ```
-		- 本质是上将原型上的函数在实例对象上又放了一份，`handleClick` 放为 `click`
+		- 本质是上将原型上的函数在实例对象上又放了一份，`handleClick` 放为 `click`，并绑定了实例
 	- 或者使用 `()=>`
 		- ``` js
 		  constructor(props) {
@@ -32,5 +32,5 @@ tags:: React
 		    this.setState({ hot: !this.state.hot });
 		  };
 		  ```
-			- handleClick 为实例成员
+			- `handleClick` 为实例成员而不在原型中
 			- 捕捉了外部的实例对象作为 `this`

@@ -7,8 +7,12 @@ tags:: [[React 组件]]
 	- constructor 声明构造方法
 	- member function 可以传入对象当做 this 使用
 - 创建 react 组件，继承 `React.Component`
-	- 如果需要传入参数，可以在 props 后加入新的构造参数
+	- 如果需要传入参数，可以直接从 props 中获取，也可以在 props 后加入新的构造参数
 	- 额外参数可以在渲染标签时作为属性加入
+	- 可以将数组直接通过 `...` 展开传入作为 props
+		- ``` html
+		  <Component {...data} />
+		  ```
 - 样例
 	- ``` js
 	  class Student extends React.Component {

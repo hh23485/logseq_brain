@@ -1,7 +1,6 @@
 tags:: GPT Plugin, 复刻, Azure Bot, Lang-Chain
 
 - 前置调研
-  collapsed:: true
 	- 抛开模型本身，复刻 ChatGPT 类似的系统并不是一件困难的事情，通常需要
 		- GPT 接口
 		- 可对话的 UI
@@ -16,7 +15,6 @@ tags:: GPT Plugin, 复刻, Azure Bot, Lang-Chain
 		- Embedding：开源工具，OpenAI 接口，集成了开源模型的向量数据库，如 Chroma, Milvus 等，Azure Semantic Search 服务
 		- Lang-Chain：提供胶水代码，集成上述所有工具的工作流，并建立了较多的生态和prompt模板。除此之外，还包括了类似 Plugin 的基于 Action 的模版应答机制可以将预定义的工具引入工作流。
 - 资源
-  collapsed:: true
 	- GPT 接口
 	- Lang-Chain 框架
 	- Python 3.10
@@ -28,3 +26,12 @@ tags:: GPT Plugin, 复刻, Azure Bot, Lang-Chain
 - 参考资料
 	- 关于如何解决 api 接口认证问题
 		- [(97) Discord | "Google Colaboratory" | LangChain](https://discord.com/channels/1038097195422978059/1047066966566916107/1048742148268359710)
+	- [[YouTube Video - GPT-4 & LangChain Tutorial: How to Chat With A 56-Page PDF Document]]
+	- [How ChatGPT Plugins (could) work (microsoft.com)](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/how-chatgpt-plugins-could-work/ba-p/3761483)
+	- [What Powers the ChatGPT Plugin System | by Thiago Alves | Mar, 2023 | Better Programming](https://betterprogramming.pub/what-powers-the-chatgpt-plugin-system-8759934517af?gi=bc8536c54e0d)
+	- [What Is ChatGPT Doing … and Why Does It Work?—Stephen Wolfram Writings](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/?continueFlag=9cf71944034535d667a60ca77f7f8b71)
+	- [ChatGPT Gets Its “Wolfram Superpowers”!—Stephen Wolfram Writings](https://writings.stephenwolfram.com/2023/03/chatgpt-gets-its-wolfram-superpowers/?continueFlag=69128407fd804bd05c)
+	- [现在ChatGPT的... - @宝玉xp的微博 - 微博 (weibo.com)](https://weibo.com/1727858283/4875446737175262#repost)
+	- [推荐阅读：《Open... - @宝玉xp的微博 - 微博 (weibo.com)](https://weibo.com/1727858283/4883339587357377?sourceType=weixin&from=10D3395010&wm=20005_0002&featurecode=newtitle&s_channel=4&s_trans=2296953024_4883339587357377)
+	- [[2302.04761] Toolformer: Language Models Can Teach Themselves to Use Tools (arxiv.org)](https://arxiv.org/abs/2302.04761)
+	- [1/ 在OpenAI发布plugin后，后知后觉地意识到了toolformer这篇论文的重要性，于是重读了论文，把一些读后感做个thread by @realrenmin(Sverige_ Dong-seok🇸🇪) (twitter-thread.com)](https://twitter-thread.com/t/1639396245524324353?continueFlag=63e2b6f3afe67dc7da38f54fe984b7a1)

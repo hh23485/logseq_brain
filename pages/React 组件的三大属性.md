@@ -12,4 +12,13 @@
 		- `this.state.<var>`
 		- 可以通过 `const {age, name} = this.state` 从其中获取多个属性
 - props
-	-
+	- 用于接收标签传入的属性
+		- ((64292f8d-8dd2-4adc-ab65-255c3dc63a6b))
+	- 限制属性规则
+		- 引入 `prop-types`
+		- ``` js
+		  <ComponentClass>.propsTypes = {
+		      name: {}
+		  }
+		  ```
+-

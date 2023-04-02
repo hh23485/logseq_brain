@@ -9,7 +9,9 @@ tags:: [[React 组件]]
 - 创建 react 组件，继承 `React.Component`
 	- 如果需要传入参数，可以直接从 props 中获取，也可以在 props 后加入新的构造参数
 	- 额外参数可以在渲染标签时作为属性加入
+	  id:: 6427f1e7-aeed-4729-b7b9-817c09df8eb7
 	- 可以将数组直接通过 `...<var>` 展开传入作为 props
+	  id:: 64292f8d-8dd2-4adc-ab65-255c3dc63a6b
 		- 对象展开仅 babel + react 标签可用，其他位置不可用
 		- ``` html
 		  <Component {...data} />

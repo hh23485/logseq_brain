@@ -356,7 +356,9 @@ tags:: Spark, Sharing
 					- First RDD each partition in stage1 get **parts of data** from all stage 0 final RDD partitions
 					  id:: 642b070f-4959-4b7d-97e0-2729fcfc1d7b
 					- TODO add graph
-				- Task in the same stage can run in paral
+				- Task in the same stage can run in parallel
+			- Questions
+				- How the job, stage, task decided?
 	- ## How Spark generate logic plan
 		-
 	- ## How spark convert logic plan to physical plan

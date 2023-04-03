@@ -334,7 +334,7 @@ tags:: Spark, Sharing
 				- TODO debug string
 					- Different types of RDD
 			- **Logic Plan** Summary
-				- About the steps on action and RDD level.
+				- Focus on **Data Source**, **Data Model**, **Data Action**, **Result**
 				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]]
 					- ![image.png](../assets/image_1680540692648_0.png){:height 409, :width 688}
 				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]] -> [[ShuffledRDD]]
@@ -348,10 +348,8 @@ tags:: Spark, Sharing
 					- Driver collects all results together and final result
 				- For Job 1
 					- Has 2 stages
-						- Stage0
-							- contains 3 tasks
-						- Stage 1
-							- contains 2 tasks
+						- Stage0 contains 3 tasks, 1 RDD
+						- Stage 1 contains 2 tasks, 1 RDD
 				- Shuffle happened here for Job1-Stage1 to find data from Job1-Stage0
 					- First RDD each partition in stage1 get **parts of data** from all stage 0 final RDD partitions
 					  id:: 642b070f-4959-4b7d-97e0-2729fcfc1d7b

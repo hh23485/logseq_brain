@@ -360,12 +360,15 @@ tags:: Spark, Sharing
 				- How shuffle implements?
 	- ## How Spark generate logic plan
 		- Three main questions:
-			- How to generate RDD, which kind RDD should be selected?
-			- How to build RDD relationships
-			- How to calculate RDD data?
+			- ((642b08b1-2a52-46c9-99ac-8761c0226e48))
+			- ((642b08d0-4f08-42de-b18a-6673f7cf17c6))
+			- ((642b0905-d68b-416a-9c13-a0059627f221))
 		- ### How to generate RDD, which kind RDD should be selected?
+		  id:: 642b08b1-2a52-46c9-99ac-8761c0226e48
 		- ### How to build RDD relationships
-		- ### How to c
+		  id:: 642b08d0-4f08-42de-b18a-6673f7cf17c6
+		- ### How to calculate RDD data?
+		  id:: 642b0905-d68b-416a-9c13-a0059627f221
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle
 	- ## How Spark do caching

@@ -359,6 +359,7 @@ tags:: Spark, Sharing
 				- Task in the same stage can run in parallel
 			- Questions
 				- How the job, stage, task decided?
+				- How shuffle implements?
 	- ## How Spark generate logic plan
 		-
 	- ## How spark convert logic plan to physical plan

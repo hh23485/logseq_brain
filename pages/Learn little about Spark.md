@@ -363,7 +363,9 @@ tags:: Spark, Sharing
 			- How to generate RDD, which kind RDD should be selected?
 			- How to build RDD relationships
 			- How to calculate RDD data?
-		-
+		- ### How to generate RDD, which kind RDD should be selected?
+		- ### How to build RDD relationships
+		- ### How to c
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle
 	- ## How Spark do caching

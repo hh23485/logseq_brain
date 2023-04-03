@@ -248,9 +248,11 @@ tags:: Spark, Sharing
 				  JavaRDD<Integer> rdd = sc.parallelize(Arrays.asList(data));
 				  ```
 	- ## What's the deployment mode of Spark
+	  collapsed:: true
 		- Big data frameworks are almost always deployed in master-slave mode, and when Spark is deployed in a cluster, it looks like the following diagram
 			- ![image.png](../assets/image_1680201992563_0.png){:height 598, :width 752}
 		- ### Master node and Worker node
+		  collapsed:: true
 			- **Master node** is responsible for managing applications and tasks
 				- The Master node has a resident **Master process** on it
 				- Responsible for managing all Worker nodes
@@ -264,9 +266,11 @@ tags:: Spark, Sharing
 					- e.g. start Executor to execute specific Spark tasks
 					- Monitoring the status of tasks, etc.
 		- ### When Spark cluster starts
+		  collapsed:: true
 			- The Master process is started on the Master node
 			- The Worker process is started on each Worker node
 		- ### When submit applications
+		  collapsed:: true
 			- Create a **driver** process (which run the `main()` of application)
 			- Driver on **master node** notify **worker node** to start **executors**, **executors will take up declared resources**
 			- Executors run tasks as threads, 1 CPU per task. All the tasks belong to the same job.
@@ -277,7 +281,84 @@ tags:: Spark, Sharing
 				- 在放牧时,每个牧民(`Driver`)只负责管理自己的动物(`Task`)
 				- 农场主(`Master`)负责监控草场(`Worker`)、牧民(`Driver`)等状况
 	- ## A new example with more actions for analysis
+		- Let's give an example for further analysis. It's a dummy code, without any meanings, just generate a RDD with randomly int, then run `RDD.count` and `RDD.groupByKey`.
+			- ``` scala
+			  def main(args: Array[String]): Unit = {
+			      // setup spark context
+			      val spark = SparkSession
+			          .builder
+			          .appName("Spark basic example")
+			          .getOrCreate()
+			  
+			      val numMappers = 3
+			      val numKVPairs = 4
+			      val valSize = 1000
+			      val numReducers = 2
+			      val input = 0 until numMappers // input is [0, 1, 2]
+			  
+			      // generate a rdd
+			      val pairs = spark.sparkContext.parallelize(input, numMappers).flatMap { p =>
+			          val ranGen = new Random
+			          val arr1 = new Array[(Int, Array[Byte])](numKVPairs)
+			          for (i <- 0 until numKVPairs) {
+			              val value = new Array[Byte](valSize)
+			              ranGen.nextBytes(value)
+			              arr1(i) = (ranGen.nextInt(numKVPairs), value)
+			          }
+			          arr1
+			      }.cache()
+			  
+			      // pairs is an rdd with numMappers * numKVPairs elements
+			      // each element is a tuple of (Int, Arrat[Byte]), as well as a key-value pair
+			      // key is between 0 and numKVPairs - 1
+			      // value is an array of bytes of length valSize
+			  
+			      println(pairs1.count())
+			      println(paris1.toDebugString)
+			      val results = paris1.groupByKey(numReducers)
+			      println(results.count())
+			      println(results.toDebugString)
+			      spark.stop()
+			  }
+			  ```
+		- ### What's the logic plan and physical plan will be?
+			- Ideally the **steps** will be like:
+				- ![image.png](../assets/image_1680538845294_0.png){:height 519, :width 854}
+			- Little more dtails
+				- Before `paris1.count()`, the calculation has not started. That's [functional programming](https://www.databricks.com/session/spark-as-the-gateway-drug-to-typed-functional-programming).
+				- Here is a `cache()` a important ability of Spark
+			- #### Let's run it, then we can go to Spark UI and see what's happening
+				- TODO graph of jobs
+					- Here are two jobs, `pairs1.count()` and `results.count()`
+					- The two jobs has different number of stages
+				- TODO debug string
+					- Different types of RDD
+			- **Logic Plan** Summary
+				- About the steps on action and RDD level.
+				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]]
+					- ![image.png](../assets/image_1680540692648_0.png){:height 409, :width 688}
+				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]] -> [[ShuffledRDD]]
+					- TODO 2.4
+					- ![image.png](../assets/image_1680540906610_0.png){:height 332, :width 809}
+			- Physical Plan Summary
+				- Focus on stages and task level
+				- For Job 0
+					- has 2 RDDs, merged in 1 stage
+					- has 3 tasks
+					- Driver collects all results together and final result
+				- For Job 1
+					- Has 2 stages
+						- Stage0
+							- contains 3 tasks
+						- Stage 1
+							- contains 2 tasks
+				- Shuffle happened here for Job1-Stage1 to find data from Job1-Stage0
+					- First RDD each partition in stage1 get **parts of data** from all stage 0 final RDD partitions
+					  id:: 642b070f-4959-4b7d-97e0-2729fcfc1d7b
+					- TODO add graph
+				- Task in the same stage can run in paral
 	- ## How Spark generate logic plan
+		-
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle
 	- ## How Spark do caching

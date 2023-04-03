@@ -300,4 +300,5 @@
  :publishing/all-pages-public? true
  :feature/enable-whiteboards? true
  :graph/settings {:journal? false}
+ :ui/show-full-blocks? true
  }

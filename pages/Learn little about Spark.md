@@ -359,6 +359,10 @@ tags:: Spark, Sharing
 				- How the job, stage, task decided?
 				- How shuffle implements?
 	- ## How Spark generate logic plan
+		- Three main questions:
+			- How to generate RDD, which kind RDD should be selected?
+			- How to build RDD relationships
+			- How to calculate RDD data?
 		-
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle

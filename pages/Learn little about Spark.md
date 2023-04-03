@@ -3,7 +3,6 @@ tags:: Spark, Sharing
 - TOC {{renderer :tocgen, [[]], 2, h}}
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Quick Introduction about Why Spark
-  collapsed:: true
 	- ## Start from MapReduce
 	  collapsed:: true
 		- **MapReduce** is a programming model and software framework first introduced by **Google** in 2004 to address the challenges of processing large data sets. The main idea behind MapReduce is to **divide a large task into smaller subtasks that can be processed in parallel across multiple computing nodes.**
@@ -44,6 +43,7 @@ tags:: Spark, Sharing
 				- How to run on multiple machines?
 			- ![Slide5.jpg](../assets/Slide5_1680192445315_0.jpg)
 	- ## Why need big data framework like MapReduce?
+	  collapsed:: true
 		- Just write how to deal with action like local simple functions, no worry about these ((6425b521-2d4b-4ad3-8acb-57489ff1f572))
 			- Write Map function
 			- Write Reduce function
@@ -66,10 +66,9 @@ tags:: Spark, Sharing
 			  background-color:: red
 				- Spark will use memory as much as possible, also support pipeline execution.
 				  background-color:: green
-	- ## Write WordCount in Map Reduce and Spark
+	- ## Write WordCount in Map Reduce and Spark #codesnipaste
 		- ### Map Reduce Version
 			- #### Java
-			  collapsed:: true
 				- ``` java
 				  public static class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 				      private final static IntWritable one = new IntWritable(1);
@@ -134,7 +133,6 @@ tags:: Spark, Sharing
 				  }
 				  ```
 			- #### Python
-			  collapsed:: true
 				- ``` python
 				  from pyspark import SparkConf, SparkContext
 				  
@@ -270,8 +268,14 @@ tags:: Spark, Sharing
 			- The Worker process is started on each Worker node
 		- ### When submit applications
 			- Create a **driver** process (which run the `main()` of application)
-			- Driver on **master node** notify **worker node** to start **executors**, executors will take up declared resources
+			- Driver on **master node** notify **worker node** to start **executors**, **executors will take up declared resources**
 			- Executors run tasks as threads, 1 CPU per task. All the tasks belong to the same job.
+		- TODO OnYarn
+		- ### Summary
+			- 一个农场主(`Master`)有多片草场(`Worker`),农主要把草场租给 3 个牧民来放马、牛、羊。假设现在有3个项目(`Application`)需要农主来运作:第1个牧民需要一片牧场来放 100 匹马,第2个牧民需要一片牧场来放 50 牛,第 3 个牧民需要一片牧场来放80只羊
+				- 每个牧民可以看作是一个`Driver`,而马、牛、可以看作是task。为了保持资源合理利用、避免冲突,在放牧前,农场主需要根据项目求为每个牧民划定可利用的草场范围,而且尽量让每个牧民在每个草场都有一小片可放的区域(`Executor`)
+				- 在放牧时,每个牧民(`Driver`)只负责管理自己的动物(`Task`)
+				- 农场主(`Master`)负责监控草场(`Worker`)、牧民(`Driver`)等状况
 	- ## A new example with more actions for analysis
 	- ## How Spark generate logic plan
 	- ## How spark convert logic plan to physical plan

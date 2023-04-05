@@ -1,9 +1,9 @@
 - TOC {{renderer :tocgen, [[]], 2, h}}
 - # 什么是 Transformation
   id:: 642cd333-da61-467c-8d3a-f18b14c1a8ca
-	- Used to **create a new dataset from existing ones**.
+	- Transformation used to **create a new dataset from existing ones**. #定义
 	- 隐含的意思是从已有的 RDD 中创建出新的 RDD，且是单向操作，Transformation 不会对已有 RDD 进行修改
-	- 一直使用 Transformation 可以一直生成新的 RDD
+	- 一直使用 Transformation 可以一直生成新的 RDD，但 RDD 的生成是惰性的，并不会真的立刻执行，只会在 RDD 中记录转换，必须在 [[Spark Action]] 中才会触发
 	- 这些 RDD 之间存在的关系取决于使用的 Transformation 类型
 - # 生成的 RDD 之间的关系
 	- 一些 Transformation 从一个 RDD，生成一个新的 RDD，另外一些 Transformation 需要多个 RDD 输入来生成一个新的 RDD。

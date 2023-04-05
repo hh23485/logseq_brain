@@ -53,6 +53,7 @@ tags:: Spark, Sharing
 			- **Data storage and management**: Big data frameworks provide tools for storing and managing large amounts of data across distributed systems.
 			- **Data processing and analysis**: Big data frameworks offer a wide range of tools for processing and analyzing data at scale.
 	- ## Why use Spark instead of MapReduce?
+	  collapsed:: true
 		- MapReduce has some drawbacks in its implementation
 			- Map Reduce has limited expressive power, while many data processing requires higher-level expressions, such as `Join`, `Zip`, `FlatMap`, `Sum`, `Max`, etc.
 			  background-color:: red
@@ -66,7 +67,8 @@ tags:: Spark, Sharing
 			  background-color:: red
 				- Spark will use memory as much as possible, also support pipeline execution.
 				  background-color:: green
-	- ## Write WordCount in Map Reduce and Spark #codesnipaste
+	- ## Write WordCount in Map Reduce and Spark
+	  collapsed:: true
 		- ### Map Reduce Version
 			- #### Java
 				- ``` java
@@ -194,13 +196,14 @@ tags:: Spark, Sharing
 				  }
 				  ```
 	- ## We got the code, how to run it?
+	  collapsed:: true
 		- Create a project, and paste the code in
 		- Local
 			- Run directly in IDE
 		- Remote
 			- Submit to spark endpoint
 - # Spark Internal Basic
-	- All this content comes from a great book [大数据处理框架Apache Spark设计与实现（全彩） (豆瓣) (douban.com)](https://book.douban.com/subject/35140409/)
+	- All this content comes from a great book [[大数据处理框架 Apache Spark 设计与实现@Book]]
 	- ## How a Spark application run?
 	  collapsed:: true
 		- Here are the steps:
@@ -281,6 +284,7 @@ tags:: Spark, Sharing
 				- 在放牧时,每个牧民(`Driver`)只负责管理自己的动物(`Task`)
 				- 农场主(`Master`)负责监控草场(`Worker`)、牧民(`Driver`)等状况
 	- ## A new example with more actions for analysis
+	  collapsed:: true
 		- Let's give an example for further analysis. It's a dummy code, without any meanings, just generate a RDD with randomly int, then run `RDD.count` and `RDD.groupByKey`.
 			- ``` scala
 			  def main(args: Array[String]): Unit = {
@@ -362,6 +366,7 @@ tags:: Spark, Sharing
 				- How the job, stage, task decided?
 				- How shuffle implements?
 	- ## How Spark generate logic plan
+	  collapsed:: true
 		- Three main questions:
 			- ((642b08b1-2a52-46c9-99ac-8761c0226e48))
 			- ((642b08d0-4f08-42de-b18a-6673f7cf17c6))
@@ -384,6 +389,7 @@ tags:: Spark, Sharing
 					- Depends on transformation and parent RDDs' partition number
 		- ### How to calculate RDD data?
 		  id:: 642b0905-d68b-416a-9c13-a0059627f221
+		  collapsed:: true
 			- As long as we can deal RDD partitions number and relationships, spark can apply transformations and actions to each records.
 			- logically, the progress just like apply function to local applications in such two ways:
 				- ``` scala
@@ -409,7 +415,7 @@ tags:: Spark, Sharing
 			- RDD vs <K, V>
 			- High level transformation and action vs map() and reduce()
 	- ## How spark convert logic plan to physical plan
-	-
+		-
 	- ## How spark do shuffle
 	- ## How Spark do caching
 	- ## How Spark do fault tolerance

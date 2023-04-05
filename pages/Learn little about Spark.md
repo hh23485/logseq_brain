@@ -415,7 +415,61 @@ tags:: Spark, Sharing
 			- RDD vs <K, V>
 			- High level transformation and action vs map() and reduce()
 	- ## How spark convert logic plan to physical plan
-		-
+		- ### How to split job, stage, and task?
+			- Sorry but has to start another new code snippet
+				- ![image.png](../assets/image_1680694684400_0.png){:height 665, :width 840}
+				- code here
+				  collapsed:: true
+					- ``` scala
+					  // Define an array of tuples with integer and character values
+					  val data1 = Array[(Int, Char)] ((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (3, 'f'), (2, 'g'), (1, 'h'))
+					  
+					  // Parallelize the data and create an RDD with 3 partitions
+					  val rdd1 = sc.parallelize(data1, 3)
+					  
+					  // Partition the RDD using a hash partitioner with 3 partitions
+					  val partitionedRDD = rdd1.partitionBy(new HashPartitioner(3))
+					  
+					  // Define an array of tuples with integer and string values
+					  val data2 = Array[(Int, String)] ((1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'))
+					  
+					  // Parallelize the data and create an RDD with 2 partitions, then map each tuple to a new tuple with the second value repeated
+					  val rdd2 = sc.parallelize(data2, 2).map(x => (x._1, x._2 + "" + x._2))
+					  
+					  // Define an array of tuples with integer and string values
+					  val data3 = Array[(Int, String)] ((3, 'X'), (5, 'Y'), (3, 'Z'), (4, 'Y'))
+					  
+					  // Parallelize the data and create an RDD with 2 partitions
+					  val rdd3 = sc.parallelize(data3, 2)
+					  
+					  // Union the two RDDs together
+					  val unionedRDD = rdd2.union(rdd3)
+					  
+					  // Join the partitioned RDD with the unioned RDD
+					  val resultRDD = partitionedRDD.join(unionedRDD)
+					  
+					  // Print the result RDD
+					  resultRDD.foreach(println)
+					  ```
+				- This code contains such transactions
+					- rdd1: `partitionBy`, `join`
+					- rdd2: `map`, `union`, `join`
+					- rdd3: `union`, `join`
+			- 3 rules to split stages and tasks
+				- Each action is a **Job**
+				- Scan from back to front
+					- when meet [[NarrowDependency]], merge into current **Stage**
+						- RDD partition numbers are the same in a stage
+					- when meet [[ShuffleDependency]], start a new **Stage**
+				- Each partition is a **Task**
+			- So in this case, the stages and tasks are like follows
+			  collapsed:: true
+				- ![image.png](../assets/image_1680695204114_0.png){:height 952, :width 945}
+		- ### How to decided the tasks calculation order?
+			- Stages will be scheduled as DAG
+			- Tasks will be executed in parallel
+		- ### How to store and propagate intermediate data
+			-
 	- ## How spark do shuffle
 	- ## How Spark do caching
 	- ## How Spark do fault tolerance

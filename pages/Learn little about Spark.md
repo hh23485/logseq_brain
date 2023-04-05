@@ -373,6 +373,7 @@ tags:: Spark, Sharing
 			- {{embed ((642cd333-da61-467c-8d3a-f18b14c1a8ca))}}
 		- ### How to build RDD relationships
 		  id:: 642b08d0-4f08-42de-b18a-6673f7cf17c6
+			-
 		- ### How to calculate RDD data?
 		  id:: 642b0905-d68b-416a-9c13-a0059627f221
 	- ## How spark convert logic plan to physical plan

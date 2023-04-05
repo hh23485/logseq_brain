@@ -27,7 +27,7 @@ tags:: [[Spark Action]]
 		- `collectAsMap(): Map[K, V]`
 			- 用法: `val result = rddl.collectAsMap()`
 			- 语义: 将`rdd1`中的 `<K,V>` record收集到 Driver 端,得到 `<K,V> Map`
-	- ## [[foreach]] 和 [[foreachPartition]]()
+	- ## [[foreach]] 和 [[foreachPartition]] 操作
 	  collapsed:: true
 		- `foreach(func): Unit`
 			- 语义:将`rdd1`中的每个分区中的数据按照 `func` 进行处理

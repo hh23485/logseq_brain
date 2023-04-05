@@ -72,6 +72,7 @@
 		- 类型 [[MapPartitionsRDD]]
 		- 关系 [[OneToOneDependency]]
 - # [[partitionBy]]操作
+  collapsed:: true
 	- `partitionBy(partitioner)`
 		- 用法：`rdd2 = rdd1.partitionBy (partitioner)`
 		- 语义：使用新的`partitioner`对`rdd1`进行重新分区，`partitioner`可以是`HashPartitioner` `RangePartitioner`等,要求`rdd1`是`<K,V>`类型
@@ -84,10 +85,11 @@
 	- 生成的 RDD
 		- 类型 [[ShuffledRDD]]
 		- 关系 [[ShuffleDependency]]
-- [[groupByKey]] 操作
+- # [[groupByKey]] 操作
 	- groupByKey([numPartitions])
 		- 用法：`rdd2 = rdd1.groupByKey(numPartitions)`
 		- 语义：将`rdd1`中的`<K,V>` record 按照 `Key` 聚合在一起形成 `<K,list()>` (实际是`<K,CompactBuffer(V)>`), `numPartitions` 表示生成的 `rdd2` 的分区个数
+			- 如果没有指定分区数量，则默认使用 `rdd1` 的分区个数
 		- 生成的 RDD 在不同的情况下可能不同，取决于 rdd1 的分区方式
 			- 如果 `rdd1` 是 [[RangePartitioner]] 分区
 				- 例如 `rdd1` 是水平划分且分区个数为`3`，rdd2 被声明为分区为 `2`
@@ -96,4 +98,10 @@
 			- 如果 `rdd1` 是 [[HashPartitioner]]，且分区数相同
 				- 只需要直接聚合
 					- ![image.png](../assets/image_1680682893763_0.png){:height 394, :width 566}
-				-
+					- 得到 [[MapPartitionsRDD]]，关系为 [[OneToOneDependency]]
+			- 如果 rdd1 分区数不同，则同样会进行 shuffle，得到 [[ShuffledRDD]]
+	- 缺点
+	  background-color:: red
+		- 如果 partition 方法不同或数量不对等，会导致 shuffle，会产生大量中间数据，占用内存较大，在大多数场景，会使用 [[reduceByKey]] 代替
+- # [[reduceByKey]]()操作
+	-

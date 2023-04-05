@@ -23,4 +23,38 @@
 		- 类型 [[MapPartitionsRDD]]
 		- 关系 [[OneToOneDependency]]
 - # [[flatMap]] 和 [[flatMapValues]]
-	- flatMap(func)
+	- `flatMap(func)`
+		- 用法：`rdd2 = rdd1.flatMap(func)`
+		- 语义：对`rdd1`中每个元素(如list)执行func操作,得到新元素。主要适用于rdd中每个元素都是一个集合的情况
+	- `flatMapValues(func)`
+		- 用法：`rdd2=rdd1.flatMapValues(func)`
+		- 语义：与`flatMap()`相同,但只针对`rdd1` 中`<K,V>` record中的**Value**进行`flatMapValues()`操作
+	- 生成的 RDD
+		- 类型 [[MapPartitionsRDD]]
+		- 关系 [[OneToOneDependency]]
+- # [[sample]] 和 [[sampleByKey]]
+	- `sample(withReplacement, fraction, seed)`
+		- 用法：`rdd2 = rdd1.sample(true, 0.5,1.0)`
+		- 语义：对`rdd1`中的数据进行抽样，取其中`fraction*100%`的数据
+			- `withReplacementtrue`表示有放回的抽样，`seed`表示随机数种子
+		- 生成 RDD
+			- 类型
+				- 无放回 [[PartitionwiseSampledRDD]]
+				- 有放回 [[MapPartitionsRDD]]
+			- 关系 [[OneToOneDependency]]
+		- ![image.png](../assets/image_1680681523351_0.png){:height 259, :width 620}
+	- `sampleByKey(withReplacement, fractions: Map, seed)`
+		- 用法：`rdd2 = rdd1.sample(true, 0.5, 1.0)`
+		- 语义：对rdd1中的数据进行抽样,为每个 `Key` 设置抽样比例,如 `Key=1` 的抽样比例是 `30%` 等
+		- 生成 RDD
+			- 类型 [[MapPartitionsRDD]]
+			- 关系 [[OneToOneDependency]]
+- # [[mapPartitions]] 和 [[mapPartitionsWithlndex]] 操作
+	- `mapPartitions(func)`
+		- 用法：`rdd2 = rdd1.mapPartitions(func)`
+		- 语义：对`rdd1`中每个分区进行`func` 操作,输出新的一组数据
+	- `mapPartitionsWithIndex(func)`
+		- 用法：`rdd2 = rdd1.mapPartitionsWithIndex(func)`
+		- 语义：分区中的数据带有索引(表示record属于哪个分区)
+		- ![image.png](../assets/image_1680681933916_0.png){:height 318, :width 490}
+	-

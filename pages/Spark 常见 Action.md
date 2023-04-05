@@ -10,6 +10,11 @@ tags:: [[Spark Action]]
 		- `countByKey(): Map[K, long]`
 			- 语义: 统计 `rdd1` 中每个 `Key` 出现的次数 (`Key`可能有重复), 返回一个 `Map`, 要求 `rdd1` 是 `<K,V>` 类型
 			- ![image.png](../assets/image_1680689580867_0.png){:height 304, :width 916}
-				- `countByKey` 操作只统计每个 `Key` 出现的次数
-				- 首先利用 [[mapValues]] 操作将 `<K,V>` record的 `Value` 设置为 1
+				- 首先利用 [[mapValues]] 操作将 `<K,V>` record 的 `Value` 设置为 1
+				- 然后利用 [[reduceByKey]] 统计每个`Key` 出现的次数
+		- `countByValue():Map[T, long]`
+			- 语义:统计`rdd`中每个 record 出现的次数,返回一个`Map`, 最后汇总到 Driver 端,形成 `Map`
+			- ![image.png](../assets/image_1680689966066_0.png){:height 323, :width 921}
+				- 先将 record 变为`<record, null>`类型
+				- 使用 [[reduceByKey]] 得到每个 record 出现的次数
 			-

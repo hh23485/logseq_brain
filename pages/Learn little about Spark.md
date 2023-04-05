@@ -2,6 +2,8 @@ tags:: Spark, Sharing
 
 - TOC {{renderer :tocgen, [[]], 4, h}}
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
+- # Introduce of Spark
+	-
 - # Quick Introduction about Why Spark
 	- ## Start from MapReduce
 	  collapsed:: true
@@ -10,9 +12,9 @@ tags:: Spark, Sharing
 			- To address the challenges of processing large data sets efficiently.
 		- How does it work?
 			- Here is a [simple brief of MapReduce](https://hci.stanford.edu/courses/cs448g/a2/files/map_reduce_tutorial.pdf)
-			- Use a unified abstraction, there are two phases: map and reduce.
-				- The map function processes input data and generates intermediate key-value pairs.
-				- The reduce function aggregates the intermediate results to produce the final output.
+			- Use a unified abstraction, there are two phases: **map** and **reduce**.
+				- The **map** function **processes input data and generates intermediate key-value pairs.**
+				- The **reduce** function **aggregates the intermediate results to produce the final output.**
 			- Example: **[Word Counting]([[An Example of word count on MapReduce]])**
 				- {{embed ((6425a352-7bfd-4b83-bc9c-a65c6b0f2856))}}
 		- Benefits of using MapReduce
@@ -203,6 +205,7 @@ tags:: Spark, Sharing
 		- Remote
 			- Submit to spark endpoint
 - # Spark Internal Basic
+  collapsed:: true
 	- All this content comes from a great book [[大数据处理框架 Apache Spark 设计与实现@Book]]
 	- ## How a Spark application run?
 	  collapsed:: true
@@ -326,6 +329,7 @@ tags:: Spark, Sharing
 			  }
 			  ```
 		- ### What's the logic plan and physical plan will be?
+		  collapsed:: true
 			- Ideally the **steps** will be like:
 				- ![image.png](../assets/image_1680538845294_0.png){:height 519, :width 854}
 			- Little more dtails
@@ -415,6 +419,7 @@ tags:: Spark, Sharing
 			- RDD vs <K, V>
 			- High level transformation and action vs map() and reduce()
 	- ## How spark convert logic plan to physical plan
+	  collapsed:: true
 		- ### How to split job, stage, and task?
 			- Sorry but has to start another new code snippet
 				- ![image.png](../assets/image_1680694684400_0.png){:height 665, :width 840}
@@ -468,26 +473,202 @@ tags:: Spark, Sharing
 		- ### How to decided the tasks calculation order?
 			- Stages will be scheduled as DAG
 			- Tasks will be executed in parallel
-		- ### How to store and propagate intermediate data
-			-
+		- ### How intermediate data is stored and calculated inside the task?
+			- If each RDD is completely computed and then the value of the next RDD is computed, then once the RDD is very large, it will result in a large memory.
+			- So Spark uses a pipelined approach to computing RDDs inside the task
+			  background-color:: green
+				- Abstract the transformation such pattern, `recordx` are records in first RDD, `f` is the first transformation, `g` is the second transformation.
+					- `record1 => f(record1) => record1' => g(record1) => record1''`
+					- `record2 => f(record2) => record2' => g(record2) => record2''`
+					- `record3 => f(record3) => record3' => g(record3) => record3''`
+					- ![image.png](../assets/image_1680696098159_0.png){:height 474, :width 784}
+				- From this perspective, an idea is if `f` and `g` for `record1` are no need to care about `record2` and `record3`, then Spark no need to store all `recordX'`, all records can directly run both `f` and `g` separately.
+				- Based on the idea, we can conclude from the characteristics of `f` and `g` as follows
+					- if `f` and `g` only deal single record, no need to store record2, and record3. Run each records for all functions one by one, and only store final results.
+					- if `g` ask for `recordX'`, have to store all `recordX` and recycle them after `g` done. This type of transformations are like [[mapPartitions]] and [[zipPafitions]]
+					- if `f` ask for all `recordX`, have to read all records at first and recycle them after `g` done.
+					- if `f` and `g` ask for all intermediate records, have to read and store all records at each step, and recycle them after done.
+		- ### How to propagate intermediate data between stage?
+			- Child RDD have to read data from parent RDD, these kind of information are stored in RDD.
+			- Due to RDDs relationship between stages are [[ShuffleDependency]], upstream stage need to do [[Shuffle Write]]
+				- Upstream need to  partition the output data for downstream, the partition number should the same with downstream stage partition number.
+			- Then downstream stage need to read data from corresponding parent RDD, do [[Shuffle Read]]
+				- Each partition need collect all needed data from multi upstream partitions through network
+		- ### How to check physical plan?
+			- Use [[Spark UI]]
+				- Job information
+				- Stage information
+				- DAG Visualization
+				- RDD in
+				- Stage information
+				- Task information
+		- #+BEGIN_TIP
+		  Adjust the order of transformation, may improve the performance.
+		  #+END_TIP
+		- #+BEGIN_WARNING
+		  This only for RDD based operations, for Spark SQL, here are lots of other optimization methods.
+		  #+END_WARNING
 	- ## How spark do shuffle
+		- Spark designed a general [[Shuffle Write]] framework
+			- ![image.png](../assets/image_1680697497701_0.png)
+			- From high level, here are 3 steps, aggregation (combine) and sort are optional #.ol
+				- Use a Map liked collection to aggregate all records from map task (upstream calculation)
+				- After aggregation, put the records into a Array liked array, and sort by `partitionId` or `partitionId + Key`
+				- Output the records to disk files by `partitionId`
+			- ### Shuffle Write without combine and sort
+			  collapsed:: true
+				- ![image.png](../assets/image_1680697921847_0.png){:height 432, :width 996}
+				- Only need to partition data
+					- Output each record to partition buffer
+					- Once buffer is full, flush to disk
+				- Spark use [[BypassMergeSortShuffleWriter]] do finsh this task.
+				- Transformations
+					- [[groupByKey]]
+					- [[partitionBy]]
+					- [[sortByKey]]
+				- Shortage
+				  background-color:: red
+					- Need a buffer per partition, also a opened file, so only less than 200 partitions support.
+			- ### Shuffle Write without combine but need sort
+			  collapsed:: true
+				- ![2023-04-05_20-37-37.jpg](../assets/2023-04-05_20-37-37_1680698329343_0.jpg){:height 468, :width 1031}
+				- To sort the records, convert each `<K, V>` to `<(PID, K), V>`, and put into a Array ([[PartitionedPairBuffer]]).
+					- Once the buffer is full, sort by `PID + key` and spill to disk.
+					- Repeat until all output records are sorted by `PID + Key`, merge sort with disk files with memory ones
+					- Write the outputs to disk single file, and keep each partition index.
+				- [[PartitionedPairBuffer]] is a Array based on Memory and Disk
+				- This shuffle write mode is [[SortShuffleWriter]](`KeyOrdering`=true).
+				- Transformations
+					- No default, but may implemented by users.
+					- If modify the `KeyOrdering` to false, then support `groupByKey(300)`, `partitionBy(300)` and `sortByKey(300)`
+				- Pros
+				  background-color:: green
+					- Use a array to support sort, easy to implements
+					- Array size is under control.
+					- Can support large partition due to the array support spill to disk.
+			- ### Shuffle Write with combine, with or without sort by key
+			  collapsed:: true
+				- ![image.png](../assets/image_1680699138902_0.png){:height 433, :width 1103}
+				- ![image.png](../assets/image_1680699232644_0.png){:height 430, :width 1115}
+				- Use a new data structure [[PartitionedAppendOnlyMap]] to do combine.
+					- PartitionedAppendOnlyMap is a special map like a `HashMap + Array`, support append records, and a sort after all records appended.
+						- The HashMap is array based, when sorting, copy all object references to the front of array
+							- ![image.png](../assets/image_1680699796317_0.png){:height 527, :width 876}
+						- Then sort by Key or by Key's hash
+						- Finally output all records from start to end.
+					- When the map is full, will expand once, if not enough as well, will sort and spill all to disk.
+						- ![image.png](../assets/image_1680700205410_0.png){:height 1113, :width 1079}
+		- Spark designed a general [[Shuffle Read]] framework
+			- ![image.png](../assets/image_1680700368922_0.png)
+			- From high level, here are 3 steps, aggregation and sort are optional #.ol
+				- Collect data from map tasks
+				- Aggregation by key
+				- Sort by Key
+			- ### Shuffle Read without aggregation and sort
+			  collapsed:: true
+				- ![image.png](../assets/image_1680700449237_0.png){:height 584, :width 974}
+				- Wait all map tasks to finish, and collect records to a buffer
+				- Next operation will directly get records from buffer
+				- Transformation
+					- [[partitionBy]]
+				- Pros
+					- Simple
+				- Cons
+					- Not support sort and aggregation
+			- ### Shuffle Read without aggregation but sort by key
+			  collapsed:: true
+				- ![image.png](../assets/image_1680701577652_0.png){:height 522, :width 1069}
+				- Not like [[Shuffle Write]], [[Shuffle Read]] may need sort by `key` instead of `partitionId`
+				- Records from buffer will be appended into a Array ([[PartitionedPairBuffer]])
+					- Due to [[PartitionedPairBuffer]] is also designed for [[Shuffle Write]], the `partitionId` will be kept there
+				- Sort and spill all the records to get final result
+				- Transformations
+					- [[sortByKey]]
+					- [[sortBy]]
+			- ### Shuffle Read with aggregation, with or without sort by key
+			  collapsed:: true
+				- ![image.png](../assets/image_1680701841734_0.png){:height 566, :width 1078}
+				- ![image.png](../assets/image_1680701814101_0.png){:height 526, :width 1079}
+				- Before sort, use a Map to do aggregation and sort
+					- The data structure is [[ExternalAppendOnlyMap]], like [[PartitionedAppendOnlyMap]]. [[PartitionedAppendOnlyMap]] is for [[Shuffle Write]], support `partitionId`, while [[ExternalAppendOnlyMap]] not. All implement based on [[AppendOnlyMap]].
+		- ### How to detect memory during shuffle?
+			- Aggregation and sort collections are implemented based on [[AppendOnlyMap]]
+			- It's hard to detect the actual memory cost of the collection, as the elements in it are reference instead of object, also the collection is updated all the time.
+			- Before expends when collection is full, the map will check if the rest space is enough to double, then to decide whether spill to disk or not.
+			- To detect the memory usage, [[AppendOnlyMap]] use sampling way to detect
+				- Sampling object size in collection as current history size
+				- When new record put in or updated, use history increasing volume + current size as new size
+			- TODO Go to [[SizeTrackerEstimateSize]] function
 	- ## How Spark do caching
+		- ### Why Cache
+			- ``` scala
+			  // Define an input RDD with key-value pairs of Int and Char
+			  val inputRDD = Array[(Int, Char)] ((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (3, 'f'), (2, 'g'), (1, 'h'), (2, 'i'), 3)
+			  
+			  // Map the input RDD to a new RDD with only the key-value pairs
+			  val mappedRDD = inputRDD.map(x => (x._1, x._2))
+			  
+			  // Cache the mapped RDD in memory for faster access
+			  // mappedRDD.cache()
+			  
+			  // Reduce the mapped RDD by key, concatenating the values with an underscore
+			  val reduceRDD = mappedRDD.reduceByKey((x, y) => x + "_" + y, 2)
+			  
+			  // Print the reduced RDD
+			  reducedRDD.foreach(println)
+			  
+			  // Group the mapped RDD by key, and convert the values to a list
+			  val groupedRDD = mappedRDD.groupByKey(3).mapValues(V => V.tolist)
+			  
+			  // Print the grouped RDD
+			  groupedRDD.foreach(println)
+			  ```
+			- The logic plan will like:
+				- ![image.png](../assets/image_1680703547961_0.png){:height 747, :width 1064}
+			- Here are two `foreach` jobs.
+				- The two jobs shared the same process `inputRDD` => `mappedRDD`
+				- However, spark will re-calculate the progress by default.
+					- if the process is costly, use cache to skip the second time execution
+					- if the process is quite cheap, re-run to avoid memory/disk waste
+		- ### When to cache
+			- To cache a RDD, you should call `rdd.cache()` before the action on the RDD.
+				- In this case, you should call `mapped.cache` before the first `foreach`, else the cache will not be triggered.
+		- ### Where to cache
+			- .cache() is the same with `persist(MEMORY_ONLY)`
+				- for MEMORY_ONLY, as long as the memory is not enough to store, will cancel this cache.
+			- You can call `persist` with such parameters
+				- ![image.png](../assets/image_1680704168703_0.png)
+		- ### How to write cache
+			- Write cache order:
+				- After each records is calculated, will be write to cache store.
+				- ![image.png](../assets/image_1680704552115_0.png){:height 685, :width 831}
+			- For memory cache, here will be a memory area managed by [[BlockManager]] on each executor
+				- BlockManager will have a memoryStore, which contains a `LinkedHashMap`
+					- Key is blockId (`rddId + partitionId`)
+					- Value is records of the partition
+					- ![image.png](../assets/image_1680704568608_0.png)
+				- LinkedHashMap implements LRU algo, that's how memory cache replacement policy.
+		- ### How to read cache
+			- `.cache()` will make the RDD, so when read data from child RDD, it will tell where the cached stored, and get from the executor.
+				- Mark the cached partitions, memory size, etc.
+			- ![image.png](../assets/image_1680704774043_0.png)
+				- In this graph, the job2 task5 will read data from worker node 1 remotely, and task3 and task4 will directly read from local memory.
+			- The read is record by record.
 	- ## How Spark do fault tolerance
-	- ## How Spark manage memory
-	- Big data application 3 elements:
-		- **Input Data**: Stored in DFS, like HDFS, cosmos
-		- **User Source Code**
-		- **Configuration**
-	- Big data framework has four layers:
-		- User Layer
-		  Distributed Data Parallel Processing Layer
-		  Resource management and task scheduling layer
-		  Physical execution layer
-	-
-- # Spark Internal
-	- [[What's RDD]]
-	- [[]]
+		- Re-run job
+			- Requires **same input**, and the process should be **deterministic** and **idempotent**
+		- Where to re-run from?
+			- No Cache and Checkpoint
+				- Re-run all jobs
+			- Use Cache
+				- Cache is perishable and can be lost for various reasons
+					- LRU
+					- Executor existed
+			- Use Checkpoint
+				- Persistence to distributed storage such as HDFS
+				- The Stage that requires Checkpoint will be re-run to specifically write out the results, so you can add a cache to the first run to avoid repeated runs
+				- Checkpoint will chop off the lineage
+				- ![image.png](../assets/image_1680705385582_0.png){:height 735, :width 734}
 - # Practice
 	- [[Write a Spark job on MT in 5 minutes]]
-	- [[What happened in Spark - SparkUI]]
-	-
+	- TODO [[What happened in Spark - SparkUI]]

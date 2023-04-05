@@ -56,7 +56,9 @@ tags:: [[Spark Action]]
 				- 本质上是避免了将所有结果在最终的 Driver 才开始聚合
 					- `treeAggregate()` 首先对 `rdd1` 中的每个分区进行局部聚合
 					- 不断利用 [[foldBvKey]] 进行树形聚合，类似归并过程
-						- foldByKey 需要 `<K,V>` 类型的数据, `treeAggregate` 为每个 record 添加一个特殊的 `Key`
+						- foldByKey 需要 `<K,V>` 类型的数据, `treeAggregate` 为每个 record 添加一个特殊的 `Key`, 使得 rdd 中的数据被均分到每个非根节点进行聚合
+						- foldByKey 使用 [[ShuffleDependency]],但实际上每个分区中只存在一个 record
 					- ![image.png](../assets/image_1680691417870_0.png)
+						- 此时 [[treeAggregate]] 与[[aggregate]] 的区别是, [[treeAggregate]] 中的 `zeroValue` 会被多次使用(由于调用了 [[fold]])函数)
 		- `treeReduce(func, depth) :T`
 			- 语义: 将 `rdd1` 中的 record 按树形结构进行聚合

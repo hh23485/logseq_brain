@@ -33,4 +33,23 @@ tags:: [[Spark Action]]
 			- 语义: 将 `rdd1` 中的每个 record 按照`func`进行处理
 			- [[foreach]] 和 [[foreachPartition]] 的关系类似于 [[map]] 和 [[mapPartitions]] 的关系
 	- ## [[fold]]/[[reduce]]/ [[foldByKey]] 操作
-		-
+		- `fold(zeroValue)(func): T`
+			- 语义: 将 `rdd1` 中的 record 按照 `func` 进行聚合, `func` 语义与 [[foldByKey]](func) 中的`func`相同
+			- ![image.png](../assets/image_1680690636873_0.png){:height 370, :width 848}
+		- `reduce (func): T`
+			- 语义: 将`rdd1`中的 record 按照`func`进行聚合, `func`语义与[[reduceByKey]](func) 中的`func`相同
+			- ![image.png](../assets/image_1680690670578_0.png){:height 383, :width 862}
+		- `aggregate(zeroValue)(seqOp, combOp): U`
+			- 语义: 将`rdd1`中的 record 进行聚合, `segOp` 和 `combOp` 的语义与 [[aggregateByKey]] (zeroValue)(seqOp,combOp) 中的类似
+			- ![image.png](../assets/image_1680690692179_0.png){:height 365, :width 855}
+		- 为什么已经有[[reduceByKey]]、[[aggregateByKey]]等操作, 还要定义[[aggregate]]、[[reduce]] 等操作呢?
+			- 需要全局聚合，而不只是需要 RDD
+		- 缺点
+		  background-color:: red
+			- 当需要 merge 的部分结果很大时, 数据传输量很大, 而且 Driver 是单点 merge, 存在效率和内存空间限制问题
+			- Spark 对这些聚合操作进行了优化,提出了 [[treeAggregate]] 和 [[treeReduce]] 操作
+	- ## [[treeAggregate]] 和 [[treeReduce]] 操作
+		- `treeAggregate(zeroValue) (seqOp, combOp, depth):U`
+			- 语义: 将 `rdd1` 中的 record 按照树形结构进行聚合, 树的高度(depth) 的默认值为 `2`
+		- `treeReduce(func, depth) :T`
+			- 语义: 将 `rdd1` 中的 record 按树形结构进行聚合

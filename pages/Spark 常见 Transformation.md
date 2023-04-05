@@ -1,5 +1,8 @@
+tags:: [[Spark Transformation]]
+
 - TOC {{renderer :tocgen, [[]], 2, h}}
 - # 常见的 Transformation
+  id:: 642d4770-3dc8-4143-a6a5-afc35499de61
 	- ## [[map]] 和[[mapValues]]
 	  collapsed:: true
 		- `map(func)`

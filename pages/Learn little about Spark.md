@@ -337,7 +337,7 @@ tags:: Spark, Sharing
 				- Focus on **Data Source**, **Data Model**, **Data Action**, **Result**
 					- **Data Source**: Generated inputs
 					- **Data Model**: RDDs
-					- **Data Action**: [Transform]([[Spark Transform]]) like `flatMap`, [Action]([[Spark Action]]) like `count`
+					- **Data Action**: [Transform]([[Spark Transformation]]) like `flatMap`, [Action]([[Spark Action]]) like `count`
 					- **Result**: Final result
 				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapPartitionsRDD]]
 					- ![image.png](../assets/image_1680540692648_0.png){:height 409, :width 688}
@@ -369,7 +369,7 @@ tags:: Spark, Sharing
 			- ((642b0905-d68b-416a-9c13-a0059627f221))
 		- ### How to generate RDD, which kind RDD should be generated?
 		  id:: 642b08b1-2a52-46c9-99ac-8761c0226e48
-			- [[RDD]]s support two types of operations: *[transformations]([[Spark Transform]])*, which create a new dataset from an existing one, and *[actions]([[Spark Action]])*, which return a value to the driver program after running a computation on the dataset.
+			- [[RDD]]s support two types of operations: *[transformations]([[Spark Transformation]])*, which create a new dataset from an existing one, and *[actions]([[Spark Action]])*, which return a value to the driver program after running a computation on the dataset.
 			- Different transformation will generate different types of RDD
 				- [What's tansformation?](((642cd333-da61-467c-8d3a-f18b14c1a8ca)))
 				- [Kinds of transformation](((642ce69a-00d6-4762-8ff3-12ff3349c8ea)))
@@ -407,6 +407,7 @@ tags:: Spark, Sharing
 				- [Common use transformations]([[Spark 常见 Transformation]])
 				- [Common use actions]([[Spark 常见 Action]])
 	- ## How spark convert logic plan to physical plan
+	-
 	- ## How spark do shuffle
 	- ## How Spark do caching
 	- ## How Spark do fault tolerance

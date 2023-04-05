@@ -20,6 +20,7 @@ tags:: [[Spark Action]]
 				- 使用 [[reduceByKey]] 得到每个 record 出现的次数
 		-
 	- ## [[collect]] 和 [[collectAsMap]] 操作
+	  collapsed:: true
 		- `collect(): Array[T]`
 			- 用法: `val result = rdd1.collect()`
 			- 语义: 将 `rdd1` 中的 record 收集到 Driver 端
@@ -27,12 +28,14 @@ tags:: [[Spark Action]]
 			- 用法: `val result = rddl.collectAsMap()`
 			- 语义: 将`rdd1`中的 `<K,V>` record收集到 Driver 端,得到 `<K,V> Map`
 	- ## [[foreach]] 和 [[foreachPartition]]()
+	  collapsed:: true
 		- `foreach(func): Unit`
 			- 语义:将`rdd1`中的每个分区中的数据按照 `func` 进行处理
 		- `foreachPartition(func): Unit`
 			- 语义: 将 `rdd1` 中的每个 record 按照`func`进行处理
 			- [[foreach]] 和 [[foreachPartition]] 的关系类似于 [[map]] 和 [[mapPartitions]] 的关系
 	- ## [[fold]]/[[reduce]]/ [[foldByKey]] 操作
+	  collapsed:: true
 		- `fold(zeroValue)(func): T`
 			- 语义: 将 `rdd1` 中的 record 按照 `func` 进行聚合, `func` 语义与 [[foldByKey]](func) 中的`func`相同
 			- ![image.png](../assets/image_1680690636873_0.png){:height 370, :width 848}
@@ -49,6 +52,7 @@ tags:: [[Spark Action]]
 			- 当需要 merge 的部分结果很大时, 数据传输量很大, 而且 Driver 是单点 merge, 存在效率和内存空间限制问题
 			- Spark 对这些聚合操作进行了优化,提出了 [[treeAggregate]] 和 [[treeReduce]] 操作
 	- ## [[treeAggregate]] 和 [[treeReduce]] 操作
+	  collapsed:: true
 		- `treeAggregate(zeroValue) (seqOp, combOp, depth):U`
 			- 语义: 将 `rdd1` 中的 record 按照树形结构进行聚合, 树的高度(depth) 的默认值为 `2`
 			- 逻辑处理过程
@@ -64,7 +68,13 @@ tags:: [[Spark Action]]
 			- 语义: 将 `rdd1` 中的 record 按树形结构进行聚合
 			- `treeReduce` 实际上是调用 [[treeAggregate]], 唯一区别是没有初始值 `zeroValue`
 			- ![image.png](../assets/image_1680693148088_0.png){:height 513, :width 1148}
+	- TODO [[reduceByKeyLocality]] 操作
+	- TODO [[take]]/[[first]]/[[takeOrdered]]/[[top]] 操作
+	- TODO [[max]] 和 [[min]] 操作
+	- TODO [[isEmpty]] 操作
+	- TODO [[lookup]] 操作
 	- ## [[saveAsTextFile]]/[[saveAsObjectFile]]/[[saveAsHadoopFile]]/[[saveAsSequenceFile]] 操作
+	  collapsed:: true
 		- `saveAsTextFile(path): Unit`
 			- 语义：将 rdd 保存为文本文件
 		- `saveAsObjectFile(path): Unit`
@@ -72,4 +82,5 @@ tags:: [[Spark Action]]
 		- `saveAsSequenceFile(path): Unit`
 			- 语义：将 rdd 保存为 SequenceFile 形式的文件,  SequenceFile 用于存放序列化后的对象
 		- `saveAsHadoopFile(path): Unit`
-			- 将 rdd 保存为 Hadoop HDFS 文件系统
+			- 语义：将 rdd 保存为 Hadoop HDFS 文件系统
+-

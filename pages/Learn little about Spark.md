@@ -405,6 +405,9 @@ tags:: Spark, Sharing
 			- For more details you can go to:
 				- [Common use transformations]([[Spark 常见 Transformation]])
 				- [Common use actions]([[Spark 常见 Action]])
+		- From such transformations and actions, Spark shows a huge expressive improvement over MapReduce.
+			- RDD vs <K, V>
+			- High level transformation and action vs map() and reduce()
 	- ## How spark convert logic plan to physical plan
 	-
 	- ## How spark do shuffle

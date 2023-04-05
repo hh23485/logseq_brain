@@ -8,7 +8,7 @@
 - # 生成的 RDD 之间的关系
 	- 一些 Transformation 从一个 RDD，生成一个新的 RDD，另外一些 Transformation 需要多个 RDD 输入来生成一个新的 RDD。
 	- 对于新生成的 RDD 而言，在计算中需要能够从父 RDD 中寻找数据，而由于 RDD 事实上是分布式的，并不一定会在一个 task 中存放所有的分区数据，因此 RDD 中关联关系需要细化到当前 RDD 的各个分区依赖父 RDD 中的哪个分区。这时候会由于 Transformation 的语义不同，会产生不同的映射关系。
-		- ![image.png](../assets/image_1680660883320_0.png)
+		- ![image.png](../assets/image_1680660883320_0.png){:height 385, :width 845}
 		- 例如在这里
 			- rdd i 中的每个分区都依赖 rdd1 中的分区，此时是一对一关系
 			- rdd m 依赖 rdd i 中的多个分区，且 rdd m 中的多个分区都依赖 rdd i 中的每个分区，因此此时是多对多关系

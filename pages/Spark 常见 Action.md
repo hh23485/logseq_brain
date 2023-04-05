@@ -62,3 +62,14 @@ tags:: [[Spark Action]]
 						- 此时 [[treeAggregate]] 与[[aggregate]] 的区别是, [[treeAggregate]] 中的 `zeroValue` 会被多次使用(由于调用了 [[fold]])函数)
 		- `treeReduce(func, depth) :T`
 			- 语义: 将 `rdd1` 中的 record 按树形结构进行聚合
+			- `treeReduce` 实际上是调用 [[treeAggregate]], 唯一区别是没有初始值 `zeroValue`
+			- ![image.png](../assets/image_1680693148088_0.png){:height 513, :width 1148}
+	- ## [[saveAsTextFile]]/[[saveAsObjectFile]]/[[saveAsHadoopFile]]/[[saveAsSequenceFile]] 操作
+		- `saveAsTextFile(path): Unit`
+			- 语义：将 rdd 保存为文本文件
+		- `saveAsObjectFile(path): Unit`
+			- 语义：将 rdd 保存为序列化对象形式的文件
+		- `saveAsSequenceFile(path): Unit`
+			- 将 rdd 保存为 SequenceFile 形式的文件,  SequenceFile 用于存放序列化后的对象
+		- `saveAsHadoopFile(path): Unit`
+			- 将 rdd 保存为 Hadoop HDFS 文件系统

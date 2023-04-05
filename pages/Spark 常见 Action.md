@@ -51,5 +51,11 @@ tags:: [[Spark Action]]
 	- ## [[treeAggregate]] 和 [[treeReduce]] 操作
 		- `treeAggregate(zeroValue) (seqOp, combOp, depth):U`
 			- 语义: 将 `rdd1` 中的 record 按照树形结构进行聚合, 树的高度(depth) 的默认值为 `2`
+			- 逻辑处理过程
+				- [[treeAggregate]](seqOp,combOp) 的语义与 [[aggregate]] (seqOp, combOp) 的语义相同, 区别是 [[treeAggregate]] 使用树形聚合方法来优化全局聚合阶段,从而减轻了 Driver 端聚合的压力(数据传输量和内存用量)
+				- 本质上是避免了将所有结果在最终的 Driver 才开始聚合
+					- `treeAggregate()` 首先对 `rdd1` 中的每个分区进行局部聚合
+					- 不断利用 [[foldBvKey]] 进行树形聚合，类似归并过程
+					- ![image.png](../assets/image_1680691417870_0.png)
 		- `treeReduce(func, depth) :T`
 			- 语义: 将 `rdd1` 中的 record 按树形结构进行聚合

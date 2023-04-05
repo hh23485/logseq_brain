@@ -103,7 +103,7 @@
 	- 缺点
 	  background-color:: red
 		- 如果 partition 方法不同或数量不对等，会导致 shuffle，会产生大量中间数据，占用内存较大，在大多数场景，会使用 [[reduceByKey]] 代替
-- # [[reduceByKey]]()操作
+- # [[reduceByKey]] 操作
 	- `reduceByKey(func, [numPartitions])`
 		- 用法：`rdd2 = rdd1.reduceByKey(func, 2)`
 		- 语义：在聚合的过程中使用 `func` 对这些 record 的 `Value` 进行融合计算
@@ -138,4 +138,12 @@
 						- 在`aggregateByKey()`中, `zeroValue`和`record`可以是不同类型
 						- `seqOp`的输出结果与`zeroValue`是同一类型的
 				- [[reduceByKey]] 可以看作特殊版的 `aggregateByKey`，可以看作`seqOp=combOp=func` 版本的 `aggregateByKey`
-			-
+		- 例如 `rdd2 =rdd1.aggregateByKey(zeroValue, 2)(seqOp, combOp)`
+			- ![image.png](../assets/image_1680684088231_0.png)
+- LATER [[combinByKey]]
+- # [[foldByKey]]操作
+	- `foldByKey(zeroValue, numPartitions,func)`
+		- 语义：`foldByKey` 是一个简化的 `aggregateByKey`, `segOp` 和 `combineOp`共用一个`func`
+			- 介于 [[reduceByKey]] 和 [[aggregateByKey]] 之间，比 [[reduceByKey]]多一个 `zeroValue`
+- # [[cogroup]]()/[[groupWith]] 操作
+	-

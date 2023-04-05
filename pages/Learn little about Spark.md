@@ -342,8 +342,7 @@ tags:: Spark, Sharing
 				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapPartitionsRDD]]
 					- ![image.png](../assets/image_1680540692648_0.png){:height 409, :width 688}
 				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapPartitionsRDD]] -> [[ShuffledRDD]]
-					- TODO 2.4
-					- ![image.png](../assets/image_1680540906610_0.png){:height 332, :width 809}
+					- ![image.png](../assets/image_1680691483961_0.png)
 			- #### Physical Plan Summary
 				- Focus on stages and task level
 				- For Job 0

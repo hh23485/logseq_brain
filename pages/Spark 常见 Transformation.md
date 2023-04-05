@@ -121,5 +121,12 @@
 			- [[ShuffleDependency]]需要对`Key`进行Hash划分,所以,`Key`不能是特别复杂的类型
 		- 优点
 		  background-color:: yellow
-			- 相比[[groupByKey]], reduceByKey 可以在 Shuffle 之前使用 `func` 对数据进行聚合,减少了数据传输量和内存用量,效率比[[groupByKey]]的效率高
-- # [[aggregateByKey]]()操作
+			- 相比[[groupByKey]], `reduceByKey` 可以在 Shuffle 之前使用 `func` 对数据进行聚合,减少了数据传输量和内存用量,效率比[[groupByKey]]的效率高
+- # [[aggregateByKey]] 操作
+	- `aggregateByKey(zeroValue)(seqOp, combOp, [numPartitions])`
+		- 语义: `aggregateByKey()`是一个通用的聚合操作可以看作一个更一般的`reduceByKey()`
+		- 为什么已经有了[[reduceByKey]]，还要定义`aggregateByKey`呢?
+			- `reduceByKey` 的灵活性较低
+				- `reduceByKey` 中的`combine` 计算逻辑与`reduce` 一样,都采用 `func`
+				- 如在`combine()` 中想使用一个`sum()`函数,而在`reduce()`中想使用`max()`函数,那么`reduceByKey()` 就不满足要求了
+			- `aggregateByKey()` 将 `combine()` 和 `reduce()`两个函数的计算逻辑分开

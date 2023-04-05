@@ -3,7 +3,12 @@
   id:: 642cd333-da61-467c-8d3a-f18b14c1a8ca
 	- Used to **create a new dataset from existing ones**.
 	- 隐含的意思是从已有的 RDD 中创建出新的 RDD，且是单向操作，Transformation 不会对已有 RDD 进行修改
-	- 一直使用 Transformation 可以一直生成新的 RDD。
+	- 一直使用 Transformation 可以一直生成新的 RDD
+	- 这些 RDD 之间存在的关系取决于使用的 Transformation 类型
+- # 生成的 RDD 之间的关系
+	- 一些 Transformation 从一个 RDD，生成一个新的 RDD，另外一些 Transformation 需要多个 RDD 输入来生成一个新的 RDD。
+	- 对于新生成的 RDD 而言，在计算中需要能够从父 RDD 中寻找数据，而由于 RDD 事实上是分布式的，因此 RDD 中关联的会细粒度到当前 RDD 的各个分区依赖父 RDD 中的哪个分区。这时候会由于 Transformation 的语义不同，会产生不同的映射关系。
+	- 因此 RDD 中会包含这就会涉及到一些新的概念，[[宽依赖]] 和 [[窄依赖]]
 - # Transform 有哪些种类
 	-
 - # 参考资料

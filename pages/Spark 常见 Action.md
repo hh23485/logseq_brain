@@ -70,6 +70,6 @@ tags:: [[Spark Action]]
 		- `saveAsObjectFile(path): Unit`
 			- 语义：将 rdd 保存为序列化对象形式的文件
 		- `saveAsSequenceFile(path): Unit`
-			- 将 rdd 保存为 SequenceFile 形式的文件,  SequenceFile 用于存放序列化后的对象
+			- 语义：将 rdd 保存为 SequenceFile 形式的文件,  SequenceFile 用于存放序列化后的对象
 		- `saveAsHadoopFile(path): Unit`
 			- 将 rdd 保存为 Hadoop HDFS 文件系统

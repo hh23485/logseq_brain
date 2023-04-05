@@ -365,6 +365,8 @@ tags:: Spark, Sharing
 			- ((642b0905-d68b-416a-9c13-a0059627f221))
 		- ### How to generate RDD, which kind RDD should be selected?
 		  id:: 642b08b1-2a52-46c9-99ac-8761c0226e48
+			- [[RDD]] are for immediate data abstraction, related to two operations [Transaction]([[Spark Transaction]]) and [Action]([[Spark Action]])
+			-
 		- ### How to build RDD relationships
 		  id:: 642b08d0-4f08-42de-b18a-6673f7cf17c6
 		- ### How to calculate RDD data?

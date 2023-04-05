@@ -333,7 +333,7 @@ tags:: Spark, Sharing
 					- The two jobs has different number of stages
 				- TODO debug string
 					- Different types of RDD
-			- **Logic Plan Summary**
+			- #### Logic Plan Summary
 				- Focus on **Data Source**, **Data Model**, **Data Action**, **Result**
 					- **Data Source**: Generated inputs
 					- **Data Model**: RDDs
@@ -344,7 +344,7 @@ tags:: Spark, Sharing
 				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]] -> [[ShuffledRDD]]
 					- TODO 2.4
 					- ![image.png](../assets/image_1680540906610_0.png){:height 332, :width 809}
-			- **Physical Plan Summary**
+			- #### Physical Plan Summary
 				- Focus on stages and task level
 				- For Job 0
 					- has 2 RDDs, merged in 1 stage
@@ -370,15 +370,15 @@ tags:: Spark, Sharing
 		- ### How to generate RDD, which kind RDD should be selected?
 		  id:: 642b08b1-2a52-46c9-99ac-8761c0226e48
 			- [[RDD]]s support two types of operations: *[transformations]([[Spark Transform]])*, which create a new dataset from an existing one, and *[actions]([[Spark Action]])*, which return a value to the driver program after running a computation on the dataset.
+			- Different transformation will generate different types of RDD
 				- [What's tansformation?](((642cd333-da61-467c-8d3a-f18b14c1a8ca)))
 				- [Kinds of transformation](((642ce69a-00d6-4762-8ff3-12ff3349c8ea)))
-				- [What's action?](((642cd732-7410-4a3f-bb9b-2879c4f04c36)))
-				- [Kind of action](((642cd76e-33a4-456b-bf89-f576801fdacf)))
 		- ### How to build RDD relationships
 		  id:: 642b08d0-4f08-42de-b18a-6673f7cf17c6
-			-
+			- RDDs relationships are typed as [[NarrowDependency]] and [[ShuffleDependency]].
 		- ### How to calculate RDD data?
 		  id:: 642b0905-d68b-416a-9c13-a0059627f221
+			-
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle
 	- ## How Spark do caching

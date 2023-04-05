@@ -119,6 +119,7 @@
 			- `combine()`和`reduce()`的计算逻辑一样,采用同一个 `func`
 			- `func` 需要满足交换律和结合律,因为Shuffle并不保证数据到达顺序
 			- [[ShuffleDependency]]需要对`Key`进行Hash划分,所以,`Key`不能是特别复杂的类型
+			- 在`reduceByKey()`中, `func`要求参与聚合的record和输出结果是同一个类型(类型`Value`),
 		- 优点
 		  background-color:: yellow
 			- 相比[[groupByKey]], `reduceByKey` 可以在 Shuffle 之前使用 `func` 对数据进行聚合,减少了数据传输量和内存用量,效率比[[groupByKey]]的效率高
@@ -129,4 +130,12 @@
 			- `reduceByKey` 的灵活性较低
 				- `reduceByKey` 中的`combine` 计算逻辑与`reduce` 一样,都采用 `func`
 				- 如在`combine()` 中想使用一个`sum()`函数,而在`reduce()`中想使用`max()`函数,那么`reduceByKey()` 就不满足要求了
-			- `aggregateByKey()` 将 `combine()` 和 `reduce()`两个函数的计算逻辑分开
+			- `aggregateByKey()` 将 `combine()` 和 `reduce()` 两个函数的计算逻辑分开
+				- `combine()` 使用`seqOp`将同一个分区中的`<K,V>`record聚合在一起,
+				- `reduce()` 使用`combineOp`将经过`seqOp`聚合后的不同分区的`<K,V'>`record进一步聚合
+					- `reduce(func)` 操作时需要一个**初始值,**而`reduceByKey(func)`没有初始值 `zeroValue`
+					- `aggregateByKey()` 还提供了一个`zeroValue`参数,来为`seqOp`提供初始值`zeroValue`
+						- 在`aggregateByKey()`中, `zeroValue`和`record`可以是不同类型
+						- `seqOp`的输出结果与`zeroValue`是同一类型的
+				- [[reduceByKey]] 可以看作特殊版的 `aggregateByKey`，可以看作`seqOp=combOp=func` 版本的 `aggregateByKey`
+			-

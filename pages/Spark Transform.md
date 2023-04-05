@@ -15,6 +15,7 @@
 		- 除此之外还存在一对多关系和多对一关系
 		- Spark 将 Trasnformation 产生的数据关系分为两大类，[[窄依赖]] 和 [[宽依赖]]
 - # Transform 有哪些种类
+  id:: 642ce69a-00d6-4762-8ff3-12ff3349c8ea
 	-
 - # 参考资料
 	- [RDD Programming Guide - Spark 3.3.2 Documentation (apache.org)](https://spark.apache.org/docs/3.3.2/rdd-programming-guide.html#transformations)

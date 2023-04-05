@@ -370,7 +370,10 @@ tags:: Spark, Sharing
 		- ### How to generate RDD, which kind RDD should be selected?
 		  id:: 642b08b1-2a52-46c9-99ac-8761c0226e48
 			- [[RDD]]s support two types of operations: *[transformations]([[Spark Transform]])*, which create a new dataset from an existing one, and *[actions]([[Spark Action]])*, which return a value to the driver program after running a computation on the dataset.
-			- {{embed ((642cd333-da61-467c-8d3a-f18b14c1a8ca))}}
+				- [What's tansformation?](((642cd333-da61-467c-8d3a-f18b14c1a8ca)))
+				- [Kinds of transformation](((642ce69a-00d6-4762-8ff3-12ff3349c8ea)))
+				- [What's action?](((642cd732-7410-4a3f-bb9b-2879c4f04c36)))
+				- [Kind of action](((642cd76e-33a4-456b-bf89-f576801fdacf)))
 		- ### How to build RDD relationships
 		  id:: 642b08d0-4f08-42de-b18a-6673f7cf17c6
 			-

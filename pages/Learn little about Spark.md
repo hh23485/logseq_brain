@@ -1,6 +1,6 @@
 tags:: Spark, Sharing
 
-- TOC {{renderer :tocgen, [[]], 2, h}}
+- TOC {{renderer :tocgen, [[]], 4, h}}
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Quick Introduction about Why Spark
 	- ## Start from MapReduce
@@ -333,8 +333,12 @@ tags:: Spark, Sharing
 					- The two jobs has different number of stages
 				- TODO debug string
 					- Different types of RDD
-			- **Logic Plan** Summary
+			- **Logic Plan Summary**
 				- Focus on **Data Source**, **Data Model**, **Data Action**, **Result**
+					- **Data Source**: Generated inputs
+					- **Data Model**: RDDs
+					- **Data Action**: [Transaction]([[Spark Transaction]]) like `flatMap`, [Action]([[Spark Action]]) like `count`
+					- **Result**: Final result
 				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]]
 					- ![image.png](../assets/image_1680540692648_0.png){:height 409, :width 688}
 				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]] -> [[ShuffledRDD]]

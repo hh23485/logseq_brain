@@ -339,9 +339,9 @@ tags:: Spark, Sharing
 					- **Data Model**: RDDs
 					- **Data Action**: [Transform]([[Spark Transform]]) like `flatMap`, [Action]([[Spark Action]]) like `count`
 					- **Result**: Final result
-				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]]
+				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapPartitionsRDD]]
 					- ![image.png](../assets/image_1680540692648_0.png){:height 409, :width 688}
-				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]] -> [[ShuffledRDD]]
+				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapPartitionsRDD]] -> [[ShuffledRDD]]
 					- TODO 2.4
 					- ![image.png](../assets/image_1680540906610_0.png){:height 332, :width 809}
 			- #### Physical Plan Summary

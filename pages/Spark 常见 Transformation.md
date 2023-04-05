@@ -10,7 +10,7 @@
 		- 语义：对于 `rdd1` 中每个 `<K,V>` record, 使用 `func` 对 value 进行处理,得到新的 record
 		- ![image.png](../assets/image_1680680109965_0.png){:height 406, :width 428}
 	- 生成的 RDD
-		- 类型 [[MapParitionsRDD]]
+		- 类型 [[MapPartitionsRDD]]
 		- 关系 [[OneToOneDependency]]
 - # [[filter]] 和 [[filterByRange]]
 	- `filter(func)`
@@ -57,4 +57,43 @@
 		- 用法：`rdd2 = rdd1.mapPartitionsWithIndex(func)`
 		- 语义：分区中的数据带有索引(表示record属于哪个分区)
 		- ![image.png](../assets/image_1680681933916_0.png){:height 318, :width 490}
-	-
+		- 场景
+			- 当程序计算出一个result RDD时,我们想知道这个RDD中包含多少个分区, 以及每个分区中包含了哪些record
+				- ``` scala
+				  resultRDD.mapPartitionsWithIndex((pid, iter) => {
+				    iter.map (Value => "Pid: " + pid + ", Value: " + Value)
+				  }).foreach(println)
+				  ```
+			- 批量写入数据库
+				- 在`mapPartitions()`中先建立数据库连接
+				- 然后将每一个新来的数据iternext)转化成数据表中的一行
+				- 将其插入数据库中
+	- 生成的 RDD
+		- 类型 [[MapPartitionsRDD]]
+		- 关系 [[OneToOneDependency]]
+- # [[partitionBy]]操作
+	- `partitionBy(partitioner)`
+		- 用法：`rdd2 = rdd1.partitionBy (partitioner)`
+		- 语义：使用新的`partitioner`对`rdd1`进行重新分区，`partitioner`可以是`HashPartitioner` `RangePartitioner`等,要求`rdd1`是`<K,V>`类型
+	- 场景
+		- 使用 [[HashPartitioner]] 对 `rdd1` 进行重新分区
+			- ![image.png](../assets/image_1680682287456_0.png){:height 352, :width 500}
+		- 使用[[RangePartitioner]]对`rdd1`进行重新分区的情景, `Key`值较小的record被分到`partition1`, `Key`值较大的record被分到`partition2`
+			- ![image.png](../assets/image_1680682342884_0.png){:height 313, :width 494}
+			- **不保证 rdd2 中的分区内数据有序**
+	- 生成的 RDD
+		- 类型 [[ShuffledRDD]]
+		- 关系 [[ShuffleDependency]]
+- [[groupByKey]] 操作
+	- groupByKey([numPartitions])
+		- 用法：`rdd2 = rdd1.groupByKey(numPartitions)`
+		- 语义：将`rdd1`中的`<K,V>` record 按照 `Key` 聚合在一起形成 `<K,list()>` (实际是`<K,CompactBuffer(V)>`), `numPartitions` 表示生成的 `rdd2` 的分区个数
+		- 生成的 RDD 在不同的情况下可能不同，取决于 rdd1 的分区方式
+			- 如果 `rdd1` 是 [[RangePartitioner]] 分区
+				- 例如 `rdd1` 是水平划分且分区个数为`3`，rdd2 被声明为分区为 `2`
+					- ![image.png](../assets/image_1680682795708_0.png){:height 358, :width 509}
+					- 会得到 [[ShuffledRDD]]，关系为 [[ShuffleDependency]]
+			- 如果 `rdd1` 是 [[HashPartitioner]]，且分区数相同
+				- 只需要直接聚合
+					- ![image.png](../assets/image_1680682893763_0.png){:height 394, :width 566}
+				-

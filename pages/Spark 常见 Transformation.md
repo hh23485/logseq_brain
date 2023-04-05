@@ -1,0 +1,11 @@
+- {{renderer :tocgen}}
+- # [[map]] and [[mapValues]]
+	- `map(func)`
+		- 用法 `rdd2 = rdd1.map(func)`
+		- 语义：使用 `func` 对 `rdd1` 中的每个 record 进行处理，输出一个新的 record
+	- `mapValues(func)`
+		- 用法 `rdd2 = rdd1.mapValues(func)`
+		- 语义：对于 `rdd1` 中每个 `<K,V> record`, 使用 `func` 对 value 进行处理,得到新的 record
+	- 生成的 RDD
+		- 类型 [[MapParitionsRDD]]
+		- 关系 [[OneToOneDependency]]

@@ -367,7 +367,7 @@ tags:: Spark, Sharing
 			- ((642b08b1-2a52-46c9-99ac-8761c0226e48))
 			- ((642b08d0-4f08-42de-b18a-6673f7cf17c6))
 			- ((642b0905-d68b-416a-9c13-a0059627f221))
-		- ### How to generate RDD, which kind RDD should be selected?
+		- ### How to generate RDD, which kind RDD should be generated?
 		  id:: 642b08b1-2a52-46c9-99ac-8761c0226e48
 			- [[RDD]]s support two types of operations: *[transformations]([[Spark Transform]])*, which create a new dataset from an existing one, and *[actions]([[Spark Action]])*, which return a value to the driver program after running a computation on the dataset.
 			- Different transformation will generate different types of RDD
@@ -375,10 +375,37 @@ tags:: Spark, Sharing
 				- [Kinds of transformation](((642ce69a-00d6-4762-8ff3-12ff3349c8ea)))
 		- ### How to build RDD relationships
 		  id:: 642b08d0-4f08-42de-b18a-6673f7cf17c6
-			- RDDs relationships are typed as [[NarrowDependency]] and [[ShuffleDependency]].
+			- Questions
+				- How to build relationships with RDD?
+					- Could be `RDD1=>RD2`, or `(RDD1, RDD2) => RDD3` or even `(RDD1, RDD2, RDD3) => RDD4`, etc
+				- How to decide how many partitions should be split in generated RDD?
+					- If not specified, the new partitions number be the max partitions number in parent RDDs.
+					- For parent RDDs, here are three common types of [partitioning method]([[Spark 如何划分 RDD 分区]])
+				- What's the relationships between partitions in child RDD and parent RDDs?
+					- Depends on transformation and parent RDDs' partition number
 		- ### How to calculate RDD data?
 		  id:: 642b0905-d68b-416a-9c13-a0059627f221
-			-
+			- As long as we can deal RDD partitions number and relationships, spark can apply transformations and actions to each records.
+			- logically, the progress just like apply function to local applications in such two ways:
+				- ``` scala
+				  int[] array = {1,2,3,4,5,6,7,8,9,10};
+				  // map(func)
+				  for (int i = 0; i < array.length; i++) {
+				      newRecord = func(array[i]);
+				      output(newRecord)
+				  }
+				  ```
+					- ![image.png](../assets/image_1680679303732_0.png){:height 191, :width 445}
+				- ``` scala
+				  int[] array = {1,2,3,4,5,6,7,8,9,10};
+				  // mapPartitions(func)
+				  list[] newRecords = func(array);
+				  output(newRecords)
+				  ```
+					- ![image.png](../assets/image_1680679276300_0.png){:height 164, :width 445}
+			- For more details you can go to:
+				- [Common use transformations]([[Spark 常见 Transformation]])
+				- [Common use actions]([[Spark 常见 Action]])
 	- ## How spark convert logic plan to physical plan
 	- ## How spark do shuffle
 	- ## How Spark do caching

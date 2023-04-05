@@ -104,4 +104,22 @@
 	  background-color:: red
 		- 如果 partition 方法不同或数量不对等，会导致 shuffle，会产生大量中间数据，占用内存较大，在大多数场景，会使用 [[reduceByKey]] 代替
 - # [[reduceByKey]]()操作
-	-
+	- `reduceByKey(func, [numPartitions])`
+		- 用法：`rdd2 = rdd1.reduceByKey(func, 2)`
+		- 语义：在聚合的过程中使用 `func` 对这些 record 的 `Value` 进行融合计算
+		- `reduceByKey` 实际包括两步聚合 #.ol
+			- 第1步,在 [[ShuffledRDD]] 之前对RDD中每个分区中的数据进行一个本地化的`combine()`聚合操作
+				- 称为mini-reduce 或者map端`combine()`
+				- 对[[ParallelCollectionsRDD]]中的每个分区进行`combine()`操作,将具有相同`Key`的`Value`聚合在一起,并利用`func`进行`reduce()` 聚合操作
+				- Spark自动完成, 并不形成新的RDD
+			- 第2步,`reduceByKey()`生成新的 [[ShuffledRDD]]
+		- ![image.png](../assets/image_1680683349931_0.png)
+		- 注意
+		  background-color:: yellow
+			- `combine()`和`reduce()`的计算逻辑一样,采用同一个 `func`
+			- `func` 需要满足交换律和结合律,因为Shuffle并不保证数据到达顺序
+			- [[ShuffleDependency]]需要对`Key`进行Hash划分,所以,`Key`不能是特别复杂的类型
+		- 优点
+		  background-color:: yellow
+			- 相比[[groupByKey]], reduceByKey 可以在 Shuffle 之前使用 `func` 对数据进行聚合,减少了数据传输量和内存用量,效率比[[groupByKey]]的效率高
+- # [[aggregateByKey]]()操作

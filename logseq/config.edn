@@ -301,4 +301,5 @@
  :feature/enable-whiteboards? true
  :graph/settings {:journal? false}
  :ui/show-full-blocks? true
+ :ui/show-brackets? true
  }

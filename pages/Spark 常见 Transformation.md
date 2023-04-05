@@ -146,4 +146,17 @@
 		- 语义：`foldByKey` 是一个简化的 `aggregateByKey`, `segOp` 和 `combineOp`共用一个`func`
 			- 介于 [[reduceByKey]] 和 [[aggregateByKey]] 之间，比 [[reduceByKey]]多一个 `zeroValue`
 - # [[cogroup]]()/[[groupWith]] 操作
-	-
+	- `cogroup(otherDataset, [numPartitions])`
+		- 用法：`rdd3 =rdd1.cogroup(rdd2, 2)`
+		- 语义：将多个 RDD 中具有相同 `Key` 的 `Value` 聚合在一起
+		- 例如
+			- ``` scala
+			  var inputRDD1 = sc.parallelize(Array[(Int, Char)]((1, 'a'), (1, 'b'), (2, 'c'), (3, 'd'), (4, 'e'), (5, 'f')), 3)
+			  var inputRDD2 = sc.parallelize(Array[(Int, Char)]((1, 'f'), (3, 'g'), (2, 'h'), 2)
+			  val resultRDD = inputRDD1.cogroup(inputRDD2, 3)
+			  ```
+		- `cogroup` 与 [[groupByKey]] 的不同
+		  id:: 642d3701-2e56-4476-8ec5-baa02eb1c740
+			- `cogroup` 可以将多个 RDD 聚合为一个RDD，最多支持 4 个 RDD 进行 `cogroup`，如 `rdd5 = rdd1.cogroup(rdd2,rdd3,rdd4)`
+			- 其生成的 RDD 与多个 parent RDD 存在依赖关系
+		-

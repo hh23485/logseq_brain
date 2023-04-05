@@ -337,14 +337,14 @@ tags:: Spark, Sharing
 				- Focus on **Data Source**, **Data Model**, **Data Action**, **Result**
 					- **Data Source**: Generated inputs
 					- **Data Model**: RDDs
-					- **Data Action**: [Transaction]([[Spark Transaction]]) like `flatMap`, [Action]([[Spark Action]]) like `count`
+					- **Data Action**: [Transform]([[Spark Transform]]) like `flatMap`, [Action]([[Spark Action]]) like `count`
 					- **Result**: Final result
 				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]]
 					- ![image.png](../assets/image_1680540692648_0.png){:height 409, :width 688}
 				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapParitionsRDD]] -> [[ShuffledRDD]]
 					- TODO 2.4
 					- ![image.png](../assets/image_1680540906610_0.png){:height 332, :width 809}
-			- Physical Plan Summary
+			- **Physical Plan Summary**
 				- Focus on stages and task level
 				- For Job 0
 					- has 2 RDDs, merged in 1 stage
@@ -369,8 +369,8 @@ tags:: Spark, Sharing
 			- ((642b0905-d68b-416a-9c13-a0059627f221))
 		- ### How to generate RDD, which kind RDD should be selected?
 		  id:: 642b08b1-2a52-46c9-99ac-8761c0226e48
-			- [[RDD]] are for immediate data abstraction, related to two operations [Transaction]([[Spark Transaction]]) and [Action]([[Spark Action]])
-			-
+			- [[RDD]]s support two types of operations: *[transformations]([[Spark Transform]])*, which create a new dataset from an existing one, and *[actions]([[Spark Action]])*, which return a value to the driver program after running a computation on the dataset.
+			- {{embed ((642cd333-da61-467c-8d3a-f18b14c1a8ca))}}
 		- ### How to build RDD relationships
 		  id:: 642b08d0-4f08-42de-b18a-6673f7cf17c6
 		- ### How to calculate RDD data?

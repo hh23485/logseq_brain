@@ -1,4 +1,0 @@
-- TOC {{renderer :tocgen, [[]], 2, h}}
-- # What's Transaction
-- # Kinds of Transactions
-- # Resources

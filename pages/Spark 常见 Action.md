@@ -2,6 +2,7 @@ tags:: [[Spark Action]]
 
 - # 常见的 Action
 	- ## [[count]]，[[countByKey]] 和 [[countByValue]] 操作
+	  collapsed:: true
 		- `count(): long`
 			- 语义: 统计`rdd1`中包含的 record 个数, 返回一个 `long` 类型
 			- 用法: `val result = rdd1.count()`
@@ -17,4 +18,19 @@ tags:: [[Spark Action]]
 			- ![image.png](../assets/image_1680689966066_0.png){:height 323, :width 921}
 				- 先将 record 变为`<record, null>`类型
 				- 使用 [[reduceByKey]] 得到每个 record 出现的次数
-			-
+		-
+	- ## [[collect]] 和 [[collectAsMap]] 操作
+		- `collect(): Array[T]`
+			- 用法: `val result = rdd1.collect()`
+			- 语义: 将 `rdd1` 中的 record 收集到 Driver 端
+		- `collectAsMap(): Map[K, V]`
+			- 用法: `val result = rddl.collectAsMap()`
+			- 语义: 将`rdd1`中的 `<K,V>` record收集到 Driver 端,得到 `<K,V> Map`
+	- ## [[foreach]] 和 [[foreachPartition]]()
+		- `foreach(func): Unit`
+			- 语义:将`rdd1`中的每个分区中的数据按照 `func` 进行处理
+		- `foreachPartition(func): Unit`
+			- 语义: 将 `rdd1` 中的每个 record 按照`func`进行处理
+			- [[foreach]] 和 [[foreachPartition]] 的关系类似于 [[map]] 和 [[mapPartitions]] 的关系
+	- ## [[fold]]/[[reduce]]/ [[foldByKey]] 操作
+		-

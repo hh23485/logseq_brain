@@ -1,11 +1,26 @@
 - {{renderer :tocgen}}
-- # [[map]] and [[mapValues]]
+- # [[map]] 和[[mapValues]]
+  collapsed:: true
 	- `map(func)`
 		- 用法 `rdd2 = rdd1.map(func)`
 		- 语义：使用 `func` 对 `rdd1` 中的每个 record 进行处理，输出一个新的 record
+		- ![image.png](../assets/image_1680680097383_0.png){:height 427, :width 390}
 	- `mapValues(func)`
 		- 用法 `rdd2 = rdd1.mapValues(func)`
-		- 语义：对于 `rdd1` 中每个 `<K,V> record`, 使用 `func` 对 value 进行处理,得到新的 record
+		- 语义：对于 `rdd1` 中每个 `<K,V>` record, 使用 `func` 对 value 进行处理,得到新的 record
+		- ![image.png](../assets/image_1680680109965_0.png){:height 406, :width 428}
 	- 生成的 RDD
 		- 类型 [[MapParitionsRDD]]
 		- 关系 [[OneToOneDependency]]
+- # [[filter]] 和 [[filterByRange]]
+	- `filter(func)`
+		- 用法：`rdd2 = rdd1.filter(func)`
+		- 语义：对 `rdd1` 中的每个record进行`func`操作, 如果结果为`true`,则保留这个record,所有保留的record将形成新的`rdd2`
+	- `filterByRange(lower, upper)`
+		- 用法：`rdd2 = rdd1.filterByRange(2,4)`
+		- 语义：对`rdd1`中的数据进行过滤,只保留`[lower, upper]`之间的record
+	- 生成的 RDD
+		- 类型 [[MapPartitionsRDD]]
+		- 关系 [[OneToOneDependency]]
+- # [[flatMap]] 和 [[flatMapValues]]
+	- flatMap(func)

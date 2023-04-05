@@ -159,4 +159,68 @@
 		  id:: 642d3701-2e56-4476-8ec5-baa02eb1c740
 			- `cogroup` 可以将多个 RDD 聚合为一个RDD，最多支持 4 个 RDD 进行 `cogroup`，如 `rdd5 = rdd1.cogroup(rdd2,rdd3,rdd4)`
 			- 其生成的 RDD 与多个 parent RDD 存在依赖关系
-		-
+		- 生成的 RDD 为 [[CoGroupedRDD]] -> [[MapPartitionsRDD]]
+			- [[CoGroupedRDD]] 将数据聚合在一起
+			- [[MapPartitionsRDD]] 将数据类型转变为[[CompactBufer]](类似于Java的ArayList)
+		- RDD 关系
+			- 通常为 [[ShuffleDependency]]
+			- 特殊情况关系为 [[OneToOneDependency]]
+				- 如果child RDD 和parent RDD使用的partitioner相同且分区个数也相同，那么使用[[OneToOneDependency]]即可
+			- 更特殊的情况可能对一部分 RDD 采用 [[OneToOneDependency]]，另外一部分采用 [[ShuffleDependency]]，
+				- ![image.png](../assets/image_1680685095928_0.png){:height 452, :width 748}
+		- 也称为 `groupWith`
+- # [[join]] 操作
+	- `join(otherDataset, [numPartitions])`
+		- 用法: `rdd3 = rdd2.join(rdd1)`
+		- 语义: 将两个 RDD 中的数据关联在一起,与SQL中的 `join()` 类似
+		- 实现
+			- [[join]] 操作实际上建立在 [[cogroup]] 之上
+				- ,首先利用[[CoGroupedRDD]]将具有相同 `Key` 的 `Value` 聚合在一起，形成 `<K,[Iist(V), list(W)]>`, 生成 [[MapPartitionsRDD]]
+				- 然后对 `[Iist(V), list(W)]` 进行笛卡儿积计算并输出结果 `<K, (V, W)>`，生成 [[MapPartitionsRDD]]
+		- 生成的 RDD
+			- 类型 [[CoGroupedRDD]] -> [[MapPartitionsRDD]] -> [[MapPartitionsRDD]]
+		- 生成的 RDD 关系
+			- [[ShuffleDependency]]: 当 rdd1, rdd2, CoGroupedRDD 的 partitioner 均不同
+			  collapsed:: true
+				- ![image.png](../assets/image_1680687706783_0.png){:height 453, :width 556}
+			- 部分 [[OneToOneDependency]]，部分 [[ShuffleDependency]]: 当 rdd1 或 rdd2 与 CoGroupedRDD 的 partitioner 相同
+			  collapsed:: true
+				- ![image.png](../assets/image_1680687847895_0.png){:height 579, :width 566}
+				- ![image.png](../assets/image_1680687890861_0.png){:height 603, :width 564}
+			- [[OneToOneDependency]]: 当 rdd1, rdd2和 CoGroupedRDD partitioner 完全相同
+			  collapsed:: true
+				- ![image.png](../assets/image_1680687946925_0.png){:height 623, :width 558}
+- # [[sortByKey]] 操作
+	- `sortByKey([ascending],[numPartitions])`
+		- 用法：`rdd2 = rdd1.sortByKey(true, 2)`
+		- 语义：对 `rdd1` 中 `<K,V>` record 进行排序, 注意只按照 `Key` 进行排序, 在相同 `Key` 的情况下, 并不对 `value` 进行排序
+		- 例如：
+			- 对 inputRDD 中的数据按照 Key 升序排列
+				- ```scala
+				  var inputRDD = sc.parallelize(Array[(Char, Int)](('D', 2), ('B', 4), ('C', 3), ('A', 5), ('B', 2), ('C', 3), ('A', 4)), 3)
+				  val sortedRDD = inputRDD.sortByKey(true, 2)
+				  ```
+				- ![image.png](../assets/image_1680688446647_0.png){:height 461, :width 789}
+		- 实现
+			- 首先将 rddl 中不同 Key 的 record 分发到 [[ShuffledRDD]] 中的不同分区中
+				- 与[[reduceByKey]] 等操作使用Hash划分来分发数据不同, [[sortByKey]] 为了保证生成的 RDD 中的数据是全局有序 (按照`Key`排序)的,采用 [[RangePartitioner]] 来分发数据
+			- ,然后在 [[ShuffledRDD]] 的每个分区中,按照 `Key` 对record 进行排序
+		- 生成的 RDD
+			- 类型 [[ShuffledRDD]]
+			- 关系 [[ShuffleDependency]]
+- TODO [[zipPartitions]] 操作
+- TODO [[coalesce]] 操作
+- TODO [[repartition]] 操作
+- TODO [[intersection]] 操作
+- TODO [[distinct]] 操作
+- TODO [[union]] 操作
+- TODO [[zip]]操作
+- TODO [[zipPafitions]] 操作
+- TODO [[zipWithIndex]] 和 [[zipWithUniqueId]] 操作
+- TODO [[subtractByKey]] 操作
+- TODO [[subtract]]操作
+- TODO [[sortBy]] 操作
+- TODO [[glom]] 操作
+- # 参考资料
+	- [[大数据处理框架 Apache Spark 设计与实现@Book]]
+	- [RDD Programming Guide - Spark 3.3.2 Documentation (apache.org)](https://spark.apache.org/docs/3.3.2/rdd-programming-guide.html#transformations)

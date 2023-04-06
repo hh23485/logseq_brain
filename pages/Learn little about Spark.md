@@ -4,12 +4,86 @@ tags:: Spark, Sharing
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machine or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Introduce of Spark
 	- ## Overview
-		- Apache Spark is  [[#green]]==a **unified** engine designed for **large-scale** **distributed** data processing== .
-			- Spark provides **in-memory storage for intermediate computations**, making it much faster than Hadoop MapReduce.
-			- Incorporates libraries with  [[#green]]==composable API== s for **machine learning (MLlib)**, **SQL for interactive queries (Spark SQL)**, **stream processing (Structured Streaming)** for interacting with real-time data, and **graph processing (GraphX)**.
-	- ## Spark capabilities
-		- [Home page of Spark](https://spark.apache.org/docs/latest/index.html)
+		- > Apache Spark is  a **unified** engine designed for **large-scale** **distributed** data processing .
+			- > Spark provides **in-memory storage for intermediate computations**, making it **much faster than Hadoop MapReduce**.
+			- > Incorporates libraries with  composable APIs for **machine learning (MLlib)**, **SQL for interactive queries (Spark SQL)**, **stream processing (Structured Streaming)** for interacting with real-time data, and **graph processing (GraphX)**.
+		- ### Four characteristics
+			- Speed
+				- > Early papers published on Spark demonstrated that it was 10 to 20 times faster than [[Hadoop MapReduce]] for certain jobs. Today, it’s many orders of magnitude faster
+					- >First, its internal implementation benefits immensely from the hardware industry‘ s recent huge strides in improving the price and performance of CPUs and memory.
+					- >Second, Spark builds its query computations as a directed acyclic graph (DAG). Scheduler and query optimizer construct an efficient computational graph that can usually be decomposed into tasks that are executed in parallel across workers on the cluster
+					- > its physical execution engine, Tungsten, uses whole-stage code generation to generate compact code for execution (we will cover SQL optimization and whole-stage code generation.
+			- Ease of use
+				- > providing a fundamental abstraction of a simple logical data structure called a [[Resilient Distributed Dataset]] (RDD)
+				- > higher-level structured data abstractions, such as [[DataFrame]]s and [[Dataset]]s
+				- > transformations and actions as operations, Spark offers a simple programming model that you can use to build big data applications in familiar languages.
+			- Modularity
+				- >programming languages: [[Scala]], [[Java]], [[Python]], SQL, and R. Spark offers unified libraries with well-documented APIs that include the following modules as core components: [[Spark SQL]], [[Spark Structured Streaming]], Spark MLlib, and GraphX
+					- ![image.png](../assets/image_1680750500240_0.png){:height 359, :width 930}
+			- Extensibility
+				- >use Spark to read data stored in myriad sources—Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more.
+				- >use Spark to read data stored in myriad sources—Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more
+				- ![image.png](../assets/image_1680750403788_0.png){:height 420, :width 471}
 	- ## Quick examples
+		- ### Read from Json by Spark SQL
+			- Spark SQL: You can read data stored in an RDBMS table or from file formats with structured data (CSV, text, JSON, Avro, ORC, Parquet, etc.) and then construct permanent or temporary tables in Spark
+			- ``` scala
+			  // In Scala
+			  // Read data off Amazon S3 bucket into a Spark DataFrame
+			  spark.read.json("s3://apache_spark/data/committers.json")
+			    .createOrReplaceTempView("committers")
+			  // Issue a SQL query and return the result as a Spark DataFrame
+			  val results = spark.sql("""SELECT name, org, module, release, num_commits
+			      FROM committers WHERE module = 'mllib' AND num_commits > 10
+			      ORDER BY num_commits DESC""")
+			  ```
+		- Run LR with Spark ML
+			- **MLlib**: includes other low-level ML primitives, including a generic gradient descent optimization. The following Python code snippet encapsulates the basic operations a data scientist may do when building a model (more extensive examples will be discussed in Chapters 10 and 11):
+			- ``` python
+			  # In Python
+			  from pyspark.ml.classification import LogisticRegression
+			  ...
+			  training = spark.read.csv("s3://...")
+			  test = spark.read.csv("s3://...")
+			  
+			  # Load training data
+			  lr = LogisticRegression(maxIter=10, regParam=0.3, elasticNetParam=0.8)
+			  
+			  # Fit the model
+			  lrModel = lr.fit(training)
+			  
+			  # Predict
+			  lrModel.transform(test)
+			  ...
+			  ```
+		- Read from Stream and write to Stream
+			- **Spark Structured Stream** Regards stream as a continually growing table, with new rows of data appended at the end
+			- ``` python
+			  # In Python
+			  # Read a stream from a local host
+			  from pyspark.sql.functions import explode, split
+			  lines = (spark 
+			    .readStream
+			    .format("socket")
+			    .option("host", "localhost")
+			    .option("port", 9999)
+			    .load())
+			  
+			  # Perform transformation
+			  # Split the lines into words
+			  words = lines.select(explode(split(lines.value, " ")).alias("word"))
+			  
+			  # Generate running word count
+			  word_counts = words.groupBy("word").count()
+			  
+			  # Write out to the stream to Kafka
+			  query = (word_counts
+			    .writeStream 
+			    .format("kafka") 
+			    .option("topic", "output"))
+			  ```
+		- Join two grph by GraphX
+			- **GraphX**: GraphX is a library for manipulating graphs (e.g., social network graphs, routes and connection points, or network topology graphs) and performing graph-parallel computations. The available algorithms include PageRank, Connected Components, and Triangle Counting.
 - # Quick Introduction about Why Spark
   collapsed:: true
 	- ## Start from MapReduce
@@ -688,6 +762,7 @@ tags:: Spark, Sharing
 				- Checkpoint will chop off the lineage
 				- ![image.png](../assets/image_1680705385582_0.png){:height 735, :width 734}
 - # Practice
+  collapsed:: true
 	- [[Write a Spark job on MT in 5 minutes]]
 	- TODO [[What happened in Spark - SparkUI]]
 - # References

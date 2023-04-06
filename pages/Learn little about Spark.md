@@ -178,6 +178,7 @@ tags:: Spark, Sharing
 	- ## Write WordCount in Map Reduce and Spark
 		- ### Map Reduce Version
 			- #### Java
+			  collapsed:: true
 				- ``` java
 				  public static class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 				      private final static IntWritable one = new IntWritable(1);
@@ -315,14 +316,13 @@ tags:: Spark, Sharing
 	- All this content comes from a great book [[大数据处理框架 Apache Spark 设计与实现@Book]]. Contents are based on [[RDD]] API instead of [[DataFrame]] and [[Spark SQL]], because it's more easy to understand and RDD is the fundamental of others.
 	- ## How a Spark application run?
 		- Here are the steps:
-			- An big data application can be describe as <Input Data, User Source Code, Configuration>
-				- Input data are hosted in HDFS or generated in the code
-				- Configurations are resource related, like buffer size, memory limit, CPU, instance number, dependency files
+			- An big data application can be describe as <*Input Data*, *User Source Code*, *Configuration*>
+				- *Input data* are hosted in file system like HDFS or generated in the code directly
+				- *Configurations* are resource related, like buffer size, memory limit, CPU, instance number, dependency files
 			- Once submit to Spark, it will create a [Driver]([[Spark Driver]]) to deal follow actions: #.ol
 				- Analyze and **convert** them into spark **logic plan**, which means the **Actions** and **Orders**.
 				- Based on logic plan, spark will **convert** the logic plan **to physical plan**, which means how to execute the job
 				- Request for **resources**, **schedule** executors and **run** it
-				- Collect result.
 		- Fig about the progress
 			- ![image.png](../assets/image_1680201501252_0.png){:height 567, :width 989}
 			  id:: 6425d71c-9fe1-43f5-b43e-dbffd4e28a56
@@ -331,8 +331,7 @@ tags:: Spark, Sharing
 		- Fig about the system layer
 			- ![image.png](../assets/image_1680199082879_0.png)
 	- ## What's RDD
-	  collapsed:: true
-		- [[RDD]], full name is [[Resilient Distributed Dataset]], is a fundamental abstract data structure in Spark.
+		- **RDD**, full name is [[Resilient Distributed Dataset]], is a fundamental abstract data structure in Spark.
 		- Putting aside those concepts in the official introduction, the RDD is a object with partition information, with such features:
 			- Stands for a collection, different type RDD implements express different collections
 			- **Immutable**, for parallel computation
@@ -345,7 +344,7 @@ tags:: Spark, Sharing
 				- The squares represent java objects
 				- **The circles are RDDs**
 		- RDDs are created by an API provided by Spark, and can be constructed from ordinary in-memory object data, or from files, streams.
-			- Create from HDFS file
+			- Create from file
 				- ``` java
 				  // Load data from an HDFS file into an RDD
 				  JavaRDD<String> lines = sc.textFile("hdfs://path/to/input/file.txt");
@@ -356,11 +355,47 @@ tags:: Spark, Sharing
 				  Integer[] data = new Integer[]{1, 2, 3, 4, 5};
 				  JavaRDD<Integer> rdd = sc.parallelize(Arrays.asList(data));
 				  ```
-	- ## What's the deployment mode of Spark
-	  collapsed:: true
-		- Big data frameworks are almost always deployed in master-slave mode, and when Spark is deployed in a cluster, it looks like the following diagram
+			- Create from stream
+				- ``` scala
+				  val conf = new SparkConf().setAppName("streaming").setMaster("local[*]")
+				  val ssc = new StreamingContext(conf, Seconds(1))
+				  
+				  val stream = ssc.socketTextStream("localhost", 9999)
+				  val rdd = stream.flatMap(_.split(" ")).map((_, 1)).reduceByKey(_ + _)
+				  ```
+			- Create from other RDD [[Spark Transformation]]
+	- ## What's support Spark distributed execution
+		- At high level in Spark architecture
+		  collapsed:: true
+			- In **Application** level, here is a `Driver` program responsible for orchestrating parallel operations on Spark Cluster.
+			  collapsed:: true
+				- **`Driver`** will access distributed components in the cluster - `Executor`s and `ClusterManager` - through a `SparkSession`
+					- > Request resources (CPU, memory, etc) from cluster manager for executors (JVMs)
+					- > transform all Spark operations into DAG computations
+					- Schedules and distributes DAG executions as tasks across the Spark executors
+					- Communicate with executors directly once resources are allocated
+				- **`SparkSession`** provides a single unified entry point to all of Spark's functionality
+				  collapsed:: true
+					- ``` scala
+					  // In Scala
+					  import org.apache.spark.sql.SparkSession
+					  
+					  // Build SparkSession
+					  val spark = SparkSession
+					    .builder
+					    .appName("LearnSpark")
+					    .config("spark.sql.shuffle.partitions", 6)
+					    .getOrCreate()
+					  ```
+					-
+				- **`Executor`** runs on each worker node in cluster, communicate with driver and responsible for executing tasks on workers
+					- > **In most deployments modes, only a single executor runs per node.**
+			- **ClusterManager** is responsible for managing and allocating resources for the cluster of `Node`s on **Cluster** level.
+			  collapsed:: true
+				- Spark support for cluster managers: Default built-in StandAlone, [[Apache Hadoop YARN]], [[Apache Mesos]], [[Kubernetes]]
+				- ![image.png](../assets/image_1680761827020_0.png){:height 657, :width 824}
 			- ![image.png](../assets/image_1680201992563_0.png){:height 598, :width 752}
-		- ### Master node and Worker node
+		- ### Master node and Worker node (StandAlone mode)
 		  collapsed:: true
 			- **Master node** is responsible for managing applications and tasks
 				- The Master node has a resident **Master process** on it
@@ -374,23 +409,20 @@ tags:: Spark, Sharing
 				- Responsible for managing the execution of Spark tasks
 					- e.g. start Executor to execute specific Spark tasks
 					- Monitoring the status of tasks, etc.
-		- ### When Spark cluster starts
-		  collapsed:: true
-			- The Master process is started on the Master node
-			- The Worker process is started on each Worker node
+			- When Spark cluster starts will start master and worker processes
+				- The Master process is started on the Master node
+				- The Worker process is started on each Worker node
 		- ### When submit applications
 		  collapsed:: true
 			- Create a **driver** process (which run the `main()` of application)
 			- Driver on **master node** notify **worker node** to start **executors**, **executors will take up declared resources**
 			- Executors run tasks as threads, 1 CPU per task. All the tasks belong to the same job.
-		- TODO OnYarn
 		- ### Summary
 			- 一个农场主(`Master`)有多片草场(`Worker`),农主要把草场租给 3 个牧民来放马、牛、羊。假设现在有3个项目(`Application`)需要农主来运作:第1个牧民需要一片牧场来放 100 匹马,第2个牧民需要一片牧场来放 50 牛,第 3 个牧民需要一片牧场来放80只羊
 				- 每个牧民可以看作是一个`Driver`,而马、牛、可以看作是task。为了保持资源合理利用、避免冲突,在放牧前,农场主需要根据项目求为每个牧民划定可利用的草场范围,而且尽量让每个牧民在每个草场都有一小片可放的区域(`Executor`)
 				- 在放牧时,每个牧民(`Driver`)只负责管理自己的动物(`Task`)
 				- 农场主(`Master`)负责监控草场(`Worker`)、牧民(`Driver`)等状况
 	- ## A new example with more actions for analysis
-	  collapsed:: true
 		- Let's give an example for further analysis. It's a dummy code, without any meanings, just generate a RDD with randomly int, then run `RDD.count` and `RDD.groupByKey`.
 			- ``` scala
 			  def main(args: Array[String]): Unit = {
@@ -431,19 +463,34 @@ tags:: Spark, Sharing
 			      spark.stop()
 			  }
 			  ```
+			- Job Link: [Bing MagneTar](https://magnetar/job-detail.html?appId=application_1680736712923_0799&subCluster=MTPrime-PROD-CO4-4)
 		- ### What's the logic plan and physical plan will be?
-		  collapsed:: true
 			- Ideally the **steps** will be like:
-				- ![image.png](../assets/image_1680538845294_0.png){:height 519, :width 854}
+				- ![image.png](../assets/image_1680538845294_0.png){:height 581, :width 1046}
 			- Little more dtails
 				- Before `paris1.count()`, the calculation has not started. That's [functional programming](https://www.databricks.com/session/spark-as-the-gateway-drug-to-typed-functional-programming).
 				- Here is a `cache()` a important ability of Spark
 			- #### Let's run it, then we can go to Spark UI and see what's happening
-				- TODO graph of jobs
+				- graph of jobs
+				  collapsed:: true
+					- ![image.png](../assets/image_1680765594957_0.png)
 					- Here are two jobs, `pairs1.count()` and `results.count()`
 					- The two jobs has different number of stages
-				- TODO debug string
+				- debug string
+				  collapsed:: true
 					- Different types of RDD
+					- ``` text
+					  12
+					  (3) MapPartitionsRDD[1] at flatMapToPair at Main.java:28 [Memory Deserialized 1x Replicated]
+					   |       CachedPartitions: 3; MemorySize: 12.4 KiB; ExternalBlockStoreSize: 0.0 B; DiskSize: 0.0 B
+					   |  ParallelCollectionRDD[0] at parallelize at Main.java:27 [Memory Deserialized 1x Replicated]
+					  4
+					  (2) MapPartitionsRDD[3] at groupByKey at Main.java:47 []
+					   |  ShuffledRDD[2] at groupByKey at Main.java:47 []
+					   +-(3) MapPartitionsRDD[1] at flatMapToPair at Main.java:28 []
+					      |      CachedPartitions: 3; MemorySize: 12.4 KiB; ExternalBlockStoreSize: 0.0 B; DiskSize: 0.0 B
+					      |  ParallelCollectionRDD[0] at parallelize at Main.java:27 []
+					  ```
 			- #### Logic Plan Summary
 				- Focus on **Data Source**, **Data Model**, **Data Action**, **Result**
 					- **Data Source**: Generated inputs
@@ -453,34 +500,34 @@ tags:: Spark, Sharing
 				- Job0: input -> [[ParallelCollectionRDD]] -> [[MapPartitionsRDD]]
 					- ![image.png](../assets/image_1680540692648_0.png){:height 409, :width 688}
 				- Job1: input -> [[ParallelCollectionRDD]] -> [[MapPartitionsRDD]] -> [[ShuffledRDD]]
-					- ![image.png](../assets/image_1680691483961_0.png)
+					- ![image.png](../assets/image_1680691483961_0.png){:height 378, :width 880}
 			- #### Physical Plan Summary
 				- Focus on stages and task level
 				- For Job 0
 					- has 2 RDDs, merged in 1 stage
 					- has 3 tasks
+						- ![image.png](../assets/image_1680765996637_0.png){:height 226, :width 954}
 					- Driver collects all results together and final result
 				- For Job 1
 					- Has 2 stages
-						- Stage0 contains 3 tasks, 1 RDD
-						- Stage 1 contains 2 tasks, 1 RDD
-				- Shuffle happened here for Job1-Stage1 to find data from Job1-Stage0
-					- First RDD each partition in stage1 get **parts of data** from all stage 0 final RDD partitions
+						- Stage 1 contains 3 tasks, 2 RDD
+						- Stage 2 contains 2 tasks, 2 RDD
+				- Shuffle happened here for Job1-Stage2 to find data from Job1-Stage1
+					- First RDD each partition in stage2 get **parts of data** from all stage 1 final RDD partitions
 					  id:: 642b070f-4959-4b7d-97e0-2729fcfc1d7b
-					- TODO add graph
+						- ![image.png](../assets/image_1680765788645_0.png){:height 565, :width 523}
 				- Task in the same stage can run in parallel
 			- Questions
 				- How the job, stage, task decided?
 				- How shuffle implements?
 	- ## How Spark generate logic plan
-	  collapsed:: true
 		- Three main questions:
 			- ((642b08b1-2a52-46c9-99ac-8761c0226e48))
 			- ((642b08d0-4f08-42de-b18a-6673f7cf17c6))
 			- ((642b0905-d68b-416a-9c13-a0059627f221))
 		- ### How to generate RDD, which kind RDD should be generated?
 		  id:: 642b08b1-2a52-46c9-99ac-8761c0226e48
-			- [[RDD]]s support two types of operations: *[transformations]([[Spark Transformation]])*, which create a new dataset from an existing one, and *[actions]([[Spark Action]])*, which return a value to the driver program after running a computation on the dataset.
+			- [[RDD]]s support two types of operations: *[transformations]([[Spark Transformation]])*, which  [[#blue]]==create a new dataset from an existing one== , and *[actions]([[Spark Action]])*, which  [[#blue]]==return a value to the driver program after running a computation on the dataset== .
 			- Different transformation will generate different types of RDD
 				- [What's tansformation?](((642cd333-da61-467c-8d3a-f18b14c1a8ca)))
 				- [Kinds of transformation](((642ce69a-00d6-4762-8ff3-12ff3349c8ea)))
@@ -496,7 +543,6 @@ tags:: Spark, Sharing
 					- Depends on transformation and parent RDDs' partition number
 		- ### How to calculate RDD data?
 		  id:: 642b0905-d68b-416a-9c13-a0059627f221
-		  collapsed:: true
 			- As long as we can deal RDD partitions number and relationships, spark can apply transformations and actions to each records.
 			- logically, the progress just like apply function to local applications in such two ways:
 				- ``` scala
@@ -522,12 +568,10 @@ tags:: Spark, Sharing
 			- RDD vs <K, V>
 			- High level transformation and action vs map() and reduce()
 	- ## How spark convert logic plan to physical plan
-	  collapsed:: true
 		- ### How to split job, stage, and task?
 			- Sorry but has to start another new code snippet
-				- ![image.png](../assets/image_1680694684400_0.png){:height 665, :width 840}
+				- ![image.png](../assets/image_1680694684400_0.png){:height 669, :width 990}
 				- code here
-				  collapsed:: true
 					- ``` scala
 					  // Define an array of tuples with integer and character values
 					  val data1 = Array[(Int, Char)] ((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (3, 'f'), (2, 'g'), (1, 'h'))
@@ -559,7 +603,9 @@ tags:: Spark, Sharing
 					  // Print the result RDD
 					  resultRDD.foreach(println)
 					  ```
+					- Job Link: [Bing MagneTar](https://magnetar/job-detail.html?appId=application_1680736712923_0873&subCluster=MTPrime-PROD-CO4-4)
 				- This code contains such transactions
+				  id:: 642e3f84-6646-4567-a079-91d5970e10bc
 					- rdd1: `partitionBy`, `join`
 					- rdd2: `map`, `union`, `join`
 					- rdd3: `union`, `join`
@@ -571,12 +617,14 @@ tags:: Spark, Sharing
 					- when meet [[ShuffleDependency]], start a new **Stage**
 				- Each partition is a **Task**
 			- So in this case, the stages and tasks are like follows
-			  collapsed:: true
 				- ![image.png](../assets/image_1680695204114_0.png){:height 952, :width 945}
+				- ![image.png](../assets/image_1680767495825_0.png)
 		- ### How to decided the tasks calculation order?
+		  collapsed:: true
 			- Stages will be scheduled as DAG
 			- Tasks will be executed in parallel
 		- ### How intermediate data is stored and calculated inside the task?
+		  collapsed:: true
 			- If each RDD is completely computed and then the value of the next RDD is computed, then once the RDD is very large, it will result in a large memory.
 			- So Spark uses a pipelined approach to computing RDDs inside the task
 			  background-color:: green
@@ -598,6 +646,7 @@ tags:: Spark, Sharing
 			- Then downstream stage need to read data from corresponding parent RDD, do [[Shuffle Read]]
 				- Each partition need collect all needed data from multi upstream partitions through network
 		- ### How to check physical plan?
+		  collapsed:: true
 			- Use [[Spark UI]]
 				- Job information
 				- Stage information
@@ -612,7 +661,6 @@ tags:: Spark, Sharing
 		  This only for RDD based operations, for Spark SQL, here are lots of other optimization methods.
 		  #+END_WARNING
 	- ## How spark do shuffle
-	  collapsed:: true
 		- Spark designed a general [[Shuffle Write]] framework
 			- ![image.png](../assets/image_1680697497701_0.png)
 			- From high level, here are 3 steps, aggregation (combine) and sort are optional #.ol
@@ -663,6 +711,7 @@ tags:: Spark, Sharing
 					- When the map is full, will expand once, if not enough as well, will sort and spill all to disk.
 						- ![image.png](../assets/image_1680700205410_0.png){:height 1113, :width 1079}
 		- Spark designed a general [[Shuffle Read]] framework
+		  collapsed:: true
 			- ![image.png](../assets/image_1680700368922_0.png)
 			- From high level, here are 3 steps, aggregation and sort are optional #.ol
 				- Collect data from map tasks

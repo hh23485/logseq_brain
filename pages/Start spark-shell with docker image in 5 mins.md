@@ -16,6 +16,6 @@ tags:: Docker, [[Spark-Shell]]
 	  ```
 - # 启动 Spark-Shell 并映射路径
 	- ``` bash
-	  docker run -ti -v /data:/data epahomov/docker-spark /spark/bin/spark-shell --master local --packages com.databricks:spark-csv_2.11:1.5.0
+	  docker run -ti -v /data:/data epahomov/docker-spark /spark/bin/spark-shell --master local --packages <pkgs>
 	  ```
 	-

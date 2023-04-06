@@ -3,8 +3,13 @@ tags:: Spark, Sharing
 - TOC {{renderer :tocgen, [[]], 4, h}}
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Introduce of Spark
-	-
+	- TODO Add some latest status of Spark
+	- ## Spark news
+	- ## Spark capabilities
+		- [Home page of Spark](https://spark.apache.org/docs/latest/index.html)
+	- ## Quick examples
 - # Quick Introduction about Why Spark
+  collapsed:: true
 	- ## Start from MapReduce
 	  collapsed:: true
 		- **MapReduce** is a programming model and software framework first introduced by **Google** in 2004 to address the challenges of processing large data sets. The main idea behind MapReduce is to **divide a large task into smaller subtasks that can be processed in parallel across multiple computing nodes.**
@@ -205,7 +210,6 @@ tags:: Spark, Sharing
 		- Remote
 			- Submit to spark endpoint
 - # Spark Internal Basic
-  collapsed:: true
 	- All this content comes from a great book [[大数据处理框架 Apache Spark 设计与实现@Book]]
 	- ## How a Spark application run?
 	  collapsed:: true

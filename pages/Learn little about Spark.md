@@ -1,10 +1,12 @@
 tags:: Spark, Sharing
 
 - TOC {{renderer :tocgen, [[]], 4, h}}
-- [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
+- [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machine or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Introduce of Spark
-	- TODO Add some latest status of Spark
-	- ## Spark news
+	- ## Overview
+		- Apache Spark is  [[#green]]==a **unified** engine designed for **large-scale** **distributed** data processing== .
+			- Spark provides **in-memory storage for intermediate computations**, making it much faster than Hadoop MapReduce.
+			- Incorporates libraries with  [[#green]]==composable API== s for **machine learning (MLlib)**, **SQL for interactive queries (Spark SQL)**, **stream processing (Structured Streaming)** for interacting with real-time data, and **graph processing (GraphX)**.
 	- ## Spark capabilities
 		- [Home page of Spark](https://spark.apache.org/docs/latest/index.html)
 	- ## Quick examples
@@ -210,6 +212,7 @@ tags:: Spark, Sharing
 		- Remote
 			- Submit to spark endpoint
 - # Spark Internal Basic
+  collapsed:: true
 	- All this content comes from a great book [[大数据处理框架 Apache Spark 设计与实现@Book]]
 	- ## How a Spark application run?
 	  collapsed:: true
@@ -513,6 +516,7 @@ tags:: Spark, Sharing
 		  This only for RDD based operations, for Spark SQL, here are lots of other optimization methods.
 		  #+END_WARNING
 	- ## How spark do shuffle
+	  collapsed:: true
 		- Spark designed a general [[Shuffle Write]] framework
 			- ![image.png](../assets/image_1680697497701_0.png)
 			- From high level, here are 3 steps, aggregation (combine) and sort are optional #.ol
@@ -596,6 +600,7 @@ tags:: Spark, Sharing
 				- Before sort, use a Map to do aggregation and sort
 					- The data structure is [[ExternalAppendOnlyMap]], like [[PartitionedAppendOnlyMap]]. [[PartitionedAppendOnlyMap]] is for [[Shuffle Write]], support `partitionId`, while [[ExternalAppendOnlyMap]] not. All implement based on [[AppendOnlyMap]].
 		- ### How to detect memory during shuffle?
+		  collapsed:: true
 			- Aggregation and sort collections are implemented based on [[AppendOnlyMap]]
 			- It's hard to detect the actual memory cost of the collection, as the elements in it are reference instead of object, also the collection is updated all the time.
 			- Before expends when collection is full, the map will check if the rest space is enough to double, then to decide whether spill to disk or not.
@@ -604,7 +609,9 @@ tags:: Spark, Sharing
 				- When new record put in or updated, use history increasing volume + current size as new size
 			- TODO Go to [[SizeTrackerEstimateSize]] function
 	- ## How Spark do caching
+	  collapsed:: true
 		- ### Why Cache
+		  collapsed:: true
 			- ``` scala
 			  // Define an input RDD with key-value pairs of Int and Char
 			  val inputRDD = Array[(Int, Char)] ((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (3, 'f'), (2, 'g'), (1, 'h'), (2, 'i'), 3)
@@ -635,14 +642,17 @@ tags:: Spark, Sharing
 					- if the process is costly, use cache to skip the second time execution
 					- if the process is quite cheap, re-run to avoid memory/disk waste
 		- ### When to cache
+		  collapsed:: true
 			- To cache a RDD, you should call `rdd.cache()` before the action on the RDD.
 				- In this case, you should call `mapped.cache` before the first `foreach`, else the cache will not be triggered.
 		- ### Where to cache
+		  collapsed:: true
 			- .cache() is the same with `persist(MEMORY_ONLY)`
 				- for MEMORY_ONLY, as long as the memory is not enough to store, will cancel this cache.
 			- You can call `persist` with such parameters
 				- ![image.png](../assets/image_1680704168703_0.png)
 		- ### How to write cache
+		  collapsed:: true
 			- Write cache order:
 				- After each records is calculated, will be write to cache store.
 				- ![image.png](../assets/image_1680704552115_0.png){:height 685, :width 831}
@@ -653,15 +663,19 @@ tags:: Spark, Sharing
 					- ![image.png](../assets/image_1680704568608_0.png)
 				- LinkedHashMap implements LRU algo, that's how memory cache replacement policy.
 		- ### How to read cache
+		  collapsed:: true
 			- `.cache()` will make the RDD, so when read data from child RDD, it will tell where the cached stored, and get from the executor.
 				- Mark the cached partitions, memory size, etc.
 			- ![image.png](../assets/image_1680704774043_0.png)
 				- In this graph, the job2 task5 will read data from worker node 1 remotely, and task3 and task4 will directly read from local memory.
 			- The read is record by record.
 	- ## How Spark do fault tolerance
+	  collapsed:: true
 		- Re-run job
+		  collapsed:: true
 			- Requires **same input**, and the process should be **deterministic** and **idempotent**
 		- Where to re-run from?
+		  collapsed:: true
 			- No Cache and Checkpoint
 				- Re-run all jobs
 			- Use Cache
@@ -676,3 +690,6 @@ tags:: Spark, Sharing
 - # Practice
 	- [[Write a Spark job on MT in 5 minutes]]
 	- TODO [[What happened in Spark - SparkUI]]
+- # References
+	- [Learning Spark, 2nd Edition (oreilly.com)](https://learning.oreilly.com/library/view/learning-spark-2nd/9781492050032/)
+	- [[大数据处理框架 Apache Spark 设计与实现@Book]]

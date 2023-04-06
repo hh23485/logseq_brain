@@ -1,7 +1,7 @@
 tags:: Spark, Sharing
 
 - TOC {{renderer :tocgen, [[]], 4, h}}
-- [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machine or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
+- [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machine or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Sparks
 - # Introduce of Spark
 	- ## Overview
 	  collapsed:: true

@@ -844,6 +844,7 @@ tags:: Spark, Sharing
 - # Practice
 	- [[Write a Spark job on MT in 5 mins]]
 	- ## How to debug?
+	  collapsed:: true
 		- MT not support, no raw endpoint exposed
 		- For local spark, you can use the same version JDK locally, and use JVM remote debug capability to connect to Spark master.
 			- Here is an answer [How to debug Spark application on Spark Standalone? - Stack Overflow](https://stackoverflow.com/questions/29090745/how-to-debug-spark-application-on-spark-standalone).

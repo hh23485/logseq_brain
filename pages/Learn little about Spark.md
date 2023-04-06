@@ -4,6 +4,7 @@ tags:: Spark, Sharing
 - [[Spark]] is a big data framework, a multi-language engine for executing data engineering, data science, and machine learning on single-node machine or clusters. In this page,  I want to introduce some **basic concepts of Spark**, some key architectures and how to run on MT to help you better understand and get started with Spark.
 - # Introduce of Spark
 	- ## Overview
+	  collapsed:: true
 		- > Apache Spark is  a **unified** engine designed for **large-scale** **distributed** data processing .
 			- > Spark provides **in-memory storage for intermediate computations**, making it **much faster than Hadoop MapReduce**.
 			- > Incorporates libraries with  composable APIs for **machine learning (MLlib)**, **SQL for interactive queries (Spark SQL)**, **stream processing (Structured Streaming)** for interacting with real-time data, and **graph processing (GraphX)**.
@@ -29,6 +30,7 @@ tags:: Spark, Sharing
 				- >use Spark to read data stored in myriad sources—Apache Hadoop, Apache Cassandra, Apache HBase, MongoDB, Apache Hive, RDBMSs, and more
 				- ![image.png](../assets/image_1680750403788_0.png){:height 420, :width 471}
 	- ## Quick examples
+	  collapsed:: true
 		- ### Read from Json by Spark SQL
 		  collapsed:: true
 			- Spark SQL: You can read data stored in an RDBMS table or from file formats with structured data (CSV, text, JSON, Avro, ORC, Parquet, etc.) and then construct permanent or temporary tables in Spark
@@ -101,13 +103,16 @@ tags:: Spark, Sharing
 			  }
 			  ```
 	- ## Play with Spark
-		- Run with Spark-Shell on [Windows](https://www.ics.uci.edu/~shantas/Install_Spark_on_Windows10.pdf), [Docker]([[Start spark-shell with docker image in 5 mins]])
-		-
+		- Run with Spark-Shell
+			- Install in [Windows](https://www.ics.uci.edu/~shantas/Install_Spark_on_Windows10.pdf)
+			- [[Start spark-shell with docker image in 5 mins]]
+		- Run with [MT Spark Livy](https://eng.ms/docs/experiences-devices/webxt/search-content-platform/magnetar/bing-magnetar-platform/magnetar-platform-public-wiki/use/mtspark/livy), [MT Job Portal](https://eng.ms/docs/experiences-devices/webxt/search-content-platform/magnetar/bing-magnetar-platform/magnetar-platform-public-wiki/use/mtspark/multitenancysparknetonmt/multitenancysparknetonmt), [MT Jupyter Notebook](https://eng.ms/docs/experiences-devices/webxt/search-content-platform/magnetar/bing-magnetar-platform/magnetar-platform-public-wiki/use/mtspark/jupyter)
+			- [[Write a Spark job on MT in 5 mins]]
+		- Run with [Azure Synapse Spark](https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-overview)
 - # Quick Introduction about Why Spark
-  collapsed:: true
 	- ## Start from MapReduce
 	  collapsed:: true
-		- **MapReduce** is a programming model and software framework first introduced by **Google** in 2004 to address the challenges of processing large data sets. The main idea behind MapReduce is to **divide a large task into smaller subtasks that can be processed in parallel across multiple computing nodes.**
+		- **MapReduce** is a programming paradigm and software framework first introduced by **Google** in 2004 to address the challenges of processing large data sets. The main idea behind MapReduce is to **divide a large task into smaller subtasks that can be processed in parallel across multiple computing nodes.**
 		- Why was it introduced?
 			- To address the challenges of processing large data sets efficiently.
 		- How does it work?
@@ -120,18 +125,17 @@ tags:: Spark, Sharing
 		- Benefits of using MapReduce
 			- **Simplification of programming model**
 			- **Scalability**
-			- **Independence of tasks**
-		- Beside the framework, MapReduce is simple to simulate in python or other languages, why we still need the framework, then why Spark?
+			- **Independence of tasks for better parallelism**
 	- ## Example on such job without big data framework
-	  collapsed:: true
-		- A Data Generate Job in Azure Speller
+		- **A Data Generate Job in Azure Speller**
+		  collapsed:: true
 			- Convert a few big language model data into [[RocksDB]] directories
 				- Each line is a Key Value pair
 				- Max file is about 600-800GB
 				- Use hash to split into 1000-10000 parts
 				- Download from cosmos, and upload to cosmos
 			- Challenges #.ol
-			  id:: 6425b521-2d4b-4ad3-8acb-57489ff1f572 #.ol
+			  id:: 642e3f84-9a3c-412b-b02e-791095044578
 				- How to read/write faster?
 				- How to utilize resources as much as possible?
 				- How to avoid exceeding the memory limit?
@@ -145,17 +149,17 @@ tags:: Spark, Sharing
 				- How to run on multiple machines?
 			- ![Slide5.jpg](../assets/Slide5_1680192445315_0.jpg)
 	- ## Why need big data framework like MapReduce?
-	  collapsed:: true
-		- Just write how to deal with action like local simple functions, no worry about these ((6425b521-2d4b-4ad3-8acb-57489ff1f572))
+		- Just write how to deal with action like local simple functions, no worry about these ((642e3f84-9a3c-412b-b02e-791095044578))
+		  collapsed:: true
 			- Write Map function
 			- Write Reduce function
 		- Common features of big data frameworks #.ol
+		  collapsed:: true
 			- **Distributed computing**: Big data frameworks enable parallel processing of data across multiple nodes in a cluster.
 			- **Fault tolerance**: Big data frameworks can handle node failures in a cluster and automatically reassign work to other nodes.
 			- **Data storage and management**: Big data frameworks provide tools for storing and managing large amounts of data across distributed systems.
 			- **Data processing and analysis**: Big data frameworks offer a wide range of tools for processing and analyzing data at scale.
 	- ## Why use Spark instead of MapReduce?
-	  collapsed:: true
 		- MapReduce has some drawbacks in its implementation
 			- Map Reduce has limited expressive power, while many data processing requires higher-level expressions, such as `Join`, `Zip`, `FlatMap`, `Sum`, `Max`, etc.
 			  background-color:: red
@@ -169,8 +173,9 @@ tags:: Spark, Sharing
 			  background-color:: red
 				- Spark will use memory as much as possible, also support pipeline execution.
 				  background-color:: green
+			- Other Spark features like eco-systems
+			  background-color:: green
 	- ## Write WordCount in Map Reduce and Spark
-	  collapsed:: true
 		- ### Map Reduce Version
 			- #### Java
 				- ``` java
@@ -203,6 +208,7 @@ tags:: Spark, Sharing
 				  ```
 		- ### Spark Version
 			- #### Java
+			  collapsed:: true
 				- ``` java
 				  import org.apache.spark.SparkConf;
 				  import org.apache.spark.api.java.JavaRDD;
@@ -236,7 +242,9 @@ tags:: Spark, Sharing
 				      }
 				  }
 				  ```
+				- Job link: [Bing MagneTar](https://magnetar/job-detail.html?appId=application_1680736712923_0541&subCluster=MTPrime-PROD-CO4-4#tab=stages#jobid=-1#stageid=0#exeid=0#attemptid=0)
 			- #### Python
+			  collapsed:: true
 				- ``` python
 				  from pyspark import SparkConf, SparkContext
 				  
@@ -298,19 +306,16 @@ tags:: Spark, Sharing
 				  }
 				  ```
 	- ## We got the code, how to run it?
-	  collapsed:: true
-		- Create a project, and paste the code in
-		- Local
-			- Run directly in IDE
-		- Remote
-			- Submit to spark endpoint
+		- [[Write a Spark job on MT in 5 mins]]
+	- ## How to debug?
+		- MT not support, but for local spark, you can use the same version JDK locally, and use JVM remote debug capability to connect to Spark master.
+			- Here is an answer [How to debug Spark application on Spark Standalone? - Stack Overflow](https://stackoverflow.com/questions/29090745/how-to-debug-spark-application-on-spark-standalone).
+			- IDE like IDEA provides Spark remote debug mode as well.
 - # Spark Internal Basic
-  collapsed:: true
-	- All this content comes from a great book [[大数据处理框架 Apache Spark 设计与实现@Book]]
+	- All this content comes from a great book [[大数据处理框架 Apache Spark 设计与实现@Book]]. Contents are based on [[RDD]] API instead of [[DataFrame]] and [[Spark SQL]], because it's more easy to understand and RDD is the fundamental of others.
 	- ## How a Spark application run?
-	  collapsed:: true
 		- Here are the steps:
-			- An big data application can be describe as <`Input Data`, `User Source Code`, `Configuration`>
+			- An big data application can be describe as <Input Data, User Source Code, Configuration>
 				- Input data are hosted in HDFS or generated in the code
 				- Configurations are resource related, like buffer size, memory limit, CPU, instance number, dependency files
 			- Once submit to Spark, it will create a [Driver]([[Spark Driver]]) to deal follow actions: #.ol
@@ -319,13 +324,11 @@ tags:: Spark, Sharing
 				- Request for **resources**, **schedule** executors and **run** it
 				- Collect result.
 		- Fig about the progress
-			- ![image.png](../assets/image_1680201501252_0.png){:height 384, :width 699}
+			- ![image.png](../assets/image_1680201501252_0.png){:height 567, :width 989}
 			  id:: 6425d71c-9fe1-43f5-b43e-dbffd4e28a56
 		- Fig about the execute mode
-		  collapsed:: true
-			- ![image.png](../assets/image_1680199915800_0.png){:height 278, :width 599}
+			- ![image.png](../assets/image_1680199915800_0.png){:height 390, :width 1012}
 		- Fig about the system layer
-		  collapsed:: true
 			- ![image.png](../assets/image_1680199082879_0.png)
 	- ## What's RDD
 	  collapsed:: true
@@ -782,7 +785,7 @@ tags:: Spark, Sharing
 				- ![image.png](../assets/image_1680705385582_0.png){:height 735, :width 734}
 - # Practice
   collapsed:: true
-	- [[Write a Spark job on MT in 5 minutes]]
+	- [[Write a Spark job on MT in 5 mins]]
 	- TODO [[What happened in Spark - SparkUI]]
 - # References
 	- [Learning Spark, 2nd Edition (oreilly.com)](https://learning.oreilly.com/library/view/learning-spark-2nd/9781492050032/)

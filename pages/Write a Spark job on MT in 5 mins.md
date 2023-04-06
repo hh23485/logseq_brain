@@ -16,7 +16,6 @@ tags:: Spark, MT Spark, QuickStart, 5min
 	- Maven 是 Java 相关的项目的主要依赖管理工具，通常不需要做额外的配置。然而 MT 相关的包都发布在 MT 的 ADO Artifacts。因此需要在 Maven 中配置好 PAT，并在 `pom. xml` 中添加仓库。
 	- ## pom.xml 文件
 		- ### 添加 maven 仓库
-		  collapsed:: true
 			- 在 pom.xml 中添加如下的
 			- ``` xml
 			  <repositories>
@@ -46,7 +45,6 @@ tags:: Spark, MT Spark, QuickStart, 5min
 			  </repositories>
 			  ```
 		- ### 配置 PAT 在 maven 的配置
-		  collapsed:: true
 			- PAT 可以从 ADO 上创建，具体可以从 [MultiTenancy-Test3 - Azure Artifacts (visualstudio.com)](https://msasg.visualstudio.com/Bing_and_IPG/_artifacts/feed/MultiTenancy-Test3/connect/maven) 查看。
 			  简单来说，配置在 `~/.m2/settings.xml` 文件中，填入包含 PAT 的设置，保存后即生效。
 			- ```xml
@@ -57,7 +55,6 @@ tags:: Spark, MT Spark, QuickStart, 5min
 			  </server>
 			  ```
 		- ### 添加 mt spark 和 scala 版本
-		  collapsed:: true
 			- ```xml
 			  <properties>
 			  	<maven.compiler.source>8</maven.compiler.source>

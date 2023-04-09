@@ -19,4 +19,5 @@ tags:: [[LangChain 文档阅读笔记]]
 	- Prompts
 		- API_Request_Chain
 			- 使用 prompts `API_URL_PROMPT_TEMPLATE`, 让 AI 根据文档来补全 API
+			- 使用 prompts `API_RESPONSE_PROMPT_TEMPLATE` 来让 AI 根据响应回答指定的问题
 	-

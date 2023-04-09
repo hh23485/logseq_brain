@@ -1,3 +1,22 @@
 tags:: [[LangChain 文档阅读笔记]]
 
--
+- Sequential Chains
+	- [Sequential Chains — 🦜🔗 LangChain 0.0.135 --- 顺序链 — 🦜🔗 朗链 0.0.135](https://python.langchain.com/en/latest/modules/chains/generic/sequential_chains.html)
+	- 顺序链
+		- 可以在将多个链串在一块，前一个链的输出会作为后一个链的输入
+		- 如果有[多个参数传递](https://python.langchain.com/en/latest/modules/chains/generic/sequential_chains.html#sequential-chain)，可以在构造每个链的声明输出的变量名称
+		- 如果有[外界需要传入的参数](https://python.langchain.com/en/latest/modules/chains/generic/sequential_chains.html#memory-in-sequential-chains)，可以使用 SimpleMemory
+	- 将链序列化
+		- [Serialization — 🦜🔗 LangChain 0.0.135 --- 序列化 — 🦜🔗 语言链 0.0.135](https://python.langchain.com/en/latest/modules/chains/generic/serialization.html)
+		- 调用链的 `.save()` 可以指定 `json` 或 `yaml` 扩展名，将链直接序列化保存
+			- Agent, LLM, Prompts 也都可以单独保存
+		- 调用 `load` 可以从磁盘或者 LangChainHub 加载
+- Demo
+	- 从 demo [Vector DB Text Generation — 🦜🔗 LangChain 0.0.135 --- 矢量数据库文本生成 — 🦜🔗 LangChain 0.0.135](https://python.langchain.com/en/latest/modules/chains/index_examples/vector_db_text_generation.html)
+- 不同链的差异
+	- [Combining LangChain and Weaviate | Weaviate - vector database --- 结合 LangChain 和 Weaviate | Weaviate - 矢量数据库](https://weaviate.io/blog/combining-langchain-and-weaviate)
+- 实现
+	- Prompts
+		- API_Request_Chain
+			- 使用 prompts `API_URL_PROMPT_TEMPLATE`, 让 AI 根据文档来补全 API
+	-

@@ -48,3 +48,38 @@
 		  ```
 - # rerfs
 	- 用于标记组件自身
+	- 如何定义
+		- 字符串类型
+			- ``` js
+			  <input
+			    type="text"
+			    placeholder="点击按钮提示数据"
+			    ref="input1"
+			  />
+			  
+			  showData1 = () => {
+			    alert(this.refs.input1.value);
+			  };
+			  ```
+		- CreateRefs 类型
+			- ``` js
+			  constructor()
+			  {
+			    this.input1 = React.CreateRef()
+			  }
+			  
+			  <input
+			    type="text"
+			    placeholder="点击按钮提示数据"
+			    ref={this.input1}
+			  />
+			  ```
+		- 回调函数形式
+			- ``` js
+			  <input
+			    type="text"
+			    placeholder="点击按钮提示数据"
+			    // 传递了当前节点
+			    ref = { cur => this.input1 = cur }
+			  />
+			  ```

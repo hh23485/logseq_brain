@@ -20,20 +20,19 @@
 		- 限制类型
 			- 引入 `prop-types.js`，引入 `PropTypes`
 			- ``` js
-			  <ComponentClass>.propsTypes = {
+			  <ComponentName>.propsTypes = {
 			      name: PropTypes.string
 			  }
 			  ```
-				- 函数式组件使用函数名来替换 `<ComponentClass>`
 		- 要求必传
 			- ``` js
-			  <ComponentClass>.propsTypes = {
+			  <ComponentName>.propsTypes = {
 			      name: PropTypes.string.isRequired
 			  }
 			  ```
 		- 默认值
 			- ``` js
-			  <ComponentClass>.defaultProps = {
+			  <ComponentName>.defaultProps = {
 			      name: "DefaultValue"
 			  }
 			  ```
@@ -48,4 +47,4 @@
 		  }
 		  ```
 - # rerfs
-	-
+	- 用于标记组件自身

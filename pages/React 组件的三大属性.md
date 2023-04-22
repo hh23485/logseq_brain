@@ -34,4 +34,5 @@
 			      name: "DefaultValue"
 			  }
 			  ```
--
+	- 简写方式
+		-

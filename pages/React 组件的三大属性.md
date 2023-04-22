@@ -24,7 +24,7 @@
 			      name: PropTypes.string
 			  }
 			  ```
-				- 函数式组件使用函数名来
+				- 函数式组件使用函数名来替换 `<ComponentClass>`
 		- 要求必传
 			- ``` js
 			  <ComponentClass>.propsTypes = {

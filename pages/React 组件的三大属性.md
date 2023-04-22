@@ -71,7 +71,7 @@
 			    ref={this.input1}
 			  />
 			  ```
-			- 引用时需要使用 `this.current.input1.value` 来获取
+			- 引用时需要使用 `this.current.input1.value` 来获取值
 		- 回调函数形式
 			- ``` js
 			  <input

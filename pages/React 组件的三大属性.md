@@ -83,4 +83,4 @@
 			    ref = { cur => this.input1 = cur }
 			  />
 			  ```
-			- 调用次数：每次 render 都会
+			- 调用次数：每次 render 都会更新，且会先清理旧组件再调用新组件的 ref

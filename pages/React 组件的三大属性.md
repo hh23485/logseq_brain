@@ -49,7 +49,7 @@
 - # rerfs
 	- 用于标记组件自身
 	- 如何定义
-		- 字符串类型
+		- 字符串类型 #Decprecated
 			- ``` js
 			  <input
 			    type="text"
@@ -63,10 +63,7 @@
 			  ```
 		- CreateRefs 类型
 			- ``` js
-			  constructor()
-			  {
-			    this.input1 = React.CreateRef()
-			  }
+			  input1 = React.CreateRef()
 			  
 			  <input
 			    type="text"
@@ -83,4 +80,7 @@
 			    ref = { cur => this.input1 = cur }
 			  />
 			  ```
-			- 调用次数：每次 render 都会更新，且会先清理旧组件再调用新组件的 ref
+			- 调用次数
+				- 每次 render 都会调用，且会先清理旧组件再调用新组件的 ref
+				- 定义成 class 的绑定函数可以避免每次都调用
+				- 两者性能差距可以忽略

@@ -9,5 +9,7 @@ tags:: 尚硅谷, React
 		- 可以代替部分 ref
 - 收集表单数据
 	- 非受控组件
+		- 点击登录 button 时获取 form 中所有的 input values
 		- 使用 `event.preventDefault()` 阻止原生 form 提交事件跳转
 	- 受控组件
+		- 使用 onChange 获取实时值放到 state 中

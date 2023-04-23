@@ -13,3 +13,14 @@ tags:: 尚硅谷, React
 		- 使用 `event.preventDefault()` 阻止原生 form 提交事件跳转
 	- 受控组件
 		- 使用 onChange 获取实时值放到 state 中
+		- 避免写很多 onChange 可以使用高阶函数来提供
+			- ``` js
+			  saveFormData = (dataType) => {
+			  	console.log(dataType);
+			      return (event) => {
+			      	this.setState([dataType], event.target.value)
+			        	// 类似于 state[dataType] = event.target.value
+			      }
+			  }
+			  ```
+- [[React 组件的生命周期]]

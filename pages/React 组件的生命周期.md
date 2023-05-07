@@ -8,3 +8,11 @@
 	- `getSnapshotBeforeUpdate()`: This is called just before the component is updated. It is used to capture some information from the DOM, such as the scroll position, before it is updated.
 	- `componentDidUpdate()`: This is called after the component is updated. It is used to update the DOM or fetch new data from an API.
 - These lifecycle hooks allow you to control the behavior of your React components at different stages of their lifecycle.
+- Graph
+	- Old Version
+		- ![image.png](../assets/image_1682387844599_0.png){:height 582, :width 716}
+		- `shouldComponentUpdate`
+			- 默认返回 true
+			- 如果返回 false，则后续所有的操作都不会发生
+	- New Version
+		-

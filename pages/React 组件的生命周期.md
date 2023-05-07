@@ -15,4 +15,25 @@
 			- 默认返回 true
 			- 如果返回 false，则后续所有的操作都不会发生
 	- New Version
-		-
+		- ![image.png](../assets/image_1683467265384_0.png)
+		- 一些旧生命周期的方法将要被移除，需要添加 `UNSAFE_` 来使用，具体可以参考日志中的警告信息
+		- 新增加的了一些
+			- `getSnapshotBeforeUpdate` 在变化之前执行，该方法的返回值会被作为 componentDidUpdate 的第三个参数传入
+				- 场景用例：在顶部增加数据的 list 中记录滚动位置不变
+					- ``` javascript
+					  getSnapshotBeforeUpdate() {
+					    console.log("getSnapshotBeforeUpdate");
+					    let height = this.refs.list.scrollHeight
+					    return height;
+					  }
+					  
+					  componentDidUpdate(prevProps, prevState, height) {
+					    console.log("componentDidUpdate");
+					    let height2 = this.refs.list.scrollHeight
+					    // hide all new generate content
+					    // scrollTop 是滚动条相对于其顶部的偏移，也就是被隐藏的部分
+					    // scrollHeight 是元素内容高度，包括被隐藏的部分
+					    this.refs.list.scrollTop += height2 - height;
+					  }
+					  ```
+-

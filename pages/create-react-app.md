@@ -7,4 +7,30 @@ tags:: React
 		- `create-react-app hello-react`
 	- 进入文件夹
 	- 启动项目
-		- `npm st`
+		- `npm start`
+- 生成的项目结构
+	- public
+		- 静态资源文件夹
+			- favicon.ico
+			- index.html
+			- logoxx.png
+			- manifest.json
+			- robots.txt
+	- src
+		- 骨架代码 index.js
+		- 默认 App.js 组件
+		- App.css
+	- node_modules
+		- 第三方包
+- 默认生成的 `index.html`
+	- head
+		- `%PUBLIC_URL%`
+			- 表示 public 文件夹路径，例如 `<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />`
+		- `<meta name="viewport" content="width=device-width, initial-scale=1" />`
+			- 开启理想窗口，用于移动端网页适配
+		- `<meta name="theme-color" content="#000000" />`
+			- 设置主题颜色，仅用于安卓
+		- `<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />`
+			- 设置安装到苹果桌面上快捷方式时的 icon
+		- `<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />`
+			- 设置 WPA 的

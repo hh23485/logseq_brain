@@ -22,20 +22,7 @@ tags:: React
 		- App.css
 	- node_modules
 		- 第三方包
-- 默认生成的 `index.html`
-	- head
-		- `%PUBLIC_URL%`
-			- 表示 public 文件夹路径，例如 `<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />`
-		- `<meta name="viewport" content="width=device-width, initial-scale=1" />`
-			- 开启理想窗口，用于移动端网页适配
-		- `<meta name="theme-color" content="#000000" />`
-			- 设置主题颜色，仅用于安卓
-		- `<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />`
-			- 设置安装到苹果桌面上快捷方式时的 icon
-		- `<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />`
-			- 设置 WPA 的应用的信息
-		- `<meta name="description" content="Web site created using create-react-app" />`
-			- 介绍信息
-		- `<title>React App</title>`
-			- Title 信息
--
+- 默认生成文件内容解释
+	- [index.html 内容]([[React 脚手架生成的 index.html 内容]])
+	- [App.js 内容]([[React 脚手架生成的 App.js 内容]])
+	-

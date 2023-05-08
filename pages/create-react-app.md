@@ -35,4 +35,6 @@ tags:: React
 		- `<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />`
 			- 设置 WPA 的应用的信息
 		- `<meta name="description" content="Web site created using create-react-app" />`
-			-
+			- 介绍信息
+		- `<title>React App</title>`
+			- Title

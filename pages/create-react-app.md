@@ -33,4 +33,6 @@ tags:: React
 		- `<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />`
 			- 设置安装到苹果桌面上快捷方式时的 icon
 		- `<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />`
-			- 设置 WPA 的
+			- 设置 WPA 的应用的信息
+		- `<meta name="description" content="Web site created using create-react-app" />`
+			-

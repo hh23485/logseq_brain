@@ -1,4 +1,5 @@
 tags:: React
+alias:: React脚手架
 
 - 使用步骤
 	- 全局安装

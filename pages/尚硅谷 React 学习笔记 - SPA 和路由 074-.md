@@ -85,4 +85,5 @@
 		  <Link to ={`/home/message/detail/${id}/${title}`}>{title}</ Link>
 		  <Route path="/home/message/detail/:id/:title" component={Detail} />
 		  ```
--
+		- 接收时在 `props.match.params` 中
+		-

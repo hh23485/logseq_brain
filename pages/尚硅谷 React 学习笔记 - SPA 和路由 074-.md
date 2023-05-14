@@ -106,4 +106,5 @@
 			  <Link to ={{pathname:'/home/message/detail', state: {id: id, title: title}}}>{title}</Link>
 			  ```
 		- `Route` 无需在标签中声明
--
+		- 接收时在 `props.location.state`
+		- 刷新会丢失状态

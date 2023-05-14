@@ -42,5 +42,18 @@ tags:: React, axios
 				    )
 				  }
 				  ```
-- 搜索 Github 用户
-	-
+- 搜索 Github 用户样例
+	- 消息订阅与发布 PubSub-js
+		- 安装 `npm install pubsub-js`
+			- 使用 subscribe 订阅
+				- ``` js
+				  
+				  ```
+			- 使用 unsubscribe 取消订阅
+				- ``` 
+				  
+				  ```
+			- 使用 publish 发送消息
+		- 通过 PubSub 来避免使用父组件繁复的传递属性
+	- 展示 [[axios]] 的错误消息时返回 `error.message`
+	- 展示 [[axios]] 的数据时使用 `response.data`

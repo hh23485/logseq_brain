@@ -26,4 +26,4 @@ alias:: React脚手架
 - 默认生成文件内容解释
 	- [index.html 内容]([[React 脚手架生成的 index.html 内容]])
 	- [App.js 内容]([[React 脚手架生成的 App.js 内容]])
-	-
+	- [index.js 内容]([[React 脚手架生成的 index.js 内容]])

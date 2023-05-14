@@ -10,17 +10,21 @@
 		- 一个路由就是一个映射关系
 			- key 是路径
 			- value 是 component
-	- 路由注册
-- 原理 #.ol
-	- 浏览器 History 管理
-		- 假设使用 history.js
-			- 使用 `listen` 监听 location 变化，获取路径变化事件
-			- `History.createBrowserHistory()`
+	- 原理
+		- 浏览器 History 管理
+			- 假设使用 history.js
+				- 使用 `listen` 监听 location 变化，获取路径变化事件
 				- 使用 `push` 来前进
 				- 使用 `replace` 来替换栈顶
 				- 使用 `back` 来回退
-			- `History.createHashHistory()`
-				- 引起锚点跳转，即路径发生变化，但不引发刷新
-				- 兼容性更好
-	- 在检测到路径变化后，就可以替换对应的组件关系
--
+				- `History.createBrowserHistory()`
+					- 使用 HTML5 的 API
+				- `History.createHashHistory()`
+					- 路径中加入 `#`
+					- 引起锚点跳转，即路径发生变化，但不引发刷新
+					- 兼容性更好
+		- 在检测到路径变化后，就可以替换对应的组件关系
+- 组件库
+	- react-router-dom
+		- 专为 web 设计
+		-

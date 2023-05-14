@@ -1,12 +1,13 @@
 tags:: React, axios
 
 - 测试跨域代理配置
+  collapsed:: true
 	- 简单配置
 		- 在 `package.json` 中添加配置
 		- ``` json
 		  "proxy": "http://localhost:5000"
 		  ```
-		- 优先匹配页面 host 的资源，如果不存在则匹配 target host 的
+		- 优先匹配页面 host 的资源，如果不存在则匹配 target host 的资源
 	- 复杂配置
 		- 创建 `src/setupProxy.js`
 		- 在其中添加如下代码
@@ -41,3 +42,5 @@ tags:: React, axios
 				    )
 				  }
 				  ```
+- 搜索 Github 用户
+	-

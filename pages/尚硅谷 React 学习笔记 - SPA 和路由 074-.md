@@ -11,7 +11,7 @@
 			- key 是路径
 			- value 是 component
 	- 路由注册
-- 其他
+- 原理
 	- 浏览器 History
 		- 使用 BOM
 			- 使用 history.js
@@ -19,4 +19,4 @@
 				- 使用 `push` 来前进
 				- 使用 `replace` 来替换
 				- 使用 `back` 来回退
-		-
+				- 使用 `listen` 监听 location 变化，获取路径变化事件

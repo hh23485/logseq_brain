@@ -31,17 +31,22 @@
 	- react-router-dom
 		- 专为 web 设计的 react 路由插件库
 		- 使用
-			- 在最外层包裹 BrowserRouter 标签
-			- 使用 Link 代替 a 标签
+			- 在最外层包裹 `BrowserRouter` 标签
+			- 使用 `Link` 代替 `a` 标签
 				- ``` jsx
 				  <Link className="list-group-item" to="/home">
 				    Home
 				  </Link>
 				  ```
-			- 使用 Route 嵌入组件内容
+			- 使用 `Route` 嵌入组件内容
 				- ``` jsx
 				  <Route path="/home" component={Home} />
 				  ```
 - 路由组件与一般组件
 	- 路由组件映射的组件会收到路由器传入的 props
-	- 路由组件由 Route 标签控制，一般组件要手动写入
+		- history
+		- location
+		-
+	- 路由组件由 `Route` 标签控制，一般组件要手动写入
+	- 存放位置不同，路由组件通常放在 pages 底下，一般组件放在 componenets 下
+-

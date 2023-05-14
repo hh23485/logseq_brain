@@ -7,4 +7,33 @@ tags:: React, axios
 		  "proxy": "http://localhost:5000"
 		  ```
 	- 复杂配置
-		- 创建
+		- 创建 `src/setupProxy.js`
+		- 在其中添加如下代码
+			- ``` js
+			  const proxy = require('http-proxy-middleware')
+			  
+			  module.exports = function(app) {
+			    app.use(
+			    	proxy ('/api1', {
+			        target: 'http://localhost:5000',
+			        changeOrigin: true,
+			        pathRewrite: {'^/api1': ''}
+			    	})
+			    )
+			  }
+			  ```
+			- 但实践中发现该 api 已经废弃需要更换为如下写法
+				- ``` js
+				  const { createProxyMiddleware } = require('http-proxy-middleware')
+				  
+				  module.exports = function (app) {
+				    app.use(
+				      createProxyMiddleware('/api1', {
+				        target: 'http://localhost:5000',
+				        changeOrigin: true,
+				        pathRewrite: { '^/api1': '' }
+				      })
+				    )
+				  }
+				  ```
+		-

@@ -68,4 +68,13 @@ tags:: React, axios, PubSub
 	- 展示 [[axios]] 的错误消息时返回 `error.message`
 	- 展示 [[axios]] 的数据时使用 `response.data`
 - 使用 `fetch` 替代 XHR (XMLHttpRequest)
-	-
+	- ``` js
+	  try {
+	    const response = await fetch('urlxx')
+	    const data = await response.json()
+	    console.log(data);
+	  } catch (error) {
+	    console.log('请求出错', error)
+	  }
+	  ```
+	- 方法上要

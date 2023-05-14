@@ -68,7 +68,7 @@
 - 多级路径样式丢失问题
 	- %PUBLIC_URL%，仅用于 react 脚手架
 	- 使用绝对路径，以 `/` 开头
-	- 使用 Hashrouter
+	- 使用 `HashRouter`
 - 匹配模式
 	- 模糊匹配
 		- Link->Route 的匹配是模糊匹配
@@ -76,3 +76,13 @@
 	- 精确匹配
 		- 添加 exact 在Route 标签中
 		- 非必要不打开，会影响二级路由
+- 默认匹配
+	- `<Redirect to="path" />`
+	- 一般卸载所有路由的最下方
+- 路由传参
+	- 传递 params
+		- ``` jsx
+		  <Link to ={`/home/message/detail/${id}/${title}`}>{title}</ Link>
+		  <Route path="/home/message/detail/:id/:title" component={Detail} />
+		  ```
+-

@@ -45,21 +45,27 @@ tags:: React, axios, PubSub
 - 搜索 Github 用户样例
 	- 消息订阅与发布 PubSub-js
 		- 安装 `npm install pubsub-js`
-			- 使用 `subscribe`订阅
+			- 使用 `subscribe` 订阅
 				- ``` js
 				  componentDidMount() {
+				    // 消息会包含两个参数，第一个是 topic，第二个是 data
 				    PubSub.subscribe("atguigu", (topic, data) => {
-				      this.setState(data);
+				      // do something
 				    });
 				  }
 				  ```
 			- 使用 `unsubscribe` 取消订阅
-				- ``` 
+				- ``` js
 				  componentWillUnmount() {
 				    PubSub.unsubscribe("atguigu");
 				  }
 				  ```
-			- 使用 publish 发送消息
+			- 使用 `publish` 发送消息
+				- ``` js
+				  PubSub.publish("atguigu", data);
+				  ```
 		- 通过 PubSub 来避免使用父组件繁复的传递属性
 	- 展示 [[axios]] 的错误消息时返回 `error.message`
 	- 展示 [[axios]] 的数据时使用 `response.data`
+- 使用 `fetch` 替代 XHR (XMLHttpRequest)
+	-

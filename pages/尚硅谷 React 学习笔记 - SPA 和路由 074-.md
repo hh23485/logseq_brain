@@ -14,9 +14,12 @@
 - 原理 #.ol
 	- 浏览器 History 管理
 		- 假设使用 history.js
-			- `History.createBrowserHistory()`
-			- 使用 `push` 来前进
-			- 使用 `replace` 来替换
-			- 使用 `back` 来回退
 			- 使用 `listen` 监听 location 变化，获取路径变化事件
+			- `History.createBrowserHistory()`
+				- 使用 `push` 来前进
+				- 使用 `replace` 来替换栈顶
+				- 使用 `back` 来回退
+			- `History.createHashHistory()`
+				- 引起锚点跳转，即路径发生变化，但不引发
 	- 在检测到路径变化后，就可以替换对应的组件关系
+-

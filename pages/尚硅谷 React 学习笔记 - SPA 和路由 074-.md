@@ -107,4 +107,5 @@
 			  ```
 		- `Route` 无需在标签中声明
 		- 接收时在 `props.location.state`
-		- 刷新不会丢失状态，BrowserRouter 会持有
+		- 刷新不会丢失状态，BrowserRouter 会持有状态
+- 编程式路由

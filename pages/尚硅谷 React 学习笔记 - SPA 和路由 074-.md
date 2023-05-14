@@ -28,6 +28,7 @@
 					- 兼容性更好
 		- 在检测到路径变化后，就可以替换对应的组件关系
 - 组件库
+  collapsed:: true
 	- react-router-dom
 		- 专为 web 设计的 react 路由插件库
 		- 使用
@@ -48,6 +49,7 @@
 				- 多匹配的时候，会全都展示
 				- 如果需要单一匹配，则使用 Switch 包裹 Route
 - 路由组件与一般组件
+  collapsed:: true
 	- 路由组件映射的组件会收到路由器传入的 props
 		- history
 			- go: func
@@ -66,20 +68,24 @@
 	- 路由组件由 `Route` 标签控制，一般组件要手动写入
 	- 存放位置不同，路由组件通常放在 pages 底下，一般组件放在 componenets 下
 - 多级路径样式丢失问题
+  collapsed:: true
 	- %PUBLIC_URL%，仅用于 react 脚手架
 	- 使用绝对路径，以 `/` 开头
 	- 使用 `HashRouter`
 - 匹配模式
+  collapsed:: true
 	- 模糊匹配
 		- Link->Route 的匹配是模糊匹配
 			- 当 path 为 /home/a/b 时，/home 的 route 也会被触发
 	- 精确匹配
 		- 添加 exact 在Route 标签中
 		- 非必要不打开，会影响二级路由
-- 默认匹配
-	- `<Redirect to="path" />`
-	- 一般卸载所有路由的最下方
+	- 默认匹配
+	  collapsed:: true
+		- `<Redirect to="path" />`
+		- 一般卸载所有路由的最下方
 - 路由传参
+  collapsed:: true
 	- 传递 params
 		- ``` jsx
 		  <Link to ={`/home/message/detail/${id}/${title}`}>{title}</ Link>
@@ -109,3 +115,4 @@
 		- 接收时在 `props.location.state`
 		- 刷新不会丢失状态，BrowserRouter 会持有状态
 - 编程式路由
+	-

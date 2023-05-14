@@ -1,4 +1,5 @@
 - SPA
+  collapsed:: true
 	- 单页 Web 应用
 	- 整个应用只有一个完整的页面
 	- 点击站内链接不会刷新页面，只做页面局部更新
@@ -7,10 +8,12 @@
 	- 依赖路由
 - 前端路由
 	- 什么是路由
+	  collapsed:: true
 		- 一个路由就是一个映射关系
 			- key 是路径
 			- value 是 component
 	- 原理
+	  collapsed:: true
 		- 浏览器 History 管理
 			- 假设使用 history.js
 				- 使用 `listen` 监听 location 变化，获取路径变化事件
@@ -26,5 +29,19 @@
 		- 在检测到路径变化后，就可以替换对应的组件关系
 - 组件库
 	- react-router-dom
-		- 专为 web 设计
-		-
+		- 专为 web 设计的 react 路由插件库
+		- 使用
+			- 在最外层包裹 BrowserRouter 标签
+			- 使用 Link 代替 a 标签
+				- ``` jsx
+				  <Link className="list-group-item" to="/home">
+				    Home
+				  </Link>
+				  ```
+			- 使用 Route 嵌入组件内容
+				- ``` jsx
+				  <Route path="/home" component={Home} />
+				  ```
+- 路由组件与一般组件
+	- 路由组件映射的组件会收到路由器传入的 props
+	- 路由组件由 Route 标签控制，一般组件要手动写入

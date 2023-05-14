@@ -86,4 +86,10 @@
 		  <Route path="/home/message/detail/:id/:title" component={Detail} />
 		  ```
 		- 接收时在 `props.match.params` 中
-		-
+	- 传递 search 参数
+		- 类似 query 参数
+		- ``` jsx
+		  <Link to ={`/home/message/detail?id=${id}&title=${title}`}>{title}</Link>
+		  ```
+		- Route 无需在标签中声明
+		- 接收时在 `props.location.search` 中 `?key=value&key=value`

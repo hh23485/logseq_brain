@@ -42,6 +42,8 @@
 				- ``` jsx
 				  <Route path="/home" component={Home} />
 				  ```
+			- 使用 `NavLink` 用于导航栏 `a` 标签
+				- 用 activeClassName 来指定 active 时添加的 class 样式名
 - 路由组件与一般组件
 	- 路由组件映射的组件会收到路由器传入的 props
 		- history
@@ -57,7 +59,7 @@
 		- match
 			- isExact
 			- path
-			-
+			- url
 	- 路由组件由 `Route` 标签控制，一般组件要手动写入
 	- 存放位置不同，路由组件通常放在 pages 底下，一般组件放在 componenets 下
 -

@@ -10,4 +10,4 @@ tags:: React
 	- 如何设置 checkbox 默认状态
 		- 设置给 `defaultChecked`，而不能设置给 `checked`，否则就不能修改
 		- 但 `defaultChecked` 在设置一次之后规则就失效
-		- 通常需要修改的状态仍然需要使用 `checked` + `onChange` 来实现
+		- 如果需要通过变量修改状态，仍然需要使用 `checked` + `onChange` 来实现

@@ -1,0 +1,22 @@
+- SPA
+	- 单页 Web 应用
+	- 整个应用只有一个完整的页面
+	- 点击站内链接不会刷新页面，只做页面局部更新
+	- 数据全都通过 ajax 请求获取，在前端异步展示
+- 实现
+	- 依赖路由
+- 前端路由
+	- 什么是路由
+		- 一个路由就是一个映射关系
+			- key 是路径
+			- value 是 component
+	- 路由注册
+- 其他
+	- 浏览器 History
+		- 使用 BOM
+			- 使用 history.js
+				- `History.createBrowserHistory()`
+				- 使用 `push` 来前进
+				- 使用 `replace` 来替换
+				- 使用 `back` 来回退
+		-

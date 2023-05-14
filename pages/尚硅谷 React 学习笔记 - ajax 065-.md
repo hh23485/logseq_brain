@@ -6,6 +6,7 @@ tags:: React, axios
 		- ``` json
 		  "proxy": "http://localhost:5000"
 		  ```
+		- 优先匹配页面 host 的资源，如果不存在则匹配 target host 的
 	- 复杂配置
 		- 创建 `src/setupProxy.js`
 		- 在其中添加如下代码

@@ -91,7 +91,19 @@
 		- ``` jsx
 		  <Link to ={`/home/message/detail?id=${id}&title=${title}`}>{title}</Link>
 		  ```
-		- Route 无需在标签中声明
+		- `Route` 无需在标签中声明
 		- 接收时在 `props.location.search` 中 `?key=value&key=value`，需要手动处理
 		- 可以使用 `querystring` 来帮忙切割为 `map`
-		-
+			- ``` jsx
+			  import qs from querystring
+			  
+			  const {id, title} = qs.parse(search.slice(1)) // remove '?'
+			  ```
+	- 传递 state 参数
+		- 在地址栏上观测不到
+		- 传递对象
+			- ``` jsx
+			  <Link to ={{pathname:'/home/message/detail', state: {id: id, title: title}}}>{title}</Link>
+			  ```
+		- `Route` 无需在标签中声明
+-

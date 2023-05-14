@@ -43,7 +43,10 @@
 				  <Route path="/home" component={Home} />
 				  ```
 			- 使用 `NavLink` 用于导航栏 `a` 标签
-				- 用 activeClassName 来指定 active 时添加的 class 样式名
+				- 用 `activeClassName` 来指定 `active` 时添加的 `class` 样式名
+			- Switch
+				- 多匹配的时候，会全都展示
+				- 如果需要单一匹配，则使用 Switch 包裹 Route
 - 路由组件与一般组件
 	- 路由组件映射的组件会收到路由器传入的 props
 		- history

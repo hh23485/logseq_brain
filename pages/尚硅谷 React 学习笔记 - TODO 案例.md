@@ -1,3 +1,5 @@
+tags:: React
+
 - 主题
 	- 如何在兄弟组件之间传递数据
 		- 通过父组件
@@ -6,3 +8,4 @@
 			- ![image.png](../assets/image_1684037439912_0.png)
 	- 如何设置 checkbox 默认状态
 		- 设置给 `defaultChecked`，而不能设置给 `checked`，否则就不能修改
+		-

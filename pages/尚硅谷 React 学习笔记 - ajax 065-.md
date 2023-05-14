@@ -1,4 +1,4 @@
-tags:: React, axios
+tags:: React, axios, PubSub
 
 - 测试跨域代理配置
   collapsed:: true
@@ -47,11 +47,17 @@ tags:: React, axios
 		- 安装 `npm install pubsub-js`
 			- 使用 subscribe 订阅
 				- ``` js
-				  
+				  componentDidMount() {
+				    PubSub.subscribe("atguigu", (topic, data) => {
+				      this.setState(data);
+				    });
+				  }
 				  ```
-			- 使用 unsubscribe 取消订阅
+			- 使用 ` `取消订阅
 				- ``` 
-				  
+				  componentWillUnmount() {
+				    PubSub.unsubscribe("atguigu");
+				  }
 				  ```
 			- 使用 publish 发送消息
 		- 通过 PubSub 来避免使用父组件繁复的传递属性

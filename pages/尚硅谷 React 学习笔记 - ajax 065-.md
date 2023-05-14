@@ -77,4 +77,5 @@ tags:: React, axios, PubSub
 	    console.log('请求出错', error)
 	  }
 	  ```
-	- 方法上要
+	- 方法上要添加 async 描述符
+	-

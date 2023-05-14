@@ -67,8 +67,8 @@
 	- 存放位置不同，路由组件通常放在 pages 底下，一般组件放在 componenets 下
 - 多级路径样式丢失问题
 	- %PUBLIC_URL%，仅用于 react 脚手架
-	- /
-	- hashrouter
+	- 使用绝对路径，以 `/` 开头
+	- 使用 Hashrouter
 - 匹配模式
 	- 模糊匹配
 		- Link->Route 的匹配是模糊匹配

@@ -69,5 +69,10 @@
 	- %PUBLIC_URL%，仅用于 react 脚手架
 	- /
 	- hashrouter
-- 模糊匹配
-	- 当 path 为 /home/a/b 时，/home 的 route 也会被
+- 匹配模式
+	- 模糊匹配
+		- Link->Route 的匹配是模糊匹配
+			- 当 path 为 /home/a/b 时，/home 的 route 也会被触发
+	- 精确匹配
+		- 添加 exact 在Route 标签中
+		- 非必要不打开

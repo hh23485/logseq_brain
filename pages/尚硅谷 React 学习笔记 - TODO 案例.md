@@ -8,4 +8,5 @@ tags:: React
 			- ![image.png](../assets/image_1684037439912_0.png)
 	- 如何设置 checkbox 默认状态
 		- 设置给 `defaultChecked`，而不能设置给 `checked`，否则就不能修改
-		-
+		- 但 `defaultChecked` 在设置一次之后规则就失效
+		- 通常需要修改的状态仍然需要使用 `checked` + `onChange` 来实现

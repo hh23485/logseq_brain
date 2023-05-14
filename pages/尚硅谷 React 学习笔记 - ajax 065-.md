@@ -45,7 +45,7 @@ tags:: React, axios, PubSub
 - 搜索 Github 用户样例
 	- 消息订阅与发布 PubSub-js
 		- 安装 `npm install pubsub-js`
-			- 使用 subscribe 订阅
+			- 使用 `subscribe`订阅
 				- ``` js
 				  componentDidMount() {
 				    PubSub.subscribe("atguigu", (topic, data) => {
@@ -53,7 +53,7 @@ tags:: React, axios, PubSub
 				    });
 				  }
 				  ```
-			- 使用 ` `取消订阅
+			- 使用 `unsubscribe` 取消订阅
 				- ``` 
 				  componentWillUnmount() {
 				    PubSub.unsubscribe("atguigu");

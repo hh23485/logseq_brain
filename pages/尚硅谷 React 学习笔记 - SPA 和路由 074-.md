@@ -93,4 +93,5 @@
 		  ```
 		- Route 无需在标签中声明
 		- 接收时在 `props.location.search` 中 `?key=value&key=value`，需要手动处理
-		- 可以使用 `querystring` 来帮忙切割为 map
+		- 可以使用 `querystring` 来帮忙切割为 `map`
+		-

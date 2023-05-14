@@ -65,4 +65,9 @@
 			- url
 	- 路由组件由 `Route` 标签控制，一般组件要手动写入
 	- 存放位置不同，路由组件通常放在 pages 底下，一般组件放在 componenets 下
--
+- 多级路径样式丢失问题
+	- %PUBLIC_URL%，仅用于 react 脚手架
+	- /
+	- hashrouter
+- 模糊匹配
+	- 当 path 为 /home/a/b 时，/home 的 route 也会被

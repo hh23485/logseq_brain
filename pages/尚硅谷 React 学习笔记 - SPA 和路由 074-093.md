@@ -13,7 +13,6 @@
 			- key 是路径
 			- value 是 component
 	- 原理
-	  collapsed:: true
 		- 浏览器 History 管理
 			- 假设使用 history.js
 				- 使用 `listen` 监听 location 变化，获取路径变化事件
@@ -26,6 +25,7 @@
 					- 路径中加入 `#`
 					- 引起锚点跳转，即路径发生变化，但不引发刷新
 					- 兼容性更好
+					- 刷新时会丢失 state
 		- 在检测到路径变化后，就可以替换对应的组件关系
 - 组件库
   collapsed:: true
@@ -144,6 +144,7 @@
 		  this.props.history.go(-1) // 等于 goBack
 		  ```
 - 在一般组件中使用 Router api，使用 `withRouter`
+  collapsed:: true
 	- ``` js
 	  import {withRouter} from 'react-router-dom'
 	  ```

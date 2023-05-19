@@ -136,5 +136,9 @@
 		- ``` js
 		  this.props.history.goForward()
 		  ```
-	-
+	- go
+		- 可以前后跳转多
+		- ``` js
+		  this.props.history.go(-1) // 等于 goBack
+		  ```
 -

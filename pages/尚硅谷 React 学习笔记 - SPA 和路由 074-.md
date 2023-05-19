@@ -143,7 +143,7 @@
 		- ``` js
 		  this.props.history.go(-1) // 等于 goBack
 		  ```
-- 在一般组件中使用 Router api
+- 在一般组件中使用 Router api，使用 withROuter
 	- ``` js
 	  import {withRouter} from 'react-router-dom'
 	  ```

@@ -150,5 +150,5 @@
 	- 并且在暴露组件时，需要使用 withRouter 包装
 		- ``` js
 		  class Header extends Component {}
-		  export default withRouter(Header_
+		  export default withRouter(Header)
 		  ```

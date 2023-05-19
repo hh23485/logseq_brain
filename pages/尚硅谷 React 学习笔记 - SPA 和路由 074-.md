@@ -120,4 +120,19 @@
 	  ```
 - 编程式路由
 	- props 会在路由组件中传入 `history`，而 `history` 中包含了一组 API
-	- this.props.history.replace(path
+	- replace
+		- ``` js
+		  this.props.history.replace(path)
+		  ```
+	- push
+		- ``` js
+		  this.props.history.push(path)
+		  ```
+	- goBack
+		- ``` js
+		  this.props.history.goBack()
+		  ```
+	- goForward
+		- ``` js
+		  this.props.history.goBack()
+		  ```

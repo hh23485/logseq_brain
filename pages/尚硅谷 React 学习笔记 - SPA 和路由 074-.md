@@ -114,5 +114,9 @@
 		- `Route` 无需在标签中声明
 		- 接收时在 `props.location.state`
 		- 刷新不会丢失状态，BrowserRouter 会持有状态
+- 历史 Replace 模式
+	- ``` jsx
+	  <Link replace={true} />
+	  ```
 - 编程式路由
 	-

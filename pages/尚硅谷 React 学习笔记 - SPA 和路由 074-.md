@@ -134,5 +134,6 @@
 		  ```
 	- goForward
 		- ``` js
-		  this.props.history.goBack()
+		  this.props.history.goForward()
 		  ```
+-

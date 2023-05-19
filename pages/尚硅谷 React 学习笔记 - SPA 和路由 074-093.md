@@ -28,7 +28,6 @@
 					- 刷新时会丢失 state
 		- 在检测到路径变化后，就可以替换对应的组件关系
 - 组件库
-  collapsed:: true
 	- react-router-dom
 		- 专为 web 设计的 react 路由插件库
 		- 使用
@@ -85,7 +84,6 @@
 		- `<Redirect to="path" />`
 		- 一般卸载所有路由的最下方
 - 路由传参
-  collapsed:: true
 	- 传递 params
 		- ``` jsx
 		  <Link to ={`/home/message/detail/${id}/${title}`}>{title}</ Link>
@@ -113,7 +111,7 @@
 			  ```
 		- `Route` 无需在标签中声明
 		- 接收时在 `props.location.state`
-		- 刷新不会丢失状态，BrowserRouter 会持有状态
+		- 刷新不会丢失状态，BrowserRouter 会持有状态, Hash
 - 历史 Replace 模式
   collapsed:: true
 	- ``` jsx

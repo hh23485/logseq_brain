@@ -84,6 +84,7 @@
 		- `<Redirect to="path" />`
 		- 一般卸载所有路由的最下方
 - 路由传参
+  collapsed:: true
 	- 传递 params
 		- ``` jsx
 		  <Link to ={`/home/message/detail/${id}/${title}`}>{title}</ Link>
@@ -111,7 +112,7 @@
 			  ```
 		- `Route` 无需在标签中声明
 		- 接收时在 `props.location.state`
-		- 刷新不会丢失状态，BrowserRouter 会持有状态, Hash
+		- 刷新不会丢失状态，`BrowserRouter` 会持有状态, `HashRouter` 会丢失
 - 历史 Replace 模式
   collapsed:: true
 	- ``` jsx

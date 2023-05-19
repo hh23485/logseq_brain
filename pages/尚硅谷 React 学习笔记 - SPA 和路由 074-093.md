@@ -4,8 +4,6 @@
 	- 整个应用只有一个完整的页面
 	- 点击站内链接不会刷新页面，只做页面局部更新
 	- 数据全都通过 ajax 请求获取，在前端异步展示
-- 实现
-	- 依赖路由
 - 前端路由
 	- 什么是路由
 	  collapsed:: true
@@ -13,6 +11,7 @@
 			- key 是路径
 			- value 是 component
 	- 原理
+	  collapsed:: true
 		- 浏览器 History 管理
 			- 假设使用 history.js
 				- 使用 `listen` 监听 location 变化，获取路径变化事件
@@ -28,6 +27,7 @@
 					- 刷新时会丢失 state
 		- 在检测到路径变化后，就可以替换对应的组件关系
 - 组件库
+  collapsed:: true
 	- react-router-dom
 		- 专为 web 设计的 react 路由插件库
 		- 使用

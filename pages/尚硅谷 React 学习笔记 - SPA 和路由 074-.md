@@ -115,10 +115,12 @@
 		- 接收时在 `props.location.state`
 		- 刷新不会丢失状态，BrowserRouter 会持有状态
 - 历史 Replace 模式
+  collapsed:: true
 	- ``` jsx
 	  <Link replace={true} />
 	  ```
 - 编程式路由
+  collapsed:: true
 	- props 会在路由组件中传入 `history`，而 `history` 中包含了一组 API
 	- replace
 		- ``` js
@@ -137,8 +139,11 @@
 		  this.props.history.goForward()
 		  ```
 	- go
-		- 可以前后跳转多
+		- 可以前后跳转多步
 		- ``` js
 		  this.props.history.go(-1) // 等于 goBack
 		  ```
--
+- 在一般组件中使用 Router api
+	- ``` js
+	  import {withRouter} from 'react-router-dom'
+	  ```

@@ -136,4 +136,4 @@
 		- ``` js
 		  this.props.history.goForward()
 		  ```
--
+	-

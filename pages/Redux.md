@@ -7,4 +7,5 @@ tags:: React
 	- Dispatch(action)
 		- 任何组件可以使用 Dispatch Action 来传递消息给 Store
 	- Store
-		- Reducer
+		- Store 存储了
+		- Reducer 负责处理事件

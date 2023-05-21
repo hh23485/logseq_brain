@@ -5,4 +5,4 @@ tags:: React
 	-
 - API
 	- Dispatch(action)
-		-
+		- 任何组件可以使用 Action

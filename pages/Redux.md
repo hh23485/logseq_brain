@@ -6,4 +6,4 @@ tags:: React
 - API
 	- Dispatch(action)
 		- 任何组件可以使用 Dispatch Action 来传递消息给 Store
-		-
+	-

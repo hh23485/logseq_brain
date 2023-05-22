@@ -1,3 +1,4 @@
 - 使用 [Google Font](https://fonts.google.com/) 来选择字体
 - 使用 [Typescale](http://type-scale.com/) 来选择合适的文本大小
--
+- 颜色
+	- 颜色需要和你的网站的风格

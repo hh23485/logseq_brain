@@ -3,4 +3,6 @@
 - 颜色
 	- 颜色需要和你的网站的风格相适应
 	- 工具
-		- [Open color](https://yeun.github.io/open-color/) 用于选择生成好的
+		- [Open color](https://yeun.github.io/open-color/) 用于选择常见的色号
+		- [Palettes | Flat UI Colors 🎨 280 handpicked colors ready for COPY & PASTE](https://flatuicolors.com/?ref=evernote.design) 用于选择颜色搭配
+	-

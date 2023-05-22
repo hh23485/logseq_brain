@@ -17,4 +17,12 @@
 			- 可以使用 [Tint & Shade Generator](https://maketintsandshades.com/) 生成颜色
 			- 使用 [Paletton - The Color Scheme Designer](https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF) 或者 [Coolors - The super fast color palettes generator!](https://coolors.co/)生成调色板
 	- 使用颜色
+		- 使用主色来描述页面中需要强调的内容
+		- 可以用颜色来增加一些其他的部分（边缘，背景等）
+			- ![image.png](../assets/image_1684777813478_0.png)
+			- ![image.png](../assets/image_1684777823178_0.png)
+			- ![image.png](../assets/image_1684777831716_0.png)
+		- 可以使用和图片中的颜色相衬的颜色，能够让人感觉一致
+			- ![image.png](../assets/image_1684777856005_0.png)
+		- 深色背景上用浅色文字
 		-

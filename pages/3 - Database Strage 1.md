@@ -64,7 +64,12 @@
 				- ![image.png](../assets/image_1690015017799_0.png){:height 259, :width 276}
 			- Page Layout
 				- Tuple-oriented
-					-
+					- How to store tuples in a page?
+					- Slotted pages
+						- ![image.png](../assets/image_1690015727438_0.png){:height 899, :width 648}
+						- Slot array maps slots to the tuples starting position offsets.
+						- Slot array use fix length to express a address.
+						- The tuple can be variable length
 - Relational Databases
 - Storage
 - Execution

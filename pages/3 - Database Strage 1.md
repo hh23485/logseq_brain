@@ -130,7 +130,9 @@
 			- SQL Server: Overflow (>size of page)
 		- Some systems allow you to store a really large value in an external file, as a **BLOB** type
 			- Oracle: BFILE data type
-			-
+			- Microsoft: FILESTREAM data type
+				- TODO paper of `To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesytem?`
+				-
 - Relational Databases
 - Storage
 - Execution

@@ -43,7 +43,11 @@
 				- Mysql 16KB
 				- SQList, DB2, Oracle 4KB
 	- Page Storage Architecture
-		-
+		- 不同的淑静注系统会使用不同的文件管理方法
+			- Heap file organization
+			- Tree file organization
+			- Sequential / Sorted file Organization
+			- Hashing File Organization
 - Relational Databases
 - Storage
 - Execution

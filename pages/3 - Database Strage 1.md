@@ -48,6 +48,7 @@
 				- unordered collection of pages, stored in random order, must support iterating over all pages
 				- if only single file, it's easy to find pages.
 					- ![image.png](../assets/image_1690014638198_0.png)
+				-
 			- Tree file organization
 			- Sequential / Sorted file Organization
 			- Hashing File Organization

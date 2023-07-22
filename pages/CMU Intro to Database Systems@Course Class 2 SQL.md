@@ -1,0 +1,10 @@
+- SQL History
+	- `SEQUEL` developed by IBM in 1974 for System R
+		- **S**tructured **E**nglish **Q**uery **L**anguage
+	- Then released commercial SQL based DBMS Syste,/38, SQL/DS, DB2
+	- ANSI standard in 1986. ISO in 1987
+		- **S**tructured **Q**uery **L**anguage
+	- Latest version
+		- SQL:2016
+	- SQL is based on bag (duplicates) algebra not set (no duplicates) algebra
+	-

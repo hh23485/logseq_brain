@@ -121,7 +121,8 @@
 							- Condition
 								- 许多条件可以触发，时间、空闲、大小、手动等等
 						- 缺点
-							-
+							- 写放大
+							- Compation
 - Relational Databases
 - Storage
 - Execution

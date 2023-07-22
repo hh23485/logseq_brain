@@ -1,9 +1,26 @@
 - ## System design goal
 	- Allow the DBMS to manage databases that exceed the amount of memory available
 - ## Disk-oriented DBMS
-	- In memory, here is a buffer pool to mapping data from the disk
-	- Disk keeps the content as well as the database files.
-	- A execution engine will insert data and query data from memory buffer pool.
+	- Overview
+		- In memory, here is a buffer pool to mapping data from the disk
+			- in lecture 6
+		- Disk keeps the content as well as the database files.
+			- in lecture 5
+		- A execution engine will insert data and query data from memory buffer pool.
+			- in lecture 12-13
+	- Why not use the OS
+		- DBMS use `mmap` to store contents of a file into a address space of a app
+		- 可行，但不好用
+			- Transaction Safety
+				- 操作系统中持有有脏数据，可能随时被刷回，而你可能并不希望刷回其中一部分仍然在事务中的数据
+			- I/O Stalls
+				- 你不知道哪些数据页已经在操作系统中了，可能你想要访问一个页，但需要操作系统不停地换出页面之后才能得到，而在此之前，你已经完全停止工作了
+			- Error Handling
+				- 难以验证页面数据的正确性，如果数据、页面出错，可能会得到一个 SIGBUP，DBMS 必须严格的处理所有这些错误
+			- Performane Issues
+				- 系统内构建的数据结构可能不是你所需的数据库的最优实现，那么可能就会成为性能瓶颈
+		-
+			-
 - Relational Databases
 - Storage
 - Execution

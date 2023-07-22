@@ -100,14 +100,15 @@
 								- Already used for lots of NoSQL DB
 								- You can enable when define the table schema
 				- Log-oriented, Log-Structured Storage
-					- 这类 DBMS 中疼死了两种方法来操作一个 tuples
-						- PUT
-						- DELETE
-					- 每个操作都要带上 tuple 的 id
-						- put 需要携带 id 的 value
-						- delete 需要携带 id
-						- ![image.png](../assets/image_1690029490358_0.png){:height 390, :width 418}
-					- 当 page 写满之后，就会
+					- High level overview
+						- 这类 DBMS 中提供了两种方法来操作一个 tuples
+							- PUT
+							- DELETE
+						- 每个操作都要带上 tuple 的 id
+							- put 需要携带 id 的 value
+							- delete 需要携带 id
+							- ![image.png](../assets/image_1690029490358_0.png){:height 390, :width 418}
+						- 当 page 写满之后，就会刷到磁盘中，然后清空 memory page
 - Relational Databases
 - Storage
 - Execution

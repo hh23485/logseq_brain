@@ -66,6 +66,7 @@
 				- ![image.png](../assets/image_1690015017799_0.png){:height 259, :width 276}
 			- Page Layout
 				- Tuple-oriented
+				  collapsed:: true
 					- How to store tuples in a page?
 					- Slotted pages
 						- ![image.png](../assets/image_1690015727438_0.png){:height 899, :width 648}
@@ -84,7 +85,7 @@
 							- 碎片
 							- 多一次 disk io
 							- 随机读写困难，如果更新 20 个 tuples on 20 pages，需要访问 20 个 page 来更新
-							- 如果文件系统是不可修改的，例如 HDFS，则不能
+							- 如果文件系统是不可修改的，例如 HDFS，则不能支持，对于分布式场景下存储的选择是有限制的
 					- Tuple
 						- Tuple header
 							- Each tuple is prefixed with a header contains meta-data
@@ -98,9 +99,14 @@
 								- May make updates more expensive
 								- Already used for lots of NoSQL DB
 								- You can enable when define the table schema
-				- Log-oriented
-					- Level DB
-	-
+				- Log-oriented, Log-Structured Storage
+					- 这类 DBMS 中疼死了两种方法来操作一个 tuples
+						- PUT
+						- DELETE
+					- 每个操作都要带上 tuple 的 id
+						- put 需要携带 id 的 value
+						- delete 需要携带 id
+					-
 - Relational Databases
 - Storage
 - Execution

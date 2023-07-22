@@ -112,7 +112,7 @@
 						- Compaction
 							- 为了避免持续的增长，DBMS 会逐渐合并这些 page，只保留最后的状态
 							- 合并完成的 page 可以被删除
-							- 合并完的 tuples 可以排序
+							- 合并完的 tuples 可以按 id 排序，以提升未来查询的速度
 - Relational Databases
 - Storage
 - Execution

@@ -45,6 +45,7 @@
 		- ### Page Storage Architecture
 			- 不同的数据库系统会使用不同的文件管理方法
 				- #### Heap file organization
+				  collapsed:: true
 					- unordered collection of pages, stored in random order, must support iterating over all pages
 					- if only single file, it's easy to find pages.
 						- ![image.png](../assets/image_1690014638198_0.png)
@@ -56,6 +57,7 @@
 				- TODO Sequential / Sorted file Organization
 				- TODO Hashing File Organization
 			- Page header
+			  collapsed:: true
 				- Page Size
 				- Checksum
 				- DBMS Version
@@ -64,6 +66,7 @@
 				- ![image.png](../assets/image_1690015017799_0.png){:height 259, :width 276}
 			- Page Layout
 				- Tuple-oriented
+				  collapsed:: true
 					- How to store tuples in a page?
 					- Slotted pages
 						- ![image.png](../assets/image_1690015727438_0.png){:height 899, :width 648}
@@ -78,21 +81,22 @@
 								- ![image.png](../assets/image_1690016883734_0.png)
 							- MSSQL
 								- ![image.png](../assets/image_1690016940721_0.png)
+					- Tuple
+					  collapsed:: true
+						- Tuple header
+							- Each tuple is prefixed with a header contains meta-data
+								- for NULL values
+								- Visibility info for concurrency control
+								- ![image.png](../assets/image_1690017541848_0.png)
+						- Tuple data
+							- Some system support `denormalize`，a kind of pre join.
+								- ![image.png](../assets/image_1690017702719_0.png)
+								- Reduce the amount of i/o for common workload patterns
+								- May make updates more expensive
+								- Already used for lots of NoSQL DB
+								- You can enable when define the table schema
 				- Log-oriented
 					- Level DB
-	- Tuple
-		- Tuple header
-			- Each tuple is prefixed with a header contains meta-data
-				- for NULL values
-				- Visibility info for concurrency control
-				- ![image.png](../assets/image_1690017541848_0.png)
-		- Tuple data
-			- Some system support `denormalize`，a kind of pre join.
-				- ![image.png](../assets/image_1690017702719_0.png)
-				- Reduce the amount of i/o for common workload patterns
-				- May make updates more expensive
-				- Already used for lots of NoSQL DB
-				- You can enable when define the table schema
 	-
 - Relational Databases
 - Storage

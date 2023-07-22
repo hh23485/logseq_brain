@@ -45,6 +45,7 @@
 	- Page Storage Architecture
 		- 不同的数据库系统会使用不同的文件管理方法
 			- Heap file organization
+				-
 			- Tree file organization
 			- Sequential / Sorted file Organization
 			- Hashing File Organization

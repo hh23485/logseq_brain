@@ -42,9 +42,9 @@
 				- SQL Server 8KB
 				- Mysql 16KB
 				- SQList, DB2, Oracle 4KB
-	- Page Storage Architecture
+	- ### Page Storage Architecture
 		- 不同的数据库系统会使用不同的文件管理方法
-			- Heap file organization
+			- #### Heap file organization
 				- unordered collection of pages, stored in random order, must support iterating over all pages
 				- if only single file, it's easy to find pages.
 					- ![image.png](../assets/image_1690014638198_0.png)

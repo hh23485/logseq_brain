@@ -41,7 +41,8 @@
 			- 数据库大概 512B-16KB
 				- SQL Server 8KB
 				- Mysql 16KB
-				- SQList, DB2, Oracle
+				- SQList, DB2, Oracle 4KB
+	- Page Storage Architecture
 		-
 - Relational Databases
 - Storage

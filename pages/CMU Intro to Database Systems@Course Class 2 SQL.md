@@ -61,4 +61,6 @@
 		- WITH <SourceName> (<OutputColumn>..) AS ( <query> )
 		- ![image.png](../assets/image_1690008521252_0.png)
 	- 递归
+		- RECURSIVE 中，UNION 前的是定点成员，只会执行一次，
 		- ![image.png](../assets/image_1690009250753_0.png)
+-

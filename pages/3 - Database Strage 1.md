@@ -3,7 +3,7 @@
 - ## Disk-oriented DBMS
 	- In memory, here is a buffer pool to mapping data from the disk
 	- Disk keeps the content as well as the database files.
-	- A execution engine will insert data and query data from memory buffer pool
+	- A execution engine will insert data and query data from memory buffer pool.
 - Relational Databases
 - Storage
 - Execution

@@ -18,9 +18,13 @@
 			- Error Handling
 				- 难以验证页面数据的正确性，如果数据、页面出错，可能会得到一个 SIGBUP，DBMS 必须严格的处理所有这些错误
 			- Performane Issues
-				- 系统内构建的数据结构可能不是你所需的数据库的最优实现，那么可能就会成为性能瓶颈,
-		-
-			-
+				- 系统内构建的数据结构可能不是你所需的数据库的最优实现，那么可能就会成为性能瓶颈
+		- TODO  to know why mmap is a bad idea from some blogs
+			- Are you sure you want to use mmap in your database management system?
+		- DBMS always wants to control everything
+- ## File Storage
+	-
+	-
 - Relational Databases
 - Storage
 - Execution

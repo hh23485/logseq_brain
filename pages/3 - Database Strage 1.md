@@ -36,10 +36,12 @@
 			- DBMS 会通过 id 来映射他们各自在物理上的位置
 		- 在不同的层级上有不同的大小
 			- 硬件上大约 4KB
-				- 数据块能够被保证 failasafe
+				- 数据块能够被保证 failasafe 写入的最大大小
 			- 操作系统大约 4KB
 			- 数据库大概 512B-16KB
-			-
+				- SQL Server 8KB
+				- Mysql 16KB
+				- SQList, DB2, Oracle
 		-
 - Relational Databases
 - Storage

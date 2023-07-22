@@ -73,7 +73,7 @@
 						- A record is `page_id` + `offset/slot`, as well as `ROWID`/`CTID`
 							- in postgreSQL, 6 bytes
 								- ![image.png](../assets/image_1690016494986_0.png)
-								- 如果删除 0, 2 在插入，会变成 0, 4，在经过一次碎片整理之后，回变回 0, 2
+								- 如果删除 0, 2 在插入，会变成 0, 4，在经过一次碎片整理之后，才会
 							- SQLite, 8 bytes
 				- Log-oriented
 					- Level DB

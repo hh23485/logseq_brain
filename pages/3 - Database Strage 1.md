@@ -100,7 +100,7 @@
 								- Already used for lots of NoSQL DB
 								- You can enable when define the table schema
 				- Log-oriented, Log-Structured Storage
-					- overview
+					- High level overview
 						- 这类 DBMS 中提供了两种方法来操作一个 tuples
 							- PUT
 							- DELETE
@@ -109,7 +109,9 @@
 							- delete 需要携带 id
 							- ![image.png](../assets/image_1690029490358_0.png){:height 390, :width 418}
 						- 当 page 写满之后，就会刷到磁盘中，然后清空 memory page。写到磁盘上的部分是不可变的。
-						-
+						- Compaction
+							- 为了避免持续的增长，DBMS 会逐渐合并这些 page，只保留最后的状态
+							- 合并完成的 page 可以被删除
 - Relational Databases
 - Storage
 - Execution

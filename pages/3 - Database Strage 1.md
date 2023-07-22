@@ -73,10 +73,20 @@
 						- A record is `page_id` + `offset/slot`, as well as `ROWID`/`CTID`
 							- in postgreSQL, 6 bytes
 								- ![image.png](../assets/image_1690016494986_0.png)
-								- 如果删除 0, 2 在插入，会变成 0, 4，在经过一次碎片整理之后，才会
-							- SQLite, 8 bytes
+								- 如果删除 0, 2 在插入，会变成 0, 4，在经过一次碎片整理之后，才会消除空洞
+							- SQLite, 8 bytes、
+								- ![image.png](../assets/image_1690016883734_0.png)
+							- MSSQL
+								- ![image.png](../assets/image_1690016940721_0.png)
 				- Log-oriented
 					- Level DB
+	- Tuple
+		- Tuple header
+			- Each tuple is prefixed with a header contains meta-data
+				- for NULL values
+				- Visibility info for concurrency control
+				- ![image.png](../assets/image_1690017541848_0.png)
+			-
 - Relational Databases
 - Storage
 - Execution

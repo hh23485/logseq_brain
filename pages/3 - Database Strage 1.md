@@ -29,7 +29,10 @@
 			- 跟踪谁在读写文件，读写什么位置等信息
 	- Page
 		- 一个固定大小的数据块
-			-
+			- contains tuples, meta=data, indexes, log records
+			- do not mix page types
+			- some system require a page to be self-contained
+		-
 		-
 - Relational Databases
 - Storage

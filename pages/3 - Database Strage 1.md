@@ -23,6 +23,7 @@
 			- Are you sure you want to use mmap in your database management system?
 		- DBMS always wants to control everything
 - ## File Storage
+	- High performance is always to use a properietary filesystems/file format, not use general format.
 	-
 	-
 - Relational Databases

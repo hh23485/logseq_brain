@@ -1,0 +1,3 @@
+- Video Link
+	- [01 - Relational Model & Relational Algebra (CMU Intro to Database Systems / Fall 2022) - YouTube](https://www.youtube.com/watch?v=uikbtpVZS2s&list=PLSE8ODhjZXjaKScG3l0nuOiDTTqpfnWFf)
+	-

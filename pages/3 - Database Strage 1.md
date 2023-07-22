@@ -72,6 +72,7 @@
 						- The tuple can be variable length.
 						- A record is `page_id` + `offset/slot`, as well as `ROWID`/`CTID`
 							- in postgreSQL, 6 bytes
+								- ![image.png](../assets/image_1690016494986_0.png)
 							- SQLite, 8 bytes
 				- Log-oriented
 					- Level DB

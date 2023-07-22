@@ -106,7 +106,8 @@
 					- 每个操作都要带上 tuple 的 id
 						- put 需要携带 id 的 value
 						- delete 需要携带 id
-					-
+						- ![image.png](../assets/image_1690029490358_0.png){:height 390, :width 418}
+						-
 - Relational Databases
 - Storage
 - Execution

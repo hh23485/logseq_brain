@@ -52,18 +52,18 @@
 						- ![image.png](../assets/image_1690014735312_0.png)
 						- meta-data 来跟踪哪个 page 存在什么地方，以及还有多少空闲的空间
 							- ![image.png](../assets/image_1690014895802_0.png){:height 282, :width 224}
-				- Tree file organization
-				- Sequential / Sorted file Organization
-				- Hashing File Organization
+				- TODO Tree file organization
+				- TODO Sequential / Sorted file Organization
+				- TODO Hashing File Organization
 			- Page header
 				- Page Size
 				- Checksum
 				- DBMS Version
 				- Transaction visibility
 				- Compression Information
-				- ![image.png](../assets/image_1690015017799_0.png)
+				- ![image.png](../assets/image_1690015017799_0.png){:height 259, :width 276}
 			- Page Layout
-				- Tuple-orient
+				- Tuple-oriented
 					-
 - Relational Databases
 - Storage

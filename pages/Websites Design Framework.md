@@ -42,27 +42,54 @@ tags:: Website Design
 		-
 - 排版
 	- 字体
-		- 衬线字体
-			- 有小细节、小尾巴
-			- 传达可靠
-				- ![image.png](../assets/image_1684764976125_0.png)
-			- 推荐
-				- Merriweather
-				- Aleo
-				- Playfair Display
-				- Cormorant
-				- Cardo
-				- Lora
-		- 无衬线字体
-			- 干净、简洁
-			- 提供线代的外观
-				- ![image.png](../assets/image_1684764996001_0.png)
-			- 适合初学者
-			- 推荐
-				- Inter
-				- Open Sans
-				- Roboto
-				- Montserrat
-				- Work Sans
-				- Lato
-			-
+	  collapsed:: true
+		- 选择正确的字体
+			- 衬线字体
+				- 有小细节、小尾巴
+				- 传达可靠
+					- ![image.png](../assets/image_1684764976125_0.png)
+				- 推荐
+					- Merriweather
+					- Aleo
+					- Playfair Display
+					- Cormorant
+					- Cardo
+					- Lora
+			- 无衬线字体
+				- 干净、简洁
+				- 提供线代的外观
+					- ![image.png](../assets/image_1684764996001_0.png)
+				- 适合初学者
+				- 推荐
+					- Inter
+					- Open Sans
+					- Roboto
+					- Montserrat
+					- Work Sans
+					- Lato
+		- 选择正确的 size 和 weights
+			- ![image.png](../assets/image_1684765568995_0.png)
+			- 使用 type scale 工具
+			- 经验值
+				- 一般文本
+					- 16px-32px
+				- 长文本
+					- 20px 以上
+				- 头条
+					- 50px 以上
+					- weight 600+
+				- 任何文字不要让 weight 小于 400
+	- 可读性
+		- 一行不要超过 75 个字符
+			- ![image.png](../assets/image_1684765721435_0.png)
+		- 常规文字行高在 1.5-2，大文字在 1.5 左右
+			- 字体越大，行高需要约高
+			- ![image.png](../assets/image_1684765780511_0.png)
+		- 如果标题字体看起来不自然，就减少字符间的空白
+			- ![image.png](../assets/image_1684765834233_0.png)
+		- 小标题可以加粗、全大写、增加字符间距
+			- ![image.png](../assets/image_1684765877074_0.png)
+		- 不要全是文本
+		- 通常不要居中长文本
+			- ![image.png](../assets/image_1684765933949_0.png)
+		-

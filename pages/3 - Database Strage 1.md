@@ -32,7 +32,9 @@
 			- contains tuples, meta=data, indexes, log records
 			- do not mix page types
 			- some system require a page to be self-contained
-		-
+		- 每个页面都有自己的 id
+			- DBMS 会通过 id 来管理他们各自在物理上的状态
+			-
 		-
 - Relational Databases
 - Storage

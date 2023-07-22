@@ -1,0 +1,9 @@
+- ## System design goal
+	- Allow the DMS
+- Relational Databases
+- Storage
+- Execution
+- Concurrency Control
+- Recovery
+- Distributed Databases
+- Potpourri

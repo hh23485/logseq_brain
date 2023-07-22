@@ -1,5 +1,6 @@
 - ## System design goal
 	- Allow the DBMS to manage databases that exceed the amount of memory available
+-
 - Relational Databases
 - Storage
 - Execution

@@ -38,9 +38,21 @@
 - Output control
 	- LIMIT <count> [offset]
 - Nested Queries
+  collapsed:: true
 	- Can appear in almost all queries
 	- ![image.png](../assets/image_1690006617706_0.png)
-		-
 		- ANY 和 EXISTS 的区别在于 ANY 和 ALL 通常携带另外一种判断，而 EXISTS 本身就包含判断，即只要 subquery 返回了任何一条 record，就为 true
 			- ![image.png](../assets/image_1690006635465_0.png)
 			- ![image.png](../assets/image_1690007487429_0.png)
+- Window functions
+	- `SELECT ... FUNC-NAME() OVER (...)`
+	- FUNC
+		- ROW_NUMBER()
+		- RANK()
+	- OVER-AME
+		- PARTITION BY
+			- 限制了窗口的范围
+			- ![image.png](../assets/image_1690007793197_0.png)
+		- ORDER BY
+			- 限制了窗口内的顺序
+				- ![image.png](../assets/image_1690007860189_0.png)

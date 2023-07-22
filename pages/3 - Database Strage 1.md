@@ -115,8 +115,9 @@
 							- 合并完的 tuples 可以按 id 排序，以提升未来查询的速度
 								- Sorted String Table (SSTale)
 							- Normal Compaction
-								- ![image.png](../assets/image_1690030349071_0.png)
+								- ![image.png](../assets/image_1690030349071_0.png){:height 422, :width 511}
 							- Level DB
+								-
 - Relational Databases
 - Storage
 - Execution

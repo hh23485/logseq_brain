@@ -19,5 +19,23 @@
 			- MySQL is insensitie and can use single/double quotes
 	- Concat
 		- MSSQL can directly use `+`
-		- MySQL needs to use `CONCAT()`
-		-
+		- MySQL needs to use `CONCAT()`, or just list all string items with space
+	- Date
+		- DATE()
+		- DATEDIFF
+		- CONVERT(DATETIME, <format>)
+- Output Redirection
+	- `CREATE TABLE` in Mysql
+		- Select and make output as another table
+		- ``` MYSQL
+		  CREATE TABLE CourseIds (
+		      SELECT DISTINCT cid FROM enrolled
+		  );
+		  
+		  ```
+	- `INSERT INTO`
+		- insert selected contents to existed table
+- Output control
+	- LIMIT <count> [offset]
+- Nested Queries
+	-

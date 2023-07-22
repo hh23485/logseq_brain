@@ -55,13 +55,14 @@
 				- Tree file organization
 				- Sequential / Sorted file Organization
 				- Hashing File Organization
-			- Psage header
+			- Page header
 				- Page Size
 				- Checksum
 				- DBMS Version
 				- Transaction visibility
 				- Compression Information
 				- ![image.png](../assets/image_1690015017799_0.png)
+			- Page Lay
 - Relational Databases
 - Storage
 - Execution

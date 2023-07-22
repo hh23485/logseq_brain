@@ -34,6 +34,10 @@
 				- some system require a page to be self-contained，要求能够自解释
 		- 每个页面都有自己的 id
 			- DBMS 会通过 id 来映射他们各自在物理上的位置
+		- 在不同的层级上有不同的大小
+			- 硬件上大约 4KB
+			- 操作系统大约 4KB
+			- 数据库大概 512B-16KB
 			-
 		-
 - Relational Databases

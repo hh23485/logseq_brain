@@ -73,7 +73,8 @@
 						- A record is `page_id` + `offset/slot`, as well as `ROWID`
 							- in postgreSQL, 6 bytes
 							- SQLite, 8 bytes
-							-
+				- Log-oriented
+					- Level DB
 - Relational Databases
 - Storage
 - Execution

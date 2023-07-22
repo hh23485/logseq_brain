@@ -118,7 +118,8 @@
 								- ![image.png](../assets/image_1690030349071_0.png){:height 422, :width 511}
 							- Level compaction
 								- ![image.png](../assets/image_1690030580938_0.png)
-								-
+							- Condition
+								- 许多条件可以触发，时间、空闲、大小
 - Relational Databases
 - Storage
 - Execution

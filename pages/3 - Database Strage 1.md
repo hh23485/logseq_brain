@@ -70,7 +70,7 @@
 						- Slot array maps slots to the tuples starting position offsets.
 						- Slot array use fix length to express a address.
 						- The tuple can be variable length.
-						- A record is `page_id` + `offset/slot`, as well as `ROWID`
+						- A record is `page_id` + `offset/slot`, as well as `ROWID`/`CTID`
 							- in postgreSQL, 6 bytes
 							- SQLite, 8 bytes
 				- Log-oriented

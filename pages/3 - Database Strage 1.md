@@ -50,7 +50,7 @@
 					- ![image.png](../assets/image_1690014638198_0.png)
 				- if has multi files (提升并行度，分散存储)
 					- ![image.png](../assets/image_1690014735312_0.png)
-					- meta-data 来跟踪哪个文件存在什么地方，以及还有多少空闲的空间
+					- meta-data 来跟踪哪个 page 存在什么地方，以及还有多少空闲的空间
 				-
 			- Tree file organization
 			- Sequential / Sorted file Organization

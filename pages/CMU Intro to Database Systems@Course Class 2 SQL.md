@@ -57,6 +57,8 @@
 			- 限制了窗口内的顺序
 				- ![image.png](../assets/image_1690007860189_0.png){:height 186, :width 705}
 - Common table expressions
-	- 定义一个可重用的查询 WITH .. AS ..，用于复杂的大型的 SQL
+	- 定义一个可重用的查询 CTE：WITH .. AS ..，用于复杂的大型的 SQL
 		- WITH <SourceName> (<OutputColumn>..) AS ( <query> )
 		- ![image.png](../assets/image_1690008521252_0.png)
+	- 递归
+		- ![image.png](../assets/image_1690009250753_0.png)

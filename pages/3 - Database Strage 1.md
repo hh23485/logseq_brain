@@ -84,6 +84,7 @@
 							- 碎片
 							- 多一次 disk io
 							- 随机读写困难，如果更新 20 个 tuples on 20 pages，需要访问 20 个 page 来更新
+							- 如果文件系统是不可修改的，例如 HDFS，则不能
 					- Tuple
 						- Tuple header
 							- Each tuple is prefixed with a header contains meta-data

@@ -86,7 +86,14 @@
 				- for NULL values
 				- Visibility info for concurrency control
 				- ![image.png](../assets/image_1690017541848_0.png)
-			-
+		- Tuple data
+			- Some system support `denormalize`，a kind of pre join.
+				- ![image.png](../assets/image_1690017702719_0.png)
+				- Reduce the amount of i/o for common workload patterns
+				- May make updates more expensive
+				- Already used for lots of NoSQL DB
+				- You can enable when define the table schema
+	-
 - Relational Databases
 - Storage
 - Execution

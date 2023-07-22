@@ -53,7 +53,6 @@
 					- meta-data 来跟踪哪个 page 存在什么地方，以及还有多少空闲的空间
 						- ![image.png](../assets/image_1690014895802_0.png){:height 367, :width 418}
 				-
-				-
 			- Tree file organization
 			- Sequential / Sorted file Organization
 			- Hashing File Organization

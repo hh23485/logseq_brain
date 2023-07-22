@@ -116,7 +116,7 @@
 								- Sorted String Table (SSTale)
 							- Normal Compaction
 								- ![image.png](../assets/image_1690030349071_0.png){:height 422, :width 511}
-							- Level DB
+							- Level
 								-
 - Relational Databases
 - Storage

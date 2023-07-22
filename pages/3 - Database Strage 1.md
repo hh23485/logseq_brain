@@ -62,7 +62,9 @@
 				- Transaction visibility
 				- Compression Information
 				- ![image.png](../assets/image_1690015017799_0.png)
-			- Page Lay
+			- Page Layout
+				- Tuple-orient
+					-
 - Relational Databases
 - Storage
 - Execution

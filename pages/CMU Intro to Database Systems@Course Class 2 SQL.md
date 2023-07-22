@@ -7,4 +7,17 @@
 	- Latest version
 		- SQL:2016
 	- SQL is based on bag (duplicates) algebra not set (no duplicates) algebra
-	-
+- SQL Aggregation
+	- Why HAVING?
+		- ![image.png](../assets/image_1689997513957_0.png)
+			- 在 Where 里无法获取聚合数据的结果
+		- ![image.png](../assets/image_1689997563499_0.png)
+			- 需要使用 Having 来设置条件，且并不会触发，DB 会识别出这是在 SELECT 中已经计算的值
+- String operations
+	- String case and String quotes
+		- ![image.png](../assets/image_1690004121104_0.png)
+			- MySQL is insensitie and can use single/double quotes
+	- Concat
+		- MSSQL can directly use `+`
+		- MySQL needs to use `CONCAT()`
+		-

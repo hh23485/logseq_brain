@@ -48,7 +48,7 @@
 				- unordered collection of pages, stored in random order, must support iterating over all pages
 				- if only single file, it's easy to find pages.
 					- ![image.png](../assets/image_1690014638198_0.png)
-				- if has multi files (提升并行度)
+				- if has multi files (提升并行度，分散存储)
 					- ![image.png](../assets/image_1690014735312_0.png)
 			- Tree file organization
 			- Sequential / Sorted file Organization

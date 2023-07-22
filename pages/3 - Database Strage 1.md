@@ -45,7 +45,9 @@
 	- Page Storage Architecture
 		- 不同的数据库系统会使用不同的文件管理方法
 			- Heap file organization
-				-
+				- unordered collection of pages, stored in random order
+				- if only single file, it's easy to find pages.
+					- ![image.png](../assets/image_1690014638198_0.png)
 			- Tree file organization
 			- Sequential / Sorted file Organization
 			- Hashing File Organization

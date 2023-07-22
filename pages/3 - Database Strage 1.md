@@ -66,7 +66,6 @@
 				- ![image.png](../assets/image_1690015017799_0.png){:height 259, :width 276}
 			- Page Layout
 				- Tuple-oriented
-				  collapsed:: true
 					- How to store tuples in a page?
 					- Slotted pages
 						- ![image.png](../assets/image_1690015727438_0.png){:height 899, :width 648}
@@ -81,8 +80,11 @@
 								- ![image.png](../assets/image_1690016883734_0.png)
 							- MSSQL
 								- ![image.png](../assets/image_1690016940721_0.png)
+						- Problem of slotted page design
+							- 碎片
+							- 多一次 disk io
+							- 随机读写困难，如果更新 20 个 tuples on 20 pages，需要访问 20 个 page 来更新
 					- Tuple
-					  collapsed:: true
 						- Tuple header
 							- Each tuple is prefixed with a header contains meta-data
 								- for NULL values

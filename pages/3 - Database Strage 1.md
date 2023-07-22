@@ -121,8 +121,13 @@
 							- Condition
 								- 许多条件可以触发，时间、空闲、大小、手动等等
 						- 缺点
-							- 写放大
-							- Compation
+							- 写放大，一条记录可能会被不停地 compaction 反复地读出写入
+							- Compaction is expensive
+	- Large values
+		- If a value is bigger than a page size, it need **overflow** storage pages
+			- Postgres: TOAST (>2KB)
+			- MySQL: Overflow (> 1/2 size of page)
+			- SQL Server: Overflow (>)
 - Relational Databases
 - Storage
 - Execution

@@ -108,7 +108,7 @@
 							- put 需要携带 id 的 value
 							- delete 需要携带 id
 							- ![image.png](../assets/image_1690029490358_0.png){:height 390, :width 418}
-						- 当 page 写满之后，就会刷到磁盘中，然后清空 memory page
+						- 当 page 写满之后，就会刷到磁盘中，然后清空 memory page。写到磁盘上的部分是不可变的。
 - Relational Databases
 - Storage
 - Execution

@@ -29,3 +29,43 @@
 		- 如果必须变长，可以存储长度相同的指针，然后指向变长的值存在的位置
 	- Goal2: 在 query 执行的过程中，可以先进行查找，再解压缩
 	- Goal3: 必须无损
+		- 有损不能被数据库层接受，只能在应用层上可以
+	- Mysql InnoDB Compression
+		- Each compressed pages have different size, 1, 2, 4, 8 KB
+		- When load page to memory buffer pool, will keep it compressed
+		- Update don't need to know previous values, just append to the mod log to the buffer pool page
+		- When query happened, just get it from mod log
+		- When the mod is full, apply the change and write it back out
+		- 这样可以不用先解压再查询或者更新
+			- TODO 那么 compressed data 里包含了什么额外信息呢？
+- 在不解压时查询压缩的数据的方法
+	- 对查询条件进行压缩来匹配也是一种方法
+		- ![image.png](../assets/image_1690107375355_0.png)
+- 压缩粒度
+	- Block Level
+		- 压缩表中同在一个块中  tuples
+	- Tuple Level
+		- 每个 tuple 单独压缩
+	- Attribute Level
+		- 一个 tuple 的每个属性或者一组属性单独压缩
+	- Column Level
+		- 一列或者多列压缩在一起
+- Columnar compression
+	- RUN-LENGTH encoding
+		- ![image.png](../assets/image_1690107765601_0.png)
+		- 只适合高度分类的数据
+			- 如果排序后会更惊人的压缩
+				- ![image.png](../assets/image_1690107956773_0.png)
+	- Bit-Packing Encoding
+		- ![image.png](../assets/image_1690108049568_0.png)
+		- ![image.png](../assets/image_1690108183522_0.png)
+			- 有时需要一个 overflow page 来存储这些超长的值
+	- BITMAP Encoding
+		- ![image.png](../assets/image_1690108312761_0.png)
+	- DELTA Encoding
+		- ![image.png](../assets/image_1690108565729_0.png){:height 297, :width 692}
+	- INCREMENTAL Encoding
+		- 如果是相近的前缀，可以使用如下方法
+			- ![image.png](../assets/image_1690108807350_0.png)
+	- DICTIONRY Compressino
+		- ![image.png](../assets/image_1690109021020_0.png)

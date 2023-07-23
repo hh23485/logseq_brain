@@ -2,5 +2,16 @@
 	- OLTP - Online Transaction Processing
 	- OLAP - Online Analytical Processing
 	- Hybrid Transaction + Analytical Processing
-	- ![image.png](../assets/image_1690084161209_0.png){:height 524, :width 753}
--
+	- ![image.png](../assets/image_1690084247548_0.png)
+- Not all a tuple's attributes together stored in a single page, as they may have different workloads
+	- ![image.png](../assets/image_1690085285962_0.png){:height 431, :width 713}
+	- Sometimes, we need column read/write
+		- ![image.png](../assets/image_1690085732546_0.png)
+		- 列查询更快，访问的 page 更少
+		- 相同域的数值类型和值域相近，容易压缩，就像年龄，差不多在 0-120 岁
+- Column Tuple Identification
+	- Fixed-Length Offsets
+		-
+	- Embedded tuple ids
+	-
+	-

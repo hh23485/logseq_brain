@@ -67,5 +67,9 @@
 	- INCREMENTAL Encoding
 		- 如果是相近的前缀，可以使用如下方法
 			- ![image.png](../assets/image_1690108807350_0.png)
-	- DICTIONRY Compressino
+	- DICTIONRY Compression
 		- ![image.png](../assets/image_1690109021020_0.png)
+	- ORDER-PRESERVING Encoding
+		- ![image.png](../assets/image_1690109450485_0.png)
+		- 适合 OLAP，OLTP 不断更新会破坏已经编码的值
+		- 对于 distinct 会更优雅，只需要在查询时查看 dictionary 中的 value 而不需要扫描所有的数据

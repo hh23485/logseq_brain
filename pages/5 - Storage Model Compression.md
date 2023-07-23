@@ -1,6 +1,8 @@
 - Database Workloads
 	- OLTP - Online Transaction Processing
+		- Row Store
 	- OLAP - Online Analytical Processing
+		- Column Stopre
 	- Hybrid Transaction + Analytical Processing
 	- ![image.png](../assets/image_1690084247548_0.png)
 - Not all a tuple's attributes together stored in a single page, as they may have different workloads
@@ -73,3 +75,4 @@
 		- ![image.png](../assets/image_1690109450485_0.png)
 		- 适合 OLAP，OLTP 不断更新会破坏已经编码的值
 		- 对于 distinct 会更优雅，只需要在查询时查看 dictionary 中的 value 而不需要扫描所有的数据
+		- 字典中可以存储更多的信息，例如每个字段的引用量等

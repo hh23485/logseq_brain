@@ -5,13 +5,27 @@
 	- ![image.png](../assets/image_1690084247548_0.png)
 - Not all a tuple's attributes together stored in a single page, as they may have different workloads
 	- ![image.png](../assets/image_1690085285962_0.png){:height 431, :width 713}
-	- Sometimes, we need column read/write
+	- Sometimes, we need column read/write (DSM)
 		- ![image.png](../assets/image_1690085732546_0.png)
 		- 列查询更快，访问的 page 更少
 		- 相同域的数值类型和值域相近，容易压缩，就像年龄，差不多在 0-120 岁
 - Column Tuple Identification
 	- Fixed-Length Offsets
-		-
+		- Each value is the same length for an attribute.
 	- Embedded tuple ids
-	-
-	-
+		- Each value is stored with its tuple id in a column.
+- Decomposition storage model (DSM)
+	- 优点
+		- 减少 IO 的浪费，只需要访问所需的数据列
+		- 更容易处理 query，也更容易压缩
+	- 缺点
+		- 由于元组分割/缝合，点查询、插入、更新和删除速度较慢
+- 真实世界的数据特点
+	- 数据往往具有高度的倾斜的分布
+	- 数据集往往在同一个 tuple 中的各个字段是具备高度关联性的
+- Database Compression
+	- Goal1: 必须生成相同长度的值
+		- 使用容易的偏移计算来获取对应的列
+		- 如果必须变长，可以存储长度相同的指针，然后指向变长的值存在的位置
+	- Goal2: 在 query 执行的过程中，可以先进行查找，再解压缩
+	- Goal3: 必须无损

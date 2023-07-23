@@ -1,0 +1,7 @@
+- Database Workloads
+	- OLTP - Online Transaction Processing
+	- OLAP - Online Analytical Processing
+	- Hybrid Transaction + Analytical Processing
+	- ![image.png](../assets/image_1690084161209_0.png){:height 524, :width 753}
+-
+-

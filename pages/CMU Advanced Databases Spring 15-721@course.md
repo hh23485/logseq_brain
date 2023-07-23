@@ -1,0 +1,4 @@
+- Video: [(3) 01 - History of Databases (CMU Advanced Databases / Spring 2023) - YouTube](https://www.youtube.com/watch?v=LWS8LEQAUVc)
+- CMU project: [CMU 15-721 :: Advanced Database Systems (Spring 2023)](https://15721.courses.cs.cmu.edu/spring2023/)
+-
+-

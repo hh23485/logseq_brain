@@ -2,7 +2,7 @@
 	- OLTP - Online Transaction Processing
 		- Row Store
 	- OLAP - Online Analytical Processing
-		- Column Stopre
+		- Column Store
 	- Hybrid Transaction + Analytical Processing
 	- ![image.png](../assets/image_1690084247548_0.png)
 - Not all a tuple's attributes together stored in a single page, as they may have different workloads

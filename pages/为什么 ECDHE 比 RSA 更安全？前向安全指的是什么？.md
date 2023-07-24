@@ -1,0 +1,9 @@
+- 在这两个文章中都有描述 ECDHE 比 RSA 要安全一些，主要体现在前向安全上。
+	- [3.4 HTTPS ECDHE 握手解析 | 小林coding (xiaolincoding.com)](https://xiaolincoding.com/network/2_http/https_ecdhe.html)
+	- [3.3 HTTPS RSA 握手解析 | 小林coding (xiaolincoding.com)](https://xiaolincoding.com/network/2_http/https_rsa.html)
+- 然而前向安全是什么？
+	- > **前向安全性**或**前向保密性**（英语：Forward Secrecy，缩写：FS），有时也被称为**完美前向安全**（英语：Perfect Forward Secrecy，缩写：PFS），是[密码学](https://baike.baidu.com/item/%E5%AF%86%E7%A0%81%E5%AD%A6/480001?fromModule=lemma_inlink)中通讯协议的安全属性，指的是长期使用的主[密钥](https://baike.baidu.com/item/%E5%AF%86%E9%92%A5?fromModule=lemma_inlink)泄漏不会导致过去的[会话密钥](https://baike.baidu.com/item/%E4%BC%9A%E8%AF%9D%E5%AF%86%E9%92%A5?fromModule=lemma_inlink)泄漏。
+- 并不是指 RSA 或者 ECDHE 中静态的私钥泄漏后中间人无法破解通讯消息，而是在静态私钥泄漏后，中间人是否能立刻破解之前监听的所有的会话信息。
+	- 对于 RSA 而言，只要静态私钥泄漏，中间人可以立刻解析之前所有握手消息，来获得其中的会话密钥，从而解密所有的加密消息内容。
+	- 对于 ECDHE 而言，即便泄漏了私钥，也只能解析出其中的算法参数，而无法获得动态生成的临时私有密钥，从而无法解密过去的参数。同样的，即便泄漏了其中某一个私有密钥，也只能破解其中一次通讯，而无法威胁其他过去的会话。
+- 但如果真的泄露了静态密钥，则对未来将要发生的内容仍然是危险的，因为可以伪装来和你进行通讯，从而使用自己生成的临时私钥、公钥和你通讯。一旦发现泄漏，要尽快替换，重新签发证书。

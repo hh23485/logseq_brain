@@ -18,5 +18,5 @@ tags:: [[15-445]], [[Course]]
 - Leaf node
 	- Leaf 里面存储了键值对，键值对可以分别存放在两个数组里，也可以交替排列在同一个数组里
 	- value 可以是 Tuple Data，或者是 Record Id
-		- 主键索引或者是二级索引
+		- InnoDB 中主键索引或者是二级索引
 -

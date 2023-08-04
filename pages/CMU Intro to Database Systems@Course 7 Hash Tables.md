@@ -1,6 +1,6 @@
 tags:: [[15-445]], [[Course]]
 
-- {{renderer :tocgen2}}
+- TOC {{renderer :tocgen, [[]], 2, h}}
 - ## Course status
 	- ![image.png](../assets/image_1691052050193_0.png){:height 258, :width 219}
 - ## Design Decisions

@@ -53,4 +53,7 @@ tags:: [[15-445]], [[Course]]
 		- 读写的时间复杂度仍然是 O(1)
 	- Extendible Hashing
 		- ![image.png](../assets/image_1691128226407_0.png)
-		- 检查 key 的一部分
+		- 检查 key 的前缀部分
+		- 如果某个 key 的前缀的对应的 table 已经塞满了，那就扩展一位，增加一个表，并且只需要移动该前缀对应的元素去新的两张表中
+		- ![image.png](../assets/image_1691128426327_0.png)
+		-

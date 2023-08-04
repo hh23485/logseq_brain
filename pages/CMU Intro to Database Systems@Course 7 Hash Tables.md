@@ -61,14 +61,13 @@ tags:: [[15-445]], [[Course]]
 		- 全局有一个计数器来追踪当前最多看多少位
 		- 可以用于解决局部热点
 	- #### Linear Hashing
-		- Split when overflow
-			- ![image.png](../assets/image_1691128951824_0.png)
-		- 在触发 split 之后，调整 split pointer 位置
-		- 如果新加入 key 在 split pointer 之前，则需要使用 hash2 来重新计算
-			- ![image.png](../assets/image_1691129241323_0.png){:height 549, :width 875}
-			- 例如，图上的 20，正常计算应该是在 0，但因为在 split pointer 之下，需要使用 hash2，会导致跳去 4
-			- 可以塞满避免分裂线之前的桶
-		- 一旦再次分裂，会导致 spilt pointer 向后滚动，同时选择下一个 hash3
-			- 任何时候只会使用 $hash_i$ 和 $hash_(i+1)$ 两个 hash 函数
-		- 如果删除使得桶的负载变小，还可以合并分开的两个表
-		-
+		- ![image.png](../assets/image_1691129241323_0.png){:height 549, :width 875}
+		- 不是太好理解，发现的讲的比较清楚的博客可以查看 [Linear hashing 线性哈希_linear hashing的线性扩容_usc_su的博客-CSDN博客](https://blog.csdn.net/usc_su/article/details/17248315)
+			- 插入大致流程如下
+				- 使用拆分指针来决定下次要拆分的桶，每次有桶溢出，就拆分拆分指针指向的桶
+				- 拆分之后如果没有桶溢出了，就将拆分指针放回原点 （似乎在不同的文档里是不同的）
+				- 如果还有溢出则继续增加拆分指针指向下一个桶，并继续分裂
+				- 如果分裂后的桶超过了当前 hash 能覆盖的数字，则增加 hash 函数，即增加 $h_i(k) = k\ mod\ 2(i)$ 中的 $i$
+			- 读取时流程如下
+				- 如果桶号小于或等于当前分裂指针位置，则桶已经分裂过，使用 $h_(i+1)$ 来查询
+				- 如果桶号大于分裂点，则桶没有分裂，直接使用 $h_(i)$ 来查询

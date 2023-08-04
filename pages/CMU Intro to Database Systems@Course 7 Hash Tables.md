@@ -33,5 +33,14 @@ tags:: [[15-445]], [[Course]]
 		- Google CityHash / FarmHash
 - Static Hash Schemas
 	- 开放地址散列法
-		- but how to delete? how to know a one exists and delete it?
-			- 每
+	- Non-Unique Keys
+		- Choice1: Separate Linked list
+			- ![image.png](../assets/image_1691126525260_0.png)
+		- Choice2: Redundant Keys
+			- 把 value 存在一起
+	- Robin Hood Hashing
+		- 一旦发生碰撞，计算遍历后将要放过去的位置的距离
+			- ![image.png](../assets/image_1691126816996_0.png)
+		- 沿路计算哪一个位置的距离比当前更近，则和它交换
+			- ![image.png](../assets/image_1691126853103_0.png)
+		- 最终使得所有碰撞后的节点的跳数不会差太多

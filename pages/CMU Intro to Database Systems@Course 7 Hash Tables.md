@@ -50,4 +50,7 @@ tags:: [[15-445]], [[Course]]
 		- 每个 key 使用各种 hash function 来找到一个空位
 		- 如果没有空位，则选一个来交换，让被交换的试试别的 hash 方法是不是能找到位置
 		- ![image.png](../assets/image_1691127167971_0.png)
-		- 读的时间复杂度仍然是 O(1)
+		- 读写的时间复杂度仍然是 O(1)
+	- Extendible Hashing
+		- ![image.png](../assets/image_1691128226407_0.png)
+		- 检查 key 的一部分

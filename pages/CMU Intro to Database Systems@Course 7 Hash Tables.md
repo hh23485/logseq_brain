@@ -49,11 +49,12 @@ tags:: [[15-445]], [[Course]]
 		- 选择多个 hash function，并准备多个 hash table
 		- 每个 key 使用各种 hash function 来找到一个空位
 		- 如果没有空位，则选一个来交换，让被交换的试试别的 hash 方法是不是能找到位置
-		- ![image.png](../assets/image_1691127167971_0.png)
+		- ![image.png](../assets/image_1691127167971_0.png){:height 460, :width 768}
 		- 读写的时间复杂度仍然是 O(1)
 	- Extendible Hashing
-		- ![image.png](../assets/image_1691128226407_0.png)
+		- ![image.png](../assets/image_1691128226407_0.png){:height 478, :width 815}
 		- 检查 key 的前缀部分
 		- 如果某个 key 的前缀的对应的 table 已经塞满了，那就扩展一位，增加一个表，并且只需要移动该前缀对应的元素去新的两张表中
-		- ![image.png](../assets/image_1691128426327_0.png)
-		-
+			- ![image.png](../assets/image_1691128453055_0.png){:height 472, :width 917}
+		- ![image.png](../assets/image_1691128426327_0.png){:height 472, :width 732}
+		- 全局有一个

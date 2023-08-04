@@ -34,25 +34,25 @@ tags:: [[15-445]], [[Course]]
 		- Google CityHash / FarmHash
 - ### Static Hash Schemas
 	- 开放地址散列法
-	- Non-Unique Keys
+	- #### Non-Unique Keys
 		- Choice1: Separate Linked list
 			- ![image.png](../assets/image_1691126525260_0.png)
 		- Choice2: Redundant Keys
 			- 把 value 存在一起
-	- Robin Hood Hashing
+	- #### Robin Hood Hashing
 		- 一旦发生碰撞，计算遍历后将要放过去的位置的距离
 			- ![image.png](../assets/image_1691126816996_0.png)
 		- 沿路计算哪一个位置的距离比当前更近，则和它交换
 			- ![image.png](../assets/image_1691126853103_0.png)
 		- 最终使得所有碰撞后的节点的跳数不会差太多
 		- 在数据库里不是好的选择，除非读远远大于写，否则会大量的数据交换
-	- Cuckoo Hashing
+	- #### Cuckoo Hashing
 		- 选择多个 hash function，并准备多个 hash table
 		- 每个 key 使用各种 hash function 来找到一个空位
 		- 如果没有空位，则选一个来交换，让被交换的试试别的 hash 方法是不是能找到位置
 		- ![image.png](../assets/image_1691127167971_0.png){:height 460, :width 768}
 		- 读写的时间复杂度仍然是 O(1)
-	- Extendible Hashing
+	- #### Extendible Hashing
 		- ![image.png](../assets/image_1691128226407_0.png){:height 478, :width 815}
 		- 检查 key 的前缀部分
 		- 如果某个 key 的前缀的对应的 table 已经塞满了，那就扩展一位，增加一个表，并且只需要移动该前缀对应的元素去新的两张表中
@@ -60,5 +60,13 @@ tags:: [[15-445]], [[Course]]
 		- ![image.png](../assets/image_1691128426327_0.png){:height 472, :width 732}
 		- 全局有一个计数器来追踪当前最多看多少位
 		- 可以用于解决局部热点
-	- Linear Hashing
-		-
+	- #### Linear Hashing
+		- Split when overflow
+			- ![image.png](../assets/image_1691128951824_0.png)
+		- 在触发 split 之后，调整 split pointer 位置
+		- 如果新加入 key 在 split pointer 之前，则需要使用 hash2 来重新计算
+			- ![image.png](../assets/image_1691129241323_0.png){:height 549, :width 875}
+			- 例如，图上的 20，正常计算应该是在 0，但因为在 split pointer 之下，需要使用 hash2，会导致跳去 4
+		- 一旦再次分裂，会导致 spilt pointer 向后滚动，同时选择下一个 hash3
+			- 任何时候只会使用 $hash_i$ 和 $hash_(i+1)$ 两个 hash 函数
+			-

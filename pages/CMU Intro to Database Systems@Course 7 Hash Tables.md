@@ -58,3 +58,4 @@ tags:: [[15-445]], [[Course]]
 			- ![image.png](../assets/image_1691128453055_0.png){:height 472, :width 917}
 		- ![image.png](../assets/image_1691128426327_0.png){:height 472, :width 732}
 		- 全局有一个计数器来追踪当前最多看多少位
+		- 可以用于解决局部热点，

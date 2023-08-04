@@ -57,4 +57,4 @@ tags:: [[15-445]], [[Course]]
 		- 如果某个 key 的前缀的对应的 table 已经塞满了，那就扩展一位，增加一个表，并且只需要移动该前缀对应的元素去新的两张表中
 			- ![image.png](../assets/image_1691128453055_0.png){:height 472, :width 917}
 		- ![image.png](../assets/image_1691128426327_0.png){:height 472, :width 732}
-		- 全局有一个
+		- 全局有一个计数器来追踪当前最多看多少位

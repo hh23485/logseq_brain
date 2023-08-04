@@ -67,6 +67,8 @@ tags:: [[15-445]], [[Course]]
 		- 如果新加入 key 在 split pointer 之前，则需要使用 hash2 来重新计算
 			- ![image.png](../assets/image_1691129241323_0.png){:height 549, :width 875}
 			- 例如，图上的 20，正常计算应该是在 0，但因为在 split pointer 之下，需要使用 hash2，会导致跳去 4
+			- 可以塞满避免分裂线之前的桶
 		- 一旦再次分裂，会导致 spilt pointer 向后滚动，同时选择下一个 hash3
 			- 任何时候只会使用 $hash_i$ 和 $hash_(i+1)$ 两个 hash 函数
-			-
+		- 如果删除使得桶的负载变小，还可以合并分开的两个表
+		-

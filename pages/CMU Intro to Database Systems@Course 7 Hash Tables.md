@@ -33,5 +33,5 @@ tags:: [[15-445]], [[Course]]
 		- Google CityHash / FarmHash
 - Static Hash Schemas
 	- 开放地址散列法
-	-
-	-
+		- but how to delete? how to know a one exists and delete it?
+			- 每

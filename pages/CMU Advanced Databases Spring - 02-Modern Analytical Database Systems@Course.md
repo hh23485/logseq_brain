@@ -1,4 +1,4 @@
-tags:: [[15-721]]
+tags:: [[CMU 15-721]]
 
 - Course Outline
 	- ![image.png](../assets/image_1691571991621_0.png)

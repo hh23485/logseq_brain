@@ -9,10 +9,16 @@ tags:: [[15-721]]
 		- Join
 		- Aggregation
 		- Sorting
-	- 执行过程的宏观过程
+	- 执行的宏观过程
 		- 将 Query 发送给一些节点，每个节点收到其中一些输入和指定的运算，得到运算结果
 		- 这些结果视作中间结果，然后根据执行计划来决定下一个操作，也许是发送给某个节点，也许是 shuffle
 		- 执行 DAG 下一个步骤
 		- 聚合结果
 		- ![image.png](../assets/image_1691572650115_0.png)
--
+- 持久数据与中间数据
+	- Persistent Data
+		- Source of records for the data bases
+		- data files, immutable but can support updates by rewriting
+	- Intermediate Data
+		- Short-lived artifacts produced by query operators during execution and consumed by other operators
+		- has little to no correlation to amount of persistent data that it reads or the execution time

@@ -22,3 +22,5 @@ tags:: [[15-721]]
 	- Intermediate Data
 		- Short-lived artifacts produced by query operators during execution and consumed by other operators
 		- has little to no correlation to amount of persistent data that it reads or the execution time
+- 分布式系统架构
+	-

@@ -5,6 +5,8 @@ tags:: [[CMU 15-721]]
 	- Choice:
 		- N-ary Storage Model
 		  logseq.order-list-type:: number
+			- 大量访问，但每次访问只访问很少的数据
 		- Decomposition Storage Model
 		  logseq.order-list-type:: number
-		- logseq.order-list-type:: number
+		- Hybrid Storage Model
+		  logseq.order-list-type:: number

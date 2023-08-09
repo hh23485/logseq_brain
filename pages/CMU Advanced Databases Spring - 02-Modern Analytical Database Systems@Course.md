@@ -58,6 +58,10 @@ tags:: [[15-721]]
 		- 数据是列式存储的
 		- 一个 tuple 的所有属性会在同一个文件中
 		- Header 或者 Fotter 会包含元数据，描述了列的偏移量，压缩方式，索引等
+- System Catalogs
+	- DB 使用 catalog 来追踪数据库的 schema (Tables/Columns)
+	- DB 自己会维护所有的结构
+	- 如果由外界程序写入了数据，也需要修改 catalog 来让 DB 感知到
 - Resources
 	- Rethinking Database System Architecture: Towards a Self-tuning RISC-style Database System
 		- 如何用轻量的、可重用的、模块化的组件来构造数据库

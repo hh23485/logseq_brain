@@ -72,6 +72,14 @@ tags:: [[15-721]]
 	- 实现
 		- Greenplum Orca
 		- Apache Calcite
+- Execution Engines
+	- Standalone libraries for executing vectorized query operators on columnar data
+		- 输入是一个 DAG of physical operators
+		- 需要额外的调度器和编排来支持
+	- 实现
+		- Velox
+		- DataFusion
+		- Intel OAP
 - Resources
 	- Rethinking Database System Architecture: Towards a Self-tuning RISC-style Database System
 		- 如何用轻量的、可重用的、模块化的组件来构造数据库

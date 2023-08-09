@@ -50,3 +50,14 @@ tags:: [[15-721]]
 		- 可以单独缩扩容，计算或者是存储
 		- 但需要从 storage 层来拉取本地缓存不存在的数据
 		- storage 层可能需要支持过滤能力来减少传输的数据
+- Shared Storage Layer
+	- 传统的方法可能是一个 NAS
+	- 云服务商会提供无限的伸缩能力，例如 Amazon S3, etc.
+- Object Stores
+	- 数据库中的表被拆分到许多大的不可变的文件中
+		- 数据是列式存储的
+		- 一个 tuple 的所有属性会在同一个文件中
+		- Header 或者 Fotter 会包含元数据，描述了列的偏移量，压缩方式，索引等
+- Resources
+	- Rethinking Database System Architecture: Towards a Self-tuning RISC-style Database System
+		- 如何用轻量的、可重用的、模块化的组件来构造数据库

@@ -62,6 +62,16 @@ tags:: [[15-721]]
 	- DB 使用 catalog 来追踪数据库的 schema (Tables/Columns)
 	- DB 自己会维护所有的结构
 	- 如果由外界程序写入了数据，也需要修改 catalog 来让 DB 感知到
+	- 实现
+		- HCatalog
+- Query Optimizers
+	- Extendible search engine framework for heuristicand cost-based query optimization
+		- DB 提供 trasformation rules 和 cost 评估
+		- 框架来返回逻辑或物理计划
+	- Hardest part to build in any DBMS
+	- 实现
+		- Greenplum Orca
+		- Apache Calcite
 - Resources
 	- Rethinking Database System Architecture: Towards a Self-tuning RISC-style Database System
 		- 如何用轻量的、可重用的、模块化的组件来构造数据库

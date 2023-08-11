@@ -28,9 +28,11 @@ tags:: [[CMU 15-721]]
 			- Tuple Identification
 				- Fixed-Length Offsets
 				  logseq.order-list-type:: number
-					-
+					- ![image.png](../assets/image_1691762859554_0.png){:height 252, :width 269}
 				- Embedded Tuple Ids
 				  logseq.order-list-type:: number
-					- ![image.png](../assets/image_1691762836913_0.png)
+					- ![image.png](../assets/image_1691762836913_0.png){:height 219, :width 279}
+			- 可变长度
+				-
 		- Hybrid Storage Model
 		  logseq.order-list-type:: number

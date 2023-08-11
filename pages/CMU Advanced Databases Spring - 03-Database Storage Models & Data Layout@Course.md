@@ -34,5 +34,11 @@ tags:: [[CMU 15-721]]
 					- ![image.png](../assets/image_1691762836913_0.png){:height 219, :width 279}
 			- 可变长度数据存储
 				- 字典压缩来转换为固定长度
+			- 优点
+				- 减少了 IO 的浪费，只读需要的数据
+				- 提升了 locality 和缓存数据的重用
+				- 更好的数据压缩
+			- 缺点
+				- point query 比较慢，插入、更新和删除比较慢，因为需要拆分到各个 column 中去操作
 		- Hybrid Storage Model
 		  logseq.order-list-type:: number

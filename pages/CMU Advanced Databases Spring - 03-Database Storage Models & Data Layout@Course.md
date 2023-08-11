@@ -40,5 +40,7 @@ tags:: [[CMU 15-721]]
 				- 更好的数据压缩
 			- 缺点
 				- point query 比较慢，插入、更新和删除比较慢，因为需要拆分到各个 column 中去操作
+			- 其他
+				- 其实也可以将一些经常一起使用的 column
 		- Hybrid Storage Model
 		  logseq.order-list-type:: number

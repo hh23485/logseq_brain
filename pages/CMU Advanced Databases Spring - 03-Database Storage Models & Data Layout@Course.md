@@ -44,5 +44,7 @@ tags:: [[CMU 15-721]]
 		- Hybrid Storage Model
 		  logseq.order-list-type:: number
 			- ![image.png](../assets/image_1691764068214_0.png){:height 597, :width 424}
-			- Global header 会包含 row groups 的目录
-			- Each row group 有一个 meta-data header 关于内部的数据
+				- Global header 会包含 row groups 的目录
+				- Each row group 有一个 meta-data header 关于内部的数据结构
+			- Row group 中的数据离的很近，因此这些 row 和 column 都具备较好的 locality
+				- Parquet 中 row-groups 默认 128MB，Pages 默认 1MB

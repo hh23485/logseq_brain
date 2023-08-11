@@ -25,5 +25,11 @@ tags:: [[CMU 15-721]]
 			- 每个属性一个文件
 				- 文件中会包含一个 header 和 null 位图
 				- 所有的字段都是相同的长度，如果不是相同长度，需要压缩成相同的长度
+			- Tuple Identification
+				- Fixed-Length Offsets
+				  logseq.order-list-type:: number
+				- Embedded Tuple Ids
+				  logseq.order-list-type:: number
+					-
 		- Hybrid Storage Model
 		  logseq.order-list-type:: number

@@ -43,3 +43,6 @@ tags:: [[CMU 15-721]]
 					- 其实也可以将一些经常一起使用的 column 放在一起 (Column Family/Group)
 		- Hybrid Storage Model
 		  logseq.order-list-type:: number
+			- ![image.png](../assets/image_1691764068214_0.png){:height 597, :width 424}
+			- Global header 会包含 row groups 的目录
+			- Each row group 有一个 meta-data header 关于内部的

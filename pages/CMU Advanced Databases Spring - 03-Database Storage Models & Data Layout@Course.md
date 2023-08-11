@@ -51,4 +51,6 @@ tags:: [[CMU 15-721]]
 					- 2010年左右设计的大小，更大会更快一些
 - Transparent Huge Pages
 	- Too keep more pages into the memory, linux can create large pages
-		- 当发现一些页的物理位置是相近的，可以把他们合成一个大页，从而在
+		- 当发现一些页的物理位置是相近的，可以把他们合成一个大页，从而在 TLB 中仍然只使用一个位置 （从虚拟地址到物理地址），避免受到 cpu cache 的限制
+		- 但缺点是，如果内核线程在访问这个 TLB slot 时，会有更大的虚拟空间被锁定
+	- 对于DBMS，通常都需要你关闭它，来避免不可预期的停顿

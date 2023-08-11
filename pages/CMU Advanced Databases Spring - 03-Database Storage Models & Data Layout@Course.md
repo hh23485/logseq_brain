@@ -47,4 +47,8 @@ tags:: [[CMU 15-721]]
 				- Global header 会包含 row groups 的目录
 				- Each row group 有一个 meta-data header 关于内部的数据结构
 			- Row group 中的数据离的很近，因此这些 row 和 column 都具备较好的 locality
-				- Parquet 中 row-groups 默认 128MB，Pages 默认 1MB
+				- Parquet 中 Row groups 默认 128MB，Pages 默认 1MB
+					- 2010年左右设计的大小，更大会更快一些
+- Transparent Huge Pages
+	- Too keep more pages into the memory, linux can create large pages
+		- 当发现一些页的物理位置是相近的，可以把他们合成一个大页，从而在

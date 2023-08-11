@@ -32,7 +32,7 @@ tags:: [[CMU 15-721]]
 				- Embedded Tuple Ids
 				  logseq.order-list-type:: number
 					- ![image.png](../assets/image_1691762836913_0.png){:height 219, :width 279}
-			- 可变长度
+			- 可变长度数据存储
 				-
 		- Hybrid Storage Model
 		  logseq.order-list-type:: number

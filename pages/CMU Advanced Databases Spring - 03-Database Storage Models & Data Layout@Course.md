@@ -54,7 +54,29 @@ tags:: [[CMU 15-721]]
 		- 当发现一些页的物理位置是相近的，可以把他们合成一个大页，从而在 TLB 中仍然只使用一个位置 （从虚拟地址到物理地址），避免受到 cpu cache 的限制
 		- 但缺点是，如果内核线程在访问这个 TLB slot 时，会有更大的虚拟空间被锁定
 	- 对于DBMS，通常都需要你关闭它，来避免不可预期的停顿
-		- 数据库会自己管理来绕开
+		- 数据库会自己管理来绕开 OS 这些操作
 	- Google 有一些内存分配器可以感知到这个 huge page，来获得了更好的性能，但仍然在研究中
 		- Huge Pages are a Good Idea
-	-
+- Data Representation
+	- use data specified by IEEE-754, which can be support by CPU directly
+- Hybrid Storage Model
+	- 刚更新的数据往往在短期时间内会再次被更新、访问
+	- 随着时间变化，这些数据变成冷数据，将不再被更新
+	- 可以将新数据存放在 OLTP 中，然后，逐渐将数据迁移到 OLAP 中
+		- Fractured Mirrors
+		  logseq.order-list-type:: number
+			- Stored a second copy of the database in a DSM layout
+				- Updates to NSM at first, then to DSM mirror
+		- Delta Store
+		  logseq.order-list-type:: number
+			- Background thread migrates updates from delta store and applies them to DSM data
+				- Batch large chunks and write them out as a PAX file
+			- A record only exists in one of the two
+				- ![image.png](../assets/image_1691809852841_0.png){:height 197, :width 562}
+- 分区
+	- 水平分区
+		- Hashing
+		- Ranges
+		- Predicates
+- 论文
+	- Micro partitioning

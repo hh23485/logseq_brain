@@ -17,4 +17,5 @@ tags:: [[CMU 15-721]]
 	- Approximate Queries
 	  logseq.order-list-type:: number
 	- 例如在一个子集上执行来获得近似的结果
-		- 对于对结果不需要太精确的
+		- 对于对结果不需要太精确的场景下是可行的，比如想要获得网站的访问量
+	- 2.

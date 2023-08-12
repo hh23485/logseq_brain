@@ -15,7 +15,9 @@ tags:: [[CMU 15-721]]
 	- Code Specialization / Compilation
 - ((64d7aa48-fea6-41fd-ab6f-e1f44888dbf3))
 	- Approximate Queries
-	  logseq.order-list-type:: number
-	- 例如在一个子集上执行来获得近似的结果
-		- 对于对结果不需要太精确的场景下是可行的，比如想要获得网站的访问量
-	- 2.
+		- 例如在一个子集上执行来获得近似的结果
+			- 对于对结果不需要太精确的场景下是可行的，比如想要获得网站的访问量
+	- Data Pruning
+		- 通过一些数据结构、算法过滤来跳过对某些数据的访问
+		- 需要权衡范围/效率，手动/自动
+	-

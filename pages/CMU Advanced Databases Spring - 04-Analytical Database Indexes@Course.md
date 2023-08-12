@@ -20,4 +20,12 @@ tags:: [[CMU 15-721]]
 	- Data Pruning
 		- 通过一些数据结构、算法过滤来跳过对某些数据的访问
 		- 需要权衡范围/效率，手动/自动
+- 对数据的考量
+	- Predicate Selectivity
+		- 多少记录会满足 Query 的要求
+	- Skewness
+		- 是否有重复的数据，还是都是 unique 的数据
+	- Clustering / Sorting
+		- 是否数据对于 Query 是有序的
+- Zone Maps
 	-

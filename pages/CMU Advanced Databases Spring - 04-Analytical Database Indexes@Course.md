@@ -28,4 +28,11 @@ tags:: [[CMU 15-721]]
 	- Clustering / Sorting
 		- 是否数据对于 Query 是有序的
 - Zone Maps
-	-
+	- 预计算后的聚合的数据
+	- 放在页头中，快速的来判定是否要访问块中的数据
+		- ![image.png](../assets/image_1691857017409_0.png){:height 368, :width 702}
+	- 场景
+		- 在目标属性的位置和值有关系的情况下
+	- Trade-off
+		- 如果 scope 太大，那这个信息就没有意义，因为很难跳过
+		- 如果 scope 太小，就意味着需要多次访问 header 来达成相同范围的查找，会损失效率

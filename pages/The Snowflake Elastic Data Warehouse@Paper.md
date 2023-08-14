@@ -20,13 +20,30 @@ tags:: [[Paper]], [[Snowflake]]
 	- ((64d9a1c1-2834-4692-86fc-1579a9a5f5d5))，完全面向云来设计，没有基于 Hadoop 或者 PostgreSQL
 		- ((64d9a1e0-6215-4dd7-b9ed-0847cf9164d5))
 	- ((64d9a1f4-ef10-4e97-bae7-e42a684050d6)) 功能特点
-		- ((64d9a200-f085-4cde-88b6-80ae14331f25))
+		- ((64d9a200-f085-4cde-88b6-80ae14331f25))，开箱即用
 		- ((64d9a205-792f-44fb-a5cf-85760d8fbada))
-		- ((64d9a20a-5eb4-4ac7-9227-65ef914584bc))
+		- ((64d9a20a-5eb4-4ac7-9227-65ef914584bc)), Support Json, Avor, schema less
 		- ((64d9a216-689d-423f-aeab-fe352c04910d))
 		- ((64d9a21b-60e4-49c2-97c4-8420daf4c774))
 		- ((64d9a21f-276b-4b11-96cb-42e8dee925c3))
 		- ((64d9a224-81cc-4fae-935c-e8badd8e5c5a))
 		- ((64d9a228-5ff2-489f-b29f-3060e771f345))
+- # STORAGE VERSUS COMPUTE
+	- ((64d9a7b7-d1a3-4f36-afd5-f5724e206a25))
+	  id:: 64d9a4de-4e14-4568-af7b-498820000812
+		- ((64d9a793-1004-498b-97fc-2bc44f870ac3))
+			- ((64d9a8db-ed75-4e2c-9d16-bc1b9fed5b3e))
+				- ((64d9a8ed-c0a3-4998-a21c-8868229cbe31))
+				- ((64d9a8fc-1a98-402c-be26-72e92d3945a1))
+				- ((64d9a917-4089-48c1-9af9-d41e7c2e8481))
+			- ((64d9a8de-3d62-4816-8fa6-ff3a04ddea09))
+				- ((64d9a92d-77e4-4dc8-a2ac-99dff6472280))
+				- ((64d9a947-046e-4bc6-ba1f-6ca3cdbca067))
+			- ((64d9a8e0-61a1-4741-b384-cf262a2d6f43))
+				- ((64d9a966-ce2a-4afb-8fea-301695645d43))
+				- ((64d9a975-5838-480f-abe1-35f28e6dc957))
+		- ((64d9a9b0-d903-4264-b320-5de3b9200831))
+			- ((64d9a9c5-ae45-4460-9bdd-1e67fc91743c))
+			- ((64d9a9cc-282f-4cfa-aec9-f4eddb0afbf0))
+			- ((64d9a9db-ceeb-442e-8701-5762c8567e6f))
 	-
--

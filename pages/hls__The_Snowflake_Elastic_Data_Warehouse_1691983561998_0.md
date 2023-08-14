@@ -314,3 +314,434 @@ file-path:: ../assets/The_Snowflake_Elastic_Data_Warehouse_1691983561998_0.pdf
   hl-page:: 3
   hl-color:: yellow
   id:: 64d9aa4c-0c13-4199-9dad-d7bfd5320e25
+- All queries issued by users pass through the Cloud Services layer
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9ca33-3a04-4545-a565-de2903d8dcd4
+- all the early stages of the query life cycle are handled
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9ca4d-d70b-48f6-b7d9-6158430cdfab
+- query optimizer follows a typical Cascadesstyle approach
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9ca5d-e523-4ef7-8ef3-24c22d22257f
+- top-down cost-based optimization
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9ca63-9826-4177-998c-9e4bd1a501ee
+- All statistics used for optimization are automatically maintained on data load and updates
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9ca6e-c28e-4af1-a3b8-cf733652c8ca
+- does not use indices (cf. Section 3.3.3), the plan search space is smaller than in some other systems.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9ca8d-e09e-47f5-9b76-a4eb7f028e88
+- plan space is further reduced by postponing many decisions until execution time,
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d2ef-5558-470b-a7a5-b68dacf71054
+- reduces the number of bad decisions made by the optimizer, increasing robustness at the cost of a small loss in peak performance
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d2ff-3f26-4f82-a99b-ce38f6bb82ef
+- akes the system easier to use (performance becomes more predictable)
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d321-e7c1-4587-b67d-f6b36ef83d62
+- Once the optimizer completes, the resulting execution plan is distributed to all the worker nodes that are part of the query
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d32a-364e-4180-810b-e1c3ca98f045
+- As the query executes, Cloud Services continuously tracks the state of the query to collect performance counters and detect node failures
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d33c-32f3-4960-9956-54565add4ac1
+- query information and statistics are stored for audits and performance analysis.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d347-d104-434f-90e3-8c7569c12532
+- Users are able to monitor and analyze past and ongoing queries through the Snowflake graphical user interface.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d350-a871-4bbf-90da-15cbb651542c
+- As mentioned previously, concurrency control is handled entirely by the Cloud Services layer.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d367-49cd-40fa-a35b-f393b6696c6d
+- decided to implement ACID transactions via Snapshot Isolation
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d386-4cab-4af1-9d67-10dadb982433
+- all reads by a transaction see a consistent snapshot of the database as of the time the transaction started.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d38e-91b3-433c-8de1-c7337e13c0fa
+- SI is implemented on top of multi-version concurrency control (MVCC), which means a copy of every changed database object is preserved for some duration
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d396-2bcb-4d01-9b9f-720b98f84312
+- Changes to a file can only be made by replacing it with a different file that includes the changes3.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d3a7-dcc1-4def-8c99-2a4accde6fe9
+- write operations (insert, update, delete, merge) on a table produce a newer version of the table by adding and removing whole files relative to the prior table version.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d3ba-bf51-4e84-8337-fa77b5adde75
+- File additions and removals are tracked in the metadata
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d3c8-c78d-421f-8957-b8a6b1bd2f94
+- global key-value store
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d3d0-9eb3-4b4d-b19d-021e17800b3b
+- in a form which allows the set of files that belong to a specific table version to be computed very efficiently.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d3da-ee00-408c-b8ae-b12c3bd8ffa1
+- Snowflake also uses these snapshots to implement time travel and efficient cloning of database objects
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d3e6-4548-4ba9-aa28-b35332195ddf
+- Limiting access only to data that is relevant to a given query is one of the most important aspects of query processing
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9d40b-7fad-4a71-aeec-018e3eae2975
+- indices
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9e11e-d9a0-4357-a718-f002a9721bbc
+- it raises multiple problems for systems like Snowflak
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: red
+  id:: 64d9e156-3f2f-4f25-9866-d3fc522f50c4
+  hl-stamp:: 1692000652027
+- . First, it relies heavily on random access, which is a problem both due to the storage medium(S3) and the data format (compressed files)
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: red
+  id:: 64d9e164-7202-497b-a969-f984b1550a91
+  hl-stamp:: 1692000653901
+- Second, maintaining indices significantly increases the volume of data and data loading time
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: red
+  id:: 64d9e16b-b5bd-47cd-9401-a942859e606e
+  hl-stamp:: 1692000655424
+- Finally, the user needs to explicitly create the indices—which would go very much against the pure service approach of Snowflak
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: red
+  id:: 64d9e176-802b-4d60-9309-4f7b6bfa8da3
+  hl-stamp:: 1692000656625
+- Even with the aid of tuning advisors, maintaining indices can be a complex, expensive, and risky process.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: blue
+  id:: 64d9e188-8ab4-40ef-a9ea-339d459e6e0f
+  hl-stamp:: 1692000660031
+- min-max based pruning,
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9e329-a048-4ab1-a892-560b696d920e
+  hl-stamp:: 1692001076816
+- zone maps
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9e32f-9355-4af6-b4ad-d28a040677f4
+  hl-stamp:: 1692001078265
+- data skipping
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9e331-82a8-422c-8ddc-1cec2f6fe3de
+  hl-stamp:: 1692001079595
+- Here, the system maintains the data distribution information for a given chunk of data (set of records, file, block etc.), in particular minimum and maximum values within the chunk.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9e343-1f96-41e5-9418-ab2e6f46a4a1
+- imagine files f1 and f2 contain values 3..5 and4..6 respectively
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9e35c-988c-44a3-a3ee-afc02f25de8d
+- Unlike traditional indices, this metadata is usually orders of magnitude smaller than the actual data, resulting in a small storage overhead and fast access.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9e3d9-8614-4d6d-aaa3-28e7a95b62fd
+- does not rely on user input
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: green
+  id:: 64d9e402-521a-4734-adf9-196bae263c72
+  hl-stamp:: 1692001395399
+- scales well
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: green
+  id:: 64d9e408-a7e3-4437-a5c2-7bc812b6faea
+  hl-stamp:: 1692001396925
+- it is easy to maintain
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: green
+  id:: 64d9e40d-ebe7-4deb-9876-d5e96b3687fb
+  hl-stamp:: 1692001398740
+- orks well for sequential access of large chunks of data
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: green
+  id:: 64d9e412-0ea7-46d8-8a9c-05df6103371e
+  hl-stamp:: 1692001399986
+- adds little overhead to loading, query optimization, and query execution times.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: green
+  id:: 64d9e45e-84bc-4211-a071-777b6e46ba8d
+  hl-stamp:: 1692001401365
+- for every indi-
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64d9e469-c346-4ee8-b508-1d3d034682db
+- vidual table file.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e46a-0369-4dc7-80fe-c1a0028031a5
+- not only covers plain relational columns,
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e480-05fb-4611-b2f0-af9f0109bc3a
+  hl-stamp:: 1692001415997
+- also a selection of auto-detected columns inside of semi-structured data,
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e486-4b18-4cc2-a903-4df86e09cd88
+  hl-stamp:: 1692001417174
+- The optimizer performs pruning not only for simple base-value predicates, but also for more complex expressions such as WEEKDAY(orderdate) IN (6, 7).
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: green
+  id:: 64d9e4b8-b451-4529-9603-ec2fbeb68265
+  hl-stamp:: 1692001731778
+- Snowflake also performs dynamic pruning during execution
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e4c0-5762-45b3-8d6b-83189063c2b4
+- This is in addition to other well-known techniques such as bloom joins 
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e584-60c8-4658-8259-6a6da1b5454a
+- Snowflake collects statistics on the distribution of join keys in the build-side records
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e591-1f6c-4084-8d9c-844e5410fb35
+- join processing
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e593-fc75-4255-a47b-8424cc921c90
+- pushed to the probe side and used to filter and possibly skip entire files on the probe side
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e5a4-163f-4526-89ce-037ab2e8a109
+- ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e5be-5630-4370-9cc5-d0ba295ef931
+  4. FEATURE HIGHLIGHTS
+- comprehensive SQL support
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e6a4-dabe-4101-95c2-f2e81a839343
+  hl-stamp:: 1692001958784
+- ACID transactions
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e6aa-4a21-4b59-8d3f-882828bef385
+- standard interfaces
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e6ac-06a8-4a64-954d-a53099e94a18
+- a number of other valuable features rarely or never-before seen in related system
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: blue
+  id:: 64d9e6c0-d050-44a9-a2dc-f635fd32e808
+  hl-stamp:: 1692001986559
+- 4.1 Pure Software-as-a-Service Experience
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e6c9-f78c-4060-af74-e19c55dac7e1
+  hl-stamp:: 1692001995629
+- Snowflake supports standard database interfaces (JDBC, ODBC, Python PEP-0249) and works with various thirdparty tools and services such as Tableau, Informatica, or Looker
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e6e8-d2ed-45d3-b918-2eeffb9c3ef3
+- provides the possibility to interact with the system using nothing but a web browser.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e6f0-0af3-4f56-b25d-dca483303ff9
+- dramatically reducing the complexity of bootstrapping and using the system
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e6ff-498f-4828-8348-1801e35b6795
+- , the UI allows not only SQL operations, but also gives access to the database catalog, user and system management, monitoring, usage information, and so forth
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e70f-6c43-4b2a-9c48-43eb75fd765c
+- 4.2 Continuous Availability
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e850-103f-4078-abff-c76cac6c47aa
+- But as data analysis became critical to more and more business tasks, continuous availability became an important requirement for any data warehouse
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e86f-f419-48f5-8286-343bf4b7be06
+  hl-stamp:: 1692002417740
+- The two main technical features in this regard are fault resilience and online upgrades.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e8b2-92c5-46c0-8f34-16a38792a665
+- Snowflake tolerates individual and correlated node failures at all levels of the architecture
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e8be-30aa-4697-adc3-a31ec3f385df
+- [:span]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e8d6-a273-4425-a7e7-6435c0258c0f
+  hl-type:: area
+  hl-stamp:: 1692002517546
+- Replication across AZs allows S3 to handle full AZ failures, and to guarantee 99.99% data availability and 99.999999999% durability.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e8f5-bb3c-49a2-9d44-1defe6c356d4
+- The remaining services of the Cloud Services layer consist of stateless nodes in multiple AZs, with a load balancer distributing user requests between them
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e90a-059e-474e-ae02-89592f66d05c
+- possibly some failed queries for users currently connected to a failed node. These users will be redirected to a different node for their next query.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e926-19ce-41dc-99e6-72fbe7e2301c
+- Virtual Warehouses (VWs) are not distributed across AZs.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: blue
+  id:: 64d9e92f-1186-4f17-b6cf-cf7baedd0fa5
+- High network throughput is critical for distributed query execution, and network throughput is significantly higher within the same AZ
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e944-6acb-4dc0-b977-1d4dd23a0962
+- If one of the worker nodes fails during query execution, the query fails but is transparently re-executed, either with the node immediately replaced, or with a temporarily reduced number of nodes
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e954-f316-4557-9a93-0c52366b6e29
+- Snowflake maintains a small pool of standby nodes.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e998-d671-48c4-bbe1-2985f6df66a6
+- used for fast VW provisioning.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e99d-9ef6-467d-8d78-e438fdfc7c31
+- If an entire AZ becomes unavailable though, all queries running on a given VW of that AZ will fail,
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e9ba-e03e-417a-ba49-01c3bfab2c45
+- If an entire AZ becomes unavailable though, all queries running on a given VW of that AZ will fail,
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 64d9e9bc-5877-4357-8426-862c57dea0ce
+- he user needs to actively re-provision the VW in a different AZ
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 64d9e9c1-0aa7-4144-b902-b8152303d138
+- 4.2.2 Online Upgrade
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e9e4-c17e-45be-962a-987b6cddf024
+- [:span]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e9f4-12cb-48d0-8a16-4edb6ea67dc2
+  hl-type:: area
+  hl-stamp:: 1692002506680
+- 4.2.2 Online Upgrade
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9e9fc-8f65-46e7-87e4-4286cf99ae87
+- [:span]
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9ea01-37b8-48d5-8df0-a77fa3610ccd
+  hl-type:: area
+  hl-stamp:: 1692002511827

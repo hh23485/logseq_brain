@@ -21,3 +21,13 @@ file-path:: ../assets/Building_An_Elastic_Query_Engine_on_Disaggregated_Storage_
   hl-page:: 2
   hl-color:: yellow
   id:: 64d9fc0c-0400-498b-82b6-218e3b6e114f
+- Shared-nothing architectures have been the foundation of traditional query execution engines and data warehousing systems
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 64d9fc82-e198-4f8f-ba35-ea895f8452a6
+- However, these benefits come at the cost of several major disadvantages:
+  ls-type:: annotation
+  hl-page:: 2
+  hl-color:: yellow
+  id:: 64d9fc84-c84e-49bc-8739-eade7103c623

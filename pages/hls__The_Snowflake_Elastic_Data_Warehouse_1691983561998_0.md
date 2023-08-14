@@ -745,3 +745,510 @@ file-path:: ../assets/The_Snowflake_Elastic_Data_Warehouse_1691983561998_0.pdf
   id:: 64d9ea01-37b8-48d5-8df0-a77fa3610ccd
   hl-type:: area
   hl-stamp:: 1692002511827
+- If an entire AZ becomes unavailable though, all queries running on a given VW of that AZ will fail, and the user needs to actively re-provision the VW in a different AZ
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9ea49-e095-4430-a18b-634fc06b4353
+- provides continuous availability not only when failures occur, but also during software upgrades
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9ea5d-5f1c-4f43-bd73-d8c9d6603d81
+- allow multiple versions of the various services to be deployed side-by-side
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9ea64-e676-4a6c-85e6-1f1764ccff16
+- both Cloud Services components and virtual warehouses.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9ea6a-9e00-45d9-bdfb-32eb9147b60b
+- This is made possible by the fact that all services are effectively stateless
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9ea71-54c9-425f-830a-65d398301609
+- All hard state is kept in a transactional key-value store and is ac-
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 64d9ea82-9b2f-476b-b59d-65486252804a
+- [:span]
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ea88-4400-47a0-a1f4-1bd54839a2b5
+  hl-type:: area
+  hl-stamp:: 1692002952333
+- cessed through a mapping layer which takes care of metadata versioning and schema evolution
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ea94-274e-4a32-afee-196de946331c
+- Whenever we change the metadata schema, we ensure backward compatibility with the previous version
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ea9c-2544-49fb-b037-0702bba5422f
+- first deploys the new version of the service alongside the previous version.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9eaa7-3231-4fca-8331-6a4e6b6072dc
+- User accounts are then progressively switched to the new version, at every which point all new queries issued by the respective user are directed to the new versio
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9eb5b-9ead-4759-8361-433164a54190
+- All queries that were executing against the previous version are allowed to run to completion
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9eb6a-e6bc-4401-917b-668ae5fad713
+- As mentioned previously, both versions of Cloud Services share the same metadata stor
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9eba3-a7f6-4b21-86de-6d270aa3215c
+- VWs of different versions are able to share the same worker nodes and their respective caches
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ebaa-1ee9-4c9d-a004-a8f2d279ce2f
+- there is no need to repopulate the caches after an upgrade
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: blue
+  id:: 64d9ebb1-826f-4938-bd6f-ce5d450b9e0b
+  hl-stamp:: 1692003262025
+- The entire process is transparent to the user with no downtime or performance degradation
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: blue
+  id:: 64d9ebc4-94ee-48c3-bd9f-93f06e6c5622
+- At the time of writing, we upgrade all services once per week
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ebe6-6447-4030-8119-942c99534960
+- both upgrade and downgrade are continuously tested in a special pre-production incarnation of Snowflake
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ec97-5b47-437f-9001-2158f573257d
+- 4.3 Semi-Structured and Schema-Less Data
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: blue
+  id:: 64d9ecb2-8507-44e2-9523-3404847922e3
+- extends the standard SQL type system with three types for semi-structured data
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ecba-7ef5-4f0b-a44b-7b993484d5b7
+- VARIANT
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ecbd-3e50-4213-97d4-720703b30b7d
+- ARRAY
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ecc0-5b56-4b12-967a-f57bc5286789
+- OBJECT
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ecc2-6b09-45c1-a87d-c6f6390b2ce0
+- can store any value of native SQL type (DATE, VARCHAR etc.)
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ecc9-e2a7-4c05-a6ce-26451214636f
+- as well as variable-length ARRAYs of values
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ecd5-a814-48eb-9d3f-de7b545122bb
+- JavaScript-like OBJECTs, maps from strings to VARIANT values
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ece6-a1be-498f-a73e-dbceecdbbc29
+- also called documents in the literature,
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ecef-af96-4286-9647-94cfd212989f
+- ARRAY and OBJECT are just restrictions of type VARIANT
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ecf6-5063-4e1c-9126-191d9d8b31d8
+- a self-describing, compact binary serialization which supports fast key-value lookup,
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ed02-223d-4d0d-8c62-16d83452d648
+- efficient type tests, comparison, and hashing
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ed17-973d-4952-91bf-497189e100ea
+- can thus be used as join keys, grouping keys, and ordering keys, just like any other column
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ed1e-1ed4-43b5-a100-a9c12e15b45f
+- Users can load their input data from JSON, Avro, or XML format directly into a VARIANT column;
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ed4a-4a2e-4ddc-8c27-0bb4f4d824ec
+- Snowflake handles parsing and type inference
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 64d9ed55-fe1a-4db8-8fd0-1f31db1e3a45
+  hl-stamp:: 1692003714755
+- no need to specify document schemas or to perform transformations on the load
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ed64-8e19-4510-8032-d0b4f168d4c0
+- used in an ELT(Extract-Load-Transform) manner rather than a traditional ETL (Extract-Transform-Load) manner
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: blue
+  id:: 64d9ed7c-ac2c-4ff2-9b9b-d7573ab18f56
+- aptly called “schema later” in the literature, allows for schema evolution by decoupling information producers from information consumers and any intermediaries.
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ed94-d414-4d5f-9aeb-13ead04ef626
+- Another advantage of ELT
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9edc6-e8a9-422a-9e70-e2ae389c05a2
+- if transformation is desired, it can be performed using the full power of a parallel SQL database, including operations such as joins, sorting, aggregation, complex predicates and so forth
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9edd5-f844-4ec7-9bcc-dcb83abaa76d
+- which are typically missing or inefficient in conventional ETL toolchains
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: red
+  id:: 64d9eddc-4025-4634-8cd7-d4fd8ce3ac01
+  hl-stamp:: 1692003808401
+- nowflake also features procedural user-defined functions (UDFs) with full JavaScript syntax and integration with the VARIANT data type
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9edfe-0139-42c2-952f-00d499f10a7a
+- most important operation on documents is extraction of data elements, either by field name (for OBJECTs), or by offset (for ARRAYs)
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ee3a-994e-433e-a000-95d07cfeab88
+- provides extraction operations in both functional SQL notation and JavaScript-like path syntax
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ee40-ee0f-40a9-bd87-f7a2f98b33c0
+- A child element is just a pointer inside the parent element; no copying is required
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 64d9ee56-2fda-4a2e-bd44-cff574c95aaf
+- The second common operation is flattening
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ee7a-40e4-41e5-94ca-c6bae634d8b9
+- pivoting a nested document into multiple rows. 
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9ee80-c04d-4ef2-a01a-7dbd5c85cd70
+- ses SQL lateral views to represent flattening operations
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9efd9-4c58-4a1d-abfb-c54ff14872f9
+- can be recursive, allowing the complete conversion of the hierarchical structure of the document into a relational table amenable to SQL processing
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9efe1-0d1e-4085-9c78-29279ac9e168
+- Snowflake introduces a few new aggregate and analytic functions such as ARRAY_AGG and OBJECT_AGG for this purpose
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9effb-7131-4706-b006-6f37f6e5204d
+- 4.3.2 Columnar Storage and Processing
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 64d9efff-5559-4668-b8c8-a035511a7583
+- which is the usual reason for transforming semi-structured data into plain relational data
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f0e7-6dd7-4b04-8518-77d9a7086d90
+- Cloudera Impala [21] (using Parquet [10]) and Google Dremel [34] have demonstrated that columnar storage of semi-structured data is possible and beneficial
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f109-47c6-492c-9126-0c7a5dd3991b
+- However, Impala and Dremel (and its externalization BigQuery [44]) require users to provide complete table schemas for columnar storage
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: red
+  id:: 64d9f119-965f-42e6-afad-da0b63431fb8
+  hl-stamp:: 1692004646631
+- To achieve both the flexibility of a schema-less serialized representation and the performance of a columnar relational database, Snowflake introduces a novel automated approach to type inference and columnar storage.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: blue
+  id:: 64d9f124-0990-492d-b6b6-daace0a2d961
+- Snowflake stores data in a hybrid columnar format.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f134-2403-44c3-ac32-8d725a3bedde
+- the system automatically performs statistical analysis of the collection of documents within a single table file
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f17c-dd78-453b-bea5-b6a615347072
+- automatic type inference and to determine which(typed) paths are frequently common.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f18b-c58e-412c-9384-a4b1aa8caa6c
+- The corresponding columns are then removed from the documents and stored separately, using the same compressed columnar format as native relational data
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f1ac-10fa-4b3d-9d8b-b1e9ddf6afbb
+- even computes materialized aggregates for use by pruning (cf. Section 3.3.3), as with plain relational data
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f1b1-774f-4004-bbe5-1574419d5fd3
+- Most queries, however, are only interested in a subset of the columns of the original document
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f1c1-84ba-4920-a45e-cc07e8f12ed3
+- he various columns can be reassembled into a single column of type VARIANT
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f208-4346-44cd-8104-aab7f1c30411
+- Snowflake pushes projection and cast expressions down into the scan operator, so that only the necessary columns are accessed and cas
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f217-7277-4b7e-ac80-880283375603
+- optimizations described above are performed independently for every table file
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f22b-a431-4c76-9d95-285598e95aaf
+- allows for efficient storage and extraction even under schema evolution.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f2ee-8930-4a77-919f-1e646b589abe
+- The conservative solution is to simply scan all files for which there is no suitable metadata
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f38f-42fe-4281-85b3-086ba57a99ea
+- improves over this solution by computing Bloom filters over all paths
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f39a-b790-412a-b645-ac5d88d82ba7
+- Bloom filters are saved along with the other file metadata, and probed by the query optimizer during pruning
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f3a2-b5ae-4907-9a64-500702c05c1d
+- Table files which do not contain paths required by a given query can safely be skipped.
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f451-eee2-4e5c-a18c-507486d4e541
+- 4.3.3 Optimistic Conversion
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f54f-8d0d-4f0c-b42f-23b8e03d6898
+- , notably date/time values, are represented as strings in common external formats such as JSON or XML, these values need to be converted from strings to their actual type either at write time (during insert or update) or at read time (during queries).
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f565-0ebb-4594-ab4a-48d29f54a597
+- applied at write time, automatic conversions may lose information
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: red
+  id:: 64d9f587-4614-4992-8a2a-7317fcd55a37
+- these string conversions need to be performed at read time, which, in a readdominated workload, is less efficient than doing the conversions once, during the write
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: red
+  id:: 64d9f593-385e-499d-a06b-4cb8086e989e
+- Snowflake solves the problem by performing optimistic data conversion, and preserving both the result of the conversion and the original string 
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: blue
+  id:: 64d9f5ae-8e12-4218-a302-1cdfeae195ad
+- unless a fully reversible conversion exists),
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f5c4-0414-4f67-93ad-989a071aa97a
+- in separate columns
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f5c9-ee4a-44c3-b721-63f411e98fcd
+- If a query later requires the original string, it is easily retrieved or reconstructed
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f5d3-ef61-4839-ab71-e1db0971c56d
+- 4.3.4 Performance
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 64d9f5e4-8ff2-4a77-b5ea-a81e0a85d26d
+- the overhead of schema-less storage and query processing was around 10% for all but two queries
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f61a-06ff-422c-9ea8-d5e8e9197cb9
+- 4.4 Time Travel and Cloning
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f674-c102-4e41-8cc6-95edcaf9ba6e
+- SELECT * FROM my_table AT(TIMESTAMP =>’Mon, 01 May 2015 16:20:00 -0700’::timestamp);
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f67d-a9d0-4cf8-b69b-85ada92dfb83
+- One can even access different versions of the same table in a single query.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f696-8b71-464c-9b6c-c27e495733dc
+- DROP DATABASE important_db; -- whoops! UNDROP DATABASE important_db;
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f6b2-4b0f-4595-a081-7dcd4317fbc1
+- Cloning a table creates a new table with the same definition and contents quickly and without making physical copies of table
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f6cb-6628-420f-b37c-6a4d75509739
+- The clone operation simply copies the metadata of the source table.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f6d6-0f2c-4fd4-b55e-11aa85c19edd
+- but both tables can be modified independently thereafter. 
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f6e1-a6d1-44fd-8ebd-6e4cb5bfcac6
+- The CLONE keyword can even be combined with AT and BEFORE, allowing such snapshots to be made after the fact.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 64d9f73d-3d39-4d64-9033-1b909d070b0f
+- ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 64d9f7ac-fe7c-468d-bc13-be91241b1959
+  5. RELATED WORK
+- Cloud-based Parallel Database Systems
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 64d9f7af-591c-4c14-9311-306d9bc7ca4f
+- Amazon has a number of DBaaS products with Amazon Redshift being the data warehousing product among these. Having evolved from the parallel database system ParAccel, Redshift was arguably the first real data warehouse system offered as a service
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 64d9f7b8-e3cf-4fe0-8906-5a7bafbafc6b
+- One of the inspirations for Snowflake was BigQuery’s support for JSON and nested data, which we find necessary for a modern analytics platform
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f7f3-153f-4fbc-b903-82f0ce0e980a
+- while BigQuery offers a SQL-like language, it has some fundamental deviations from the ANSI SQL syntax and semantics, making it tricky to use with SQL-based products
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f7fa-1b91-4203-bb18-bcf6d0e0026d
+- BigQuery tables are append-only and require schemas.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f801-aca9-41d9-bf8d-5b0c32f34828
+- Snowflake offers full DML(insert, update, delete, merge), ACID transactions, and does not require schema definitions for semi-structured data
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f808-bdc0-48aa-b1ac-20042ab50a42
+- Computational resources can be scaled through data warehouse units (DWUs). The degree of concurrency is capped though
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f837-5619-4dcb-9fa4-82b26cda4d67
+- maximum number of concurrently executing queries is32
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: red
+  id:: 64d9f83d-5f61-4f9d-a5e6-93f20d0d3ad4
+  hl-stamp:: 1692006464167
+- it does not have built-in support for semi-structured data comparable to Snowflake’s VARIANT type and related optimizations.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f854-e12d-44f2-a6ca-18f5369094a0
+- However, one challenge that has resulted from the simple keyvalue and CRUD (create, read, update, and delete) API of these systems is the difficulty to express more complex queries.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f86b-0b0e-4f87-af24-083cba7b3376
+- As a result, today, Snowflake has only one tuning parameter: how much performance the user wants (and is willing to pay for).
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: blue
+  id:: 64d9f8ce-d6d6-4e9e-a4b9-a47d1a30d315
+- Building a metadata layer that can support hundreds of users concurrently was a very challenging and complex task
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f8dc-5914-4f57-bd7c-5ef7b56e8b20
+- Security has been and will continue to be a big topic: protecting the system and the users’ data from external attacks, the users themselves, and our internal users as well
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f8e5-739d-4ce8-930d-778f20c2b5c6
+- Maintaining a live system of hundreds of nodes running millions of queries per day, while bringing a lot of satisfaction, requires a highly integrated approach to development, operations, and support.
+  ls-type:: annotation
+  hl-page:: 11
+  hl-color:: yellow
+  id:: 64d9f8e9-9105-45ba-af04-748cf76f32a5

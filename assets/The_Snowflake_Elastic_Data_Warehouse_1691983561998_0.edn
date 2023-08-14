@@ -1684,7 +1684,7 @@
                                    :height 1795.2}),
                           :page 3},
                :content {:text "Snowflake separates storage and compute"},
-               :properties {:color "yellow"}}
+               :properties {:color "green"}}
               {:id #uuid "64d9a9fe-8bfd-4c84-a1b5-81b4d0959bc8",
                :page 3,
                :position {:bounding {:x1 0,
@@ -1836,7 +1836,7 @@
                                    :height 1795.2}),
                           :page 3},
                :content {:text "ocal disk space is not spent on replicating the whole base data, which may be very large and mostly cold (rarely accessed)"},
-               :properties {:color "yellow"}}
+               :properties {:color "green"}}
               {:id #uuid "64d9aa38-94e8-4def-96dd-2bd85a2e9e01",
                :page 3,
                :position {:bounding {:x1 0,
@@ -1889,7 +1889,7 @@
                                    :height 1795.2}),
                           :page 3},
                :content {:text "local disk is used exclusively for temporary data and caches, both of which are hot (suggesting the use of high-performance storage devices such as SSDs)."},
-               :properties {:color "yellow"}}
+               :properties {:color "green"}}
               {:id #uuid "64d9aa41-c50a-44a9-a4e4-83e3e21669f4",
                :page 3,
                :position {:bounding {:x1 0,
@@ -1930,7 +1930,7 @@
                                    :height 1795.2}),
                           :page 3},
                :content {:text "once the caches are warm, performance approaches or even exceeds that of a pure shared-nothing system"},
-               :properties {:color "yellow"}}
+               :properties {:color "green"}}
               {:id #uuid "64d9aa4c-0c13-4199-9dad-d7bfd5320e25",
                :page 3,
                :position {:bounding {:x1 157.859375,

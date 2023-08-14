@@ -273,8 +273,9 @@ file-path:: ../assets/The_Snowflake_Elastic_Data_Warehouse_1691983561998_0.pdf
 - Snowflake separates storage and compute
   ls-type:: annotation
   hl-page:: 3
-  hl-color:: yellow
+  hl-color:: green
   id:: 64d9a9f0-5ab6-4763-bbd1-922f20aa38b9
+  hl-stamp:: 1691986617399
 - Compute is provided through Snowflake’s (proprietary) shared-nothing engine
   ls-type:: annotation
   hl-page:: 3
@@ -290,21 +291,24 @@ file-path:: ../assets/The_Snowflake_Elastic_Data_Warehouse_1691983561998_0.pdf
   hl-page:: 3
   hl-color:: yellow
   id:: 64d9aa1a-bf22-441d-bc10-31ac0707ac2c
-- ocal disk space is not spent on replicating the whole base data, which may be very large and mostly cold (rarely accessed)
-  ls-type:: annotation
+- local disk space is not spent on replicating the whole base data, which may be very large and mostly cold (rarely accessed)
+  hl-stamp:: 1691986664298
   hl-page:: 3
-  hl-color:: yellow
+  ls-type:: annotation
   id:: 64d9aa2a-e5f3-4254-840e-7e43c0fd3852
+  hl-color:: green
 - local disk is used exclusively for temporary data and caches, both of which are hot (suggesting the use of high-performance storage devices such as SSDs).
   ls-type:: annotation
   hl-page:: 3
-  hl-color:: yellow
+  hl-color:: green
   id:: 64d9aa38-94e8-4def-96dd-2bd85a2e9e01
+  hl-stamp:: 1691986662782
 - once the caches are warm, performance approaches or even exceeds that of a pure shared-nothing system
   ls-type:: annotation
   hl-page:: 3
-  hl-color:: yellow
+  hl-color:: green
   id:: 64d9aa41-c50a-44a9-a4e4-83e3e21669f4
+  hl-stamp:: 1691986657255
 - multi-cluster, shared-data architecture.
   ls-type:: annotation
   hl-page:: 3

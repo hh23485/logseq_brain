@@ -8,7 +8,7 @@ tags:: [[Paper]], [[Snowflake]]
 		- ((64d99f4d-c8f9-4042-b082-9efc8cde1fe2))
 		- ((64d99f51-bf39-445b-a2b7-106b3af5289d))
 		- ((64d99f5c-6257-4ce0-ad49-98ffcf172102))
-- # Introduction
+- # 1. Introduction
 	- ((64d9a02b-a171-43ad-92eb-9a748567cf0a))
 		- ((64d9a034-9573-4b7c-b57b-362873417c9c))
 	- ((64d9a057-5e4e-4b4b-b005-3d8f572ec0c3))
@@ -28,7 +28,7 @@ tags:: [[Paper]], [[Snowflake]]
 		- ((64d9a21f-276b-4b11-96cb-42e8dee925c3))
 		- ((64d9a224-81cc-4fae-935c-e8badd8e5c5a))
 		- ((64d9a228-5ff2-489f-b29f-3060e771f345))
-- # STORAGE VERSUS COMPUTE
+- # 2. STORAGE VERSUS COMPUTE
 	- ## ((64d9a7b7-d1a3-4f36-afd5-f5724e206a25))
 	  id:: 64d9a4de-4e14-4568-af7b-498820000812
 		- ((64d9a793-1004-498b-97fc-2bc44f870ac3))
@@ -46,11 +46,12 @@ tags:: [[Paper]], [[Snowflake]]
 			- ((64d9a9c5-ae45-4460-9bdd-1e67fc91743c))
 			- ((64d9a9cc-282f-4cfa-aec9-f4eddb0afbf0))
 			- ((64d9a9db-ceeb-442e-8701-5762c8567e6f))
-	- ((64d9a9f0-5ab6-4763-bbd1-922f20aa38b9))
+	- ## ((64d9a9f0-5ab6-4763-bbd1-922f20aa38b9))
 		- ((64d9a9fe-8bfd-4c84-a1b5-81b4d0959bc8))
 			- ((64d9aa1a-bf22-441d-bc10-31ac0707ac2c))
 			- ((64d9aa2a-e5f3-4254-840e-7e43c0fd3852))
 			- ((64d9aa38-94e8-4def-96dd-2bd85a2e9e01))
 			- ((64d9aa41-c50a-44a9-a4e4-83e3e21669f4))
 		- ((64d9aa09-4793-4a2e-9fff-fc30b0f4eb5c))
-		-
+- # 3. Architecture
+	-

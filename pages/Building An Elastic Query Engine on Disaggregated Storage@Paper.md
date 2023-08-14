@@ -45,4 +45,12 @@ tags:: Paper
 			- ((64da166a-387e-4149-9ee3-4882be91cca3))
 		- ((64da12bc-f2c6-49e6-9436-6a6a14b8e099))
 			- ((64da16a4-a654-44d5-9b13-e871cff27bb4))
-			-
+				- ((64da16d6-8f4b-4b8c-95c0-e061b588199f))
+			- ((64da16e4-d755-42bf-be28-f4db6a0bc914))
+				- ((64da16f3-c6db-4b5b-9958-e1564f21e805))
+			- ((64da1707-d846-4b7a-9106-1a0a7af68e66))
+				- ((64da1b10-98cb-4136-856e-76a1d6b7d8bc))
+				- ((64da1b1a-3068-42f5-9263-16d79bce9bbf))
+					- ((64da1b27-07bb-4b67-998a-e47d98a8e930))
+	- ## 2.3 End-to-end query execution
+		-

@@ -359,3 +359,38 @@ file-path:: ../assets/Building_An_Elastic_Query_Engine_on_Disaggregated_Storage_
   hl-page:: 5
   hl-color:: yellow
   id:: 64da16a4-a654-44d5-9b13-e871cff27bb4
+- because of S3’s elasticity, high availability and durability properties.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64da16d6-8f4b-4b8c-95c0-e061b588199f
+- storing immutable files — files can only be overwritten in full and do not even allow append operations.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: blue
+  id:: 64da16e4-d755-42bf-be28-f4db6a0bc914
+- S3 supports read requests for parts of a file
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: green
+  id:: 64da16f3-c6db-4b5b-9958-e1564f21e805
+- To store tables in S3, Snowflake partitions them horizontally into large, immutable files that are equivalent to blocks in traditional database systems
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64da1707-d846-4b7a-9106-1a0a7af68e66
+- Within each file, the values of each individual attribute or column are grouped together and compressed, as in PAX
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64da1b10-98cb-4136-856e-76a1d6b7d8bc
+- Each file has a header that stores offset of each column within the file
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64da1b1a-3068-42f5-9263-16d79bce9bbf
+- enabling us to use the partial read functionality of S3 to only read columns that are needed for query execution
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 64da1b27-07bb-4b67-998a-e47d98a8e930

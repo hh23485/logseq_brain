@@ -1,7 +1,6 @@
 tags:: [[Paper]], [[Snowflake]]
 
 - ![The Snowflake Elastic Data Warehouse.pdf](../assets/The_Snowflake_Elastic_Data_Warehouse_1691983561998_0.pdf)
-	-
 - # Abstraction
 	- ((64d99f1a-62ea-4682-8d4e-3c0050e6c53b))
 	- ((64d99f29-c136-4c55-baf8-381bc95d091a))

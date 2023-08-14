@@ -1,0 +1,32 @@
+tags:: [[Paper]], [[Snowflake]]
+
+- ![The Snowflake Elastic Data Warehouse.pdf](../assets/The_Snowflake_Elastic_Data_Warehouse_1691983561998_0.pdf)
+	-
+- # Abstraction
+	- ((64d99f1a-62ea-4682-8d4e-3c0050e6c53b))
+	- ((64d99f29-c136-4c55-baf8-381bc95d091a))
+	- ((64d99f40-f6e9-49ca-bd94-0468a323d944))
+		- ((64d99f4d-c8f9-4042-b082-9efc8cde1fe2))
+		- ((64d99f51-bf39-445b-a2b7-106b3af5289d))
+		- ((64d99f5c-6257-4ce0-ad49-98ffcf172102))
+- # Introduction
+	- ((64d9a02b-a171-43ad-92eb-9a748567cf0a))
+		- ((64d9a034-9573-4b7c-b57b-362873417c9c))
+	- ((64d9a057-5e4e-4b4b-b005-3d8f572ec0c3))
+		- ((64d9a07d-b7b0-4ce7-8d06-2d3fd7a7e74e))
+		- ((64d9a0a7-8b22-477f-a399-e840c9860a84))
+			- ((64d9a0bb-8655-4171-aa49-163628f9500a))
+			- ((64d9a131-aacb-483f-bb35-d552c5d843f9))
+			- ((64d9a139-4e22-497e-b02b-2007b5498305))
+	- ((64d9a1c1-2834-4692-86fc-1579a9a5f5d5))，完全面向云来设计，没有基于 Hadoop 或者 PostgreSQL
+		- ((64d9a1e0-6215-4dd7-b9ed-0847cf9164d5))
+	- ((64d9a1f4-ef10-4e97-bae7-e42a684050d6)) 功能特点
+		- ((64d9a200-f085-4cde-88b6-80ae14331f25))
+		- ((64d9a205-792f-44fb-a5cf-85760d8fbada))
+		- ((64d9a20a-5eb4-4ac7-9227-65ef914584bc))
+		- ((64d9a216-689d-423f-aeab-fe352c04910d))
+		- ((64d9a21b-60e4-49c2-97c4-8420daf4c774))
+		- ((64d9a21f-276b-4b11-96cb-42e8dee925c3))
+		- ((64d9a224-81cc-4fae-935c-e8badd8e5c5a))
+		- ((64d9a228-5ff2-489f-b29f-3060e771f345))
+	-

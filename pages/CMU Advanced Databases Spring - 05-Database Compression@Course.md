@@ -62,6 +62,7 @@ tags:: [[CMU 15-721]]
 						- ![image.png](../assets/image_1692092096791_0.png){:height 480, :width 411}
 				- 哈希表
 				  logseq.order-list-type:: number
+					-
 				- B+ 树
 				  logseq.order-list-type:: number
 				-

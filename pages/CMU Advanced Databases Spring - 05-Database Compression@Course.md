@@ -106,6 +106,10 @@ tags:: [[CMU 15-721]]
 	- Delta Encoding
 		- 存储值和相邻值的差值
 			- ![image.png](../assets/image_1692101912742_0.png)
-		-
+			- 可以和 Run-length encoding 一起使用，可以获得更高的压缩比
+			- 读取的时候需要一些重放
 	- Bit Packing
 	  id:: 64db3c45-9487-4733-8bf8-ecc533789711
+		- 如果发现实际数据所需的位数小于声明的数据类型范围，那么可以进行位压缩
+			- ![image.png](../assets/image_1692102551954_0.png)
+		- 如果有单独的值特别大，可以预留一个标记和 offset 来通知这些数据 可能在一个溢出表中

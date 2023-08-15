@@ -62,10 +62,10 @@ tags:: [[CMU 15-721]]
 						- ![image.png](../assets/image_1692092096791_0.png){:height 480, :width 411}
 				- 哈希表
 				  logseq.order-list-type:: number
-					-
 				- B+ 树
 				  logseq.order-list-type:: number
-				-
+					- 可以使用一个共享叶子节点的 B+ 树，一颗排序的 original value，另外一颗排序 Encoded Value
+						- ![image.png](../assets/image_1692092187804_0.png)
 	- Bitmap Encoding
 	- Delta Encoding
 	- Bit Packing

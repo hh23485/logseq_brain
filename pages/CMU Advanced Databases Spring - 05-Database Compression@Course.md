@@ -66,6 +66,7 @@ tags:: [[CMU 15-721]]
 				  logseq.order-list-type:: number
 					- 可以使用一个共享叶子节点的 B+ 树，一颗排序的 original value，另外一颗排序 Encoded Value
 						- ![image.png](../assets/image_1692092187804_0.png)
+			- Parquet 和 ORC 并不暴露访问压缩字典的 api，因此数据库无法执行谓词下推，访问数据就必须要解压缩
 	- Bitmap Encoding
 	- Delta Encoding
 	- Bit Packing

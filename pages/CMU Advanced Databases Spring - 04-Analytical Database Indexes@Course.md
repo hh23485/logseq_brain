@@ -37,6 +37,7 @@ tags:: [[CMU 15-721]]
 		- 如果 scope 太大，那这个信息就没有意义，因为很难跳过
 		- 如果 scope 太小，就意味着需要多次访问 header 来达成相同范围的查找，会损失效率
 - BitMap Indexes
+  id:: 64d99ada-3b18-4c6e-b7eb-e73c49955521
 	- 对 unique value 提供一个 bitmap 来记录它们所在的位置
 	- 对于每个 unique value，建立一个向量，来表示在这个 tuple 的位置上是
 	- ![image.png](../assets/image_1691857706625_0.png)

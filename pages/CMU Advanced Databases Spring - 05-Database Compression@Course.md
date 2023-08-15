@@ -70,7 +70,42 @@ tags:: [[CMU 15-721]]
 				- 谓词下推简单的说法就是，能够在尽可能接近数据扫描之前进行过滤，来避免访问不需要的数据，而不是读取所有的数据在应用、或者查询器中再判断谓词
 			- 一个布隆过滤器也许是有用的
 	- Bitmap Encoding
-		-
+		- {{embed ((64d99ada-3b18-4c6e-b7eb-e73c49955521))}}
+		- 压缩 bitmap index
+			- 通用压缩
+				- Snappy, zstd
+			- Byte-aligned bitmap codes
+				- 例如
+					- ![image.png](../assets/image_1692093341710_0.png)
+					- 第一行中，压缩为下面三个部分
+						- 第一个部分是 Gap Bytes 的数量，全是 0 的部分，长度为 2
+						- 第二个部分是 Tail Bytes，1 表示尾部只有 1 个，0 表示有多个
+						- 第三个部分是尾部字节中 1 的位置
+						- 从 3 字节压缩到 1 字节
+				- 又比如
+					- ![image.png](../assets/image_1692093704917_0.png)
+						- 当 gap bytes > 7，前三位为 111
+						- 因为 tail bytes 超过 1个，第四位为 0
+						- 接下来是 4 bit 表示从末尾拷贝多少个 bytes 作为 tail bytes
+						- 然后是 Gap bytes 的长度，13 的二进制 `00001101`
+						- 最后是从 tail bytes 拷贝过来的两个字节
+						- 从 18 字节压缩到 5 字节
+				- 已经不再使用了
+					- 对 SIMD 不友好
+					- 有许多的 if else, 有很多分支，CPU 预测更糟糕
+					- 难以随机访问，必须全都解压缩，无法部分操作
+			- Roaring Bitmaps
+				- 被用于许多系统
+				- 如果数据很密集，就存储为位图
+				- 如果数据是稀疏的，就存储为 16 位的整数的紧凑数组
+				- ![image.png](../assets/image_1692102067088_0.png)
+					- 将一个数字 / 2^16
+					- 找到对应的 container
+					- 如果 container 里的元素少于 4096，container 就是一个数组（例如图里的 1000）
+					- 如果数据很多，就存储为 bitmap (例如分区 3)
 	- Delta Encoding
+		- 存储值和相邻值的差值
+			- ![image.png](../assets/image_1692101912742_0.png)
+		-
 	- Bit Packing
 	  id:: 64db3c45-9487-4733-8bf8-ecc533789711

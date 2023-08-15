@@ -1,0 +1,31 @@
+tags:: [[CMU 15-721]]
+
+- 观察
+	- I/O 是目前 query 主要的瓶颈
+	- 当必须读取数据时，我们希望能从其中读取足够多的有效信息，不浪费 IO
+- 任何压缩必须要实现的目标
+	- 必须压缩为固定长度
+	- 必须是无损的压缩
+	- 尽可能晚的推迟在查询时的解压缩，也就是尽可能多的操作想要在解压操作上处理，如果必须要读取，才解压缩数据
+- 压缩的粒度
+	- Block-Level
+		- database page or row group
+	- Tuple-Level
+		- content of the entire tuple in MSN only
+	- Attribute-Level
+		- Single attribute value within one tuple
+		- Multiple attributes for the same tuple
+	- Column-Level
+		- Multiple value for one or mote attributes for multiple tuples for DSM only
+- 朴素压缩
+	- 使用通用的压缩方法，直接压缩输入数据
+		- LZO, LZ4, Snappy, Brotli, Oracle OZIP, Zstd.
+			- Snappy 是其中最广泛使用的算法之一
+			- 但最新的的压缩性能和压缩比的权衡的是 Zstd
+	- MySQL 中存储压缩数据，每个 page 在内存中大约 16 KB，但存储到磁盘后，是 1,2,4,8 KB 大小中的一个
+		- MySQL 在内存中会有一个 mod log 区域，这个位置存放了所有的更新的信息，那么，如果有人放入了更新操作或者删除操作，那么在内存中就可以直接获得结果
+		- 这些块就是B+树的节点
+		- 缺点
+			- 但在想要读取压缩的中的数据时，仍然需要先解压缩，因为其中压缩的结构并不能被数据系统读取和识别，是算法压缩完的字节块而已
+			- 如果我想要读取16KB中的1KB的某部分数据，是做不到的
+		-

@@ -47,7 +47,36 @@ tags:: [[CMU 15-721]]
 		- 每个 operation 实现一个 next，然后自顶向下的调用 Next，并传递直到最底层的数据提供者
 			- ![image.png](../assets/image_1692170432403_0.png)
 			- ![image.png](../assets/image_1692170440802_0.png)
-		-
+		- 这样几个算子就可以在一个两个数据集合上完成 Join 和 select
+		- 这是 OLTP 中经常使用的，允许管道操作
 	- Materialization Model
+		- 一次输出所有的数据，不会再次调用了
+			- ![image.png](../assets/image_1692172074068_0.png)
+			- ![image.png](../assets/image_1692172081671_0.png)
+			- 有些运算符可以内联
+				- ![image.png](../assets/image_1692172179018_0.png)
+			- 对 OLTP 有利，对 OLAP 不利
+				- 更好的函数调用，更低的执行/协作开销
+				- 对于许多大量中间结果的 OLAP 查询会非常糟糕
+		- 需要下推来避免生成超过特定数量、条件的数据
 	- Vectorized/Batch Model
--
+		- 每次操作其中多个 tuple
+			- 在达到某个批量数量时，就抛出
+			- ![image.png](../assets/image_1692177097770_0.png)
+		- 批处理大小根据硬件不同而不同
+		- 大大减少了每个运算符的调用次数，非常适用于 OLAP 查询
+		- 允许 operation 更轻松的使用 SIMD 向量指令
+- 执行计划处理方向
+	- 自顶向下
+		- 从一个运算符向另外一个运算符拉取数据
+		- 容易控制输出，例如 limit 几个结果
+		- 父操作在子操作完成之前会阻塞
+		- next 函数是虚函数，因此会有一些开销
+	- 自底向上
+		- 将一个运算符的结果推送给另外一个运算符
+		- 可以对寄存器和缓存做更严格的控制
+		- 难以对 limit 进行控制
+		- 难以实现 Sort-Merge Join
+- 自底向上 Push-based iterator model
+	- ![image.png](../assets/image_1692177415410_0.png)
+	-

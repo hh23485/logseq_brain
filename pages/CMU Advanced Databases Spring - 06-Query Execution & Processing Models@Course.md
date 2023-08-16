@@ -1,0 +1,53 @@
+tags:: [[CMU 15-721]]
+
+- ## Execution Optimization
+	- DBMS engineering is an orchestration a bunch of optimizations that seek to make full use of hardware.
+	- No a single tech is more important than others
+- ## Unscientific Top-3 Optimizations
+	- Data Parallelization 向量化
+	- Task Parallelization 多线程
+	- Code Specialization 编译
+- ## 优化目标
+	- Reduce Instruction Count
+		- 用更少的指令来完成相同的目标
+	- Reduce Cycles per Instruction
+		- 减少每个指令的周期
+			- CPU 预测、内存缺页、缓存未命中等等都会导致在指令数不变的情况下，指令周期变长
+	- Parallelize Execution
+		- 并行执行每个 query
+- ## 词汇表
+	- Query Plan
+		- 一堆 operations 的 DAG
+	- Operator instance
+		- operation 的实例们，负责不同的 partition
+	- Task / Pipeline
+		- 一组 operations 的 sequence
+		- ![image.png](../assets/image_1692166542688_0.png){:height 383, :width 368}
+- ## [MonetDB/X100 Paper](https://15721.courses.cs.cmu.edu/spring2023/papers/06-execution/boncz-cidr2005.pdf)
+	- Show how DBMS are designed incorrectly for modern CPU architectures
+	- 通常人容易理解的方法是 CPU 工作最糟糕的方式
+	- 基于其中的许多发现，然后提出了一个新的数据库 DBMS 叫做 MonetDB/X100
+		- 在 2010 年重命名为 Vectorwise
+		- 又被 rebranded 为 Vector
+- ## CPU 利用
+	- 尽可能的让 CPU 忙碌起来，不要空闲
+	- 问题
+		- 数据依赖
+			- 如果存在数据依赖，那么没有办法，必须等待数据准备好才能执行后续指令
+		- 分支预测
+			- CPU 先按照预测的分支执行，如果出现问题时，就丢弃已经执行的数据，并回到正确的位置
+			- C++ 中存在 likely/unlikely 来提示 CPU 的更可能的分支，但 CPU 2015+ 已经会忽略它，但存在争议，没有数据库真实的使用，需要使用其他方法。
+				- 应该避免产生分支
+				- ![image.png](../assets/image_1692168722431_0.png)
+					- 只需要最后处理一下最后一个元素，而不需要考虑分支
+			- 然而现有的数据库都是设计给通用类型的，因此在执行之前都需要检查类型，大多使用 switch 来选择合适的路径，这会导致 CPU 的难以进行预测
+- ## Processing Model
+	- Iterator Model
+		- 有时候也称为 Volcano 或者 Pipeline Model
+		- 每个 operation 实现一个 next，然后自顶向下的调用 Next，并传递直到最底层的数据提供者
+			- ![image.png](../assets/image_1692170432403_0.png)
+			- ![image.png](../assets/image_1692170440802_0.png)
+		-
+	- Materialization Model
+	- Vectorized/Batch Model
+-

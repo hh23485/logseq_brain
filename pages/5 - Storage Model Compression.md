@@ -54,6 +54,7 @@
 		- 一列或者多列压缩在一起
 - Columnar compression
 	- RUN-LENGTH encoding
+	  id:: 64c0ca5c-df61-4301-aa00-6e1fefe11ec7
 		- ![image.png](../assets/image_1690107765601_0.png)
 		- 只适合高度分类的数据
 			- 如果排序后会更惊人的压缩

@@ -28,5 +28,13 @@ tags:: Parquet
 					- `required` 表示这个元素只要上层存在，那么它肯定存在
 					- `repeated` 表示是一个列表
 					- 分支表示是上一层的成员
-			- 所以和树的结构图不完全一样，可以对 `required` 元素进行压缩，得到如下层级关系
-				-
+			- 所以和树的结构图不完全一样，可以对 `required` 元素进行压缩，得到定义层级：
+				- owner: 0
+					- owner 是 required 元素，因此只要 AddressBook 存在，onwer 就一定存在
+				- contacts: 1
+					- contacts 是 required 元素，只要 AddressBook 存在，contacts 就一定存在
+				- ownerPhoneNumbers: 1
+					- 并不一定存在，但如果存在元素就是 1，如果某行的定义层级为 0，就意味着这行的 `ownerPhoneNumbers` 不存在
+				- contacts.name: 1
+					- contacts.name 是 required 元素，
+				- contacts.phoneNumber: 2

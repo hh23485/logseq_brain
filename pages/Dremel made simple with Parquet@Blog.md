@@ -24,7 +24,7 @@ tags:: Parquet
 			- 这个结构和 protobuf 的语法约定相同，用来表达如下的数据结构
 				- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet100.thumb.1280.1280.png){:height 423, :width 890}
 				- 需要注意的是：
-					- AddressBook 是根元素/
+					- AddressBook 是根元素
 					- required 表示这个元素只要上层存在，那么它肯定存在
 					- repeated 表示是一个列表
 					- 分支表示是上一层的成员

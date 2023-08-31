@@ -1,3 +1,5 @@
+tags:: Stroage, Blog, BigQuery
+
 - [Inside BigQuery’s storage and query optimizations | Google Cloud Blog](https://cloud.google.com/blog/products/data-analytics/inside-bigquerys-serverless-optimizations)
 - Storage optimization
 	- 自适应的存储文件大小来改善查询性能

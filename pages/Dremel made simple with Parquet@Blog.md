@@ -34,10 +34,10 @@ tags:: Parquet
 				- `owner`: 0
 					- owner 是 `required` 元素，因此只要 `AddressBook` 存在，`onwer` 就一定存在，没有可空层
 				- `ownerPhoneNumbers`: 1
-					- 并不一定存在，但如果存在元素就是 1，如果某行的定义层级为 0，就意味着这行的 `ownerPhoneNumbers` 不存在
+					- 该层可空，往上不可空，所以在可空的第一层
 				- `contacts.name`: 1
-					- `contacts.name` 是 `required` 元素，因此 `contacts` 如果有子元素，就一定存在，层级是 1
+					- `contacts.name` 是 `required` 元素，因此 `contacts` 如果有子元素，就一定存在，contacts 可能 `null`，因此层级是 1
 				- `contacts.phoneNumber`: 2
-					- `phoneNumber` 是 `optional` 元素，可能存在可能不存在，层级要低一级，是 2
-					- 另外一个角度的理解是，即便 contacts 的某个对象存在，只能保证 name 存在，不能保证 phoneNumber 存在，所以他们并不在同一个定义层级上
+					- `phoneNumber` 是 `optional` 元素，层级比 `name` 要低一级，是 2
+					- 另外一个角度的理解是，即便 contacts 的某个对象存在，只能保证 name 存在，不能保证 `phoneNumber` 存在，所以他们并不在同一个定义层级上
 		-

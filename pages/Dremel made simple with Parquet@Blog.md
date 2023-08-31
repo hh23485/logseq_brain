@@ -6,7 +6,7 @@ tags:: Parquet
 	- 其中的核心是 Definition level 和 Repetition level
 - 我读了好几遍才能勉强理解，那么将我理解后的内容记录如下：
 - ## Definition level
-	- To support nested records we need to store the level for which the field is null. This is what the definition level is for: from 0 at the root of the schema up to the maximum level for this column。也就是定义从 root 到当前层，在可 null  的第几层
+	- To support nested records we need to store the level for which the field is null. This is what the definition level is for: from 0 at the root of the schema up to the maximum level for this column。也就是定义从 root 到当前层，在可 `null`  的第几层
 		- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet103.thumb.1280.1280.png){:height 399, :width 923}
 		- 可以快速的通过层级来判定这个嵌套层级到哪一层是有数据的
 	- ### Repeat 和 Group
@@ -32,7 +32,7 @@ tags:: Parquet
 					- 分支表示是上一层的成员
 			- 所以和树的结构图不完全一样，可以对 `required` 元素进行压缩，得到定义层级：
 				- `owner`: 0
-					- owner 是 required 元素，因此只要 `AddressBook` 存在，`onwer` 就一定存在
+					- owner 是 `required` 元素，因此只要 `AddressBook` 存在，`onwer` 就一定存在，没有可空层
 				- `ownerPhoneNumbers`: 1
 					- 并不一定存在，但如果存在元素就是 1，如果某行的定义层级为 0，就意味着这行的 `ownerPhoneNumbers` 不存在
 				- `contacts.name`: 1

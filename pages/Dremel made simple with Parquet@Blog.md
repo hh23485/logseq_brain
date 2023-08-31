@@ -25,7 +25,8 @@ tags:: Parquet
 				- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet100.thumb.1280.1280.png){:height 423, :width 890}
 				- 需要注意的是：
 					- AddressBook 是根元素
-					- required 表示这个元素只要上层存在，那么它肯定存在
-					- repeated 表示是一个列表
+					- `required` 表示这个元素只要上层存在，那么它肯定存在
+					- `repeated` 表示是一个列表
 					- 分支表示是上一层的成员
-			- 所以和树的结构图不完全一样，可以对 required 元素进行压缩，得到如下
+			- 所以和树的结构图不完全一样，可以对 `required` 元素进行压缩，得到如下层级关系
+				-

@@ -6,4 +6,17 @@ tags:: Parquet
 	- 其中的核心是 Definition level 和 Repetition level
 - 我读了好几遍才能勉强理解，那么将我理解后的内容记录如下：
 - ## Definition level
-	- 用来定义这个字段所属的字段树的层级，可以快速的通过层级来判定这些
+	- 用来定义这个字段所属的字段树的层级，可以快速的通过层级来判定这个嵌套层级到哪一层是有数据的
+	- ### Repeat 和 Group
+		- 从这个案例开始
+			- ``` protobuf
+			  message AddressBook {
+			      required string owner;
+			      repeated string ownerPhoneNumbers;
+			      repeated group contacts {
+			          required string name;
+			          optional string phoneNumber;
+			      }
+			  }
+			  ```
+			-

@@ -1,0 +1,27 @@
+- [Inside BigQuery’s storage and query optimizations | Google Cloud Blog](https://cloud.google.com/blog/products/data-analytics/inside-bigquerys-serverless-optimizations)
+- Storage optimization
+	- 自适应的存储文件大小来改善查询性能
+		- 在 [Capacitor](https://cloud.google.com/blog/products/bigquery/inside-capacitor-bigquerys-next-generation-columnar-storage-format)  原来的设计中主要针对 PB 级别查询的大小，但文件过大会导致对于小数据量的查询的速度产生影响，因为需要从每个文件中剔除的数据太多了，需要大量扫描，因此增加了适应性
+		- 根据数据量大小，来决定列式存储文件的大小
+			- 针对 GB/TB 量级数据集
+	- 提升大型元数据性能
+		- 和其他大数据系统一样，在 Capacitor 文件头部存储了丰富的文件内容信息，用来在扫描的时候快速跳过、避免读取不必要的文件，以及一些事务、流处理相关的信息
+		- 在 [VLDB paper](http://vldb.org/pvldb/vol14/p3083-edara.pdf) 中提出了一个新的分布式源数据系统 CMETA，能够支持非常大的表的快速查询
+		- 元数据的支持除了 BigQuery 还通过 BigLake 支持到了外部数据库，例如 Hive的查找性能优化
+		- 在 100GB 到 10 TB 表的查询上，速度加速了 5x - 10x
+	- 存储优化：紧凑、合并、聚类
+		- 数据会被实时监测和优化，如果小文件太多，就会合并成一个文件，以减少对元数据维护的开销；如果文件过大，就会拆分。
+		- 多个列可以一起聚集，根据需要来将他们放在一起存储，而不是只能单列或者单表一起存储
+			- 随时数据变化，存储优化器会自动重新聚集以确保一致的查询性能
+	- 查询优化
+		- 倾斜处理
+			- 会检测数据倾斜比例来考虑工作分配，如果发现数据倾斜，就会对倾斜的部分分配更多的 worker，来让他们可以一起完成工作，避免长尾倾斜分区拖慢任务进度
+		- 动态并发和排队
+			- 可以动态调整最大并发限制，按工作负载动态计算
+			- 查询任务可以排队，而不是超过限制就自动失败
+	- 设计了高速缓存来避免经常访问数据库底层存储的磁盘
+	- 洗牌也进行了优化，构建了重复 CTE 检测机制，减少了资源使用量
+- TODOs
+	- TODO 倾斜处理的方法是什么，有哪些，静态检测还是动态检测
+	- TODO 系列怎么优化，重复 CTE 怎么检测
+	-

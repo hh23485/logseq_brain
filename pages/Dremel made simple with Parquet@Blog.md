@@ -58,11 +58,13 @@ tags:: Parquet
 					  logseq.order-list-type:: number
 					- 对于 e，定义了第 2 层的新元素
 					  logseq.order-list-type:: number
+					- ...
+					  logseq.order-list-type:: number
 				- 初看的时候，不能理解什么叫定义层级的新元素。
 				- 事实上在存储的时候，并不会给你一个树状结构，而是一个扁平的结构，一个列中只有一个 level 2，那么如果你发现它的重复级别是 0，就表示一个新的 Nested lists 的元素，它和另外一个重复级别是 0 的记录一定不在同一个 Nested lists 中
 				- 如果你想要查找一个 Nested lists 所有的元素，你就扫描到下一个 0 就可以了，如果你想要找到同一个 Level1 的，你就找到下一个为 1 的
 - 所以综合上面的两个新概念，可以得到上述例子中的各个字段的 D 和 R
-	- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet108.thumb.1280.1280.png)
+	- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet108.thumb.1280.1280.png){:height 315, :width 989}
 - 最后，作者给了一个实际的记录模拟
 	- 对于数据
 		- ``` protobuf
@@ -89,3 +91,7 @@ tags:: Parquet
 		- `0`, `0`
 			- `0` 表示一个新的 `AddressBook`
 			- `0` 表示没有定义任何的 `contacts`
+	- 最后存储的结果为
+		- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet110.thumb.1280.1280.png){:height 273, :width 501}
+- 那么层级关系可以被很容易的存储，3 个 bit 就可以处理 7 层嵌套，而没有嵌套的列不会有 R 和 D
+- 对于这种有 schema 的结构，即便是嵌套的列式存储，也可以进行高效编码压缩

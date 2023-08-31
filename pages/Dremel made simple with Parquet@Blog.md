@@ -40,4 +40,21 @@ tags:: Parquet
 				- `contacts.phoneNumber`: 2
 					- `phoneNumber` 是 `optional` 元素，层级比 `name` 要低一级，是 2
 					- 另外一个角度的理解是，即便 contacts 的某个对象存在，只能保证 name 存在，不能保证 `phoneNumber` 存在，所以他们并不在同一个定义层级上
-		-
+- ## Repetition level
+	- 重复级别表示：必须为当前值创建新列表的级别
+		- 这句话很难懂，但以如下例子来解释
+			- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet105.thumb.1280.1280.png)
+			  id:: 64f082b3-11ad-4ae6-b965-bf952718f664
+			- 在这个例子中，如果显示嵌套级别，可以得到
+				- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet107.thumb.1280.1280.png)
+				- 如果解释这个图
+					- 对于 a，定义了第 0 层的元素
+					  logseq.order-list-type:: number
+					- 对于 b，定义了第 1 层的新元素
+					  logseq.order-list-type:: number
+					- 对于 c，定义了第 2 层的新元素
+					  logseq.order-list-type:: number
+					- 对于 d，定义了第 1 层的新元素
+					  logseq.order-list-type:: number
+					- 对于 e，定义了第 2 层的新元素
+					  logseq.order-list-type:: number

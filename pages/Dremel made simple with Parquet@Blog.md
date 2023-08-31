@@ -47,8 +47,8 @@ tags:: Parquet
 			  id:: 64f082b3-11ad-4ae6-b965-bf952718f664
 			- 在这个例子中，如果显示嵌套级别，可以得到
 				- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet107.thumb.1280.1280.png)
-				- 如果解释这个图
-					- 对于 a，定义了第 0 层的元素
+				- 对于这个图，我自己解释为：
+					- 对于 a，定义了第 0 层的新元素
 					  logseq.order-list-type:: number
 					- 对于 b，定义了第 1 层的新元素
 					  logseq.order-list-type:: number
@@ -58,3 +58,34 @@ tags:: Parquet
 					  logseq.order-list-type:: number
 					- 对于 e，定义了第 2 层的新元素
 					  logseq.order-list-type:: number
+				- 初看的时候，不能理解什么叫定义层级的新元素。
+				- 事实上在存储的时候，并不会给你一个树状结构，而是一个扁平的结构，一个列中只有一个 level 2，那么如果你发现它的重复级别是 0，就表示一个新的 Nested lists 的元素，它和另外一个重复级别是 0 的记录一定不在同一个 Nested lists 中
+				- 如果你想要查找一个 Nested lists 所有的元素，你就扫描到下一个 0 就可以了，如果你想要找到同一个 Level1 的，你就找到下一个为 1 的
+- 所以综合上面的两个新概念，可以得到上述例子中的各个字段的 D 和 R
+	- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet108.thumb.1280.1280.png)
+- 最后，作者给了一个实际的记录模拟
+	- 对于数据
+		- ``` protobuf
+		  AddressBook {
+		      contacts: {
+		              phoneNumber: "555 987 6543"
+		          }
+		          contacts: {
+		          }
+		      }
+		  AddressBook {
+		  }
+		  ```
+	- 假如看 `contacts.phoneNumber` 这列
+		- ![Dremel made simple with Parquet](https://cdn.cms-twdigitalassets.com/content/dam/blog-twitter/archive/dremel_made_simplewithparquet109.thumb.1280.1280.png)
+	- 可以得到如下解释：
+		- `0`,` 2`, `"555 987 6543"`
+			- `0` 表示定义了一个新的 `AddressBook`
+			- `2` 表示定义到了层级 2, 这一层有值
+			- 值为 `555 987 6543`
+		- `1`, `1`
+			- `1` 表示在同一个 `AddressBook` 中定义了一个新的 `contacts`
+			- `1` 表示没有定义到层级2，也就是只包含 `name`，`phoneNumber` 这一列没有值
+		- `0`, `0`
+			- `0` 表示一个新的 `AddressBook`
+			- `0` 表示没有定义任何的 `contacts`

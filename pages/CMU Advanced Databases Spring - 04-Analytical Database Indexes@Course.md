@@ -39,5 +39,53 @@ tags:: [[CMU 15-721]]
 - BitMap Indexes
   id:: 64d99ada-3b18-4c6e-b7eb-e73c49955521
 	- 对 unique value 提供一个 bitmap 来记录它们所在的位置
-	- 对于每个 unique value，建立一个向量，来表示在这个 tuple 的位置上是
-	- ![image.png](../assets/image_1691857706625_0.png)
+	- 对于每个 unique value，建立一个向量，来表示在这个 tuple 的位置上是哪一个值
+	- ![image.png](../assets/image_1691857706625_0.png){:height 280, :width 653}
+		- 某种程度上，这需要是一种有限类型的 Enum
+	- 向量会非常稀疏，因此需要较好的编码和压缩来减少空间的浪费
+		- Encoding
+			- Equality Encoding
+			- Range Encoding
+			- Hierarchical Encoding
+				- ![image.png](../assets/image_1691888841908_0.png)
+				- 对于非稀疏的情况下，会花费更多的空间
+				- 如果存储的数据很多，也会导致这棵树很大，为此付出的性能开销要比存储更贵
+			- Bit-sliced Encoding
+				- ![image.png](../assets/image_1691908385805_0.png)
+				- 使用向量化的计算，快速根据 bit-slices 前缀来丢弃不需要访问的数据
+				- 对于聚合函数也是可行的
+					- ![image.png](../assets/image_1691908561357_0.png){:height 264, :width 748}
+			- Bit Weaving
+				- 用于列式存储的另外一种存储布局，可以在 SIMD 中高效的对压缩数据进行判定
+				- Horizontal
+					- Row-oriented storage at the bit-level
+						- ![image.png](../assets/image_1691909639740_0.png)
+						- ![image.png](../assets/image_1691909655889_0.png){:height 258, :width 618}
+							- 4条指令可以检查2条记录
+						- 对于多条记录，可以拼接成一条 selection vector
+							- ![image.png](../assets/image_1691913617564_0.png)
+						- 进一步的，可以进行预运算来存放在内存中
+							- ![image.png](../assets/image_1691913652780_0.png)
+							- 能快速的知道哪些 tuple 是在向量中为 1 的
+						- 单个向量的指令非常少，多个向量之间可以并行执行
+				- Vertical
+					- Column-oriented storage at the bit-level
+						- 垂直的存储中，同一个 tuple 的值会分布在多个向量中
+							- ![image.png](../assets/image_1691914387441_0.png)
+						- 在查找相等结果时，可以快速的按位筛选，并在筛选完的结果中，再筛选剩余的部分
+							- ![image.png](../assets/image_1691914480331_0.png)
+							- 2 个指令就可以处理 8 个 tuple
+- 如果放弃一些精确度还可以更快
+	- Column Imprints
+		- 使用一个 bitmap 来推测某个值是否存在，类似布隆过滤器
+			- ![image.png](../assets/image_1691914922778_0.png)
+	- Column Sketches
+		- 将值映射到一个区间里，但有损的获得一个大致的结果
+			- ![image.png](../assets/image_1691915082372_0.png)
+		- 然后在查询时，将查询目标也同样的映射，在 sketched column 中快速查找
+			- ![image.png](../assets/image_1691915156539_0.png)
+	- Parting Thoughts
+		- Zone Maps are most widely used methods
+		- Bitmap indexes are more common in NSM than columnar OLAP systems
+		-
+	-

@@ -1,6 +1,6 @@
 tags:: Parquet
 
-- /toc
+-
 - TOC {{renderer :tocgen, [[]], 2, h}}
 - 博客
 	- [Dremel made simple with Parquet (twitter.com)](https://blog.twitter.com/engineering/en_us/a/2013/dremel-made-simple-with-parquet)

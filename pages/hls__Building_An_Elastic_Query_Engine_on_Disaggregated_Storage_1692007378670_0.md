@@ -394,3 +394,277 @@ file-path:: ../assets/Building_An_Elastic_Query_Engine_on_Disaggregated_Storage_
   hl-page:: 5
   hl-color:: yellow
   id:: 64da1b27-07bb-4b67-998a-e47d98a8e930
+- Query execution begins with customers submitting their query text to CS for execution on a speciﬁc customer VW
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003ac0-c696-43eb-b89b-357969d4d9ab
+- CS performs query parsing, query planning and optimization, producing a set of tasks that need to be executed
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003ace-d8c6-4f70-9d05-7b2f5c44fbac
+- then schedules these tasks on compute nodes of the VW
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003adb-2416-4e56-9762-6d7c65fac01e
+- each task may perform read/write operations on both ephemeral storage system and remote persistent data store
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003aeb-70f4-4b1e-92fe-496cb79b1e99
+- CS continually tracks the progress of each query, collects performance counters, and upon detecting a node failure, reschedules the query on compute nodes within the VW
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: green
+  id:: 65003b25-1bac-4140-b15c-85c6701bb369
+- Once the query is executed, the corresponding result is returned back to the CS and eventually to the customer
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003b41-2836-4f64-a8ff-c380f1bee4f5
+- Snowﬂake collects statistics at each layer of the system
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003b75-0fde-4454-9c71-d676a959f426
+- each individual VW(size over time, instance types, failure statistics, etc.)
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003b92-9d19-429f-8811-04ef9d52c582
+- performance counters for individual queries, time spent in different phases of query execution
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003ba0-fc46-4358-b1f9-7657dca0bc58
+- Each node collects statistics for ephemeral and persistent store accesses, resource (CPU, memory and bandwidth) utilization characteristics, compression properties, etc.
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003bad-6541-4acf-af88-afab37aa9257
+- The dataset is publicly available at https://github.com/resource-disaggregation/snowset
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003e92-f04e-4367-ac17-866c8cb21618
+- Query Classiﬁcation
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003ea1-2552-4b20-9c63-044af314ece4
+- Read-only queries
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003eaa-ef10-45a3-b992-88ab8e60966f
+- these queries can vary over nine orders of magnitude
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003edb-7125-4c4d-8858-364f72b5a4ab
+- queries contribute to ∼28% of all customer queries
+  ls-type:: annotation
+  hl-page:: 5
+  hl-color:: yellow
+  id:: 65003ee7-3202-4ea2-9218-367ad5def528
+- Write-only queries: 
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65003efe-8df3-4019-a383-e613785fda2f
+- Queries along the y-axis are the ones that do not read any persistent data
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65003f0c-8adf-448f-acac-31f7d34fec1a
+- the amount of data written by these queries can vary over eight orders of magnitude
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65003f1a-7dcd-41ad-aadb-9f1adee8adb0
+- These queries contribute to ∼13% of all customer queries, and essentially represent data ingestion queries that bring data into the system
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65003f2c-258f-48e1-96e2-1c27efafe953
+- Read-Write (RW) queries
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65003f77-c41c-4bcb-baaf-045781e14e2a
+- region in the middle of the plot contains ∼59% of customer queries, and represents queries that both read and write persistent data
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65003f83-31e3-4cfc-bda8-e1b05287a65e
+- 4.1 Storage Architecture, and Provisioning
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 650040fd-ad7d-4bdb-a4e6-02f48984c923
+- two limitations in existing persistent data stores
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 6500410c-670b-4f60-97cf-b7426c8aec55
+- First, they fall short of providing the necessary latency and throughput performance to avoid compute tasks being blocks on intermediate data exchange
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65004117-939a-4cd0-b611-7d454b9b9b44
+- Second, they provide much stronger availability and durability semantics than what is needed for intermediate data.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65004120-56e1-4b8f-8977-6f0d1b6f9d64
+- two important design decisions in our ephemeral storage system
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65004134-abb6-4083-9bca-3e01321e2d78
+- First, rather than designing a pure in-memory storage system, we decided to use both memory and local SSDs
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 6500413d-2114-4211-8c02-ce661ca323f9
+- when memory is full, intermediate data is spilled to local SSDs.
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65004155-d742-406a-a299-f8f139cfe9f5
+- while purely in-memory systems can achieve superior performance when entire data ﬁts in memory, they are too restrictive to handle the variety of our target workloads
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: red
+  id:: 650041b5-7053-46ff-8f28-10d8b877ed79
+- The second design decision was to allow intermediate data to spill into remote persistent data store in case the local SSD capacity is exhausted
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 650041de-a136-4143-8325-a07c9c919c61
+- it does not require keeping track of intermediate data location
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65004231-480a-4ee2-9a40-10693b2ad787
+- it alleviates the need for explicitly handling out-of-memory or out-of-disk errors for large queries
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 6500423c-6ebd-4f61-ba3f-2639b2a5d8b3
+- allows to keep our ephemeral storage system thin and highly performant
+  ls-type:: annotation
+  hl-page:: 6
+  hl-color:: yellow
+  id:: 65004249-ddf3-4655-9e82-09730a82f147
+- 4.2 Persistent Data Caching
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 65004289-c2ac-4a81-a8df-3650d0e9dd5a
+- a persistent data ﬁle cannot be cached on any node — Snowﬂake assigns input ﬁle sets for the customer to nodes using consistent hashing over persistent data ﬁle name
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 6500433a-bbea-4be1-9fed-3d9f548d37ce
+- each node uses a simple LRU policy to decide caching and eviction of persistent data ﬁles
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 6500434b-639f-45cb-a57c-25adc7b3a5b4
+- such opportunistic caching of persistent data ﬁles improves the execution time for many queries in Snowﬂake
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 65004361-caad-4cd7-bcd1-b229974a9201
+- intermediate data storage is always prioritized over caching persistent data ﬁles
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 65004373-4f86-4ebf-8f3a-49499d584588
+- Maintaining the right system semantics
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 650043d5-0952-46b3-b5c0-64f5272c1621
+- First, to ensure data consistency, the “view” of persistent ﬁles in ephemeral storage system must be consistent with those in remote persistent data store
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 650043e3-e132-4e02-97a8-9170c191861f
+- by forcing the ephemeral storage system to act as a write-through cache for persistent data ﬁles
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 650043f7-6805-43c0-9078-20e426599686
+  hl-stamp:: 1694516221294
+- Second, consistent hashing of persistent data ﬁles on nodes in a naïve way requires reshufﬂing of cached data when VWs are elastically scaled
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: yellow
+  id:: 65004410-7b3c-4055-9f30-f47d37fa80dc
+- implement a lazy consistent hashing optimization in our ephemeral storage system that avoids such data reshufﬂing altogether
+  ls-type:: annotation
+  hl-page:: 7
+  hl-color:: green
+  id:: 65004429-4db1-479f-83af-be51d29c598a
+- it may be better to prioritize caching a persistent data ﬁle that is going to be accessed by many queries over intermediate data that is accessed by only one
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 650044a3-9474-4aa7-9db8-c7d8cbb0f0dd
+- Second, existing caching mechanisms were designed for two-tier storage system
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 650044b4-8e99-4dd0-8b1a-c6b4dbab641e
+  hl-stamp:: 1694516483737
+- we already have three tiers of hierarchy with compute-local memory, ephemeral storage system and remote persistent data store
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 650044c1-f336-4594-bc81-26643a3eaddd
+- to efﬁciently exploit the deepening storage hierarchy, we need new caching mechanisms that can efﬁciently coordinate caching across multiple tiers
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 650044de-b62a-4cd9-895e-577770e4b329
+- Future Directions
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 650044f1-4a76-4771-885e-0fdda5d2b67a
+- First, since end-to-end query performance depends on both, cache hit rate for persistent data ﬁles and I/O throughput for intermediate data, it is important to optimize how the ephemeral storage system splits capacity between the two
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 65004500-3d1a-4e9d-a957-08078578865f
+- high cache hit rates (avg. hit rate is close to 80% for read-only queries and around 60% for read-write queries).
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 65004519-801c-4203-a12b-68298c62aa19
+- [:span]
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 65004538-cbdb-4614-a032-5a425bb4f37f
+  hl-type:: area
+  hl-stamp:: 1694516531537
+- the storage hierarchy in the cloud will get increasingly deeper
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 6500455a-3a75-4906-bfa0-685576939981
+- Locality-aware task scheduling
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 65004591-9aa0-4899-8502-099d9a3a061f
+- To fully exploit the ephemeral storage system, Snowﬂake colocates each task with persistent data ﬁles that it operates on using a locality-aware scheduling mechanism
+  ls-type:: annotation
+  hl-page:: 8
+  hl-color:: yellow
+  id:: 650045b1-c352-4a32-b6ba-80a864b8c3dd

@@ -668,3 +668,90 @@ file-path:: ../assets/Building_An_Elastic_Query_Engine_on_Disaggregated_Storage_
   hl-page:: 8
   hl-color:: yellow
   id:: 650045b1-c352-4a32-b6ba-80a864b8c3dd
+- for a ﬁxed VW size, each persistent data ﬁle is cached on a speciﬁc node
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 650045db-915f-4f4f-93d1-f6f8a2d34ab4
+- As a result of this scheduling scheme, query parallelism is tightly coupled with consistent hashing of ﬁles on nodes
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 65004621-7f9f-40af-a221-c6596550e647
+- Work stealing
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 6500463c-16a9-4a46-8eba-ae614402d68f
+- It is known that consistent hashing can lead to imbalanced partitions
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 65004652-da99-443b-97f5-af028123c085
+- to avoid overloading of nodes and improve load balance, Snowﬂake uses work stealing, a simple optimization that allows a node to steal a task from another node if the expected completion time of the task
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 65004661-7cde-4b1d-884d-ea0649d6c030
+- This avoids increasing load on an already overloaded node where the task was originally scheduled (note that work stealing happens only when a node is overloaded).
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 65004676-6b86-4d28-b23b-17bd2ebd6bb6
+- it may lead to increased network trafﬁc for intermediate data exchange
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: red
+  id:: 650046a6-0664-47b3-abe6-aa8dace94c74
+- The other extreme is to place all tasks on a single node
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 650046be-3a96-46dd-85c5-a2deda67816c
+- It would be interesting to codesign query schedulers that would pick just the right set of nodes to obtain a sweet spot between the two extremes, and then schedule individual tasks onto these nodes
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 650046ec-0cd6-451b-8ec0-5b6277be6b46
+- its core goals: resource elasticity, that is, scaling of compute and storage resources on an on-demand basis.
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 65006b60-0897-4507-8615-375756810b6e
+- 6.1 Lazy Consistent Hashing
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: yellow
+  id:: 65006b68-bac1-4543-982d-b0d7fa704577
+- One of the challenges that Snowﬂake had to resolve in order to achieve elasticity efﬁciently is related to data management in ephemeral storage system
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: blue
+  id:: 65006be1-7e19-457f-b2b2-1cacdb0648b9
+  hl-stamp:: 1694526438524
+- any ﬁxed partitioning mechanism (in our case, consistent hashing) requires large amounts of data to be reshufﬂed upon scaling of nodes
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: red
+  id:: 65006bfa-cb88-462b-bad3-d7745b2ff4c8
+- moreover, since the very same set of nodes are also responsible for query processing, the system observes a signiﬁcant performance impact during the scaling process
+  ls-type:: annotation
+  hl-page:: 9
+  hl-color:: red
+  id:: 65006c0c-06ac-4aea-bb0f-af25839eb7c1
+- Snowﬂake resolves this challenge using a lazy consistent hashing mechanism
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: green
+  id:: 65006c51-8b67-4412-9bbe-2105e8094ad4
+  hl-stamp:: 1694526551459
+- completely avoids any reshufﬂing of data upon elastic scaling of nodes by exploiting the fact that a copy of cached data is stored at remote persistent data store
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: blue
+  id:: 65006c64-79ab-4a12-9395-829fa0c3134e
+- 6.2 Elasticity Characteristics
+  ls-type:: annotation
+  hl-page:: 10
+  hl-color:: yellow
+  id:: 65006de3-1db3-420c-a41e-2c36ac3379b9

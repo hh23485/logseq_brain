@@ -30,4 +30,17 @@ tags:: [[Books]], [[Python]]
 				  [-1, 1, 2, 3, 4]
 				  ```
 			- 使用 `sort(reverse=True)` 进行逆序排序
-			-
+			- 使用 sorted 传入比较方法进行排序
+				- ``` python
+				  cars = ['bmw', 'audi', 'toyota', 'subaru']
+				  
+				  print(cars)
+				  print(sorted(cars))
+				  print(cars)
+				  ```
+		- 使用 len 获取 list 的长度
+		- 使用负数从后往前访问元素
+- 第四章
+	- 循环
+		- Range(x, y) 生成 [x, y) 的序列用于循环
+		-

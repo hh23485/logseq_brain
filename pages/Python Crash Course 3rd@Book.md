@@ -42,5 +42,28 @@ tags:: [[Books]], [[Python]]
 		- 使用负数从后往前访问元素
 - 第四章
 	- 循环
-		- Range(x, y) 生成 [x, y) 的序列
+		- Range(x, y) 生成 [x, y) 的 range 对象，可用于转换成列表或者用于循环
+			- ``` python
+			  for value in range(1, 6):
+			      print(value)
+			  
+			  numbers = list(range(1, 6))
+			  ```
+	- 聚合函数
+		- min, max, sum 可以应用于 list
+	- 列表推导
+		- ``` python
+		  squares = [value ** 2 for value in range(1, 6)]
+		  print(squares)
+		  ```
+	- 切片
+		- 使用  [start:end:step] 来生成切片，切片并不是对原数据的
+			- ``` python
+			  numbers[:3]
+			  numbers[1:3]
+			  numbers[::2]
+			  numbers[-3:]
+			  numbers[0, 4, 1]
+			  ```
+		- 可以使用 `[:]` 复制一个列宁
 		-

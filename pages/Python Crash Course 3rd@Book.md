@@ -75,4 +75,35 @@ tags:: [[Books]], [[Python]]
 			  
 			  ```
 - 第五章
-	-
+	- 判断
+		- 使用 `in` 判断元素是否在容器中
+			- ``` python
+			  requested_toppings = ['mushrooms', 'onions', 'pineapple']
+			  print('mushrooms' in requested_toppings)
+			  ```
+		- 使用 `not in` 判断元素是否不在容器中
+- 第六章
+	- Dictionaries 字典
+		- 创建一个字典
+			- ``` python
+			  alien_0 = {'color': 'green'}
+			  
+			  ```
+		- 使用 `[<key>]` 访问字典里的值，也可以使用 get
+			- get 主要用于不确定其中是否包含该 key 的情况
+				- get 的第二个参数为不存在时的默认值
+		- 可以直接 `[<key>]` 来添加或者更新字典里的值
+		- `{}` 可以创建一个空字典
+		- 删除同样使用 `del dic[key]`
+		- 循环所有的键值对，dic.items()
+			- ``` python
+			  for k, v in res.items()
+			  	print(k, v)
+			  ```
+			- items() 循环中的每个对象都是 tuple
+			- 如果不适用 items，循环的是所有的 key，但可读性比较差，建议使用 `keys()`
+- 第七章
+	- 输入
+		- input('prompts') 用于提示用户输入，返回值是用户在控制台输入的 字符串
+		-
+-

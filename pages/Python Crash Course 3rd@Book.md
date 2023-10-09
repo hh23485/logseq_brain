@@ -105,5 +105,39 @@ tags:: [[Books]], [[Python]]
 - 第七章
 	- 输入
 		- input('prompts') 用于提示用户输入，返回值是用户在控制台输入的 字符串
+- 第八章
+	- 函数
+		- python 的函数参数支持设置默认值
+		- 如果想要阻止传入的参数，如  list 被函数修改，可以传入 `list_name[:]`
+		- 在形参中使用 `*params` 可以收集所有的未匹配的参数
+			- ``` python
+			  def make_pizza(*toppings):
+			  	print(toppings)
+			  
+			  make_pizza('pepperoni')
+			  make_pizza('mushrooms', 'green peppers', 'extra cheese')
+			  ```
+			- 这里的 params 是一个元组，即便只有一个元素，可以遍历访问
+		- 在形参中使用 `**kwargs` 可以收集所有未匹配的关键字参数
+			- ``` python
+			  def build_profile(first, last, **user_info):
+			      """Build a dictionary containing everything we know about a user."""
+			      user_info['first_name'] = first
+			      user_info['last_name'] = last
+			      return user_info
+			  
+			  user_profile = build_profile('albert', 'einstein',
+			                               location='princeton',
+			                               field='physics')
+			  print(user_profile)
+			  
+			  ```
+	- 导入模块
+		- 使用 import 导入 <name>.py 作为模块，然后用 <name>.<func name> 访问模块中的函数
+		- 使用 from <name> 导入 <func name> 来从 <name>.py 中导入函数
+		- 使用 as 定义别名
+		- 使用 from <name> import * 来导入 <name>.py 中所有的函数 （复制）
+		- import 要放在文件开头除了注释外的最顶位置
+- 第九章
+	- 类
 		-
--

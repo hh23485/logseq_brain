@@ -140,4 +140,27 @@ tags:: [[Books]], [[Python]]
 		- import 要放在文件开头除了注释外的最顶位置
 - 第九章
 	- 类
+- 第十章
+	- 读取文件
+		- ``` python
+		  path = Path('pi_digits.txt')
+		  contents = path.read_text()
+		  print(contents)
+		  ```
+			- 此处返回的结果中，末尾会多一个空行
+				- `path.read_text().rstrip()`
+	- 相对路径和绝对路径
+		- python 的相对路径的起始位置可以通过 `os.chdir(path)` 来设置
+	- 访问文件的行
+		- ``` python
+		  contents = path.read_text()
+		  
+		  lines = contents.splitlines()
+		  for line in lines:
+		      print(line)
+		  ```
+			- 会读出所有的内容之后，再 split
+	- 写文件
+		- `path.write_text(...)`
+	- 异常
 		-

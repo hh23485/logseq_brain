@@ -140,6 +140,14 @@ tags:: [[Books]], [[Python]]
 		- import 要放在文件开头除了注释外的最顶位置
 - 第九章
 	- 类
+		- 导入类
+			- from <file> import <class>
+			- from <file> import <class1>, <class2>
+			- from <file> import *
+		- 样式
+			- 类名用驼峰
+			- 实例和模块名称应该使用小写字母，单词之间添加下划线
+			- 类定义后面都要跟上文档字符串注释来解释类的作用和结构、约定
 - 第十章
 	- 读取文件
 		- ``` python

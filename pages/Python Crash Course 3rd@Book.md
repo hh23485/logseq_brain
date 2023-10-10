@@ -148,7 +148,7 @@ tags:: [[Books]], [[Python]]
 		  print(contents)
 		  ```
 			- 此处返回的结果中，末尾会多一个空行
-				- `path.read_text().rstrip()`
+				- `path.read_text(<encoding>).rstrip()`
 	- 相对路径和绝对路径
 		- python 的相对路径的起始位置可以通过 `os.chdir(path)` 来设置
 	- 访问文件的行
@@ -163,4 +163,8 @@ tags:: [[Books]], [[Python]]
 	- 写文件
 		- `path.write_text(...)`
 	- 异常
+		- `try...except...else`
+- 第十一章
+	- pytest
+		- 测试方法以 `test_` 开头
 		-

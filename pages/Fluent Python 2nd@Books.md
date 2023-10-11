@@ -76,4 +76,12 @@ tags:: [[Python]], [[Books]]
 			  ```
 		- 但所有的数据都是一次性生成，但好在比 map/filter 更快
 	- 生成器表达式
+		- 生成器构造的是一个迭代器，可以不断的产出新的元素，而不是一次性生成所有
+		- 和列表推导器的差别是，不使用方括号而使用圆括号
+			- ``` python
+			  >>> colors = ['black', 'white']
+			  >>> sizes = ['S', 'M', 'L']
+			  >>> for tshirt in (f'{c} {s}' for c in colors for s in sizes):  
+			  ...     print(tshirt)
+			  ```
 		-

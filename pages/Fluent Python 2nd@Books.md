@@ -67,5 +67,13 @@ tags:: [[Python]], [[Books]]
 				  >>> last  2
 				  
 				  ```
+		- 推导器可以用于多个循环
+			- ``` python
+			  >>> tshirts = [(color, size) for color in colors for size in sizes]  #+BEGIN_EXPORT hiccup
+			  >>> tshirts
+			  [('black', 'S'), ('black', 'M'), ('black', 'L'), ('white', 'S'),
+			   ('white', 'M'), ('white', 'L')]
+			  ```
+		- 但所有的数据都是一次性生成，但好在比 map/filter 更快
 	- 生成器表达式
 		-

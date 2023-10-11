@@ -27,5 +27,45 @@ tags:: [[Python]], [[Books]]
 				  |  属性描述符 | `__get__ __set__ __delete__ __set_name__` |
 				  |  抽象基类 | `__instancecheck__ __subclasscheck__` |
 				  |  类元编程 | `__prepare__ __init_subclass__ __class_getitem__ __mro_entries__` |
-			- 数学
-				-
+			- 数学运算
+				- 各种基础运算都有对应的特殊方法来实现
+				- 如果第一个操作数的响应特殊方法无法使用，就会在第二个操作数上调用一个反向操作的特殊方法
+	- 进一步阅读
+		- [“Data Model” chapter (fpy.li)](https://fpy.li/dtmodel)
+		- [Python in a Nutshell, 3rd ed. (fpy.li)](https://fpy.li/pynut3) 对数据模型的访问机制的描述
+		- [The Art of the Metaobject Protocol (mit.edu)](https://mitpress.mit.edu/books/art-metaobject-protocol) 解释了元对象协议的概念，其中举了 python 数据模型的例子
+			- 书作者也是 AspectJ 的作者
+			- 元对象是构建语言核心结构的 API，如果足够灵活就可以扩展出新的编程范式
+- 第二章
+	- 序列分类
+		- 按结构
+			- 容器序列
+				- 可以容纳不同类型的项目
+			- 扁平序列
+				- str, bytes, array.array
+			- ![image.png](../assets/image_1697004762789_0.png)
+	- 可变性
+		- 可变
+			- list, bytearray, array.array, collections.deque
+		- 不可变
+			- tuple, str, bytes
+		- ![image.png](../assets/image_1697004925620_0.png)
+	- python 中每个对象都有一个带元数据的头部，以 float 为例
+		- ob_refcnt: 引用计数
+		- ob_type: 指向对象类型的指针
+		- ob_fval: 一个包含 float 值的 C double
+	- 列表推导器
+		- ``` python
+		  symbols = '$¢£¥€¤'
+		  codes = [ord(symbol) for symbol in symbols]
+		  
+		  ```
+			- symbol 这里创建的变量是一个局部变量，不会和外面冲突
+			- 但如果是用 `:=` 来分配的话，就可以在外界访问
+				- ``` python
+				  >>> codes = [last := ord(c) for c in x]
+				  >>> last  2
+				  
+				  ```
+	- 生成器表达式
+		-

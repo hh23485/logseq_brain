@@ -175,4 +175,148 @@ tags:: [[Books]], [[Python]]
 - 第十一章
 	- pytest
 		- 测试方法以 `test_` 开头
-		-
+		- 使用 `@pytest.fixture` 来创建统一的用于测试的初始对象
+			- ``` python
+			  import pytest
+			  from survey import AnonymousSurvey
+			  
+			  ❶ @pytest.fixture
+			  ❷ def language_survey():
+			      """A survey that will be available to all test functions."""
+			      question = "What language did you first learn to speak?"
+			      language_survey = AnonymousSurvey(question)
+			      return language_survey
+			  
+			  ❸ def test_store_single_response(language_survey):
+			      """Test that a single response is stored properly."""
+			  ❹     language_survey.store_response('English')
+			      assert 'English' in language_survey.responses
+			  
+			  ❺ def test_store_three_responses(language_survey):
+			      """Test that three individual responses are stored properly."""
+			      responses = ['English', 'Spanish', 'Mandarin']
+			      for response in responses:
+			  ❻         language_survey.store_response(response)
+			  
+			      for response in responses:
+			          assert response in language_survey.responses
+			  
+			  ```
+- 第十五章
+	- 生成数据
+		- Matplotlib
+			- 连点成线
+				- ``` python
+				  import matplotlib.pyplot as plt
+				  
+				  input_values = [1, 2, 3, 4, 5]
+				  squares = [1, 4, 9, 16, 25]
+				  fig, ax = plt.subplots()
+				  ax.plot(input_values, squares)
+				  
+				  plt.show()
+				  ```
+				- `ax` 就是坐标轴，可以向其中添加相关属性
+					- ``` python
+					  ❶ ax.plot(squares, linewidth=3)
+					  
+					  # Set chart title and label axes.
+					  ❷ ax.set_title("Square Numbers", fontsize=24)
+					  ❸ ax.set_xlabel("Value", fontsize=14)
+					  ax.set_ylabel("Square of Value", fontsize=14)
+					  
+					  # Set size of tick labels.
+					  ❹ ax.tick_params(labelsize=14)
+					  
+					  ```
+					- `linewidth` 控制线条粗细
+					- `tick_params` 控制刻度线标题的尺寸
+			- 设置样式
+				- 在调用 subplots 之前设置 `plt.style.use('<style>')`
+					- 可以用 `plt.style.available` 来获取所有可用的 style
+			- 画点
+				- ``` python
+				  fig, ax = plt.subplots()
+				  ax.scatter(2, 4)
+				  
+				  ```
+			- 设置坐标轴范围
+				- ``` python
+				  ax.axis([0, 1100, 0, 1_100_000])
+				  ```
+			- 设置点的颜色
+				- ``` python
+				  ax.scatter(x_values, y_values, color=(0, 0.8, 0), s=10)
+				  
+				  ```
+			- 自动分配颜色
+				- ``` python
+				  ax.scatter(input_values, squares, c=squares, cmap=plt.cm.Blues, s=10)
+				  
+				  ```
+				- `cmap` 会用来控制一组颜色的映射关系，按 `c` 传入的值进行映射
+			- 多次使用 ax.plot 可以绘制多条线
+			- 使用 ax.fill_between 可以在两条线之间填充颜色
+				- ``` python
+				  ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
+				  ```
+			- 保存图表
+				- ``` python
+				  plt.savefig('squares_plot.png', bbox_inches='tight')
+				  ```
+		- Plotly
+			- 直方图
+				- ``` python
+				  import plotly.express as px
+				  
+				  # 打开在新的 html 标签中
+				  fig = px.bar(x=poss_results, y=frequencies)
+				  fig.show()
+				  
+				  ```
+			- 添加属性
+				- ``` python
+				  title = "Results of Rolling One D6 1,000 Times"
+				  labels = {'x': 'Result', 'y': 'Frequency of Result'}
+				  fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)
+				  
+				  ```
+			- 绘制地图
+				- `px.scatter_geo` 可以绘制一个地图，传入经纬度来展示
+				- 颜色
+					- ```
+					  fig = px.scatter_geo(lat=lats, lon=lons, size=mags, title=title,
+					           color=mags,
+					           color_continuous_scale='Viridis',
+					           labels={'color':'Magnitude'},
+					           projection='natural earth',
+					      )
+					  ```
+					- 使用 color 来设置颜色
+					- 使用 color_continuous_scale 来设置颜色比例尺
+						- 比例尺的表现为 labels，但这不代表实际含义
+					- ![](https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781098156664/files/image_fi/502703c16/f16009.png)
+				- 添加悬停文本
+					- ```
+					  hover_name=eq_titles,
+					  ```
+					- ![](https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781098156664/files/image_fi/502703c16/f16010.png)
+			- 保存图表
+				- ``` python
+				  fig.write_html('dice_visual_d6d10.html')
+				  ```
+- 第十六章
+	- 下载数据
+		- 加载 csv 数据
+			- ``` python
+			  lines = path.read_text().splitlines()
+			  reader = csv.reader(lines)
+			  
+			  ```
+		- 读取 header
+			- `header = next(reader)`
+	- str -> time
+		- ```
+		  first_date = datetime.strptime('2021-07-01', '%Y-%m-%d')
+		  ```
+	-

@@ -84,4 +84,6 @@ tags:: [[Python]], [[Books]]
 			  >>> for tshirt in (f'{c} {s}' for c in colors for s in sizes):  
 			  ...     print(tshirt)
 			  ```
+	- 切片
+		- 切片实际上是构造了一个 slice 对象，并传递给容器的 __getitem__ 方法，来够造一个新的容器
 		-

@@ -84,6 +84,124 @@ tags:: [[Python]], [[Books]]
 			  >>> for tshirt in (f'{c} {s}' for c in colors for s in sizes):  
 			  ...     print(tshirt)
 			  ```
+	- Tuple 是一个不可变对象，但是其引用的对象可能是可变的
+		- 在 python 中如果想要知道一个对象是不是完全不可变，值是不是确定的，可以使用如下方法
+			- ``` python
+			  >>> def fixed(o):
+			  ...     try:
+			  ...         hash(o)
+			  ...     except TypeError:
+			  ...         return False
+			  ...     return True
+			  ...
+			  >>> tf = (10, 'alpha', (1, 2))
+			  >>> tm = (10, 'alpha', [1, 2])
+			  >>> fixed(tf)
+			  True
+			  >>> fixed(tm)
+			  False
+			  ```
+			- hash 对于非固定不变的对象，就会抛异常
+	- 使用 * 解包
+		- ``` python
+		  >>> a, b, *rest = range(5)
+		  >>> a, b, rest
+		  (0, 1, [2, 3, 4])
+		  >>> a, b, *rest = range(3)
+		  >>> a, b, rest
+		  (0, 1, [2])
+		  >>> a, b, *rest = range(2)
+		  >>> a, b, rest
+		  (0, 1, [])
+		  
+		  >>> a, *body, c, d = range(5)
+		  >>> a, body, c, d
+		  (0, [1, 2], 3, 4)
+		  
+		  >> def fun(a, b, c, d, *rest):
+		  ...     return a, b, c, d, rest
+		  ...
+		  >>> fun(*[1, 2], 3, *range(4, 7))
+		  (1, 2, 3, 4, (5, 6))
+		  
+		  ```
+	- 嵌套解包
+		- `[record] = query_returning_single_row()` 用于 返回值为 list 但只有一个元素
+		- `[[field]] = query_returning_single_row_with_single_field()` 用于 返回值为 list，但只有一个元素，且元素只有一个字段
+	- 模式匹配中解包
+		- ``` python
+		      def handle_command(self, message):
+		          match message:  1
+		              case ['BEEPER', frequency, times]:
+		                  self.beep(times, frequency)
+		              case ['NECK', angle]:
+		                  self.rotate_neck(angle)
+		              case ['LED', ident, intensity]:
+		                  self.leds[ident].set_brightness(ident, intensity)
+		              case ['LED', ident, red, green, blue]:
+		                  self.leds[ident].set_color(ident, red, green, blue)
+		              case _:
+		                  raise InvalidCommand(message)
+		  ```
+			- 第一个元素都是字符串，然后，其他元素会被逐步放置
+		- 另外一个例子
+			- ``` python
+			  metro_areas = [
+			      ('Tokyo', 'JP', 36.933, (35.689722, 139.691667)),
+			      ('Delhi NCR', 'IN', 21.935, (28.613889, 77.208889)),
+			      ('Mexico City', 'MX', 20.142, (19.433333, -99.133333)),
+			      ('New York-Newark', 'US', 20.104, (40.808611, -74.020386)),
+			      ('São Paulo', 'BR', 19.649, (-23.547778, -46.635833)),
+			  ]
+			  
+			  def main():
+			      print(f'{"":15} | {"latitude":>9} | {"longitude":>9}')
+			      for record in metro_areas:
+			          match record:  
+			              case [name, _, _, (lat, lon)] if lon <= 0:  
+			                  print(f'{name:15} | {lat:9.4f} | {lon:9.4f}')
+			  
+			  ```
+		- 被匹配的可以是元组或者列表，可嵌套
+		- 规则和普通的解包是相同的，也可以使用 `*`
+		- 也可以自己设置格式 `case [str(name), *_, (float(lat), float(lon))]`
+		- `_` 可以匹配任何变量，`*_` 可以匹配任意数量的项目，而不绑定到任何变量
+	- 切片也用作 list 的操作控制
+		- ``` python
+		  >>> l = list(range(10))
+		  >>> l
+		  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+		  >>> l[2:5] = [20, 30]
+		  >>> l
+		  [0, 1, 20, 30, 5, 6, 7, 8, 9]
+		  >>> del l[5:7]
+		  >>> l
+		  [0, 1, 20, 30, 5, 8, 9]
+		  >>> l[3::2] = [11, 22]
+		  >>> l
+		  [0, 1, 20, 11, 5, 22, 9]
+		  >>> l[2:5] = 100  1
+		  Traceback (most recent call last):
+		    File "<stdin>", line 1, in <module>
+		  TypeError: can only assign an iterable
+		  >>> l[2:5] = [100]
+		  >>> l
+		  [0, 1, 100, 22, 9]
+		  ```
+	- 对序列使用 + 和 *
+		- + 可以用于拼接
+		- * 可以用于重复序列中的值
+			- ``` python
+			  >>> l = [1, 2, 3]
+			  >>> l * 5
+			  [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+			  >>> 5 * 'abcd'
+			  'abcdabcdabcdabcdabcd'
+			  
+			  ```
+	- 自增操作
+		- 对于 python 自带的可变序列，都实现了 `__iadd__`
+		-
 	- 切片
 		- 切片实际上是构造了一个 slice 对象，并传递给容器的 __getitem__ 方法，来够造一个新的容器
 		- 也可以如下操作

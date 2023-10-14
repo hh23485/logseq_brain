@@ -30,7 +30,8 @@ tags:: [[Books]], [[Python]]
 				  [-1, 1, 2, 3, 4]
 				  ```
 			- 使用 `sort(reverse=True)` 进行逆序排序
-			- 使用 sorted 传入比较方法进行排序
+			- 使用 sorted 排序
+			  id:: 652a5a67-68b2-4c96-84d2-c5738766f844
 				- ``` python
 				  cars = ['bmw', 'audi', 'toyota', 'subaru']
 				  

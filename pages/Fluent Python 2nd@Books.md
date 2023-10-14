@@ -244,5 +244,26 @@ tags:: [[Python]], [[Books]]
 			  [0, 1, 20, 11, 5, 22, 9]
 			  
 			  ```
+	- ((652a5a67-68b2-4c96-84d2-c5738766f844)) 可以传入一个 key
+		- key 可以执行用于排序的元素，例如使用 key = len 或者 key=str.lower 来影响元素的排序
+			- ``` python
+			  >>> fruits = ['grape', 'raspberry', 'apple', 'banana']
+			  >>> sorted(fruits)
+			  ['apple', 'banana', 'grape', 'raspberry']  1
+			  >>> fruits
+			  ['grape', 'raspberry', 'apple', 'banana']  2
+			  >>> sorted(fruits, reverse=True)
+			  ['raspberry', 'grape', 'banana', 'apple']  3
+			  >>> sorted(fruits, key=len)
+			  ['grape', 'apple', 'banana', 'raspberry']  4
+			  >>> sorted(fruits, key=len, reverse=True)
+			  ['raspberry', 'banana', 'grape', 'apple']  5
+			  >>> fruits
+			  ['grape', 'raspberry', 'apple', 'banana']  6
+			  >>> fruits.sort()                          7
+			  >>> fruits
+			  ['apple', 'banana', 'grape', 'raspberry']  8
+			  
+			  ```
+		- 默认是使用字典序排序
 	-
--

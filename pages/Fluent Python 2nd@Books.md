@@ -1,6 +1,7 @@
 tags:: [[Python]], [[Books]]
 
 - 第一章
+  collapsed:: true
 	- namedtuple
 		- 创建的 tuple 的名称只用于展示，返回的值才用于创建对象
 	- 特殊函数通常用于被各种内部逻辑隐式调用
@@ -37,6 +38,7 @@ tags:: [[Python]], [[Books]]
 			- 书作者也是 AspectJ 的作者
 			- 元对象是构建语言核心结构的 API，如果足够灵活就可以扩展出新的编程范式
 - 第二章
+  collapsed:: true
 	- 序列分类
 		- 按结构
 			- 容器序列
@@ -415,6 +417,7 @@ tags:: [[Python]], [[Books]]
 			- [“Less copies in Python with the buffer protocol and memoryviews” (fpy.li)](https://fpy.li/2-28)
 		- 官方的排序指南 [“Sorting HOW TO” (fpy.li)](https://fpy.li/2-22)
 - 第三章
+  collapsed:: true
 	- 字典
 		- dict 的构造可以从任何键值结构创建，只要使用 `{ }`
 			- 推导
@@ -580,7 +583,95 @@ tags:: [[Python]], [[Books]]
 				  ```
 	- 需要实现一个 dict 子类的时候，使用 `UserDict` 而不是直接继承自 `dict`
 		- UserDict 并不是 dict 子类，而是使用组合的方式，在内部持有了一个 dict 实例
-		- 这样可以在必要的时候才重写一些函数，且重写的时候仍然可以依赖 dict 的实现
-			- ![image.png](../assets/image_1697441608170_0.png)
-			-
--
+			- `UserDict` 扩展了 `abc.MutableMapping`
+			- ![image.png](../assets/image_1697441823129_0.png)
+		- 这样可以在必要的时候才重写一些函数，且重写的时候仍然可以依赖 dict 已经实现的功能
+			- ![image.png](../assets/image_1697441620929_0.png)
+			- 比之前直接实现 dict 需要更少的关注 contains/setitem 的细节，而只需要填写必要的代理逻辑即可
+	- Inmutable Mapping
+		- Python 中没有实现只读的 map，但可以使用 types 中提供的 MappingProxyType
+		- ``` python
+		  >>> from types import MappingProxyType
+		  >>> d = {1: 'A'}
+		  >>> d_proxy = MappingProxyType(d) #构造代理
+		  >>> d_proxy
+		  mappingproxy({1: 'A'})
+		  >>> d_proxy[1]  
+		  'A'
+		  
+		  >>> d_proxy[2] = 'x'   #拒绝修改
+		  Traceback (most recent call last):
+		    File "<stdin>", line 1, in <module>
+		  TypeError: 'mappingproxy' object does not support item assignment
+		  
+		  >>> d[2] = 'B' #但是可以向原来的 map 添加
+		  >>> d_proxy  # 仍然可以通过代理显示变化
+		  mappingproxy({1: 'A', 2: 'B'})
+		  >>> d_proxy[2]
+		  'B'
+		  >>>
+		  ```
+	- set
+		- 使用  {1,2,3 } 就可以创建一个 set
+			- 比 set({1,2,3}) 要更高效
+		- 但如果需要创建一个空的 set，要使用 set()，而不是 {}，否则创建的会是一个 dict
+	- set 的结构和方法
+		- ![image.png](../assets/image_1697444665735_0.png)
+	- 进一步阅读
+		- Python 标准文档中的示例 [“collections—Container datatypes” (fpy.li)](https://fpy.li/collec)
+		- Python 的 PyPy 是第一个实现了紧凑字典的 Python 解释器 [“Faster, more memory efficient and more ordered dictionaries on PyPy” (fpy.li)](https://fpy.li/3-20)
+		- 一些 dict 特性的展示
+			- [“The Dictionary Even Mightier” (fpy.li)](https://fpy.li/3-22)
+			- [“The Mighty Dictionary” (fpy.li)](https://fpy.li/3-23)
+			- [“Modern Dictionaries” (fpy.li)](https://fpy.li/3-24)
+		- 对于 `True` 和 json 中的 `true`，你可以使用一些方法来让他们表现相同，来获得可以直接拷贝的类型
+			- ``` python
+			  >>> true, false, null = True, False, None
+			  >>> fruit = {
+			  ...     "type": "banana",
+			  ...     "avg_weight": 123.2,
+			  ...     "edible_peel": false,
+			  ...     "species": ["acuminata", "balbisiana", "paradisiaca"],
+			  ...     "issues": null,
+			  ... }
+			  >>> fruit
+			  {'type': 'banana', 'avg_weight': 123.2, 'edible_peel': False,
+			  'species': ['acuminata', 'balbisiana', 'paradisiaca'], 'issues': None}
+			  ```
+		- 其他
+			- [“Saving Memory with __slots__” (oreilly.com)](https://learning.oreilly.com/library/view/fluent-python-2nd/9781492056348/ch11.html#slots_section)
+- 第四章
+  collapsed:: true
+	- 获取当前环境相关的编码设置
+		- ``` python
+		  import locale
+		  import sys
+		  - expressions = """
+		        locale.getpreferredencoding()
+		        type(my_file)
+		        my_file.encoding
+		        sys.stdout.isatty()
+		        sys.stdout.encoding
+		        sys.stdin.isatty()
+		        sys.stdin.encoding
+		        sys.stderr.isatty()
+		        sys.stderr.encoding
+		        sys.getdefaultencoding()
+		        sys.getfilesystemencoding()
+		    """
+		  - my_file = open('dummy', 'w')
+		  - for expression in expressions.split():
+		    value = eval(expression)
+		    print(f'{expression:>30} -> {value!r}')
+		  ```
+	- Windows 上的执行时的编码和 stdout 的编码会是完全不同的值，很奇妙
+		- ```
+		  Z:\>python default_encodings.py > encodings.log # 会得到和上面不同的结果
+		  ```
+	- 中间省略了，没看
+	- 正则表达式中的 str 和 bytes
+		- 正则表达式如果对于输入也使用 bytes，那么 regex 也可以使用 bytes 来编译
+		- regex 有参数 `re.ASCII` 来限制`\w`, `\W`, `\b`, `\B`, `\d`, `\D`, `\s`, 和`\S` 等参数只匹配 `ASCII`
+- 第五章
+	- Data Class Builder
+		-

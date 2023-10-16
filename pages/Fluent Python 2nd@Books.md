@@ -521,5 +521,66 @@ tags:: [[Python]], [[Books]]
 		- 自 3.6 版本开始，内置的 dict 也会保持键的顺序，所以使用 `OrderedDict` 的常见原因是
 		- 带有一个 `move_to_end()` 方法可以调整顺序
 		- 比 `dict` 更擅长重新排序，空间效率、插入性能都是次要的
-		-
+	- `ChainMap`
+		- 像是一个层次的 dict，可以按顺序将多个 dict 组织起来，在查询时按照顺序从第一个 dict 开始查找
+		- ``` python
+		  >>> d1 = dict(a=1, b=3)
+		  >>> d2 = dict(a=2, b=4, c=6)
+		  >>> from collections import ChainMap
+		  >>> chain = ChainMap(d1, d2)
+		  >>> chain['a']
+		  1
+		  >>> chain['c']
+		  6
+		  ```
+		- ``` python
+		  >>> chain['c'] = -1
+		  >>> d1
+		  {'a': 1, 'b': 3, 'c': -1}
+		  >>> d2
+		  {'a': 2, 'b': 4, 'c': 6}
+		  ```
+		- 对于环境变量的、上下文的设置非常有效
+			- ``` python
+			  import builtins
+			  pylookup = ChainMap(locals(), globals(), vars(builtins))
+			  ```
+	- `collections.Counter`
+		- ``` python
+		  >>> ct = collections.Counter('abracadabra')
+		  >>> ct
+		  Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+		  >>> ct.update('aaaaazzz')
+		  >>> ct
+		  Counter({'a': 10, 'z': 3, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+		  >>> ct.most_common(3)
+		  [('a', 10), ('z', 3), ('b', 2)]
+		  ```
+		- 提供了一些有意思的接口
+			- most_common 来获取 top n 的元素
+			- total 所有元素总计数
+			- elements 获取所有的元素，返回的是一个迭代类型，可以用于排序或者转换成 list
+			- 也可以使用  + - | 来合并、删除两个 dict
+				- ``` python
+				  c = Counter(a=3, b=1)
+				  **>>> **d = Counter(a=1, b=2)
+				  **>>> **c + d                       *# add two counters together:  c[x] + d[x]*
+				  Counter({'a': 4, 'b': 3})
+				  **>>> **c - d                       *# subtract (keeping only positive counts)*
+				  Counter({'a': 2})
+				  **>>> **c & d                       *# intersection:  min(c[x], d[x])*
+				  Counter({'a': 1, 'b': 1})
+				  **>>> **c | d                       *# union:  max(c[x], d[x])*
+				  Counter({'a': 3, 'b': 2})
+				  ```
+			- 如果想要针对非单个字母的，需要手动添加
+				- ``` python
+				  c = Counter({'red': 4, 'blue': 2})      # a new counter from a mapping
+				  c = Counter(cats=4, dogs=8)             # a new counter from keyword args
+				  ```
+	- 需要实现一个 dict 子类的时候，使用 `UserDict` 而不是直接继承自 `dict`
+		- UserDict 并不是 dict 子类，而是使用组合的方式，在内部持有了一个 dict 实例
+		- 这样可以在必要的时候才重写一些函数，且重写的时候仍然可以依赖 dict 的实现
+			- ![image.png](../assets/image_1697441608170_0.png)
 			-
+-

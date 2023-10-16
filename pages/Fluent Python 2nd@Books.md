@@ -166,7 +166,7 @@ tags:: [[Python]], [[Books]]
 		- 规则和普通的解包是相同的，也可以使用 `*`
 		- 也可以自己设置格式 `case [str(name), *_, (float(lat), float(lon))]`
 		- `_` 可以匹配任何变量，`*_` 可以匹配任意数量的项目，而不绑定到任何变量
-	- 切片也用作 list 的操作控制
+	- 切片也用作 `list` 的操作控制
 		- ``` python
 		  >>> l = list(range(10))
 		  >>> l
@@ -265,5 +265,261 @@ tags:: [[Python]], [[Books]]
 			  ['apple', 'banana', 'grape', 'raspberry']  8
 			  
 			  ```
-		- 默认是使用字典序排序
-	-
+		- python 使用的排序算法是 [[Timsort]]，是一种自适应算法，根据数据的有序程度切换插入排序和归并的排序策略
+	- 对于只包含数字的列表，使用 `array.array` 的效率会更高
+		- 支持所有的可变序列操作 `.pop`, `.insert`, `.extend`
+		- 创建时候需要提供一个类型码来告诉 python 如何存储数组中每个项的底层 C 类型
+			- ``` python
+			  >>> from array import array  1
+			  >>> from random import random
+			  >>> floats = array('d', (random() for i in range(10**7)))  2    #设置为 d, double
+			  >>> floats[-1]  3
+			  0.07802343889111107
+			  >>> fp = open('floats.bin', 'wb')
+			  >>> floats.tofile(fp)  4
+			  >>> fp.close()  # 存储大量浮点数到文件
+			  
+			  >>> floats2 = array('d')  5
+			  >>> fp = open('floats.bin', 'rb')
+			  >>> floats2.fromfile(fp, 10**7)  6 #还原大量浮点数
+			  >>> fp.close()
+			  
+			  >>> floats2[-1]  7
+			  0.07802343889111107
+			  >>> floats2 == floats  8
+			  True
+			  
+			  ```
+		- 和 list 相比还有一些特别地方
+			- 支持 s.byteswap()，对数组中所有的 item 进行字节交换以转换字节序
+			- 支持 s.copy()
+			- s.__deepcopy__() 对 copy.deepcopy 进行了优化
+			- 支持 s.fromlist(l) 来从列表中添加
+			- s.itemsize 获取每个数组项的字节长度
+			- 不支持 s.sort()
+				- 需要使用 a = array.array(a.typecode, sorted(a)) 重新构造一个数组
+			- s.typecode 获取标识 item 的 C 类型
+	- memoryview
+		- 一共钟祥内存序列类型
+		- 处理数组的切片而无需复制字节，受到了 [[NumPy]] 的启发
+		- ``` python
+		  >>> from array import array
+		  >>> octets = array('B', range(6))
+		  
+		  # 从 array 构造了 memoryview
+		  >>> m1 = memoryview(octets)
+		  
+		  # 转换为 list
+		  >>> m1.tolist()
+		  [0, 1, 2, 3, 4, 5]
+		  
+		  # 转换格式，但没有复制字节
+		  >>> m2 = m1.cast('B', [2, 3])
+		  >>> m2.tolist()
+		  [[0, 1, 2], [3, 4, 5]]
+		  >>> m3 = m1.cast('B', [3, 2])
+		  >>> m3.tolist()
+		  [[0, 1], [2, 3], [4, 5]]
+		  
+		  # 对 memoryview 的修改，会修改到源数据
+		  >>> m2[1,1] = 22
+		  >>> m3[1,1] = 33
+		  >>> octets  7
+		  array('B', [0, 1, 2, 33, 22, 5])
+		  
+		  ```
+	- 对于高级复杂的数据处理要求，可以使用 [[NumPy]]
+		- ``` python
+		  >>> from array import array
+		  >>> octets = array('B', range(6))  1
+		  >>> m1 = memoryview(octets)  2
+		  >>> m1.tolist()
+		  [0, 1, 2, 3, 4, 5]
+		  >>> m2 = m1.cast('B', [2, 3])  3
+		  >>> m2.tolist()
+		  [[0, 1, 2], [3, 4, 5]]
+		  >>> m3 = m1.cast('B', [3, 2])  4
+		  >>> m3.tolist()
+		  [[0, 1], [2, 3], [4, 5]]
+		  >>> m2[1,1] = 22  5
+		  >>> m3[1,1] = 33  6
+		  >>> octets  7
+		  array('B', [0, 1, 2, 33, 22, 5])
+		  
+		  ```
+		- 也同样支持从文件加载、保存和操作
+			- ``` python
+			  >>> import numpy
+			  >>> floats = numpy.loadtxt('floats-10M-lines.txt') #加载数据
+			  >>> floats[-3:]
+			  array([ 3016362.69195522,   535281.10514262,  4566560.44373946])
+			  >>> floats *= .5 #矩阵操作
+			  >>> floats[-3:]
+			  array([ 1508181.34597761,   267640.55257131,  2283280.22186973]) #逆向操作
+			  
+			  >>> from time import perf_counter as pc
+			  >>> t0 = pc(); floats /= 3; pc() - t0    #计算时间
+			  0.03690556302899495
+			  
+			  >>> numpy.save('floats-10M', floats)    #保存到文件
+			  >>> floats2 = numpy.load('floats-10M.npy', 'r+')
+			  >>> floats2 *= 6
+			  >>> floats2[-3:]
+			  memmap([ 3016362.69195522,   535281.10514262,  4566560.44373946])
+			  
+			  ```
+	- deque
+		- 双向队列，collections.deque 用来创建一个**线程安全**的双端队列
+		- 可以设置为有界
+			- ``` python
+			  >>> from collections import deque
+			  >>> dq = deque(range(10), maxlen=10)
+			  >>> dq
+			  deque([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)
+			  
+			  >>> dq.rotate(3) #旋转
+			  >>> dq
+			  deque([7, 8, 9, 0, 1, 2, 3, 4, 5, 6], maxlen=10)
+			  
+			  >>> dq.rotate(-4)  #逆转4个
+			  >>> dq
+			  deque([1, 2, 3, 4, 5, 6, 7, 8, 9, 0], maxlen=10)
+			  
+			  >>> dq.appendleft(-1)  #从左边添加
+			  >>> dq
+			  deque([-1, 1, 2, 3, 4, 5, 6, 7, 8, 9], maxlen=10)
+			  
+			  >>> dq.extend([11, 22, 33])  #从右边添加
+			  >>> dq
+			  deque([3, 4, 5, 6, 7, 8, 9, 11, 22, 33], maxlen=10)
+			  
+			  >>> dq.extendleft([10, 20, 30, 40])  #按顺序从左边添加
+			  >>> dq
+			  deque([40, 30, 20, 10, 3, 4, 5, 6, 7, 8], maxlen=10)
+			  
+			  ```
+			- `maxlen` 设置了一个上界
+			- 已满 deque 中，继续往下塞，会导致丢弃另一端的 item
+		- Python 标准库包实现了其他队列
+			- queue
+			- multiprocessing
+			- asyncio
+			- heapq
+	- 扩展阅读
+	  tags:: 扩展阅读
+		- NumPy 的书籍
+			- [From Python to NumPy (fpy.li)](https://fpy.li/2-31)
+			- [Python Data Science Handbook (fpy.li)](https://fpy.li/2-29)
+			- [Python for Data Analysis (fpy.li)](https://fpy.li/2-30)
+		- memoryview
+			- [“Less copies in Python with the buffer protocol and memoryviews” (fpy.li)](https://fpy.li/2-28)
+		- 官方的排序指南 [“Sorting HOW TO” (fpy.li)](https://fpy.li/2-22)
+- 第三章
+	- 字典
+		- dict 的构造可以从任何键值结构创建，只要使用 `{ }`
+			- 推导
+				- ``` python
+				  >>> dial_codes = [
+				  ...     (880, 'Bangladesh'),
+				  ...     (55,  'Brazil'),
+				  ...     (86,  'China'),
+				  ...     (91,  'India'),
+				  ...     (62,  'Indonesia'),
+				  ...     (81,  'Japan'),
+				  ...     (234, 'Nigeria'),
+				  ...     (92,  'Pakistan'),
+				  ...     (7,   'Russia'),
+				  ...     (1,   'United States'),
+				  ... ]
+				  >>> country_dial = {country: code for code, country in dial_codes}
+				  
+				  ```
+			- 解包映射
+				- ``` python
+				  >>> def dump(**kwargs):
+				  ...     return kwargs
+				  ...
+				  >>> dump(**{'x': 1}, y=2, **{'z': 3})
+				  {'x': 1, 'y': 2, 'z': 3}
+				  
+				  ```
+			- 使用 `|` 或者 `|=` 合并两个 dict
+				- ``` python
+				  >>> d1 = {'a': 1, 'b': 3}
+				  >>> d2 = {'a': 2, 'b': 4, 'c': 6}
+				  >>> d1 | d2
+				  {'a': 2, 'b': 4, 'c': 6}
+				  
+				  
+				  >>> d1
+				  {'a': 1, 'b': 3}
+				  >>> d1 |= d2
+				  >>> d1
+				  {'a': 2, 'b': 4, 'c': 6}
+				  
+				  ```
+		- 字典也可以进行模式匹配和映射（匹配任何 `collections.abc.Mapping`)
+			- 例如从某种半结构数据中方便的提取数据和匹配
+				- ``` python
+				  def get_creators(record: dict) -> list:
+				      match record:
+				          case {'type': 'book', 'api': 2, 'authors': [*names]}:
+				              return names
+				          case {'type': 'book', 'api': 1, 'author': name}:
+				              return [name]
+				          case {'type': 'book'}:
+				              raise ValueError(f"Invalid 'book' record: {record!r}")
+				          case {'type': 'movie', 'director': name}:
+				              return [name]
+				          case _:
+				              raise ValueError(f'Invalid record: {record!r}')
+				  
+				  ```
+			- 也可以使用 **extra 来收集额外的键值对
+				- ``` python
+				  >>> food = dict(category='ice cream', flavor='vanilla', cost=199)
+				  >>> match food:
+				  ...     case {'category': 'ice cream', **details}:
+				  ...         print(f'Ice cream details: {details}')
+				  ...
+				  Ice cream details: {'flavor': 'vanilla', 'cost': 199}
+				  ```
+	- 什么是可哈希的
+		- #+BEGIN_QUOTE
+		  如果一个对象具有在其生命周期内永远不会改变的哈希码（它需要一个 `__hash__()` 方法），并且可以与其他对象进行比较（它需要一个 `__eq__()` 方法），则该对象是可哈希的。具有相等比较的可哈希对象必须具有相同的哈希码
+		  #+END_QUOTE
+		- ``` python
+		  >>> tt = (1, 2, (30, 40))
+		  >>> hash(tt)
+		  8027212646858338501
+		  >>> tl = (1, 2, [30, 40])
+		  >>> hash(tl)
+		  Traceback (most recent call last):
+		    File "<stdin>", line 1, in <module>
+		  TypeError: unhashable type: 'list'
+		  ```
+	- `__missing__`
+		- 这是一个特殊方法，用来在访问字典时处理不存在的 key
+			- ![image.png](../assets/image_1697423167224_0.png)
+			- 通过 override 形式能够覆盖对 `__getitem__` 的失败访问，但不覆盖 `__contains__`
+				- 这个例子可以让数组里不论存放的 key 是字符串还是数字，都能够被正常的访问
+				- ![image.png](../assets/image_1697423252380_0.png)
+		- 该特殊方法在特定的实现类中的覆盖范围有一些差异
+			- 对于 dict 子类如果只实现了 `__missing__`，意味着对下面两个方法进行了支持
+				- `d[k]`
+				- `__getitem__`
+			- 对于 `collections.UserDict` 的子类，如果只实现了 `__missing__`，支持如下方法
+				- `d[k]`
+				- `d.get(k)`
+			- 对于 `abc.Mapping` 子类中的逻辑完全取决于你是否在 `__getitem__` 中调用 `__missing__`
+				- 如果不调用，则默认不会触发
+				- 如果自己调用了，那么可以覆盖 `d[k]`, `d.get(k)`，`k in d`
+			- `setdefault` 和 `update` 的行为也会受到影响
+	- `defaultdict`
+		- 是一个默认值的 dict 变体，如果这个
+	- `collections.OrderedDict`
+		- 自 3.6 版本开始，内置的 dict 也会保持键的顺序，所以使用 `OrderedDict` 的常见原因是
+		- 带有一个 `move_to_end()` 方法可以调整顺序
+		- 比 `dict` 更擅长重新排序，空间效率、插入性能都是次要的
+		-
+			-

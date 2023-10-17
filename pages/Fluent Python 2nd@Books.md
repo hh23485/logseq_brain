@@ -673,6 +673,7 @@ tags:: [[Python]], [[Books]]
 		- 正则表达式如果对于输入也使用 bytes，那么 regex 也可以使用 bytes 来编译
 		- regex 有参数 `re.ASCII` 来限制`\w`, `\W`, `\b`, `\B`, `\d`, `\D`, `\s`, 和`\S` 等参数只匹配 `ASCII`
 - 第五章
+  collapsed:: true
 	- Data Class Builder
 		- 构建类的简单方式，这些类只是一些数据字段的集合，不具备其他功能
 			- 相比于手动构造一个类，继承自 object 的一些默认实现的方法并不是很有用
@@ -968,7 +969,13 @@ tags:: [[Python]], [[Books]]
 				      return results
 				  
 				  ```
-			-
--
+				- 如果想要知道顺序，可以使用 `City.__match_args__`
+		- 延伸阅读
+			- [“Why not just use namedtuple?” (fpy.li)](https://fpy.li/5-18)
+			- [“Why not just use typing.NamedTuple?” (fpy.li)](https://fpy.li/5-19)
+			- [“Dataclasses: The code generator to end all code generators” (video) (fpy.li)](https://fpy.li/5-23)
+			- [“Ultimate guide to data classes in Python 3.7” (fpy.li)](https://fpy.li/5-22)
+- 第六章
+	-
 -
 -

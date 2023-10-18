@@ -1066,5 +1066,18 @@ tags:: [[Python]], [[Books]]
 		- ![image.png](../assets/image_1697604404316_0.png).
 		-
 - 第七章
+	- python 中的 function 是一等公民
+		- ``` python
+		  >>> def factorial(n):  
+		  ...     """returns n!"""
+		  ...     return 1 if n < 2 else n * factorial(n - 1)
+		  ...
+		  >>> factorial(42)
+		  1405006117752879898543142606244511569936384000000000
+		  >>> factorial.__doc__  
+		  'returns n!'
+		  >>> type(factorial)  
+		  <class 'function'>
+		  ```
 	-
 -

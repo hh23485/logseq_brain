@@ -1,10 +1,6 @@
 tags:: [[Python]], [[Books]]
 
-- [[Fluent Python 2nd - 第一章]]
-- [[Fluent Python 2nd - 第二章]]
-- [[Fluent Python 2nd - 第三章]]
-- [[Fluent Python 2nd - 第四章]]
-- [[Fluent Python 2nd - 第五章]]
-- [[Fluent Python 2nd - 第六章]]
-- [[Fluent Python 2nd - 第七章]]
--
+- 读书笔记
+	- {{query (page-property tags "Fluent Python 2nd@Books")}}
+	  query-sort-by:: created-at
+	  query-sort-desc:: false

@@ -976,6 +976,7 @@ tags:: [[Python]], [[Books]]
 			- [“Dataclasses: The code generator to end all code generators” (video) (fpy.li)](https://fpy.li/5-23)
 			- [“Ultimate guide to data classes in Python 3.7” (fpy.li)](https://fpy.li/5-22)
 - 第六章
+  collapsed:: true
 	- python 中的 is 是比较两个对象的 id 是否相同，而 == 比较的是两个对象所持有的值是否相同
 		- object 默认实现的 `__eq__` 就是比较两个 id，所以会得到和 is 相同的结果
 		- 通常领域对象都会重新实现 `__eq__`
@@ -1062,6 +1063,8 @@ tags:: [[Python]], [[Books]]
 		- [string interning (fpy.li)](https://fpy.li/6-15)
 	- 其他
 		- 对于需要销毁和关闭的对象，尽量使用 with，而不是依赖垃圾回收
+		- ![image.png](../assets/image_1697604404316_0.png).
+		-
+- 第七章
 	-
--
 -

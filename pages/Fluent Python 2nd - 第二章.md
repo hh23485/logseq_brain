@@ -1,4 +1,4 @@
-tags:: [[Fluent Python 2nd - 第一章]]
+tags:: [[Fluent Python 2nd@Books]]
 
 - 序列分类
 	- 按结构

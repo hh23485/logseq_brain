@@ -1,5 +1,18 @@
-- [[YouTube Video - GPT-4 & LangChain Tutorial: How to Chat With A 56-Page PDF Document]]
-- DOING [[尝试基于 GPT 制作内部问答和 DRI 助手]]
-  :LOGBOOK:
-  CLOCK: [2023-04-06 Thu 09:17:09]
-  :END:
+- 技术
+	- 读书
+		- [[性能之巅2@book]]
+		- [[Building Big Data Pipelines with Apache Beam@Book]]
+		- [[Fluent Python 2nd@Books]]
+		-
+	- 开源
+		- [[Feathr]]
+	- 大数据
+		- [[Spark]]
+		- [[Hadoop]]
+	- GPT
+		- [[尝试基于 GPT 制作内部问答和 DRI 助手]]
+	- 课程
+		- [[CMU 15-721]]
+- 生活
+- 随笔
+	- [[抢跑 Logseq 白板]]

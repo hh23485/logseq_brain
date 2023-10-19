@@ -40,11 +40,24 @@ tags:: [[Fluent Python 2nd@Books]]
 		- [“Functional Programming HOWTO” (fpy.li)](https://fpy.li/7-5)
 - 可调用对象的九种类型
 	- 用户定义的函数
-	- 内置函数
-		- len, time.strftime
 	- 内置方法
-	- 类方法
+		- len, time.strftime
+	- 内置函数
+	- 类函数
 	- 类
 	- 类实例
 	- 生成器函数
-		- 主题中使用 yield 的函数或方法
+		- 主题中使用 `yield` 的函数或方法
+	- 本地协程方法
+		- 使用 async def 函数或方法时，会返回一个协程对象
+	- 异步生成器方法
+		- async def
+- 确认一个对象是否可调用的方法是，使用 `callable()` 来判断
+	- ``` python
+	  >>> abs, str, 'Ni!'
+	  (<built-in function abs>, <class 'str'>, 'Ni!')
+	  >>> [callable(obj) for obj in (abs, str, 'Ni!')]
+	  [True, True, False]
+	  
+	  ```
+- 如果

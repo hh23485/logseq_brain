@@ -1,3 +1,5 @@
+tags:: Checklist, [[Machine Learning]]
+
 - 这个清单可以指导您完成机器学习项目。有八个主要步骤：
 	- 框定问题并审视整体情况。
 	  logseq.order-list-type:: number
@@ -150,23 +152,35 @@
 	  logseq.order-list-type:: number
 	- 一旦您对最终模型有信心，请在测试集上测量其性能以估计泛化误差。
 	  logseq.order-list-type:: number
-- ## 警告
+- #+BEGIN_WARNING
+  警告
   在测量泛化误差之后不要调整模型：这样只会导致对测试集过拟合。
-	- Present Your Solution
+  #+END_WARNING
+- ## Present Your Solution
 	- Document what you have done.
+	  logseq.order-list-type:: number
 	- 创建一个漂亮的演示文稿：
-	- 确保首先突出重点。
+	  logseq.order-list-type:: number
+		- 确保首先突出重点。
 	- 解释为什么您的解决方案能够实现业务目标。
+	  logseq.order-list-type:: number
 	- 不要忘记提出你在途中注意到的有趣观点：
-	- 描述哪些工作了，哪些没有工作。
+	  logseq.order-list-type:: number
+		- 描述哪些工作了，哪些没有工作。
 	- 列出您的假设和系统的限制。
-	- 确保通过美观的可视化或易于记忆的陈述来传达您的关键发现（例如，“中位数收入是房价的头号预测因素”）。
+	  logseq.order-list-type:: number
+		- 确保通过美观的可视化或易于记忆的陈述来传达您的关键发现（例如，“中位数收入是房价的头号预测因素”）。
 - ## 启动！
 	- 准备好您的解决方案以供生产使用（连接到生产数据输入，编写单元测试等）。
+	  logseq.order-list-type:: number
 	- 编写监控代码，定期检查系统的实时性能，并在性能下降时触发警报
-	- 小心慢速退化：随着数据的演变，模型往往会“腐烂”。
-	- 测量性能可能需要一个人工流水线（例如，通过众包服务）。
-	- 同时监控您的输入质量（例如，故障传感器发送随机值，或其他团队的输出变得陈旧）。这对于在线学习系统尤为重要。
+	  logseq.order-list-type:: number
+		- 小心慢速退化：随着数据的演变，模型往往会“腐烂”。
+		- 测量性能可能需要一个人工流水线（例如，通过众包服务）。
+		- 同时监控您的输入质量（例如，故障传感器发送随机值，或其他团队的输出变得陈旧）。这对于在线学习系统尤为重要。
 	- 定期使用新鲜数据对模型进行重新训练（尽可能自动化）。
-- ---
-- Jasper Snoek等人，“机器学习算法的实用贝叶斯优化”，第25届神经信息处理系统国际会议论文集2（2012年）：2951-2959。
+	  logseq.order-list-type:: number
+- #+BEGIN_QUOTE
+  Jasper Snoek等人，“机器学习算法的实用贝叶斯优化”，第25届神经信息处理系统国际会议论文集2（2012年）：2951-2959。
+  #+END_QUOTE
+-

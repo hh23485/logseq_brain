@@ -1,4 +1,4 @@
-tags:: Checklist, [[Machine Learning]]
+tags:: Checklist, [[Machine Learning]], [[Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition@Books]]
 
 - 这个清单可以指导您完成机器学习项目。有八个主要步骤：
 	- 框定问题并审视整体情况。

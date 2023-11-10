@@ -37,5 +37,70 @@ tags:: [[Docker: Up & Running, 3rd Edition@Books]]
 	  #+END_QUOTE
 - ## Docker 工作流的优势
 	- #+BEGIN_QUOTE
-	  
+	  以下是使用Docker和Linux容器可以获得的更多好处：
 	  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  以一种利用开发人员已有技能的方式打包软件
+		  #+END_QUOTE
+			- #+BEGIN_QUOTE
+			  Linux工具，如 rpm ， mock ， dpkg 和 pbuilder 可能难以使用，每个工具都必须独立学习。Docker将所有的需求打包成一个格式，被称为开放容器倡议（OCI）标准。
+			  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  将应用软件和所需的操作系统文件系统一起打包到单一标准化的镜像格式中
+		  #+END_QUOTE
+			- #+BEGIN_QUOTE
+			  你通常需要打包你的应用程序以及它所依赖的许多依赖项，包括库和守护进程。然而，你永远不能确保100%的执行环境是相同的。对于本地编译的代码，这意味着你的构建系统需要有与你的生产环境完全相同的共享库版本。所有这些都使得打包难以掌握，许多公司难以可靠地完成。
+			  有了Docker，你可以部署你的应用程序以及运行它所需的每一个文件。Docker的分层图像使这个过程变得高效，确保你的应用程序在预期的环境中运行。
+			  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  使用打包的工件来测试并将完全相同的工件交付给所有系统在所有环境中
+		  #+END_QUOTE
+			- #+BEGIN_QUOTE
+			  当开发人员将更改提交到版本控制系统时，可以构建新的Docker镜像，该镜像可以经历整个测试过程，并且可以在不需要在过程的任何步骤中重新编译或重新打包的情况下部署到生产环境，除非特别需要。
+			  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  在不牺牲资源的情况下，将软件应用程序从硬件中抽象出来
+		  #+END_QUOTE
+			- #+BEGIN_QUOTE
+			  传统的企业虚拟化解决方案，如VMware，通常在需要在物理硬件和其上运行的软件应用程序之间创建抽象层时使用，但这会消耗资源。
+			  容器只是另一个通常直接与底层Linux内核通信的进程，因此可以利用更多资源，直到达到系统或配额限制为止。
+			  #+END_QUOTE
+- ## What Docker Isn't
+	- #+BEGIN_QUOTE
+	  企业虚拟化平台（VMware，KVM等）
+	  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  容器并不是传统意义上的虚拟机。
+		  #+END_QUOTE
+	- #+BEGIN_QUOTE
+	  云平台（OpenStack，CloudStack等）
+	  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  容器工作流在表面上与更传统的云平台有很多相似之处。这两者通常都被用来允许应用程序根据需求变化进行水平扩展。然而，Docker并不是一个云平台。它只处理在预先存在的Docker主机上部署、运行和管理容器。它不允许你创建新的主机系统（实例）、对象存储、块存储，以及通常使用云平台管理的许多其他资源。
+		  #+END_QUOTE
+	- #+BEGIN_QUOTE
+	  配置管理（Puppet，Chef等）
+	  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  Dockerfiles用于定义在构建时容器的样子，但它们并不能管理容器的持续状态，也不能用于管理Docker主机系统。
+		  然而，Docker可以显著减少对复杂配置管理代码的需求。随着越来越多的服务器简单地成为Docker主机，公司使用的配置管理代码库可以变得更小，Docker可以用于在标准化的OCI图像内部传输更复杂的应用程序需求。
+		  #+END_QUOTE
+	- #+BEGIN_QUOTE
+	  部署框架（Capistrano，Fabric等）
+	  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  Docker通过创建容器镜像来简化许多部署方面的问题，这些镜像以一种可以在所有环境中部署而不需要更改的方式封装了应用程序的所有依赖项。然而，Docker本身不能用来自动化复杂的部署过程。通常仍然需要其他工具来将更大的工作流程拼接在一起。
+		  #+END_QUOTE
+	- #+BEGIN_QUOTE
+	  开发环境（Vagrant等）
+	  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  Vagrant是一种供开发者使用的虚拟机管理工具，常用于模拟与应用程序将要部署的生产环境非常相似的服务器堆栈。
+		  当你开始充分利用Docker时，就没有太大的需要在开发中模拟各种各样的生产系统，因为大多数生产系统将简单地是Linux容器服务器，这可以很容易地在本地复制。
+		  #+END_QUOTE
+	- #+BEGIN_QUOTE
+	  负载管理工具（Mesos，Kubernetes，Swarm等）
+	  #+END_QUOTE
+		- #+BEGIN_QUOTE
+		  必须使用编排层（包括内置的Swarm模式）来协调Linux容器主机池中的工作，跟踪所有主机及其资源的当前状态，并保持运行容器的库存。这些系统旨在自动化保持生产集群健康所需的常规任务，同时也提供帮助使得容器化工作负载的高度动态性更易于人类交互的工具。
+		  #+END_QUOTE

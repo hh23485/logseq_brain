@@ -35,4 +35,7 @@ tags:: [[Docker: Up & Running, 3rd Edition@Books]]
 	- #+BEGIN_QUOTE
 	  **Docker强制执行的设计选择意味着容器化的应用程序需要遵循这些最佳实践。这是一件非常好的事情。**
 	  #+END_QUOTE
--
+- ## Docker 工作流的优势
+	- #+BEGIN_QUOTE
+	  
+	  #+END_QUOTE

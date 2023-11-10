@@ -3,7 +3,16 @@ tags:: [[Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd
 - 机器学习项目的主要步骤
 	- 看大局
 		- 观察所有可能的数据
-			- 拿出[[机器学习的 checklist]]来确定要做的许多的事情，并根据需求调整
+		- 拿出[[机器学习的 checklist]]来确定要做的许多的事情，并根据需求调整
+		- 确定问题
+			- 建立模型，乃至模型的输出可能都不是最终的目标，目标是如何从这个模型中收益
+		- 选择性能指标
+			- {{embed [[RMSE]]}}
+			- 均方根误差
+				- {{embed [[MAE]]}}
+			- [[RMSE]] 对误差更加敏感，在异常值比较少时，[[RMSE]] 的效果更好
+		- 检查假设
+			- 尽早进行目标的确认
 	- 获取数据
 	- 探索和可视化数据以获得灵感
 	- 为机器学习算法准备数据
@@ -11,16 +20,6 @@ tags:: [[Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd
 	- 调整模型
 	- 提出解决方案
 	- 启动监控和维护系统
-- Look at the big picture
-- 确定问题
-	- 建立模型，乃至模型的输出可能都不是最终的目标，目标是如何从这个模型中收益
-- 选择性能指标
-	- {{embed [[RMSE]]}}
-	- {{embed [[MAE]]}}
-	- [[RMSE]] 对误差更加敏感，在异常值比较少时，[[RMSE]] 的效果更好
-- 检查假设
-	- 尽早进行目标的确认
-- 获取数据
 - 一个 E2E 的案例
 	-
 -

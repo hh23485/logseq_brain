@@ -64,5 +64,77 @@ tags:: Ray, 读书笔记
 				- 您编程针对所谓的驱动程序，即程序根，它位于主节点上
 				- 驱动程序可以运行作业，即在集群中的节点上运行的任务集合
 					- 作业的各个任务在工作节点上的工作进程上运行
-				- ![image.png](../assets/image_1704099420030_0.png)
-			-
+				- ![image.png](../assets/image_1704099420030_0.png){:height 213, :width 517}
+					- Ray Cluster也可以是一个本地集群，即仅由您自己的计算机组成的集群。在这种情况下，只有一个节点，即头节点，它具有驱动程序和一些工作进程
+		- ## 第一个 ray 的应用
+			- 安装
+				- ``` bash
+				  pip install "ray[rllib, serve, tune]==2.2.0"
+				  ```
+			- 开启一个会话
+				- ``` python
+				  import ray
+				  ray.init()
+				  ```
+				- `init` 函数是您将在第2章深入学习的六个基本API调用之一。Ray核心API非常易于访问和使用。但由于它也是一个相当低级的接口，因此需要时间来构建有趣的示例
+				- 这个 `init` 调用通常被称为Ray客户端，用于与现有的Ray集群进行交互连接。如果您想在“真实”集群上运行Ray，您将不得不向 `init` 传递更多的参数
+		- ## Ray 分布式的两个基础组件
+			- ### Ray Cluster
+				- 该组件负责分配资源、创建节点并确保其健康
+				- [Ray Clusters Overview — Ray 2.9.0](https://docs.ray.io/en/latest/cluster/getting-started.html)
+			- ### Ray Core
+				- 一旦您的集群运行起来，您可以使用 Ray Core API 来对其进行编程
+				- [What is Ray Core? — Ray 2.9.0](https://docs.ray.io/en/latest/ray-core/walkthrough.html)
+	- # 数据科学库套件
+		- ## Ray AIR and the Data Science Workflow
+			- 术语“数据科学”（DS）近年来发展迅速，对我们来说，数据科学是通过利用数据来获得洞见并构建现实世界应用的实践。这是一个围绕构建和理解事物的实际和应用领域的广泛定义.
+			- 进行数据科学是一个迭代的过程，包括需求工程、数据收集和处理、构建模型和评估，以及部署解决方案
+			- 这四个步骤对于成功开展使用机器学习的数据科学项目至关重要
+				- ### *Data processing*
+					- 为了训练机器学习模型，您需要以您的机器学习模型理解的格式准备数据。
+					- 转换和选择应该输入模型的数据的过程通常被称为特征工程
+				- ### *Model training*
+					- 在机器学习中，您需要在上一步中处理过的数据上训练您的算法
+				- ### *Hyperparameter tuning*
+					- 机器学习模型具有在模型训练阶段调整的参数，大多数机器学习模型还有另一组称为超参数的参数，可以在训练之前进行修改
+					- 这些参数可以严重影响最终机器学习模型的性能，需要适当调整。有一些很好的工具可以帮助自动化这个过程
+				- ### *Model serving*
+					- 训练好的模型需要部署。提供模型意味着通过任何必要的方式使其对需要访问的人员可用
+			- 您不仅希望所有涉及的库能够无缝地互操作，而且如果您能在整个数据科学过程中使用一致的API，这也可能是一个决定性的优势。
+				- ![image.png](../assets/image_1704120721856_0.png)
+				- Ray 的高级库，用于我们刚刚列出的四个机器学习特定步骤中的每一个，所有这些库都是按设计分布式的
+					- 使用 Ray Datasets 处理数据
+					- 使用 Ray Train 进行分布式模型训练
+					- 使用 Ray RLlib 运行强化学习工作负载
+					- 使用 Ray Tune 高效调整超参数
+					- 使用 Ray Serve 提供模型服务
+		- ## Data Processing with Ray Datasets
+			- Ray 的第一个高级库是 Ray Datasets
+				- 库包含一个名为 `Dataset` 的数据结构，多种用于从各种格式和系统加载数据的连接器，用于转换此类数据集的 API，以及使用它们构建数据处理流水线的方法，以及与其他数据处理框架的许多集成
+				- `Dataset` 抽象构建在强大的 [Arrow](https://arrow.apache.org/) 框架之上
+			- 要使用Ray Datasets
+				- 您需要安装Python的Arrow，例如通过运行 `pip install pyarrow`
+				- 以下简单示例从Python数据结构在本地Ray集群上创建一个分布式 `Dataset`
+					- ``` python
+					  import ray
+					  
+					  items = [{"name": str(i), "data": i} for i in range(10000)]
+					  ds = ray.data.from_items(items)
+					  ds.show(5) 
+					  
+					  ```
+				- `Dataset` API 在函数式编程上下了重注，因为这种范式非常适合数据转换
+					- ``` python
+					  # ds 支持 map, filter, flat_map 等操作
+					  squares = ds.map(lambda x: x["data"] ** 2)
+					  
+					  evens = squares.filter(lambda x: x % 2 == 0)
+					  
+					  # 一些 action 操作
+					  evens.count()
+					  
+					  cubes = evens.flat_map(lambda x: [x, x**3])
+					  sample = cubes.take(10)
+					  print(sample)
+					  ```
+				-

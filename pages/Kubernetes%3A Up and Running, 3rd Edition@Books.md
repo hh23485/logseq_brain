@@ -216,4 +216,5 @@ tags:: [[Kubernetes]], [[读书笔记]]
 					- 删除不会有确认，一旦发出命令，对象就会被删除
 				- `kubectl delete <resource-name> <obj-name>`
 		- labeling 或 annotating 对象
+			- 向名为 bar 的 pod 标记 color=red，可以使用 `kubectl label pods bar color=red`
 			-
